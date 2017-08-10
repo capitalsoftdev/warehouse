@@ -1,0 +1,6 @@
+D:\Projects\Others\WMS\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.exe.config
+D:\Projects\Others\WMS\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.exe
+D:\Projects\Others\WMS\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.pdb
+D:\Projects\Others\WMS\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.csprojResolveAssemblyReference.cache
+D:\Projects\Others\WMS\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.exe
+D:\Projects\Others\WMS\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.pdb

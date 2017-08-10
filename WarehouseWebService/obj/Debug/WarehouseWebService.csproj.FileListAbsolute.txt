@@ -1,0 +1,6 @@
+D:\Projects\Others\WMS\WarehouseWebService\bin\Debug\WarehouseWebService.dll.config
+D:\Projects\Others\WMS\WarehouseWebService\bin\Debug\WarehouseWebService.dll
+D:\Projects\Others\WMS\WarehouseWebService\bin\Debug\WarehouseWebService.pdb
+D:\Projects\Others\WMS\WarehouseWebService\obj\Debug\WarehouseWebService.csprojResolveAssemblyReference.cache
+D:\Projects\Others\WMS\WarehouseWebService\obj\Debug\WarehouseWebService.dll
+D:\Projects\Others\WMS\WarehouseWebService\obj\Debug\WarehouseWebService.pdb

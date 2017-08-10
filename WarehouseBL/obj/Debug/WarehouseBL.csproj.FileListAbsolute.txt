@@ -1,0 +1,5 @@
+D:\Projects\Others\WMS\WarehouseBL\bin\Debug\WarehouseBL.dll
+D:\Projects\Others\WMS\WarehouseBL\bin\Debug\WarehouseBL.pdb
+D:\Projects\Others\WMS\WarehouseBL\obj\Debug\WarehouseBL.csprojResolveAssemblyReference.cache
+D:\Projects\Others\WMS\WarehouseBL\obj\Debug\WarehouseBL.dll
+D:\Projects\Others\WMS\WarehouseBL\obj\Debug\WarehouseBL.pdb

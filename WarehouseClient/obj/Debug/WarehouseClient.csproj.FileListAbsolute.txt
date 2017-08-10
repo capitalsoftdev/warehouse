@@ -1,0 +1,8 @@
+D:\Projects\Others\WMS\WarehouseClient\bin\Debug\WarehouseClient.exe.config
+D:\Projects\Others\WMS\WarehouseClient\bin\Debug\WarehouseClient.exe
+D:\Projects\Others\WMS\WarehouseClient\bin\Debug\WarehouseClient.pdb
+D:\Projects\Others\WMS\WarehouseClient\obj\Debug\WarehouseClient.csprojResolveAssemblyReference.cache
+D:\Projects\Others\WMS\WarehouseClient\obj\Debug\WarehouseClient.Properties.Resources.resources
+D:\Projects\Others\WMS\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
+D:\Projects\Others\WMS\WarehouseClient\obj\Debug\WarehouseClient.exe
+D:\Projects\Others\WMS\WarehouseClient\obj\Debug\WarehouseClient.pdb

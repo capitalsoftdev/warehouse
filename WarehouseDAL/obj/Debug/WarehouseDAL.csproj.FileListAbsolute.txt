@@ -1,0 +1,4 @@
+D:\Projects\Others\WMS\WarehouseDAL\bin\Debug\WarehouseDAL.dll
+D:\Projects\Others\WMS\WarehouseDAL\bin\Debug\WarehouseDAL.pdb
+D:\Projects\Others\WMS\WarehouseDAL\obj\Debug\WarehouseDAL.dll
+D:\Projects\Others\WMS\WarehouseDAL\obj\Debug\WarehouseDAL.pdb
