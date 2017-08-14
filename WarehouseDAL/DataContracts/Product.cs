@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WarehouseDAL.DataContracts
 {
-    class Product
+    public class Product
     {
         private int id;
         private int productCategoryId;
