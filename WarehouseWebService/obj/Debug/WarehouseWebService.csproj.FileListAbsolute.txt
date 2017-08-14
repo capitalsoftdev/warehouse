@@ -10,3 +10,9 @@ C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseWebSe
 C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.csprojResolveAssemblyReference.cache
 C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.dll
 C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.pdb
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseWebService.dll.config
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseWebService.dll
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseWebService.pdb
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.csprojResolveAssemblyReference.cache
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.dll
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.pdb
