@@ -10,7 +10,7 @@ namespace WarehouseDAL.DataContracts
     {
         private int roleGroupId;
         private int roleId;
-        public int RoleGroupId { get => roleGroupId; set => roleGroupId = value; }
-        public int RoleId { get => roleId; set => roleId = value; }
+        public int RoleGroupId { get { return this.roleGroupId; } set { this.roleGroupId = value; } }
+        public int RoleId { get { return this.roleId; } set { this.roleId = value; } }
     }
 }
