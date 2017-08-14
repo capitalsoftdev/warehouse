@@ -41,12 +41,6 @@ namespace WarehouseDAL
                     int result = Convert.ToInt32(pResult.Value);
 
                     if (result == 1) return true;
-
-
-
-
-
-
                 }
                 return retVal;
             }
