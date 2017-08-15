@@ -50,7 +50,6 @@
     <Compile Include="ProductCategoryAdaptor.cs" />
     <Compile Include="ProductManagmentAdapter.cs" />
     <Compile Include="RoleGroupMapAdapter.cs" />
-    <Compile Include="User.cs" />
     <Compile Include="DataContracts\User.cs" />
     <Compile Include="UserAdaptor.cs" />
   </ItemGroup>
