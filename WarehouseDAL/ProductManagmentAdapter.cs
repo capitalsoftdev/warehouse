@@ -12,7 +12,7 @@ namespace WarehouseDAL
     class ProductManagmentAdapter
     {
         private string _createOrUpdate = "CreateOrUpdateProcuctManagment";
-        public IList<ProductManagment> GetItem(int id , int userId , int productId )
+        public IList<DataContracts.ProductManagment> GetItem(int id , int userId , int productId )
         {
 
             return null;

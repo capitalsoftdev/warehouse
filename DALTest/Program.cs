@@ -11,7 +11,7 @@ namespace DALTest
     {
         static void Main(string[] args)
         {
-            /*var product = new WarehouseDAL.DataContracts.Product();
+            var product = new WarehouseDAL.DataContracts.Product();
             product.Munit = 5;
             product.Name = "Katuka";
             product.ProductCategoryId = 5;
@@ -20,7 +20,7 @@ namespace DALTest
             var productAdaptor = new ProductAdaptor();
             Console.WriteLine(productAdaptor.CreateOrUpdateProduct(product));
             Console.ReadLine();
-            */
+            
 
         }
     }
