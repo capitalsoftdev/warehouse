@@ -88,6 +88,7 @@ namespace WarehouseDAL
                     cmd.ExecuteNonQuery();
 
                     result = Convert.ToInt32(pResult.Value);
+                
 
                 }
                 return result;
