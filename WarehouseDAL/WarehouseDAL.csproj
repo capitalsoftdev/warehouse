@@ -44,9 +44,12 @@
     <Compile Include="Class1.cs" />
     <Compile Include="ConnectionParameters.cs" />
     <Compile Include="DataContracts\Product.cs" />
+    <Compile Include="DataContracts\ProductManagment.cs" />
     <Compile Include="ProductAdaptor.cs" />
     <Compile Include="DataContracts\RoleGroupMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProductCategoryAdaptor.cs" />
+    <Compile Include="ProductManagmentAdapter.cs" />
     <Compile Include="ProductCategoryAdaptor.cs" />
     <Compile Include="ProductManagmentAdapter.cs" />
     <Compile Include="RoleGroupMapAdapter.cs" />

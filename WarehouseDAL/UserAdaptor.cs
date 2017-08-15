@@ -7,7 +7,6 @@ using System.Data.SqlClient;
 using System.Configuration;
 using WarehouseDAL.DataContracts;
 
-
 namespace WarehouseDAL
 {
     class UserAdaptor
