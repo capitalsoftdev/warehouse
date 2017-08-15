@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using WarehouseDAL.DataContracts;
+using System.Configuration;
 
 namespace WarehouseDAL
 {
-    class ProductAdaptor
+    public class ProductAdaptor
     {
         private string createOrUpdateProduct = "";
 
         public int CreateOrUpdateProduct(Product product)
         {
             int res = 0;
-            using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["LOCAL"].ConnectionString))
             {
                 conn.Open();
 
@@ -26,7 +28,15 @@ namespace WarehouseDAL
                     pProductCategoryId.Value = product.ProductCategoryId;
                     cmd.Parameters.Add(pProductCategoryId);
 
-                    SqlParameter pResult = new SqlParameter("result", System.Data.SqlDbType.Int);
+                    SqlParameter pName = new SqlParameter("name", System.Data.SqlDbType.NVarChar, 100);
+                    pName.Value = product.Name;
+                    cmd.Parameters.Add(pName);
+
+                    SqlParameter pMunit = new SqlParameter("munit", System.Data.SqlDbType.Int);
+                    pMunit.Value = product.Munit;
+                    cmd.Parameters.Add(pMunit);
+
+                    SqlParameter pResult = new SqlParameter("status", System.Data.SqlDbType.Int);
                     pResult.Direction = System.Data.ParameterDirection.Output;
                     cmd.Parameters.Add(pResult);
 
@@ -35,7 +45,6 @@ namespace WarehouseDAL
 
                      res = Convert.ToInt32(pResult.Value);
 
-                    
 
                 }
                 return res;

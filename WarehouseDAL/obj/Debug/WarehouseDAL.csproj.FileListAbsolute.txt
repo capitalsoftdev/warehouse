@@ -2,3 +2,9 @@ D:\Projects\Others\WMS\WarehouseDAL\bin\Debug\WarehouseDAL.dll
 D:\Projects\Others\WMS\WarehouseDAL\bin\Debug\WarehouseDAL.pdb
 D:\Projects\Others\WMS\WarehouseDAL\obj\Debug\WarehouseDAL.dll
 D:\Projects\Others\WMS\WarehouseDAL\obj\Debug\WarehouseDAL.pdb
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.dll.config
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.dll
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.pdb
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.csprojResolveAssemblyReference.cache
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.dll
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.pdb
