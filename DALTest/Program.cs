@@ -13,9 +13,9 @@ namespace DALTest
         {
             var product = new WarehouseDAL.DataContracts.Product();
             product.Munit = 5;
-            product.Name = "Katuka";
+            product.Name = "Katukashka";
             product.ProductCategoryId = 5;
-            product.Id = 1002;
+            
 
             var productAdaptor = new ProductAdaptor();
             Console.WriteLine(productAdaptor.CreateOrUpdateProduct(product));

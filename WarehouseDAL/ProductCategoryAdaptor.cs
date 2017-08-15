@@ -8,7 +8,7 @@ namespace WarehouseDAL
 {
     class ProductCategoryAdaptor
     {
-        
+
 
         public ProductCategory getProductCategoryById(int id)
         {
@@ -17,12 +17,12 @@ namespace WarehouseDAL
         }
 
 
-        public IList<ProductCategory>  getAllProductCategories()
+        public IList<ProductCategory> getAllProductCategories()
         {
             return new List<ProductCategory>();
         }
 
-        
+
     }
 
     public class ProductCategory
