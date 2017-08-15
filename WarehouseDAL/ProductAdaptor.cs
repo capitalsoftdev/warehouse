@@ -11,7 +11,7 @@ namespace WarehouseDAL
 {
     public class ProductAdaptor
     {
-        private string createOrUpdateProduct = "";
+        private string createOrUpdateProduct = "[dbo].[CreateOrUpdateProduct]";
 
         public int CreateOrUpdateProduct(Product product)
         {
@@ -22,7 +22,13 @@ namespace WarehouseDAL
 
                 using (var cmd = new SqlCommand(createOrUpdateProduct, conn))
                 {
+
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    SqlParameter pId = new SqlParameter("id", System.Data.SqlDbType.Int);
+                    pId.Value = product.Id;
+                    cmd.Parameters.Add(pId);
+
 
                     SqlParameter pProductCategoryId = new SqlParameter("productCategoryId", System.Data.SqlDbType.Int);
                     pProductCategoryId.Value = product.ProductCategoryId;
@@ -40,10 +46,13 @@ namespace WarehouseDAL
                     pResult.Direction = System.Data.ParameterDirection.Output;
                     cmd.Parameters.Add(pResult);
 
+                   // cmd.Connection = conn;
+
+                    
                     cmd.ExecuteNonQuery();
 
 
-                     res = Convert.ToInt32(pResult.Value);
+                    res = Convert.ToInt32(pResult.Value);
 
 
                 }
