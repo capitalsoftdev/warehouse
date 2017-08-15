@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using WarehouseDAL.DataContracts;
 
 namespace WarehouseDAL
 {
-    class ProductManagmentAdapter
+    public class ProductManagmentAdapter
     {
         private string _createOrUpdate = "CreateOrUpdateProcuctManagment";
         public IList<ProductManagment> GetItem(int id, int userId, int productId)
