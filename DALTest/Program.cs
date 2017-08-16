@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WarehouseDAL;
+using WarehouseDAL.DataContracts;
 
 
 namespace DALTest
@@ -12,7 +13,7 @@ namespace DALTest
     {
         static void Main(string[] args)
         {
-            var product = new WarehouseDAL.DataContracts.Product();
+            var product = new Product();
             product.Munit = 5;
             product.Name = "Dianan kompy u gity ind kznvcyrala";
             product.ProductCategoryId = 5;
@@ -20,6 +21,18 @@ namespace DALTest
 
             var productAdaptor = new ProductAdaptor();
             Console.WriteLine(productAdaptor.CreateOrUpdateProduct(product));
+
+
+            IList<Product> list = productAdaptor.GetProduct();
+
+            foreach(Product products in list)
+            {
+                Console.WriteLine(products);
+            }
+
+            Product productId = productAdaptor.GetProduct(1003);
+            Console.WriteLine(productId);
+
             Console.ReadLine();
             
 
