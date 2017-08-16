@@ -13,7 +13,11 @@ namespace DALTest
     {
         static void Main(string[] args)
         {
-            var product = new Product();
+
+           
+
+           var product = new Product();
+
             product.Munit = 5;
             product.Name = "Dianan";
             product.ProductCategoryId = 10;
@@ -21,6 +25,16 @@ namespace DALTest
 
             var productAdaptor = new ProductAdaptor();
             Console.WriteLine(productAdaptor.CreateOrUpdateProduct(product));
+
+            
+
+            //var roleGroupMap = new WarehouseDAL.DataContracts.RoleGroupMap();
+            //roleGroupMap.RoleGroupId = 3;
+            //roleGroupMap.RoleId = 4;
+
+            //var roleGroupMapAdapter = new RoleGroupMapAdapter();
+            //roleGroupMapAdapter.CreateRoleGroupMap(roleGroupMap);
+
 
 
             IList<Product> list = productAdaptor.GetProduct();
@@ -30,7 +44,7 @@ namespace DALTest
                 Console.WriteLine(products);
             }
 
-            Product productId = productAdaptor.GetProduct(1003);
+            Product productId = productAdaptor.GetProduct(1);
             Console.WriteLine(productId);
             
 
@@ -44,7 +58,7 @@ namespace DALTest
             }
 
             Console.ReadLine();
-            
+
 
         }
     }
