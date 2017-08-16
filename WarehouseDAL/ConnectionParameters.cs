@@ -9,7 +9,7 @@ namespace WarehouseDAL
 {
     public static class ConnectionParameters
     {
-        public static string ConnectionString = ConfigurationManager.ConnectionStrings["LOCAL"].ToString();//@""
+        public static string ConnectionString = ConfigurationManager.ConnectionStrings["LOCAL"].ConnectionString;//@""
 
     }
 }

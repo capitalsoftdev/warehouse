@@ -4,51 +4,98 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+using WarehouseDAL.DataContracts;
 
 namespace WarehouseDAL
 {
-    class ProductManagmentAdapter
+    public class ProductManagmentAdapter
     {
-        public IList<ProductManagment> GetItemFromProductManagment(int id , int userId , int productId )
+        private string _createOrUpdate = "CreateOrUpdateProcuctManagment";
+        public IList<ProductManagment> GetItem(int id, int userId, int productId)
         {
 
             return null;
         }
 
-        public int DeleteItemFromProductManagment(int id)
+        public int DeleteItem(int id)
         {
             return 0;
         }
 
-        public int CreateOrUpdateProcuctManagment(int id)
+        public int CreateOrUpdate(ProductManagment prMn)
         {
-            return 0;
+            int result = 0;
+            using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SqlCommand(_createOrUpdate, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    SqlParameter pId = new SqlParameter("@id", System.Data.SqlDbType.Int);
+                    pId.Value = prMn.Id;
+                    cmd.Parameters.Add(pId);
+
+                    SqlParameter pProductId = new SqlParameter("@productId", SqlDbType.Int);
+                    pProductId.Value = prMn.ProductId;
+                    cmd.Parameters.Add(pProductId);
+
+                    SqlParameter pQuantity = new SqlParameter("@quantity", SqlDbType.Int);
+                    pQuantity.Value = prMn.Quantity;
+                    cmd.Parameters.Add(pQuantity);
+
+                    SqlParameter pActionDate = new SqlParameter("@actionDate", SqlDbType.Date); //Date or Datatime
+                    pActionDate.Value = prMn.ActionDate;
+                    cmd.Parameters.Add(pActionDate);
+
+                    SqlParameter pAction = new SqlParameter("@action", SqlDbType.Int);
+                    pAction.Value = prMn.Action;
+                    cmd.Parameters.Add(pAction);
+
+                    SqlParameter pUserId = new SqlParameter("@userId", SqlDbType.Int);
+                    pUserId.Value = prMn.Action;
+                    cmd.Parameters.Add(pUserId);
+
+
+                    SqlParameter pReason = new SqlParameter("@reason", SqlDbType.NVarChar);
+                    pReason.Value = prMn.Reason;
+                    cmd.Parameters.Add(pReason);
+
+
+                    SqlParameter pPrice = new SqlParameter("@price", SqlDbType.Int);
+                    pPrice.Value = prMn.Price;
+                    cmd.Parameters.Add(pPrice);
+
+                    SqlParameter pSupplierId = new SqlParameter("@supplierId", SqlDbType.Int);
+                    pSupplierId.Value = prMn.SupplierId;
+                    cmd.Parameters.Add(pSupplierId);
+
+                    SqlParameter pLastModifyDate = new SqlParameter("@lastModifyDate", SqlDbType.Date);
+                    pLastModifyDate.Value = prMn.LastModifyDate;
+                    cmd.Parameters.Add(pLastModifyDate);
+
+
+                    SqlParameter pIsActive = new SqlParameter("@isActive", SqlDbType.Bit);
+                    pIsActive.Value = prMn.IsActive;
+
+                    SqlParameter pResult = new SqlParameter("result", System.Data.SqlDbType.Int);
+                    pResult.Direction = System.Data.ParameterDirection.Output;
+                    cmd.Parameters.Add(pResult);
+
+                    cmd.ExecuteNonQuery();
+
+                    result = Convert.ToInt32(pResult.Value);
+
+
+                }
+                return result;
+            }
         }
 
     }
 
-    class ProductManagment
-    {
-        private int productId;
-        private int quantity;
-        private DateTime	actionDate;
-        private int action;
-        private int userId;
-        private decimal price;
-        private int supplierId;
-        private string reason;
-        private DateTime	lastModifyDate;
-        private bool IsActive;
 
-        public int ProductId { get => productId; set => productId = value; }
-        public int Quantity { get => quantity; set => quantity = value; }
-        public DateTime ActionDate { get => actionDate; set => actionDate = value; }
-        public int Action { get => action; set => action = value; }
-        public int UserId { get => userId; set => userId = value; }
-        public decimal Price { get => price; set => price = value; }
-        public int SupplierId { get => supplierId; set => supplierId = value; }
-        public string Reason { get => reason; set => reason = value; }
-        public DateTime LastModifyDate { get => lastModifyDate; set => lastModifyDate = value; }
-        public bool IsActive1 { get => IsActive; set => IsActive = value; }
-    }
 }
