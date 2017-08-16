@@ -16,7 +16,7 @@ namespace DALTest
             var product = new Product();
             product.Munit = 5;
             product.Name = "Dianan";
-            product.ProductCategoryId = 5;
+            product.ProductCategoryId = 10;
             
 
             var productAdaptor = new ProductAdaptor();

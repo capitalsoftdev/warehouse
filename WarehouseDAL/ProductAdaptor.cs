@@ -16,7 +16,7 @@ namespace WarehouseDAL
 
         public int CreateOrUpdateProduct(Product product)
         {
-            int res = 0;
+            int res = -10;
             using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
             {
                 conn.Open();

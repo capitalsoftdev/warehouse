@@ -8,13 +8,13 @@ namespace WarehouseDAL.DataContracts
 {
     public class Product
     {
-        private int id;
+        private int? id;
         private int productCategoryId;
         private string name;
         private int munit;
         private bool isActive;
         
-        public int Id
+        public int? Id
         {
             get { return this.id; }
             set { this.id = value; }
