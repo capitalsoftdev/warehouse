@@ -17,3 +17,6 @@ C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClie
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
+C:\Users\AST\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
+C:\Users\AST\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
+C:\Users\AST\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
