@@ -102,7 +102,10 @@ namespace WarehouseDAL
                             newProduct.Name = (string)reader["name"];
                             newProduct.ProductCategoryId = (int)reader["productCategoryId"];
                             newProduct.Munit = (int)reader["munit"];
-                            newProduct.IsActive = (bool)reader["IsActive"];
+                            if (reader["IsActive"] == DBNull.Value)
+                                newProduct.IsActive = null;
+                            else
+                                newProduct.IsActive = (bool)reader["IsActive"];
                             productList.Add(newProduct);
                         }
                     }
