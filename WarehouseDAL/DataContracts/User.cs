@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace WarehouseDAL.DataContracts
 {
    public class User
     {
+        private int? id;
         private string username;
         private string password;
         private int roleGroupId;
@@ -38,7 +40,19 @@ namespace WarehouseDAL.DataContracts
 
             set
             {
-                password = value;
+
+                MD5 md5 = new MD5CryptoServiceProvider();
+                byte[] checkSum = md5.ComputeHash(Encoding.UTF8.GetBytes(value));
+                string pass = BitConverter.ToString(checkSum).Replace("-", String.Empty);
+
+                if (id == null || (this.password != pass))
+                {
+                    password = pass;
+                }
+                else
+                {
+                    password = value;
+                }
             }
         }
 
@@ -104,6 +118,19 @@ namespace WarehouseDAL.DataContracts
             set
             {
                 isActive = value;
+            }
+        }
+
+        public int? Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
             }
         }
     }
