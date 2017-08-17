@@ -14,9 +14,6 @@ C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClie
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
-C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
-C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
-C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
 E:\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
 E:\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe
 E:\warehouse\WarehouseClient\bin\Debug\WarehouseClient.pdb
@@ -34,3 +31,12 @@ C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csp
 C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.CoreCompileInputs.cache
 C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
 C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csprojResolveAssemblyReference.cache
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Form1.resources
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Properties.Resources.resources
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
