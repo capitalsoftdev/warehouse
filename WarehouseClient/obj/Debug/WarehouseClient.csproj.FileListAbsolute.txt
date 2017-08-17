@@ -17,17 +17,20 @@ C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClie
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
-<<<<<<< HEAD
-C:\Users\Артур\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
-C:\Users\Артур\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe
-C:\Users\Артур\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.pdb
-C:\Users\Артур\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csprojResolveAssemblyReference.cache
-C:\Users\Артур\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Properties.Resources.resources
-C:\Users\Артур\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
-C:\Users\Артур\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
-C:\Users\Артур\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
-=======
-C:\Users\AST\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
-C:\Users\AST\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
-C:\Users\AST\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
->>>>>>> 62237971cf0e43e3df3d6c127a2d88b7d76db6a8
+E:\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
+E:\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe
+E:\warehouse\WarehouseClient\bin\Debug\WarehouseClient.pdb
+E:\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csprojResolveAssemblyReference.cache
+E:\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Properties.Resources.resources
+E:\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
+E:\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
+E:\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.pdb
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csprojResolveAssemblyReference.cache
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Properties.Resources.resources
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.CoreCompileInputs.cache
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb

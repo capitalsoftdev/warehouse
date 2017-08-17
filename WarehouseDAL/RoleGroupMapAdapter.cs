@@ -18,6 +18,7 @@ namespace WarehouseDAL
         }
 
         private string insertRoleGroupMap = "[dbo].[InsertRoleGroupMap]";
+        private string getRoleGroupMap    = "[dbo].[GetRoleGroupMap]";
 
         public int CreateRoleGroupMap(RoleGroupMap role)
         {
@@ -57,7 +58,43 @@ namespace WarehouseDAL
             }
         }
 
+        public IList<RoleGroupMap> GetRoleGroupI()
+        {
+            return GetRoleGroupMap();
+        }
+        private IList<RoleGroupMap> GetRoleGroupMap()
+        {
+            IList<RoleGroupMap> roleGroupMapList = null;
+            using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SqlCommand(getRoleGroupMap, conn))
+                {
+
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var cmdParamId = new SqlParameter("roleId", System.Data.SqlDbType.Int);
+                    
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                            roleGroupMapList = new List<RoleGroupMap>();
+                        while (reader.Read())
+                        {
+                            RoleGroupMap newRoleGroupMap = new RoleGroupMap();
+                            newRoleGroupMap.RoleGroupId = (int)reader["roleGroupId"];
+                            newRoleGroupMap.RoleId = (int)reader["roleId"];
+                            roleGroupMapList.Add(newRoleGroupMap);
+                        }
+                    }
+
+                }
+                    return roleGroupMapList;
+            }
+            
+        }
 
 
     }
-}
+
