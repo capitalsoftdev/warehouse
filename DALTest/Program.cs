@@ -19,7 +19,7 @@ namespace DALTest
            var product = new Product();
 
             product.Munit = 5;
-            product.Name = "llllll";
+            product.Name = "ggggg";
             product.ProductCategoryId = 15;
             
 
