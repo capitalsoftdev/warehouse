@@ -15,22 +15,26 @@ namespace WarehouseDAL
         {
             return GetActiveUsers(null);
         }
-        public User SelectActiveUser(int a)
+        public User SelectActiveUser(int id)
         {
-            var user = GetActiveUsers(a);
-            if (user.Count > 0)
+            var user = GetActiveUsers(id);
+            Console.WriteLine(user.Count);
+            if (user.Count != 0)
                 return user[0];
             return null;
         }
         private IList<User> GetActiveUsers(int? id)
         {
-            IList<User> user = null;
+            IList<User> user = new List<User>();
             using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
             {
                 connection.Open();
                 using (var comand = new SqlCommand("SelectActiveUsers", connection))
                 {
-                    var param = new SqlParameter("@UserId", System.Data.SqlDbType.Int);
+                    comand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var param = new SqlParameter("UserId", System.Data.SqlDbType.Int);
+
                     if (id.HasValue)
                     {
                         param.Value = id.Value;
@@ -40,35 +44,39 @@ namespace WarehouseDAL
                         param.Value = DBNull.Value;
                     }
                     comand.Parameters.Add(param);
+
                     SqlDataReader reader = comand.ExecuteReader();
-                    User use;
-                    user = new List<User>();
-                    while (reader.Read())
+                    if (reader.HasRows)
                     {
-                        use = new User();
-                        use.Id = (Int32)reader["id"];
-                        use.Username = (string)reader["username"];
-                        use.Password = (string)reader["password"];
-                        use.RoleGroupId = (Int32)reader["roleGroupId"];
-                        use.CreationDate = (DateTime)reader["CreationDate"];
-                        if ((reader["lastLoginDate"]) == DBNull.Value)
-                            use.LastLoginDate = DateTime.MinValue;
-                        else use.LastLoginDate = (DateTime)(reader["lastLoginDate"]);
-                        use.LastModifireDate = (DateTime)reader["LastModifyDate"];
-                        user.Add(use);
+                        User use = null;
+                        while (reader.Read())
+                        {
+                            use = new User();
+                            use.Id = (Int32)reader["id"];
+                            use.Username = (string)reader["username"];
+                            use.Password = (string)reader["password"];
+                            use.RoleGroupId = (Int32)reader["roleGroupId"];
+                            use.CreationDate = (DateTime)reader["CreationDate"];
+                            if ((reader["lastLoginDate"]) == DBNull.Value)
+                                use.LastLoginDate = DateTime.MinValue;
+                            else
+                                use.LastLoginDate = (DateTime)reader["lastLoginDate"];
+                            use.LastModifireDate = (DateTime)reader["LastModifyDate"];
+                            use.IsActive = (bool)reader["IsActive"];
+                            user.Add(use);
+                        }
                     }
+                    reader.Close();
                 }
             }
             return user;
         }
-      
 
 
 
-        bool ManageUser(User user)
+        private bool ManageUser(User user)
         {
-            int result = -1;
-            bool retVal = false;
+          
             using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
             {
                 conn.Open();
@@ -97,9 +105,7 @@ namespace WarehouseDAL
 
                     
 
-                    if (result == 0) return true;
-                }
-                return retVal;
+                }     
             }
         }
 
