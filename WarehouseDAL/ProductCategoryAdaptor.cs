@@ -9,10 +9,12 @@ using System.Configuration;
 
 namespace WarehouseDAL
 {
-    class ProductCategoryAdaptor
+   public class ProductCategoryAdaptor
     {
 
         private string createOrUpdateProductCategory = "[dbo].[CreateOrUpdateProductCategory]";
+        private string getProductCategory = "[dbo].[GetProductCategory]";
+
 
         public int CreateOrUpdateProductCategory(ProductCategory product)
         {
@@ -27,7 +29,10 @@ namespace WarehouseDAL
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     SqlParameter pId = new SqlParameter("id", System.Data.SqlDbType.Int);
-                    pId.Value = product.Id;
+                    if (product.Id > 0)
+                        pId.Value = product.Id;
+                    else
+                        pId.Value = DBNull.Value;
                     cmd.Parameters.Add(pId);
 
 
@@ -55,8 +60,81 @@ namespace WarehouseDAL
 
 
                 }
+                
                 return res;
             }
+        }
+
+        public IList<ProductCategory> GetAllProductCategories()
+        {
+            IList<ProductCategory> productCategoryList = null;
+            using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SqlCommand(getProductCategory, conn))
+                {
+
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    SqlParameter pId = new SqlParameter("id", System.Data.SqlDbType.Int);
+                    pId.Value = null;
+                    cmd.Parameters.Add(pId);
+
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+
+                    if (reader.HasRows)
+                    {
+                        productCategoryList = new List<ProductCategory>();
+                        while (reader.Read())
+                        {
+                            ProductCategory newProductCategory = new ProductCategory();
+                            newProductCategory.Id = (int)reader["id"];
+                            newProductCategory.Name = (string)reader["name"];
+                            newProductCategory.ParentId = (int)reader["parentId"];
+                            newProductCategory.IsActive = (bool)reader["isActive"];
+                            productCategoryList.Add(newProductCategory);
+                        }
+                    }
+
+                }
+
+            }
+            return productCategoryList;
+        }
+
+        public ProductCategory GetProductCategoryById(int id)
+        {
+            ProductCategory productCategory = null;
+
+            using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
+            {
+                conn.Open();
+                using (var cmd = new SqlCommand(getProductCategory, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    SqlParameter pId = new SqlParameter("id", System.Data.SqlDbType.Int);
+                    pId.Value = id;
+                    cmd.Parameters.Add(pId);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    productCategory = new ProductCategory();
+                    if (reader.Read())
+                    {
+                        productCategory.Id = (int)reader["id"];
+                        productCategory.Name = (string)reader["name"];
+                        productCategory.ParentId = (int)reader["parentId"];
+                        productCategory.IsActive = (bool)reader["isActive"];
+
+                    }
+
+                }
+            }
+            return productCategory;
         }
 
 
@@ -70,52 +148,12 @@ namespace WarehouseDAL
 
         public IList<ProductCategory> getAllProductCategories()
         {
-            return new List<ProductCategory>();
+            return  new List<ProductCategory>();
         }
+
 
 
     }
 
-    public class ProductCategory
-    {
-        private int id;
-        private string name;
-        private int parentId;
-
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                id = value;
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
-
-        public int ParentId
-        {
-            get
-            {
-                return parentId;
-            }
-            set
-            {
-                parentId = value;
-            }
-        }
-    }
+   
 }

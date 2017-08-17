@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ConnectionParameters.cs" />
     <Compile Include="DataContracts\Product.cs" />
+    <Compile Include="DataContracts\ProductCategory.cs" />
     <Compile Include="DataContracts\ProductManagment.cs" />
     <Compile Include="ProductAdaptor.cs" />
     <Compile Include="DataContracts\RoleGroupMap.cs" />
