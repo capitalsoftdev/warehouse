@@ -42,6 +42,7 @@ namespace DALTest
             foreach (Product products in list)
              {
                  Console.WriteLine(products);
+
              }
 
              Product productId = productAdaptor.GetProduct(1);
