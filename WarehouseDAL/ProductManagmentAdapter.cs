@@ -6,13 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using WarehouseDAL.DataContracts;
 
 namespace WarehouseDAL
 {
-    class ProductManagmentAdapter
+    public class ProductManagmentAdapter
     {
         private string _createOrUpdate = "CreateOrUpdateProcuctManagment";
-        public IList<DataContracts.ProductManagment> GetItem(int id , int userId , int productId )
+        public IList<ProductManagment> GetItem(int id, int userId, int productId)
         {
 
             return null;
@@ -78,7 +79,7 @@ namespace WarehouseDAL
 
 
                     SqlParameter pIsActive = new SqlParameter("@isActive", SqlDbType.Bit);
-                    pIsActive.Value = prMn.IsActive1;
+                    pIsActive.Value = prMn.IsActive;
 
                     SqlParameter pResult = new SqlParameter("result", System.Data.SqlDbType.Int);
                     pResult.Direction = System.Data.ParameterDirection.Output;
@@ -87,7 +88,7 @@ namespace WarehouseDAL
                     cmd.ExecuteNonQuery();
 
                     result = Convert.ToInt32(pResult.Value);
-                
+
 
                 }
                 return result;
@@ -96,5 +97,5 @@ namespace WarehouseDAL
 
     }
 
-   
+
 }

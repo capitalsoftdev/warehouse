@@ -28,8 +28,9 @@ namespace WarehouseDAL.DataContracts
         
         private DateTime lastModifyDate;
 
-        private bool IsActive;
+        private bool isActive;
 
+        public int Id { get { return this.id; } set { this.id = value; } }
         public int ProductId { get { return this.productId; } set { this.productId = value; } }
         public int Quantity { get { return this.quantity; } set { quantity = value; } }
         public DateTime ActionDate { get { return this.actionDate; } set { actionDate = value; } }
@@ -39,6 +40,6 @@ namespace WarehouseDAL.DataContracts
         public int SupplierId { get { return this.supplierId; } set { this.supplierId = value; } }
         public string Reason { get { return this.reason; } set { this.reason = value; } }
         public DateTime LastModifyDate { get { return this.lastModifyDate; } set { this.lastModifyDate = value; } }
-        public bool IsActive1 { get { return this.IsActive; } set { this.IsActive = value; } }
+        public bool IsActive { get { return this.isActive; } set { this.isActive = value; } }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WarehouseDAL;
 
 
 namespace DALTest
@@ -13,9 +14,9 @@ namespace DALTest
         {
             var product = new WarehouseDAL.DataContracts.Product();
             product.Munit = 5;
-            product.Name = "Katuka";
+            product.Name = "Dianan kompy u gity ind kznvcyrala";
             product.ProductCategoryId = 5;
-            product.Id = 1002;
+            
 
             var productAdaptor = new ProductAdaptor();
             Console.WriteLine(productAdaptor.CreateOrUpdateProduct(product));
