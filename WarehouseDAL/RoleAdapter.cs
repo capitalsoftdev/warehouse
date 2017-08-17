@@ -58,6 +58,8 @@ namespace WarehouseDAL
             return _GetRole();
         }
 
+
+
         public int Disable(int id)
         {
             int res;
