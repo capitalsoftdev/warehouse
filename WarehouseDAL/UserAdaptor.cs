@@ -71,43 +71,63 @@ namespace WarehouseDAL
             }
             return user;
         }
-
-
-
-        private bool ManageUser(User user)
+        public void UpdateOrInsertUser(User user)
         {
-          
-            using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
+            using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
             {
-                conn.Open();
+                connection.Open();
 
-                using (var cmd = new SqlCommand(ConnectionParameters.ConnectionString, conn))
+                using (var comand = new SqlCommand("AddOrUpdateUser", connection))
                 {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    
-                    SqlParameter pUserName = new SqlParameter("@UserName", System.Data.SqlDbType.VarChar, 20);
-                    pUserName.Value = user.Username;
-                    cmd.Parameters.Add(pUserName);
+                    comand.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    SqlParameter pPassword = new SqlParameter("@Password", System.Data.SqlDbType.VarChar, 50);
-                    pPassword.Value = user.Password;
-                    cmd.Parameters.Add(pPassword);
+                    var parId = new SqlParameter("@UserId", System.Data.SqlDbType.Int);
+                    if (user.Id.HasValue)
+                    {
+                        parId.Value = user.Id.Value;
+                    }
+                    else
+                    {
+                        parId.Value = DBNull.Value;
+                    }
 
-                    SqlParameter pRoleGroupId = new SqlParameter("@RoleGroupId", System.Data.SqlDbType.Int);
-                    pRoleGroupId.Value = user.RoleGroupId;
-                    cmd.Parameters.Add(pRoleGroupId);
+                    comand.Parameters.Add(parId);
 
+                    var parUserName = new SqlParameter("@UserName", System.Data.SqlDbType.VarChar, 20);
+                    parUserName.Value = user.Username;
+                    comand.Parameters.Add(parUserName);
 
-                   
+                    var parPassword = new SqlParameter("@Password", System.Data.SqlDbType.VarChar, 50);
+                    parPassword.Value = user.Password;
+                    comand.Parameters.Add(parPassword);
 
-                    cmd.ExecuteNonQuery();
+                    var parRoleGroupId = new SqlParameter("@RoleGroupId", System.Data.SqlDbType.Int);
+                    parRoleGroupId.Value = user.RoleGroupId;
+                    comand.Parameters.Add(parRoleGroupId);
 
-
-                    
-
-                }     
+                    comand.ExecuteNonQuery();
+                }
             }
         }
+        public void ChangeIsActive(int id)
+        {
+            using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SqlCommand("ChangeIsActive", connection))
+                {
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var param = new SqlParameter("@UserId", System.Data.SqlDbType.Int);
+                    param.Value = id;
+                    command.Parameters.Add(param);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
 
     }
 }

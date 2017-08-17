@@ -33,7 +33,7 @@ namespace WarehouseDAL.DataContracts
 
         public string Password
         {
-         private   get
+            get
             {
                 return password;
             }
@@ -41,11 +41,12 @@ namespace WarehouseDAL.DataContracts
             set
             {
 
-                if (id == null)
+                MD5 md5 = new MD5CryptoServiceProvider();
+                byte[] checkSum = md5.ComputeHash(Encoding.UTF8.GetBytes(value));
+                string pass = BitConverter.ToString(checkSum).Replace("-", String.Empty);
+
+                if (id == null || (this.password != pass))
                 {
-                    MD5 md5 = new MD5CryptoServiceProvider();
-                    byte[] checkSum = md5.ComputeHash(Encoding.UTF8.GetBytes(value));
-                    string pass = BitConverter.ToString(checkSum).Replace("-", String.Empty);
                     password = pass;
                 }
                 else
