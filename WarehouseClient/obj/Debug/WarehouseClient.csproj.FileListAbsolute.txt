@@ -25,3 +25,12 @@ E:\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Properties.Resources.reso
 E:\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
 E:\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
 E:\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.pdb
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csprojResolveAssemblyReference.cache
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Properties.Resources.resources
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.CoreCompileInputs.cache
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
+C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
