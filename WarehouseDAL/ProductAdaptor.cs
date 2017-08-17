@@ -119,6 +119,7 @@ namespace WarehouseDAL
         public Product GetProduct(int id)
         {
             var product = GetProducts(id);
+          
             if (product.Count > 0)
                 return product[0];
             return null;

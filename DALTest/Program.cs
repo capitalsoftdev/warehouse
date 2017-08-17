@@ -14,50 +14,52 @@ namespace DALTest
         static void Main(string[] args)
         {
 
-           
 
-           var product = new Product();
 
-            product.Munit = 5;
-            product.Name = "ggggg";
-            product.ProductCategoryId = 15;
-            
+            /*  var product = new Product();
 
-            var productAdaptor = new ProductAdaptor();
-            Console.WriteLine(productAdaptor.CreateOrUpdateProduct(product));
+               product.Munit = 5;
+               product.Name = "ggggg";
+               product.ProductCategoryId = 15;
 
-            
+*/
+               //var productAdaptor = new ProductAdaptor();
+               //Console.WriteLine(productAdaptor.CreateOrUpdateProduct(product));
+               
+
 
             //var roleGroupMap = new WarehouseDAL.DataContracts.RoleGroupMap();
-            //roleGroupMap.RoleGroupId = 3;
-            //roleGroupMap.RoleId = 4;
+            //roleGroupMap.RoleGroupId = 15;
+            //roleGroupMap.RoleId = 16;
 
             //var roleGroupMapAdapter = new RoleGroupMapAdapter();
-            //roleGroupMapAdapter.CreateRoleGroupMap(roleGroupMap);
+            //IList<RoleGroupMap> list = roleGroupMapAdapter.GetRoleGroupI();
+
+            //foreach (RoleGroupMap products in list)
+            //{
+            //    Console.WriteLine(products);
+            //}
+            //IList<Product> list = productAdaptor.GetProduct();
+
+            /* foreach(Product products in list)
+             {
+                 Console.WriteLine(products);
+             }
+
+             Product productId = productAdaptor.GetProduct(1);
+             Console.WriteLine(productId);
 
 
+             productAdaptor.DicebleProduct(1003);
 
-            IList<Product> list = productAdaptor.GetProduct();
+             list = productAdaptor.GetProduct();
 
-            foreach(Product products in list)
-            {
-                Console.WriteLine(products);
-            }
+             foreach (Product products in list)
+             {
+                 Console.WriteLine(products);
+             }
+             */
 
-            Product productId = productAdaptor.GetProduct(1);
-            Console.WriteLine(productId);
-            
-
-            productAdaptor.DicebleProduct(1003);
-
-            list = productAdaptor.GetProduct();
-
-            foreach (Product products in list)
-            {
-                Console.WriteLine(products);
-            }
-
-            Console.ReadLine();
 
 
         }
