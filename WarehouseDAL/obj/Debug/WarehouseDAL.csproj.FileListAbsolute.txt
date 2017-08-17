@@ -8,3 +8,10 @@ C:\Users\Nastasya\Source\Repos\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.pdb
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.csprojResolveAssemblyReference.cache
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.dll
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.pdb
+E:\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.csprojResolveAssemblyReference.cache
+E:\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.dll.config
+E:\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.dll
+E:\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.pdb
+E:\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.dll
+E:\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.pdb
+E:\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.csproj.CoreCompileInputs.cache
