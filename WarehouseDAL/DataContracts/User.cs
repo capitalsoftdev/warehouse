@@ -8,6 +8,7 @@ namespace WarehouseDAL.DataContracts
 {
    public class User
     {
+        private int id;
         private string username;
         private string password;
         private int roleGroupId;
@@ -104,6 +105,19 @@ namespace WarehouseDAL.DataContracts
             set
             {
                 isActive = value;
+            }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
             }
         }
     }

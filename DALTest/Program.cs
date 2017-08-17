@@ -46,7 +46,16 @@ namespace DALTest
 
             Product productId = productAdaptor.GetProduct(1);
             Console.WriteLine(productId);
+            
 
+            productAdaptor.DicebleProduct(1003);
+
+            list = productAdaptor.GetProduct();
+
+            foreach (Product products in list)
+            {
+                Console.WriteLine(products);
+            }
 
             Console.ReadLine();
 
