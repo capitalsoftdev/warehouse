@@ -11,41 +11,123 @@ namespace WarehouseDAL
 {
     class UserAdaptor
     {
-        
-        private string _createUpdateUserSpName = "";
-        bool LoginUser(string login, string password) {
-            return false;
-        }
-
-        bool ManageUser(User user)
+        public IList<User> SelectActiveUser()
         {
-            bool retVal = false;
-            using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
+            return GetActiveUsers(null);
+        }
+        public User SelectActiveUser(int id)
+        {
+            var user = GetActiveUsers(id);
+            Console.WriteLine(user.Count);
+            if (user.Count != 0)
+                return user[0];
+            return null;
+        }
+        private IList<User> GetActiveUsers(int? id)
+        {
+            IList<User> user = new List<User>();
+            using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
             {
-                conn.Open();
-
-                using (var cmd = new SqlCommand(_createUpdateUserSpName, conn))
+                connection.Open();
+                using (var comand = new SqlCommand("SelectActiveUsers", connection))
                 {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    
-                    SqlParameter pUserName = new SqlParameter("userName", System.Data.SqlDbType.VarChar, 20);
-                    pUserName.Value = user.Username;
-                    cmd.Parameters.Add(pUserName);
+                    comand.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    SqlParameter pResult = new SqlParameter("result", System.Data.SqlDbType.Int);
-                    pResult.Direction = System.Data.ParameterDirection.Output;
-                    cmd.Parameters.Add(pResult);
+                    var param = new SqlParameter("UserId", System.Data.SqlDbType.Int);
 
-                    cmd.ExecuteNonQuery();
+                    if (id.HasValue)
+                    {
+                        param.Value = id.Value;
+                    }
+                    else
+                    {
+                        param.Value = DBNull.Value;
+                    }
+                    comand.Parameters.Add(param);
 
-
-                    int result = Convert.ToInt32(pResult.Value);
-
-                    if (result == 1) return true;
+                    SqlDataReader reader = comand.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        User use = null;
+                        while (reader.Read())
+                        {
+                            use = new User();
+                            use.Id = (Int32)reader["id"];
+                            use.Username = (string)reader["username"];
+                            use.Password = (string)reader["password"];
+                            use.RoleGroupId = (Int32)reader["roleGroupId"];
+                            use.CreationDate = (DateTime)reader["CreationDate"];
+                            if ((reader["lastLoginDate"]) == DBNull.Value)
+                                use.LastLoginDate = DateTime.MinValue;
+                            else
+                                use.LastLoginDate = (DateTime)reader["lastLoginDate"];
+                            use.LastModifireDate = (DateTime)reader["LastModifyDate"];
+                            use.IsActive = (bool)reader["IsActive"];
+                            user.Add(use);
+                        }
+                    }
+                    reader.Close();
                 }
-                return retVal;
+            }
+            return user;
+        }
+        public void UpdateOrInsertUser(User user)
+        {
+            using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
+            {
+                connection.Open();
+
+                using (var comand = new SqlCommand("AddOrUpdateUser", connection))
+                {
+                    comand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var parId = new SqlParameter("@UserId", System.Data.SqlDbType.Int);
+                    if (user.Id.HasValue)
+                    {
+                        parId.Value = user.Id.Value;
+                    }
+                    else
+                    {
+                        parId.Value = DBNull.Value;
+                    }
+
+                    comand.Parameters.Add(parId);
+
+                    var parUserName = new SqlParameter("@UserName", System.Data.SqlDbType.VarChar, 20);
+                    parUserName.Value = user.Username;
+                    comand.Parameters.Add(parUserName);
+
+                    var parPassword = new SqlParameter("@Password", System.Data.SqlDbType.VarChar, 50);
+                    parPassword.Value = user.Password;
+                    comand.Parameters.Add(parPassword);
+
+                    var parRoleGroupId = new SqlParameter("@RoleGroupId", System.Data.SqlDbType.Int);
+                    parRoleGroupId.Value = user.RoleGroupId;
+                    comand.Parameters.Add(parRoleGroupId);
+
+                    comand.ExecuteNonQuery();
+                }
             }
         }
+        public void ActiveOrDeactive(int id)
+        {
+            using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SqlCommand("ChangeIsActive", connection))
+                {
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var param = new SqlParameter("@UserId", System.Data.SqlDbType.Int);
+                    param.Value = id;
+                    command.Parameters.Add(param);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
 
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using DataContracts;
 
 namespace WarehouseDAL
 {
@@ -56,6 +57,8 @@ namespace WarehouseDAL
         {
             return _GetRole();
         }
+
+
 
         public int Disable(int id)
         {

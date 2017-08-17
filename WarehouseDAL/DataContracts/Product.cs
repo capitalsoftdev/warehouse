@@ -12,7 +12,7 @@ namespace WarehouseDAL.DataContracts
         private int productCategoryId;
         private string name;
         private int munit;
-        private bool isActive;
+        private bool? isActive;
         
         public int? Id
         {
@@ -38,10 +38,14 @@ namespace WarehouseDAL.DataContracts
             set { this.munit = value; }
         }
 
-        public bool IsActive
+        public bool? IsActive
         {
             get { return this.isActive; }
             set { this.isActive = value; }
+        }
+        public override string ToString()
+        {
+            return String.Format("id -> {0}: ProductCategoryId -> {1}: name -> {2}: Munit -> {3}: IsActive -> {4}", Id, ProductCategoryId, Name, Munit, IsActive);
         }
     }
 }

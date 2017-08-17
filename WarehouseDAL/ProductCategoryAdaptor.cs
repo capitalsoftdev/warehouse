@@ -3,11 +3,140 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using WarehouseDAL.DataContracts;
+using System.Configuration;
 
 namespace WarehouseDAL
 {
-    class ProductCategoryAdaptor
+   public class ProductCategoryAdaptor
     {
+
+        private string createOrUpdateProductCategory = "[dbo].[CreateOrUpdateProductCategory]";
+        private string getProductCategory = "[dbo].[GetProductCategory]";
+
+
+        public int CreateOrUpdateProductCategory(ProductCategory product)
+        {
+            int res = 0;
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["LOCAL"].ConnectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SqlCommand(createOrUpdateProductCategory, conn))
+                {
+
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    SqlParameter pId = new SqlParameter("id", System.Data.SqlDbType.Int);
+                    if (product.Id > 0)
+                        pId.Value = product.Id;
+                    else
+                        pId.Value = DBNull.Value;
+                    cmd.Parameters.Add(pId);
+
+
+                    SqlParameter pparentId = new SqlParameter("parentId", System.Data.SqlDbType.Int);
+                    pparentId.Value = product.ParentId;
+                    cmd.Parameters.Add(pparentId);
+
+                    SqlParameter pName = new SqlParameter("name", System.Data.SqlDbType.NVarChar, 100);
+                    pName.Value = product.Name;
+                    cmd.Parameters.Add(pName);
+
+                    SqlParameter pResult = new SqlParameter("status", System.Data.SqlDbType.Int);
+                    pResult.Direction = System.Data.ParameterDirection.Output;
+                    cmd.Parameters.Add(pResult);
+
+
+
+                    // cmd.Connection = conn;
+
+
+                    cmd.ExecuteNonQuery();
+
+
+                    res = Convert.ToInt32(pResult.Value);
+
+
+                }
+                
+                return res;
+            }
+        }
+
+        public IList<ProductCategory> GetAllProductCategories()
+        {
+            IList<ProductCategory> productCategoryList = null;
+            using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SqlCommand(getProductCategory, conn))
+                {
+
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    SqlParameter pId = new SqlParameter("id", System.Data.SqlDbType.Int);
+                    pId.Value = null;
+                    cmd.Parameters.Add(pId);
+
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+
+                    if (reader.HasRows)
+                    {
+                        productCategoryList = new List<ProductCategory>();
+                        while (reader.Read())
+                        {
+                            ProductCategory newProductCategory = new ProductCategory();
+                            newProductCategory.Id = (int)reader["id"];
+                            newProductCategory.Name = (string)reader["name"];
+                            newProductCategory.ParentId = (int)reader["parentId"];
+                            newProductCategory.IsActive = (bool)reader["isActive"];
+                            productCategoryList.Add(newProductCategory);
+                        }
+                    }
+
+                }
+
+            }
+            return productCategoryList;
+        }
+
+        public ProductCategory GetProductCategoryById(int id)
+        {
+            ProductCategory productCategory = null;
+
+            using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
+            {
+                conn.Open();
+                using (var cmd = new SqlCommand(getProductCategory, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    SqlParameter pId = new SqlParameter("id", System.Data.SqlDbType.Int);
+                    pId.Value = id;
+                    cmd.Parameters.Add(pId);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    productCategory = new ProductCategory();
+                    if (reader.Read())
+                    {
+                        productCategory.Id = (int)reader["id"];
+                        productCategory.Name = (string)reader["name"];
+                        productCategory.ParentId = (int)reader["parentId"];
+                        productCategory.IsActive = (bool)reader["isActive"];
+
+                    }
+
+                }
+            }
+            return productCategory;
+        }
+
 
 
         public ProductCategory getProductCategoryById(int id)
@@ -19,16 +148,12 @@ namespace WarehouseDAL
 
         public IList<ProductCategory> getAllProductCategories()
         {
-            return new List<ProductCategory>();
+            return  new List<ProductCategory>();
         }
 
 
+
     }
 
-    public class ProductCategory
-    {
-        private int id;
-        private string name;
-        private int parentId;
-    }
+   
 }
