@@ -15,3 +15,9 @@ E:\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.pdb
 E:\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.dll.config
 E:\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.dll
 E:\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.dll.config
+C:\Users\ADT\Source\Repos\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.dll
+C:\Users\ADT\Source\Repos\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.csprojResolveAssemblyReference.cache
+C:\Users\ADT\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.dll
+C:\Users\ADT\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.pdb

@@ -10,7 +10,7 @@ using System.Security.Cryptography;
 
 namespace WarehouseDAL
 {
-    class UserAdaptor
+  public  class UserAdaptor
     {
         public IList<User> SelectActiveUser()
         {
@@ -127,10 +127,7 @@ namespace WarehouseDAL
                 }
             }
         }
-
-
-
-        private int _Autorisation(string username, string password)
+        public int Autorisation(string username, string password)
         {
             int result = 0;
             using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
@@ -163,20 +160,7 @@ namespace WarehouseDAL
                 }
             }
             return result;
+        }      
         }
-
-        public string Autorisation(string username, string password) {
-            int a = _Autorisation(username, password);
-            if (a == 0)
-            {
-                return "Wrong login or password";
-            }
-            else {
-                return "SUCSESS ! ! ! !";
-            }
-
-        }
-
-
     }
-}
+
