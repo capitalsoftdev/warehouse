@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WarehouseDAL;
-
+using WarehouseDAL.DataContracts;
 
 namespace DALTest
 {
@@ -12,16 +12,33 @@ namespace DALTest
     {
         static void Main(string[] args)
         {
-            var product = new WarehouseDAL.DataContracts.Product();
-            product.Munit = 5;
-            product.Name = "Dianan kompy u gity ind kznvcyrala";
-            product.ProductCategoryId = 5;
-            
+            var prMn = new ProductManagment();
+            var prMnAdaptor = new ProductManagmentAdapter();
 
-            var productAdaptor = new ProductAdaptor();
-            Console.WriteLine(productAdaptor.CreateOrUpdateProduct(product));
-            Console.ReadLine();
-            
+
+            //Console.WriteLine(prMnAdaptor.DeleteItem(12));
+
+            //IList<WarehouseDAL.DataContracts.ProductManagment> list = prMnAdaptor.GetItem(0, 0, 1);
+            //foreach (WarehouseDAL.DataContracts.ProductManagment l in list)
+            //{
+            //    Console.WriteLine(l);
+            //}
+
+          //  prMn.Id = 12;
+            prMn.ProductId = 545;
+            prMn.Quantity = 88852;
+            prMn.ActionDate = new DateTime(2021, 06, 4);
+            prMn.Action = 4;
+            prMn.UserId = 5;
+            prMn.Reason = "readgdfhcgj";
+            prMn.Price = 545;
+            prMn.SupplierId = 4;
+            prMn.Brand = "brandsfgdsghg";
+            prMn.LastModifyDate = new DateTime(2014, 04, 22);
+            prMn.IsActive = true;
+
+            Console.WriteLine(prMnAdaptor.CreateOrUpdate(prMn));
+           // Console.ReadLine(); 
 
         }
     }
