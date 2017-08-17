@@ -109,7 +109,7 @@ namespace WarehouseDAL
                 }
             }
         }
-        public void ChangeIsActive(int id)
+        public void ActiveOrDeactive(int id)
         {
             using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
             {
