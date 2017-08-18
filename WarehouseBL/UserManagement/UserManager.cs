@@ -8,7 +8,7 @@ using WarehouseDAL.DataContracts;
 
 namespace WarehouseBL.UserManagement
 {
-    class UserManager : IUserManager
+  public  class UserManager : IUserManager
     {
         public User Login(string userName, string password)
         {
