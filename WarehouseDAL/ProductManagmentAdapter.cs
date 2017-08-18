@@ -83,7 +83,7 @@ namespace WarehouseDAL
                                 ProductManagment newPrMn = new ProductManagment();
                                 newPrMn.Id = Convert.ToInt32(reader["id"]);
                                 newPrMn.ProductId = Convert.ToInt32(reader["productId"]);
-                                newPrMn.Quantity = Convert.ToInt32(reader["quantity"]);
+                                newPrMn.Quantity = Convert.ToDecimal(reader["quantity"]);
                                 newPrMn.ActionDate = Convert.ToDateTime(reader["actionDate"]);
                                 newPrMn.Action = Convert.ToInt32(reader["action"]);
                                 newPrMn.UserId = Convert.ToInt32(reader["userId"]);
@@ -151,7 +151,7 @@ namespace WarehouseDAL
                     pProductId.Value = prMn.ProductId;
                     cmd.Parameters.Add(pProductId);
 
-                    SqlParameter pQuantity = new SqlParameter("@quantity", SqlDbType.Int);
+                    SqlParameter pQuantity = new SqlParameter("@quantity", SqlDbType.Decimal);
                     pQuantity.Value = prMn.Quantity;
                     cmd.Parameters.Add(pQuantity);
 

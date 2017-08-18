@@ -16,3 +16,10 @@ C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\Warehouse
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.csprojResolveAssemblyReference.cache
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.dll
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.pdb
+E:\warehouse\WarehouseWebService\bin\Debug\WarehouseWebService.dll.config
+E:\warehouse\WarehouseWebService\bin\Debug\WarehouseWebService.dll
+E:\warehouse\WarehouseWebService\bin\Debug\WarehouseWebService.pdb
+E:\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.csprojResolveAssemblyReference.cache
+E:\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.csproj.CoreCompileInputs.cache
+E:\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.dll
+E:\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.pdb

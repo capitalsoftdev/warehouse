@@ -4,3 +4,10 @@ D:\Projects\Others\WMS\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.p
 D:\Projects\Others\WMS\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.csprojResolveAssemblyReference.cache
 D:\Projects\Others\WMS\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.exe
 D:\Projects\Others\WMS\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.pdb
+E:\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.exe.config
+E:\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.exe
+E:\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.pdb
+E:\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.csprojResolveAssemblyReference.cache
+E:\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.csproj.CoreCompileInputs.cache
+E:\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.exe
+E:\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.pdb
