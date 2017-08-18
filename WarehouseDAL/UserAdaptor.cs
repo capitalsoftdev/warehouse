@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 using WarehouseDAL.DataContracts;
+using System.Security.Cryptography;
 
 namespace WarehouseDAL
 {
-    class UserAdaptor
+  public  class UserAdaptor
     {
         public IList<User> SelectActiveUser()
         {
@@ -126,8 +127,40 @@ namespace WarehouseDAL
                 }
             }
         }
+        public int Autorisation(string username, string password)
+        {
+            int result = 0;
+            using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
+            {
+                connection.Open();
+                using (var comand = new SqlCommand("Autorisation", connection))
+                {
+                    comand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var parUserName = new SqlParameter("@username", System.Data.SqlDbType.VarChar, 20);
+                    parUserName.Value = username;
+                    comand.Parameters.Add(parUserName);
 
 
+                    MD5 md5 = new MD5CryptoServiceProvider();
+                    byte[] checkSum = md5.ComputeHash(Encoding.UTF8.GetBytes(password));
+                    string pass = BitConverter.ToString(checkSum).Replace("-", String.Empty);
 
+                    var parPassword = new SqlParameter("@password", System.Data.SqlDbType.VarChar, 50);
+                    parPassword.Value = pass;
+                    comand.Parameters.Add(parPassword);
+
+
+                    var parOutput = new SqlParameter("@output", System.Data.SqlDbType.Int);
+                    parOutput.Direction = System.Data.ParameterDirection.Output;
+                    comand.Parameters.Add(parOutput);
+
+                    comand.ExecuteNonQuery();
+                    result = (Int32)parOutput.Value;
+                }
+            }
+            return result;
+        }      
+        }
     }
-}
+
