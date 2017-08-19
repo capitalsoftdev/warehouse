@@ -3,3 +3,9 @@ D:\Projects\Others\WMS\WarehouseBL\bin\Debug\WarehouseBL.pdb
 D:\Projects\Others\WMS\WarehouseBL\obj\Debug\WarehouseBL.csprojResolveAssemblyReference.cache
 D:\Projects\Others\WMS\WarehouseBL\obj\Debug\WarehouseBL.dll
 D:\Projects\Others\WMS\WarehouseBL\obj\Debug\WarehouseBL.pdb
+E:\warehouse\WarehouseBL\bin\Debug\WarehouseBL.dll
+E:\warehouse\WarehouseBL\bin\Debug\WarehouseBL.pdb
+E:\warehouse\WarehouseBL\obj\Debug\WarehouseBL.csproj.CoreCompileInputs.cache
+E:\warehouse\WarehouseBL\obj\Debug\WarehouseBL.dll
+E:\warehouse\WarehouseBL\obj\Debug\WarehouseBL.pdb
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.csprojResolveAssemblyReference.cache

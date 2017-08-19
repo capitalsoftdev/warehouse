@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Interfaces\IProductManager.cs" />
     <Compile Include="Interfaces\IRoleGroupMapManger.cs" />
     <Compile Include="Interfaces\IUserManager.cs" />
+    <Compile Include="ProductManagement\ProductManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserManagement\UserManager.cs" />
   </ItemGroup>

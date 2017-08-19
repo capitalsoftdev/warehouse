@@ -12,7 +12,7 @@ namespace WarehouseDAL.DataContracts
 
         private int productId;
 
-        private int quantity;
+        private decimal quantity;
 
         private DateTime actionDate;
 
@@ -33,7 +33,7 @@ namespace WarehouseDAL.DataContracts
 
         public int? Id { get { return this.id; } set { this.id = value; } }
         public int ProductId { get { return this.productId; } set { this.productId = value; } }
-        public int Quantity { get { return this.quantity; } set { quantity = value; } }
+        public decimal Quantity { get { return this.quantity; } set { quantity = value; } }
         public DateTime ActionDate { get { return this.actionDate; } set { actionDate = value; } }
         public int Action { get { return this.action; } set { this.action = value; } }
         public int UserId { get { return this.userId; } set { this.userId = value; } }

@@ -14,6 +14,9 @@ C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClie
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
 E:\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe.config
 E:\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe
 E:\warehouse\WarehouseClient\bin\Debug\WarehouseClient.pdb

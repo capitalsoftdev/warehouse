@@ -125,7 +125,7 @@ namespace WarehouseDAL
             return null;
         }
 
-        public int DicebleProduct(int id)
+        public int DisableProduct(int id)
         {
             int res = -10;
             using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))

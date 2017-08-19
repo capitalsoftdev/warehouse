@@ -60,6 +60,11 @@ namespace WarehouseDAL.DataContracts
                 parentId = value;
             }
         }
+
+        public override string ToString()
+        {
+            return String.Format("id -> {0}: ParentId -> {1}: name -> {2}: IsActive -> {3}", Id, ParentId, Name, IsActive);
+        }
     }
 }
 
