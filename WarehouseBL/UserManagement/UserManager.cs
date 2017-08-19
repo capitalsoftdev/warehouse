@@ -8,7 +8,7 @@ using WarehouseDAL.DataContracts;
 
 namespace WarehouseBL.UserManagement
 {
-    class UserManager : IUserManager
+  public  class UserManager : IUserManager
     {
         public User Login(string userName, string password)
         {
@@ -22,6 +22,13 @@ namespace WarehouseBL.UserManagement
             }
 
             return null;
+        }
+        public IList<User> SelectActiveUser()
+        {
+            var userAdapter = new UserAdaptor();
+            IList<User> reList;
+            reList = userAdapter.SelectActiveUser();
+            return reList;
         }
     }
 }
