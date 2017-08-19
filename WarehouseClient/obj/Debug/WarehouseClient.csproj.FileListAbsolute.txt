@@ -37,3 +37,8 @@ C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
 E:\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.CoreCompileInputs.cache
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Form1.resources
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Login.resources
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseBL.dll
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseDAL.dll
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseBL.pdb
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseDAL.pdb
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProductForm.resources

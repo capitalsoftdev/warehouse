@@ -23,3 +23,7 @@ E:\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.csprojResolveAsse
 E:\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.csproj.CoreCompileInputs.cache
 E:\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.dll
 E:\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.pdb
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseBL.dll
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseDAL.dll
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseBL.pdb
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseDAL.pdb
