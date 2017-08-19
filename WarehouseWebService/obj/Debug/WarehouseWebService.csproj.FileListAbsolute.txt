@@ -27,3 +27,7 @@ C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\Warehouse
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseDAL.dll
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseBL.pdb
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseDAL.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseBL.dll
+C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseDAL.dll
+C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseBL.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseDAL.pdb

@@ -33,5 +33,7 @@ namespace WarehouseClient
                 dataGridView1.DataSource = us.ToList();
             }
         }
+
+
     }
 }

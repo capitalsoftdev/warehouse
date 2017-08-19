@@ -15,3 +15,10 @@ C:\Users\Nastasya\Source\Repos\warehouse\WarehouseBL\bin\Debug\WarehouseDAL.dll
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseBL\bin\Debug\WarehouseDAL.pdb
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.dll
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseBL\bin\Debug\WarehouseBL.dll
+C:\Users\ADT\Source\Repos\warehouse\WarehouseBL\bin\Debug\WarehouseBL.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseBL\bin\Debug\WarehouseDAL.dll
+C:\Users\ADT\Source\Repos\warehouse\WarehouseBL\bin\Debug\WarehouseDAL.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.csprojResolveAssemblyReference.cache
+C:\Users\ADT\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.dll
+C:\Users\ADT\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.pdb
