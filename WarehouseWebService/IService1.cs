@@ -34,7 +34,7 @@ namespace WarehouseWebService
             get { return boolValue; }
             set { boolValue = value; }
         }
-
+      
         [DataMember]
         public string StringValue
         {

@@ -5,12 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using WarehouseDAL.DataContracts;
 
-namespace WarehouseBL
+namespace WarehouseBL.Interfaces
 {
-    interface IUserManager
+    interface IRoleGroupMapManger
     {
-        User Login(string userName, string password);
-        IList<User> SelectActiveUser();
-      
+        int CreateRoleGroupMap(RoleGroupMap roleGroupMap);
     }
 }

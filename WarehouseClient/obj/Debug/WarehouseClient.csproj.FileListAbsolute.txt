@@ -42,3 +42,14 @@ C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseDAL.
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseBL.pdb
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseDAL.pdb
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProductForm.resources
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csprojResolveAssemblyReference.cache
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Login.resources
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Properties.Resources.resources
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.MainForm.resources
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseBL.dll
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseDAL.dll
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseBL.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseDAL.pdb
