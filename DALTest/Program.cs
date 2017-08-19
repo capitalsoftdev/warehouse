@@ -24,7 +24,7 @@ namespace DALTest
             //    Console.WriteLine(l);
             //}
 
-          //  prMn.Id = 12;
+            prMn.Id = 17;
             prMn.ProductId = 545;
             prMn.Quantity = 88852;
             prMn.ActionDate = new DateTime(2021, 06, 4);
@@ -34,7 +34,7 @@ namespace DALTest
             prMn.Price = 545;
             prMn.SupplierId = 4;
             prMn.Brand = "brandsfgdsghg";
-            prMn.LastModifyDate = new DateTime(2014, 04, 22);
+        //    prMn.LastModifyDate = new DateTime(2014, 04, 22);
             prMn.IsActive = true;
 
             Console.WriteLine(prMnAdaptor.CreateOrUpdate(prMn));
