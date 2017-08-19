@@ -12,7 +12,7 @@ namespace WarehouseDAL
 {
     public class ProductManagmentAdapter
     {
-        private string _createOrUpdate = "CreateOrUpdateProcuctManagment";
+        private string _createOrUpdate = "CreateOrUpdateProductManagment";
 
         private string _deleteItem = "DeleteItemFromProductManagment";
 
@@ -155,7 +155,7 @@ namespace WarehouseDAL
                     pQuantity.Value = prMn.Quantity;
                     cmd.Parameters.Add(pQuantity);
 
-                    SqlParameter pActionDate = new SqlParameter("@actionDate", SqlDbType.Date); //Date or Datatime
+                    SqlParameter pActionDate = new SqlParameter("@actionDate", SqlDbType.DateTime); //Date or Datatime
                     pActionDate.Value = prMn.ActionDate;
                     cmd.Parameters.Add(pActionDate);
 
@@ -186,7 +186,7 @@ namespace WarehouseDAL
                     cmd.Parameters.Add(pBrand);
 
 
-                    SqlParameter pLastModifyDate = new SqlParameter("@lastModifyDate", SqlDbType.Date);
+                    SqlParameter pLastModifyDate = new SqlParameter("@lastModifyDate", SqlDbType.DateTime);
                     pLastModifyDate.Value = prMn.LastModifyDate;
                     cmd.Parameters.Add(pLastModifyDate);
 
