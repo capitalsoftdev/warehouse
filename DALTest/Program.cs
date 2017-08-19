@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using WarehouseDAL;
 using WarehouseDAL.DataContracts;
 
-
 namespace DALTest
 {
     class Program
     {
         static void Main(string[] args)
         {
+            var prMn = new ProductManagment();
+            var prMnAdaptor = new ProductManagmentAdapter();
 
             ///*
             // var product = new WarehouseDAL.DataContracts.Product();
@@ -20,7 +21,9 @@ namespace DALTest
             // product.Name = "Dianan kompy u gity ind kznvcyrala";
             // product.ProductCategoryId = 5;
 
-
+            
+            var productAdaptor = new ProductAdaptor();
+            Console.WriteLine(productAdaptor.CreateOrUpdateProduct(product));
 
             //var productAdaptor = new ProductAdaptor();
             //Console.WriteLine(productAdaptor.CreateOrUpdateProduct(product));
@@ -92,6 +95,8 @@ namespace DALTest
             //Console.WriteLine(prMnAdaptor.DeleteItem(9));
 
 
+            Console.WriteLine(prMnAdaptor.CreateOrUpdate(prMn));
+           // Console.ReadLine(); 
 
         }
     }
