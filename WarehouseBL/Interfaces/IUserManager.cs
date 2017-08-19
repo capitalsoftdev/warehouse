@@ -10,5 +10,7 @@ namespace WarehouseBL
     interface IUserManager
     {
         User Login(string userName, string password);
+        IList<User> SelectActiveUser();
+      
     }
 }
