@@ -43,9 +43,11 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Interfaces\IProductManager.cs" />
     <Compile Include="Interfaces\IRoleGroupMapManger.cs" />
+    <Compile Include="Interfaces\IRoleManager.cs" />
     <Compile Include="Interfaces\IUserManager.cs" />
     <Compile Include="ProductManagement\ProductManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleManagement\RoleManagement.cs" />
     <Compile Include="UserManagement\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +56,7 @@
       <Name>WarehouseDAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

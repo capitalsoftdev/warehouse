@@ -24,7 +24,7 @@ namespace WarehouseBL.ProductManagement
         {
             var productAdaptor = new ProductAdaptor();
 
-            var result = productAdaptor.DicebleProduct(id);
+            var result = productAdaptor.DisableProduct(id);
 
             return result;
             
