@@ -12,6 +12,7 @@ namespace WarehouseDAL.DataContracts
         private string name;
         private int parentId;
         private bool isActive;
+        private int action;
 
         public int Id
         {
@@ -22,6 +23,18 @@ namespace WarehouseDAL.DataContracts
             set
             {
                 id = value;
+            }
+        }
+
+        public int Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
             }
         }
 
