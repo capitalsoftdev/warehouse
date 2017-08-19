@@ -9,7 +9,7 @@ using WarehouseDAL.DataContracts;
 
 namespace WarehouseBL.ProductManagmentManagment
 {
-    class ProductManagmentManager : IProductManagmentManager
+    public class ProductManagmentManager : IProductManagmentManager
     {
         public IList<ProductManagment> GetItem(int id, int userId, int productId)
         {

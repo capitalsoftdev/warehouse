@@ -49,6 +49,7 @@
     <Compile Include="DALExtention.cs" />
     <Compile Include="IProductService.cs" />
     <Compile Include="IService1.cs" />
+    <Compile Include="ProductManagmentService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service1.cs" />
