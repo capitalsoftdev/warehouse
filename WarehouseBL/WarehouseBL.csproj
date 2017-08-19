@@ -43,6 +43,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Interfaces\IProductCategoryManager.cs" />
     <Compile Include="Interfaces\IProductManager.cs" />
+    <Compile Include="Interfaces\IRoleGroupMapManger.cs" />
     <Compile Include="Interfaces\IUserManager.cs" />
     <Compile Include="ProductCategoryManagement\ProductCategoryManager.cs" />
     <Compile Include="ProductManagement\ProductManager.cs" />
