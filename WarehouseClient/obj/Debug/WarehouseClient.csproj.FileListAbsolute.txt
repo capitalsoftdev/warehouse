@@ -54,3 +54,4 @@ C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseDAL.dll
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseBL.pdb
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseDAL.pdb
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProductForm.resources
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.UserManagement.AddUser.resources

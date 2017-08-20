@@ -160,7 +160,34 @@ namespace WarehouseDAL
                 }
             }
             return result;
-        }      
         }
+
+        public void UpdateUserLoginDate(int id)
+        {
+            using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
+            {
+                connection.Open();
+
+                using (var comand = new SqlCommand("setLoginDate", connection))
+                {
+                    comand.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    var parId = new SqlParameter("@UserId", System.Data.SqlDbType.Int);
+                    parId.Value = id;
+                    comand.Parameters.Add(parId);
+
+                    comand.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+
+
     }
+
+
+
+}
 

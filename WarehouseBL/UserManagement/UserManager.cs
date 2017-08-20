@@ -30,5 +30,26 @@ namespace WarehouseBL.UserManagement
             reList = userAdapter.SelectActiveUser();
             return reList;
         }
+        public void AddOrInsertUser(User user) {
+            UserAdaptor adaptor = new UserAdaptor();
+            adaptor.UpdateOrInsertUser(user);
+        }
+
+
+
+        public void UpdateUserLoginDate(int id)
+        {
+            UserAdaptor adaptor = new UserAdaptor();
+            adaptor.UpdateUserLoginDate(id);
+
+        }
+
+
+
+
+
+
+
+
     }
 }

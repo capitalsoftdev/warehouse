@@ -29,16 +29,12 @@ namespace WarehouseClient
             }
             else
             {
+                user.UpdateUserLoginDate(user1.Id.Value);
                 this.Hide();
                 var formx = new MainForm(user1);
                 formx.Closed += (s, args) => this.Close();
                 formx.Show();
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
