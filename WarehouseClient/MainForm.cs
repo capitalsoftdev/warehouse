@@ -15,7 +15,11 @@ namespace WarehouseClient
     public partial class MainForm : Form
     {
         UserManager manage = new UserManager();
-        IList<User> us = null;
+        static IList<User> us = null;
+        public static IList<User> SelectUsers()
+        {
+            return us;
+        }
         User loginUser;
         public MainForm()
         {
@@ -34,22 +38,26 @@ namespace WarehouseClient
                 dataGridView1.DataSource = us.ToList();       
             }
         }
+        public  void DataRefresh()
+        {
+                us = manage.SelectActiveUser();
+                dataGridView1.DataSource = us.ToList();
+        }
 
         private void click1(object sender, DataGridViewCellEventArgs e)
         {
-            us = manage.SelectActiveUser();
-            dataGridView1.DataSource = us.ToList();
+            MessageBox.Show(e.RowIndex.ToString());
         }
-
-        private void doubleclick1(object sender, DataGridViewCellEventArgs e)
-        {
-         
-        }
-       
+      
         private void button1_Click(object sender, EventArgs e)
         {
             UserManagement.AddUser add = new UserManagement.AddUser(this);
             add.Show();
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            MainForm_Load(null, null);
         }
     }
 }

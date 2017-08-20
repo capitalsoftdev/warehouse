@@ -34,22 +34,11 @@ namespace WarehouseBL.UserManagement
             UserAdaptor adaptor = new UserAdaptor();
             adaptor.UpdateOrInsertUser(user);
         }
-
-
-
         public void UpdateUserLoginDate(int id)
         {
             UserAdaptor adaptor = new UserAdaptor();
             adaptor.UpdateUserLoginDate(id);
 
         }
-
-
-
-
-
-
-
-
     }
 }

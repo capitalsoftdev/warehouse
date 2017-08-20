@@ -67,6 +67,7 @@
             this.txtbxpass.Size = new System.Drawing.Size(164, 20);
             this.txtbxpass.TabIndex = 2;
             this.txtbxpass.UseSystemPasswordChar = true;
+            this.txtbxpass.TextChanged += new System.EventHandler(this.txtbxpass_TextChanged);
             // 
             // txtbxconfirmpass
             // 
@@ -79,6 +80,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DisplayMember = "2";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "1",
@@ -86,7 +88,8 @@
             "3",
             "4",
             "5",
-            "6"});
+            "6",
+            "7"});
             this.comboBox1.Location = new System.Drawing.Point(144, 158);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(128, 21);
@@ -132,7 +135,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(161, 21);
+            this.label5.Location = new System.Drawing.Point(161, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 29);
             this.label5.TabIndex = 0;
@@ -166,6 +169,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddUser";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.close1);
             this.ResumeLayout(false);
