@@ -94,5 +94,8 @@
     <Build Include="dbo\Stored Procedures\SelectActiveUsers.sql" />
     <Build Include="dbo\Stored Procedures\setLoginDate.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Build Include="dbo\Stored Procedures\GetRoleGroup.sql" />
+    <Build Include="dbo\Stored Procedures\CreateOrUpdateRoleGroup.sql" />
+    <Build Include="dbo\Stored Procedures\DisableRoleGroup.sql" />
   </ItemGroup>
 </Project>
