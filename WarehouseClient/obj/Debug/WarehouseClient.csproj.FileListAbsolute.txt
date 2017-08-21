@@ -70,6 +70,3 @@ C:\Users\Артур\Downloads\WMS\WMS\WarehouseClient\obj\Debug\WarehouseClient.
 C:\Users\Артур\Downloads\WMS\WMS\WarehouseClient\obj\Debug\WarehouseClient.pdb
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProductForm.resources
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.UserManagement.AddUser.resources
-C:\Users\Артур\Downloads\WMS\WMS\WarehouseClient\obj\Debug\WarehouseClient.ProductForm.resources
-C:\Users\Артур\Downloads\WMS\WMS\WarehouseClient\obj\Debug\WarehouseClient.UserManagement.AddUser.resources
-C:\Users\Артур\Downloads\WMS\WMS\WarehouseClient\obj\Debug\WarehouseClient.RoleGroupMapManagment.AddRoleGroupMap.resources

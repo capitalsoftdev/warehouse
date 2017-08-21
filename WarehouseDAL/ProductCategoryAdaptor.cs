@@ -30,7 +30,7 @@ namespace WarehouseDAL
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     SqlParameter pId = new SqlParameter("id", System.Data.SqlDbType.Int);
-                    if (product.Id > 0)
+                    if (product.Id >= 0)
                         pId.Value = product.Id;
                     else
                         pId.Value = DBNull.Value;
@@ -41,7 +41,7 @@ namespace WarehouseDAL
                     pparentId.Value = product.ParentId;
                     cmd.Parameters.Add(pparentId);
 
-                    SqlParameter pName = new SqlParameter("name", System.Data.SqlDbType.NVarChar, 100);
+                    SqlParameter pName = new SqlParameter("name", System.Data.SqlDbType.NVarChar, 50);
                     pName.Value = product.Name;
                     cmd.Parameters.Add(pName);
 
@@ -68,7 +68,7 @@ namespace WarehouseDAL
 
         public IList<ProductCategory> GetAllProductCategories()
         {
-            IList<ProductCategory> productCategoryList = null;
+            IList<ProductCategory> productCategoryList = new List<ProductCategory>();
             using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
             {
                 conn.Open();
@@ -88,14 +88,14 @@ namespace WarehouseDAL
 
                     if (reader.HasRows)
                     {
-                        productCategoryList = new List<ProductCategory>();
+                        //productCategoryList = new List<ProductCategory>();
                         while (reader.Read())
                         {
                             ProductCategory newProductCategory = new ProductCategory();
-                            newProductCategory.Id = (int)reader["id"];
-                            newProductCategory.Name = (string)reader["name"];
-                            newProductCategory.ParentId = (int)reader["parentId"];
-                            newProductCategory.IsActive = (bool)reader["isActive"];
+                            newProductCategory.Id = (int)reader.GetValue(0);//["id"];
+                            newProductCategory.Name = (string)reader.GetValue(1);//["name"];
+                            newProductCategory.ParentId = (int)reader.GetValue(2);//["parentId"];
+                            newProductCategory.IsActive = (bool)reader.GetValue(3);//["isActive"];
                             productCategoryList.Add(newProductCategory);
                         }
                     }
