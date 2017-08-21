@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarehouseBL.UserManagement;
 using WarehouseDAL.DataContracts;
+using WarehouseBL.ProductCategoryManagement;
+using WarehouseBL.RoleGroupMapManagment;
+
 
 namespace WarehouseClient
 {
@@ -72,6 +75,12 @@ namespace WarehouseClient
             MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             dataGridView1.Columns[2].Visible = false;
 
+        }
+        // Add Role Group Map 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RoleGroupMapManagment.AddRoleGroupMap add = new RoleGroupMapManagment.AddRoleGroupMap();
+            add.Show();
         }
     }
 }
