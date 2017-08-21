@@ -25,7 +25,7 @@ namespace WarehouseClient
             WarehouseDAL.DataContracts.User user1 = user.Login(textBox1.Text, textBox2.Text);
             if (user1 == null)
             {
-                MessageBox.Show("Invalid User name or password\nAshot, 12c3sddd4);");
+                MessageBox.Show("Invalid User name or password");
             }
             else
             {
@@ -34,6 +34,7 @@ namespace WarehouseClient
                 var formx = new MainForm(user1);
                 formx.Closed += (s, args) => this.Close();
                 formx.Show();
+               
             }
         }
     }

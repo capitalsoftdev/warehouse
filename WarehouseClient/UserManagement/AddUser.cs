@@ -30,7 +30,7 @@ namespace WarehouseClient.UserManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.TextLength>5  && txtbxpass.Text==txtbxconfirmpass.Text && (string)comboBox1.Text!="" && txtbxpass.TextLength > 9)
+            if (textBox1.TextLength>4  && txtbxpass.Text==txtbxconfirmpass.Text && (string)comboBox1.Text!="" && txtbxpass.TextLength > 9)
             {
                 WarehouseDAL.DataContracts.User user = new WarehouseDAL.DataContracts.User();
                 user.Id = -1;
@@ -58,7 +58,7 @@ namespace WarehouseClient.UserManagement
       
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.TextLength < 6)
+            if (textBox1.TextLength < 5)
             {
                 label6.Text = "The username must be at least 5 characters";
             }

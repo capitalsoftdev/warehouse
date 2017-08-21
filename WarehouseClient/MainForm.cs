@@ -14,13 +14,14 @@ namespace WarehouseClient
 {
     public partial class MainForm : Form
     {
+        User loginUser;
         UserManager manage = new UserManager();
         static IList<User> us = null;
         public static IList<User> SelectUsers()
         {
             return us;
         }
-        User loginUser;
+       
         public MainForm()
         {
             InitializeComponent();
@@ -32,10 +33,12 @@ namespace WarehouseClient
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+         
             if (loginUser.RoleGroupId == 1)
             {      
                 us = manage.SelectActiveUser();
-                dataGridView1.DataSource = us.ToList();       
+                dataGridView1.DataSource = us.ToList();
+                dataGridView1.Columns[2].Visible = false;
             }
         }
         public  void DataRefresh()
@@ -44,20 +47,31 @@ namespace WarehouseClient
                 dataGridView1.DataSource = us.ToList();
         }
 
-        private void click1(object sender, DataGridViewCellEventArgs e)
+        private void MainForm_Activated(object sender, EventArgs e)
         {
-            MessageBox.Show(e.RowIndex.ToString());
+            MainForm_Load(null, null);
         }
-      
-        private void button1_Click(object sender, EventArgs e)
+
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form = new Login();
+            form.Closed += (s, args) => this.Close();
+            form.Show();
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UserManagement.AddUser add = new UserManagement.AddUser(this);
             add.Show();
         }
 
-        private void MainForm_Activated(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MainForm_Load(null, null);
+            //MessageBox.Show();
+            MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            dataGridView1.Columns[2].Visible = false;
+
         }
     }
 }
