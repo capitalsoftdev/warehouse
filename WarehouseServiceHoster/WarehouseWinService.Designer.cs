@@ -1,6 +1,6 @@
 ﻿namespace WarehouseServiceHoster
 {
-    partial class Service1
+    partial class WarehouseWinService
     {
         /// <summary> 
         /// Required designer variable.

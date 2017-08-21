@@ -24,3 +24,17 @@ C:\Users\ADT\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseSe
 C:\Users\ADT\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.csprojResolveAssemblyReference.cache
 C:\Users\ADT\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.exe
 C:\Users\ADT\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.pdb
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.exe.config
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.exe
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.pdb
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.csprojResolveAssemblyReference.cache
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.exe
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.pdb
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\Logger.dll
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseDAL.dll
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseWebService.dll
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseBL.dll
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\Logger.pdb
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseDAL.pdb
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseWebService.pdb
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseBL.pdb

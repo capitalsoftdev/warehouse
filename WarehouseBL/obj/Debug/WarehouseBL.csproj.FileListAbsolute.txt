@@ -31,3 +31,12 @@ C:\Users\Diana\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.csprojRe
 C:\Users\Diana\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.csproj.CoreCompileInputs.cache
 C:\Users\Diana\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.dll
 C:\Users\Diana\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.pdb
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseBL\bin\Debug\WarehouseBL.dll
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseBL\bin\Debug\WarehouseBL.pdb
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseBL\bin\Debug\WarehouseDAL.dll
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseBL\bin\Debug\WarehouseDAL.pdb
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.csprojResolveAssemblyReference.cache
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.dll
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.pdb
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseBL\bin\Debug\Logger.dll
+C:\Users\edmkr\Source\Repos\warehouse\WarehouseBL\bin\Debug\Logger.pdb

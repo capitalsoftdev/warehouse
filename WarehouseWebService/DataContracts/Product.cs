@@ -1,30 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using System.Runtime.Serialization;
-using System.ServiceModel;
 
-namespace WarehouseWebService
+namespace WarehouseWebService.DataContracts
 {
-    [ServiceContract]
-    interface IProductService
-    {
-        [OperationContract]
-        int CreateOrUpdateProduct(Product product);
-
-        [OperationContract]
-        IList<Product> GetProduct();
-
-        [OperationContract]
-        Product GetProduct(int id);
-
-        [OperationContract]
-        int DisableProduct(int id);
-
-    }
-
     [DataContract]
     public class Product
     {
