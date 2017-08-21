@@ -10,5 +10,6 @@ namespace WarehouseBL.Interfaces
     interface IRoleGroupMapManger
     {
         int CreateRoleGroupMap(RoleGroupMap roleGroupMap);
+        
     }
 }
