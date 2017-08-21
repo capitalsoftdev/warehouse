@@ -18,6 +18,18 @@ namespace WarehouseDAL.DataContracts
         private DateTime lastModifireDate;
         private bool isActive;
 
+        public int? Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
         public string Username
         {
             get
@@ -121,17 +133,6 @@ namespace WarehouseDAL.DataContracts
             }
         }
 
-        public int? Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
-        }
+        
     }
 }

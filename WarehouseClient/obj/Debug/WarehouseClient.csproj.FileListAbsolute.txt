@@ -35,6 +35,13 @@ C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csp
 C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
 C:\Users\NK\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
 E:\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.CoreCompileInputs.cache
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Form1.resources
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Login.resources
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseBL.dll
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseDAL.dll
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseBL.pdb
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseDAL.pdb
+C:\Users\Nastasya\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProductForm.resources
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.exe
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\bin\Debug\WarehouseClient.pdb
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csprojResolveAssemblyReference.cache
@@ -61,3 +68,5 @@ C:\Users\Артур\Downloads\WMS\WMS\WarehouseClient\obj\Debug\WarehouseClient.
 C:\Users\Артур\Downloads\WMS\WMS\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
 C:\Users\Артур\Downloads\WMS\WMS\WarehouseClient\obj\Debug\WarehouseClient.exe
 C:\Users\Артур\Downloads\WMS\WMS\WarehouseClient\obj\Debug\WarehouseClient.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProductForm.resources
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.UserManagement.AddUser.resources

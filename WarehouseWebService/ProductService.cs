@@ -13,28 +13,28 @@ namespace WarehouseWebService
     {
         public int CreateOrUpdateProduct(Product product)
         {
-            ProductManager productManager = new ProductManager();
+            var productManager = new ProductManager();
 
             return  productManager.CreateOrUpdateProduct(product.ToDALProduct());
         }
 
         public int DisableProduct(int id)
         {
-            ProductManager productManager = new ProductManager();
+            var productManager = new ProductManager();
 
             return productManager.DisableProduct(id);
         }
 
         public IList<Product> GetProduct()
         {
-            ProductManager productManager = new ProductManager();
+            var productManager = new ProductManager();
 
             return productManager.GetProduct().Select(p => p.ToServiceProduct()).ToList();
         }
 
         public Product GetProduct(int id)
         {
-            ProductManager productManager = new ProductManager();
+            var productManager = new ProductManager();
 
             return productManager.GetProduct(id).ToServiceProduct();
         }
