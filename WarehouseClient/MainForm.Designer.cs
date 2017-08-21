@@ -46,11 +46,11 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+//            this.button1 = new System.Windows.Forms.Button();
+ //           this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+  //          this.dataGridView2 = new System.Windows.Forms.DataGridView();
+    //        this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -60,9 +60,9 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductManagmentGridView)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -100,7 +100,7 @@
             this.tabControl1.Size = new System.Drawing.Size(814, 429);
             this.tabControl1.Size = new System.Drawing.Size(958, 382);
             this.tabControl1.TabIndex = 1;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.se);
+ //           this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.se);
             // 
             // tabPage1
             // 
@@ -235,7 +235,7 @@
             // 
             this.tabPage4.Controls.Add(this.button2);
             this.tabPage4.Controls.Add(this.button1);
-            this.tabPage4.Controls.Add(this.dataGridView2);
+          //  this.tabPage4.Controls.Add(this.dataGridView2);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(950, 356);
@@ -246,7 +246,7 @@
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.button1);
-            this.tabPage5.Controls.Add(this.dataGridView2);
+         //   this.tabPage5.Controls.Add(this.dataGridView2);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(950, 356);
@@ -257,23 +257,23 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(250, 343);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "AddNewColumn";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            //this.button1.Location = new System.Drawing.Point(250, 343);
+            //this.button1.Name = "button1";
+            //this.button1.Size = new System.Drawing.Size(102, 23);
+            //this.button1.TabIndex = 1;
+            //this.button1.Text = "AddNewColumn";
+            //this.button1.UseVisualStyleBackColor = true;
+            //this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView2
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 12);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(598, 311);
-            this.dataGridView2.TabIndex = 0;
+            //this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            //this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            //this.dataGridView2.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            //this.dataGridView2.Location = new System.Drawing.Point(8, 12);
+            //this.dataGridView2.Name = "dataGridView2";
+            //this.dataGridView2.Size = new System.Drawing.Size(598, 311);
+            //this.dataGridView2.TabIndex = 0;
             // 
             // tabPage6
             // 
@@ -286,20 +286,20 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 12);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView2.TabIndex = 0;
+            //this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            //this.dataGridView2.Location = new System.Drawing.Point(8, 12);
+            //this.dataGridView2.Name = "dataGridView2";
+            //this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            //this.dataGridView2.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(264, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Select";
-            this.button1.UseVisualStyleBackColor = true;
+            //this.button1.Location = new System.Drawing.Point(264, 12);
+            //this.button1.Name = "button1";
+            //this.button1.Size = new System.Drawing.Size(75, 23);
+            //this.button1.TabIndex = 1;
+            //this.button1.Text = "Select";
+            //this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -309,7 +309,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+ //           this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
@@ -357,10 +357,10 @@
         private System.Windows.Forms.Button AddNewItemProdManag;
         private System.Windows.Forms.Button DeleteProdManag;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+   //     private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+  //      private System.Windows.Forms.Button button1;
+   //     private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TabPage tabPage1;
     }
 }

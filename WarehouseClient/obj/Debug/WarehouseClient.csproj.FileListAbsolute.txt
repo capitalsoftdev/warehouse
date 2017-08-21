@@ -89,3 +89,5 @@ C:\Users\Diana\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.
 C:\Users\Diana\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.exe
 C:\Users\Diana\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.pdb
 C:\Users\Diana\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProdManagForm.NewItemProdManag.resources
+C:\Users\Diana\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProductCategoryManagement.AddProductCategory.resources
+C:\Users\Diana\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.RoleGroupMapManagment.AddRoleGroupMap.resources

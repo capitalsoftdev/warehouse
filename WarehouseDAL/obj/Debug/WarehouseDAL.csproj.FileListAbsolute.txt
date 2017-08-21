@@ -39,3 +39,4 @@ C:\Users\AST\Source\Repos\warehouse\WarehouseDAL\bin\Debug\WarehouseDAL.pdb
 C:\Users\AST\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.csprojResolveAssemblyReference.cache
 C:\Users\AST\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.dll
 C:\Users\AST\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.pdb
+C:\Users\Diana\Source\Repos\warehouse\WarehouseDAL\obj\Debug\WarehouseDAL.csprojResolveAssemblyReference.cache

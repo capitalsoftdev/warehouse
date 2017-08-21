@@ -15,7 +15,7 @@ using WarehouseClient.ProdManagForm;
 using WarehouseBL.ProductCategoryManagement;
 using WarehouseBL.RoleGroupMapManagment;
 using WarehouseClient.ProductCategoryManagement;
-using WarehouseBL.ProductCategoryManagement;
+//using WarehouseBL.ProductCategoryManagement;
 
 
 namespace WarehouseClient
@@ -53,14 +53,16 @@ namespace WarehouseClient
 
             if (loginUser.RoleGroupId == 1)
             {
-            {
-                tabControl1.SelectedTab = tabPage1;
-                us = manage.SelectActiveUser();
-                dataGridView1.DataSource = us.ToList();
-                dataGridView1.Columns[2].Visible = false;
-                dataGridView1.Columns[0].Visible = false;
+                {
+                    tabControl1.SelectedTab = tabPage1;
+                    us = manage.SelectActiveUser();
+                    dataGridView1.DataSource = us.ToList();
+                    dataGridView1.Columns[2].Visible = false;
+                    dataGridView1.Columns[0].Visible = false;
+                }
             }
-            else {
+            else
+            {
                 tabControl1.TabPages.Remove(tabPage1);
             }
 
@@ -68,14 +70,14 @@ namespace WarehouseClient
             prodManagList = prodManag.GetItem(0, 0, 0);
             ProductManagmentGridView.DataSource = prodManagList.ToList();
 
-        
 
 
-        //
-        IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
-        dataGridView2.DataSource = productCategoryList.ToList();
+
+            //
+            IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
+           // dataGridView2.DataSource = productCategoryList.ToList();
         }
-        public void DataRefresh()
+        private void DataRefresh()
         {
             us = manage.SelectActiveUser();
             dataGridView1.DataSource = us.ToList();
@@ -94,7 +96,7 @@ namespace WarehouseClient
             form.Show();
         }
 
-        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        public void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UserManagement.AddUser add = new UserManagement.AddUser(this);
             add.Show();
@@ -105,41 +107,884 @@ namespace WarehouseClient
             MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
         }
 
-   
+    private void tabPage2_Click(object sender, EventArgs e)
+    {
 
-        
 
-        }
+    }
+    private void button1_Click(object sender, EventArgs e)
+    {
+        AddProductCategory add = new AddProductCategory(this);
+        add.Show();
+    }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
+    private void AddNewItem_Click(object sender, EventArgs e)
+    {
+        NewItemProdManag newItem = new NewItemProdManag();
+        newItem.Show();
+    }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddProductCategory add = new AddProductCategory(this);
-            add.Show();
-        }
+    private void DeleteProdManag_Click(object sender, EventArgs e)
+    {
+        var id = ProductManagmentGridView.CurrentRow.Cells[1].Value;
+        prodManag.DeleteItem(Convert.ToInt32(id));
+        //MessageBox.Show(id.ToString());
+    }
 
-        private void AddNewItem_Click(object sender, EventArgs e)
-        {
-            NewItemProdManag newItem = new NewItemProdManag();
-            newItem.Show();
-        }
+    private void ProductManagmentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+        // MessageBox.Show( ProductManagmentGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+    }
 
-        private void DeleteProdManag_Click(object sender, EventArgs e)
-        {
-            var id = ProductManagmentGridView.CurrentRow.Cells[1].Value;
-            prodManag.DeleteItem(Convert.ToInt32(id));
-            //MessageBox.Show(id.ToString());
-        }
+    private void ProductManagmentGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+    { }
 
-        private void ProductManagmentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          // MessageBox.Show( ProductManagmentGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
-        }
-
-        private void ProductManagmentGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
