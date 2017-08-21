@@ -26,7 +26,7 @@ namespace WarehouseClient
         {
             return us;
         }
-       
+
         public MainForm()
         {
             InitializeComponent();
@@ -50,12 +50,12 @@ namespace WarehouseClient
                 tabControl1.TabPages.Remove(tabPage1);
             }
 
-        }
+        
 
 
-            //
-            IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
-            dataGridView2.DataSource = productCategoryList.ToList();
+        //
+        IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
+        dataGridView2.DataSource = productCategoryList.ToList();
         }
         public  void DataRefresh()
         {
@@ -85,12 +85,11 @@ namespace WarehouseClient
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-            tabPage1.Hide();
         }
 
    
 
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
