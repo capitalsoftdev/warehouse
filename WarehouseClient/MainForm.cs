@@ -26,20 +26,25 @@ namespace WarehouseClient
         {
             InitializeComponent();
         }
-        public MainForm(WarehouseDAL.DataContracts.User user) {
+        public MainForm(User user) {
             InitializeComponent();
             loginUser = user;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-         
             if (loginUser.RoleGroupId == 1)
-            {      
+            {
+                tabControl1.SelectedTab = tabPage1;
                 us = manage.SelectActiveUser();
                 dataGridView1.DataSource = us.ToList();
                 dataGridView1.Columns[2].Visible = false;
+                dataGridView1.Columns[0].Visible = false;
             }
+            else {
+                tabControl1.TabPages.Remove(tabPage1);
+            }
+
         }
         public  void DataRefresh()
         {
@@ -68,10 +73,23 @@ namespace WarehouseClient
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show();
-            MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            dataGridView1.Columns[2].Visible = false;
+            MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+            tabPage1.Hide();
+        }
 
+   
+
+        private void se(object sender, EventArgs e)
+        {
+            if ((loginUser.RoleGroupId==1) && (tabControl1.SelectedTab == tabPage1))
+            {
+                tabControl1.SelectedTab = tabPage1;
+            }
+            else if ((loginUser.RoleGroupId != 1 ) && (tabControl1.SelectedTab == tabPage1))
+            {
+                MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
+                tabControl1.SelectedTab = tabPage2;
+            }
         }
     }
 }
