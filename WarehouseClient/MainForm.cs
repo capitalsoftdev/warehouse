@@ -9,50 +9,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarehouseBL.UserManagement;
 using WarehouseDAL.DataContracts;
-using WarehouseBL.ProductManagmentManagment;
-using WarehouseBL.Interfaces;
-using WarehouseClient.ProdManagForm;
-using WarehouseBL.ProductCategoryManagement;
-using WarehouseBL.RoleGroupMapManagment;
 using WarehouseClient.ProductCategoryManagement;
 //using WarehouseBL.ProductCategoryManagement;
 
-
 namespace WarehouseClient
 {
-    public partial class MainForm : Form
+     public partial class MainForm : Form
     {
 
         ProductCategoryManager productCategoryManager = new ProductCategoryManager();
-
-        User loginUser;
-        UserManager manage = new UserManager();
-        static IList<User> us = null;
-
-
-        //productManagment
-        IProductManagmentManager prodManag = new ProductManagmentManager();
-        static IList<ProductManagment> prodManagList = null;
-
-        public static IList<User> SelectUsers()
-        {
-            return us;
-        }
 
         public MainForm()
         {
             InitializeComponent();
         }
-        public MainForm(User user) {
-            InitializeComponent();
-            loginUser = user;
-        }
+       
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
             if (loginUser.RoleGroupId == 1)
             {
+                tabControl1.SelectedTab = tabPage1;
+                us = manage.SelectActiveUser();
+                dataGridView1.DataSource = us.ToList();
+                dataGridView1.Columns[2].Visible = false;
+                dataGridView1.Columns[0].Visible = false;
+            }
+            else {
                 {
                     tabControl1.SelectedTab = tabPage1;
                     us = manage.SelectActiveUser();
@@ -76,6 +59,9 @@ namespace WarehouseClient
             //
             IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
            // dataGridView2.DataSource = productCategoryList.ToList();
+        //
+        IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
+        dataGridView2.DataSource = productCategoryList.ToList();
         }
         private void DataRefresh()
         {
@@ -85,7 +71,7 @@ namespace WarehouseClient
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            MainForm_Load(null, null);
+           // MainForm_Load(null, null);
         }
 
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,6 +103,12 @@ namespace WarehouseClient
         AddProductCategory add = new AddProductCategory(this);
         add.Show();
     }
+ 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddProductCategory add = new AddProductCategory(this);
+            add.Show();
+        }
 
     private void AddNewItem_Click(object sender, EventArgs e)
     {

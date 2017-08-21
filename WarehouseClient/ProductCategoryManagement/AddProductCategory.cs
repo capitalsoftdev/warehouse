@@ -35,12 +35,12 @@ namespace WarehouseClient.ProductCategoryManagement
             mainForm.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addinfo_Click(object sender, EventArgs e)
         {
             WarehouseDAL.DataContracts.ProductCategory product = new WarehouseDAL.DataContracts.ProductCategory();
             product.Id = -1;
-            product.Name = textBox1.Text.ToString();
-            product.ParentId = (int)numericUpDown1.Value;
+            product.Name = PCTextBox1.Text.ToString();
+            product.ParentId = (int)PCNumericUpDown1.Value;
             WarehouseBL.ProductCategoryManagement.ProductCategoryManager manager = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
             manager.CreateOrUpdateProductCategory(product);
 
