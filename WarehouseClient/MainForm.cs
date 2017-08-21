@@ -14,27 +14,16 @@ using WarehouseBL.ProductCategoryManagement;
 
 namespace WarehouseClient
 {
-    public partial class MainForm : Form
+     public partial class MainForm : Form
     {
 
         ProductCategoryManager productCategoryManager = new ProductCategoryManager();
-
-        User loginUser;
-        UserManager manage = new UserManager();
-        static IList<User> us = null;
-        public static IList<User> SelectUsers()
-        {
-            return us;
-        }
 
         public MainForm()
         {
             InitializeComponent();
         }
-        public MainForm(User user) {
-            InitializeComponent();
-            loginUser = user;
-        }
+       
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -49,48 +38,16 @@ namespace WarehouseClient
             else {
                 tabControl1.TabPages.Remove(tabPage1);
             }
-
-        
-
-
         //
         IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
         dataGridView2.DataSource = productCategoryList.ToList();
         }
-        public  void DataRefresh()
-        {
-                us = manage.SelectActiveUser();
-                dataGridView1.DataSource = us.ToList();
-        }
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            MainForm_Load(null, null);
+           // MainForm_Load(null, null);
         }
-
-        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var form = new Login();
-            form.Closed += (s, args) => this.Close();
-            form.Show();
-        }
-
-        private void addToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UserManagement.AddUser add = new UserManagement.AddUser(this);
-            add.Show();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-        }
-
-   
-
-        
-
+ 
         private void button1_Click(object sender, EventArgs e)
         {
             AddProductCategory add = new AddProductCategory(this);

@@ -13,6 +13,6 @@ namespace Logger
         void Warn(string message);
         void Error(string message);
         void Error(Exception ex);
-        void SetLogSevel(LogLevel level);
+        void SetLogLevel(LogLevel level);
     }
 }

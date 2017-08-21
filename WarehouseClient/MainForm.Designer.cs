@@ -1,6 +1,6 @@
 ﻿namespace WarehouseClient
 {
-    partial class MainForm
+     partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -88,7 +88,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(814, 429);
             this.tabControl1.TabIndex = 1;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.se);
             // 
             // tabPage1
             // 

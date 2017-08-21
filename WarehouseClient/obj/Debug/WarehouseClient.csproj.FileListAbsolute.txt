@@ -72,3 +72,4 @@ C:\Users\AST\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Pr
 C:\Users\AST\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.UserManagement.AddUser.resources
 C:\Users\AST\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
 C:\Users\AST\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProductCategoryManagement.AddProductCategory.resources
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProductCategoryManagement.AddProductCategory.resources

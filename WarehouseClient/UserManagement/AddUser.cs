@@ -15,13 +15,13 @@ namespace WarehouseClient.UserManagement
 {
     public partial class AddUser : Form
     {
-        
-        Form f;
+
+        MainForm f;
         public AddUser()
         {
             InitializeComponent();
         }
-        public AddUser(Form form)
+        public AddUser(MainForm form)
         {
             f = form;
             f.Enabled = false;
@@ -41,6 +41,7 @@ namespace WarehouseClient.UserManagement
                 manager.AddOrInsertUser(user);
 
                 f.Enabled = true;
+                f.ReloadUserGrid(true);
                 Close();
                 
             }
