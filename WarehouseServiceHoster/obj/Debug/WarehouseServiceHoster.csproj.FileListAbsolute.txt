@@ -11,3 +11,16 @@ E:\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.csprojResol
 E:\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.csproj.CoreCompileInputs.cache
 E:\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.exe
 E:\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.pdb
+C:\Users\Diana\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.exe.config
+C:\Users\Diana\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.exe
+C:\Users\Diana\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.pdb
+C:\Users\Diana\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.csprojResolveAssemblyReference.cache
+C:\Users\Diana\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.csproj.CoreCompileInputs.cache
+C:\Users\Diana\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.exe
+C:\Users\Diana\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.exe.config
+C:\Users\ADT\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.exe
+C:\Users\ADT\Source\Repos\warehouse\WarehouseServiceHoster\bin\Debug\WarehouseServiceHoster.pdb
+C:\Users\ADT\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.csprojResolveAssemblyReference.cache
+C:\Users\ADT\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.exe
+C:\Users\ADT\Source\Repos\warehouse\WarehouseServiceHoster\obj\Debug\WarehouseServiceHoster.pdb

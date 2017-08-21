@@ -7,7 +7,7 @@ using WarehouseDAL.DataContracts;
 
 namespace WarehouseBL.Interfaces
 {
-    interface IProductManagmentManager
+    public interface IProductManagmentManager
     {
         IList<ProductManagment> GetItem(int id, int userId, int productId);
         int DeleteItem(int id);

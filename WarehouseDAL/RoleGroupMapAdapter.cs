@@ -11,13 +11,7 @@ namespace WarehouseDAL
 {
    public class RoleGroupMapAdapter
     {
-        public IList<RoleGroupMap> GetItemFromProductManagment(int roleGroupId, int roleid) {
-
-
-            return null;
-        }
-
-        private string insertRoleGroupMap = "[dbo].[InsertRoleGroupMap]";
+        private string insertRoleGroupMap = "[dbo].[CreateRoleGroupMap]";
         private string getRoleGroupMap    = "[dbo].[GetRoleGroupMap]";
 
         public int CreateRoleGroupMap(RoleGroupMap role)

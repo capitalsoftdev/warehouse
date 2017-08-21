@@ -9,12 +9,13 @@ using WarehouseDAL.DataContracts;
 
 namespace WarehouseBL.RoleGroupMapManagment
 {
-    class RoleGroupMapManager:IRoleGroupMapManger
+  public class RoleGroupMapManager:IRoleGroupMapManger
     {
       public int CreateRoleGroupMap(RoleGroupMap roleGroupMap) {
             var roleGroupAdaper = new RoleGroupMapAdapter();
             return roleGroupAdaper.CreateRoleGroupMap(roleGroupMap);
 
         }
+
     }
 }
