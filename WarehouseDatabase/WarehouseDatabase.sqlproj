@@ -57,5 +57,42 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Munit.sql" />
+    <Build Include="dbo\Tables\Product.sql" />
+    <Build Include="dbo\Tables\ProductCategory.sql" />
+    <Build Include="dbo\Tables\ProductManagment.sql" />
+    <Build Include="dbo\Tables\Role.sql" />
+    <Build Include="dbo\Tables\RoleGroup.sql" />
+    <Build Include="dbo\Tables\RoleGroupMap.sql" />
+    <Build Include="dbo\Tables\User.sql" />
+    <Build Include="dbo\Stored Procedures\AddOrUpdateUser.sql" />
+    <Build Include="dbo\Stored Procedures\Autorisation.sql" />
+    <Build Include="dbo\Stored Procedures\ChangeIsActive.sql" />
+    <Build Include="dbo\Stored Procedures\CreateOrUpdateProduct.sql" />
+    <Build Include="dbo\Stored Procedures\CreateOrUpdateProductCategory.sql" />
+    <Build Include="dbo\Stored Procedures\CreateOrUpdateProductManagment.sql" />
+    <Build Include="dbo\Stored Procedures\CreateOrUpdateRole.sql" />
+    <Build Include="dbo\Stored Procedures\CreateRoleGroupMap.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteItemFromProductManagment.sql" />
+    <Build Include="dbo\Stored Procedures\DisableProduct.sql" />
+    <Build Include="dbo\Stored Procedures\DisableRole.sql" />
+    <Build Include="dbo\Stored Procedures\GetActiveProduct.sql" />
+    <Build Include="dbo\Stored Procedures\GetItemFromProductManagment.sql" />
+    <Build Include="dbo\Stored Procedures\GetMunit.sql" />
+    <Build Include="dbo\Stored Procedures\GetProduct.sql" />
+    <Build Include="dbo\Stored Procedures\GetProductCategory.sql" />
+    <Build Include="dbo\Stored Procedures\GetRole.sql" />
+    <Build Include="dbo\Stored Procedures\GetRoleGroupMap.sql" />
+    <Build Include="dbo\Stored Procedures\LoginUser.sql" />
+    <Build Include="dbo\Stored Procedures\ManageProductCategory.sql" />
+    <Build Include="dbo\Stored Procedures\SelectActiveUsers.sql" />
+    <Build Include="dbo\Stored Procedures\setLoginDate.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
   </ItemGroup>
 </Project>
