@@ -9,3 +9,11 @@ E:\warehouse\WarehouseBL\obj\Debug\WarehouseBL.csproj.CoreCompileInputs.cache
 E:\warehouse\WarehouseBL\obj\Debug\WarehouseBL.dll
 E:\warehouse\WarehouseBL\obj\Debug\WarehouseBL.pdb
 C:\Users\Nastasya\Source\Repos\warehouse\WarehouseBL\obj\Debug\WarehouseBL.csprojResolveAssemblyReference.cache
+C:\Users\Артур\Downloads\WMS\WMS\WarehouseBL\bin\Debug\WarehouseBL.dll
+C:\Users\Артур\Downloads\WMS\WMS\WarehouseBL\bin\Debug\WarehouseBL.pdb
+C:\Users\Артур\Downloads\WMS\WMS\WarehouseBL\bin\Debug\WarehouseDAL.dll
+C:\Users\Артур\Downloads\WMS\WMS\WarehouseBL\bin\Debug\WarehouseDAL.pdb
+C:\Users\Артур\Downloads\WMS\WMS\WarehouseBL\bin\Debug\WarehouseDAL.dll.config
+C:\Users\Артур\Downloads\WMS\WMS\WarehouseBL\obj\Debug\WarehouseBL.csprojResolveAssemblyReference.cache
+C:\Users\Артур\Downloads\WMS\WMS\WarehouseBL\obj\Debug\WarehouseBL.dll
+C:\Users\Артур\Downloads\WMS\WMS\WarehouseBL\obj\Debug\WarehouseBL.pdb
