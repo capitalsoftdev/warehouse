@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarehouseBL.UserManagement;
 using WarehouseDAL.DataContracts;
+using WarehouseClient.ProductCategoryManagement;
+using WarehouseBL.ProductCategoryManagement;
 
 namespace WarehouseClient
 {
     public partial class MainForm : Form
     {
+
+        ProductCategoryManager productCategoryManager = new ProductCategoryManager();
+
         User loginUser;
         UserManager manage = new UserManager();
         static IList<User> us = null;
@@ -40,6 +45,11 @@ namespace WarehouseClient
                 dataGridView1.DataSource = us.ToList();
                 dataGridView1.Columns[2].Visible = false;
             }
+
+
+            //
+            IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
+            dataGridView2.DataSource = productCategoryList.ToList();
         }
         public  void DataRefresh()
         {
@@ -73,5 +83,12 @@ namespace WarehouseClient
             dataGridView1.Columns[2].Visible = false;
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddProductCategory add = new AddProductCategory(this);
+            add.Show();
+        }
+
     }
 }
