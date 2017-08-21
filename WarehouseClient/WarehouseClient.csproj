@@ -84,6 +84,12 @@
     <Compile Include="ProdManagForm\NewItemProdManag.Designer.cs">
       <DependentUpon>NewItemProdManag.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductCategoryManagement\AddProductCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductCategoryManagement\AddProductCategory.Designer.cs">
+      <DependentUpon>AddProductCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleGroupMapManagment\AddRoleGroupMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoleGroupMapManagment\AddRoleGroupMap.Designer.cs">
+      <DependentUpon>AddRoleGroupMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserManagement\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,9 @@
     <EmbeddedResource Include="ProdManagForm\NewItemProdManag.resx">
       <DependentUpon>NewItemProdManag.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductCategoryManagement\AddProductCategory.resx">
+      <DependentUpon>AddProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +134,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RoleGroupMapManagment\AddRoleGroupMap.resx">
+      <DependentUpon>AddRoleGroupMap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserManagement\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +163,7 @@
       <Name>WarehouseDAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -26,29 +26,9 @@ namespace WarehouseDAL.DataContracts
             }
         }
 
-        public int Action
-        {
-            get
-            {
-                return action;
-            }
-            set
-            {
-                action = value;
-            }
-        }
+      
 
-        public bool IsActive
-        {
-            get
-            {
-                return isActive;
-            }
-            set
-            {
-                isActive = value;
-            }
-        }
+       
 
         public string Name
         {
@@ -71,6 +51,30 @@ namespace WarehouseDAL.DataContracts
             set
             {
                 parentId = value;
+            }
+        }
+
+        public bool IsActive
+        {
+            get
+            {
+                return isActive;
+            }
+            set
+            {
+                isActive = value;
+            }
+        }
+
+        public int Action
+        {
+            get
+            {
+                return action;
+            }
+            set
+            {
+                action = value;
             }
         }
 
