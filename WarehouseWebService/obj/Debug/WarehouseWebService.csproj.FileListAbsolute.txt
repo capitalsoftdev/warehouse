@@ -31,3 +31,15 @@ C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseBL.dl
 C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseDAL.dll
 C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseBL.pdb
 C:\Users\ADT\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseDAL.pdb
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseWebService.dll.config
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseWebService.dll
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseWebService.pdb
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseBL.dll
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseDAL.dll
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseBL.pdb
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseDAL.pdb
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\bin\Debug\WarehouseDAL.dll.config
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.csprojResolveAssemblyReference.cache
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.csproj.CoreCompileInputs.cache
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.dll
+C:\Users\Diana\Source\Repos\warehouse\WarehouseWebService\obj\Debug\WarehouseWebService.pdb

@@ -40,6 +40,9 @@
             this.outToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.DeleteProdManag = new System.Windows.Forms.Button();
+            this.AddNewItemProdManag = new System.Windows.Forms.Button();
+            this.ProductManagmentGridView = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -49,6 +52,8 @@
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductManagmentGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -82,7 +87,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(814, 338);
+            this.tabControl1.Size = new System.Drawing.Size(958, 382);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -93,7 +98,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(806, 312);
+            this.tabPage1.Size = new System.Drawing.Size(950, 356);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "User management";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -125,7 +130,7 @@
             this.outToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 3);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -162,19 +167,53 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.DeleteProdManag);
+            this.tabPage2.Controls.Add(this.AddNewItemProdManag);
+            this.tabPage2.Controls.Add(this.ProductManagmentGridView);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(806, 312);
+            this.tabPage2.Size = new System.Drawing.Size(950, 356);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Product management";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // DeleteProdManag
+            // 
+            this.DeleteProdManag.Location = new System.Drawing.Point(243, 302);
+            this.DeleteProdManag.Name = "DeleteProdManag";
+            this.DeleteProdManag.Size = new System.Drawing.Size(88, 29);
+            this.DeleteProdManag.TabIndex = 2;
+            this.DeleteProdManag.Text = "Delete";
+            this.DeleteProdManag.UseVisualStyleBackColor = true;
+            this.DeleteProdManag.Click += new System.EventHandler(this.DeleteProdManag_Click);
+            // 
+            // AddNewItemProdManag
+            // 
+            this.AddNewItemProdManag.Location = new System.Drawing.Point(67, 302);
+            this.AddNewItemProdManag.Name = "AddNewItemProdManag";
+            this.AddNewItemProdManag.Size = new System.Drawing.Size(133, 29);
+            this.AddNewItemProdManag.TabIndex = 1;
+            this.AddNewItemProdManag.Text = "AddNewItem";
+            this.AddNewItemProdManag.UseVisualStyleBackColor = true;
+            this.AddNewItemProdManag.Click += new System.EventHandler(this.AddNewItem_Click);
+            // 
+            // ProductManagmentGridView
+            // 
+            this.ProductManagmentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductManagmentGridView.Location = new System.Drawing.Point(8, 41);
+            this.ProductManagmentGridView.Name = "ProductManagmentGridView";
+            this.ProductManagmentGridView.Size = new System.Drawing.Size(936, 178);
+            this.ProductManagmentGridView.TabIndex = 0;
+            this.ProductManagmentGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductManagmentGridView_CellContentClick);
+            this.ProductManagmentGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ProductManagmentGridView_RowsAdded);
             // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(806, 312);
+            this.tabPage3.Size = new System.Drawing.Size(950, 356);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Product";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -183,7 +222,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(806, 312);
+            this.tabPage4.Size = new System.Drawing.Size(950, 356);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -192,7 +231,7 @@
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(806, 312);
+            this.tabPage5.Size = new System.Drawing.Size(950, 356);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -201,7 +240,7 @@
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(806, 312);
+            this.tabPage6.Size = new System.Drawing.Size(950, 356);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -210,7 +249,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 339);
+            this.ClientSize = new System.Drawing.Size(958, 383);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -225,6 +264,8 @@
             this.panel2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductManagmentGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,6 +287,9 @@
         private System.Windows.Forms.ToolStripMenuItem outToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.DataGridView ProductManagmentGridView;
+        private System.Windows.Forms.Button AddNewItemProdManag;
+        private System.Windows.Forms.Button DeleteProdManag;
     }
 }
 

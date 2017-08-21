@@ -78,6 +78,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProdManagForm\NewItemProdManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdManagForm\NewItemProdManag.Designer.cs">
+      <DependentUpon>NewItemProdManag.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdManagForm\NewItemProdManag.resx">
+      <DependentUpon>NewItemProdManag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
