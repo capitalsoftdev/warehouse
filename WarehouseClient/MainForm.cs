@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarehouseBL.UserManagement;
 using WarehouseDAL.DataContracts;
+using WarehouseClient.ProductCategoryManagement;
+using WarehouseBL.ProductCategoryManagement;
 
 namespace WarehouseClient
 {
     public partial class MainForm : Form
     {
+
+        ProductCategoryManager productCategoryManager = new ProductCategoryManager();
+
         User loginUser;
         UserManager manage = new UserManager();
         static IList<User> us = null;
@@ -45,6 +50,12 @@ namespace WarehouseClient
                 tabControl1.TabPages.Remove(tabPage1);
             }
 
+        }
+
+
+            //
+            IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
+            dataGridView2.DataSource = productCategoryList.ToList();
         }
         public  void DataRefresh()
         {
@@ -79,17 +90,13 @@ namespace WarehouseClient
 
    
 
-        private void se(object sender, EventArgs e)
-        {
-            if ((loginUser.RoleGroupId==1) && (tabControl1.SelectedTab == tabPage1))
-            {
-                tabControl1.SelectedTab = tabPage1;
-            }
-            else if ((loginUser.RoleGroupId != 1 ) && (tabControl1.SelectedTab == tabPage1))
-            {
-                MessageBox.Show("Unable to load tab. You have insufficient access privileges.");
-                tabControl1.SelectedTab = tabPage2;
-            }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddProductCategory add = new AddProductCategory(this);
+            add.Show();
+        }
+
     }
 }

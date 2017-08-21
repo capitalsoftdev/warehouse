@@ -9,7 +9,7 @@ using WarehouseDAL.DataContracts;
 
 namespace WarehouseBL.ProductCategoryManagement
 {
-    class ProductCategoryManager: IProductCategoryManager
+    public class ProductCategoryManager: IProductCategoryManager
     {
         public int CreateOrUpdateProductCategory(ProductCategory product)
         {

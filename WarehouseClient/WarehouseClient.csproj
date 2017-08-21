@@ -78,6 +78,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductCategoryManagement\AddProductCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductCategoryManagement\AddProductCategory.Designer.cs">
+      <DependentUpon>AddProductCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductCategoryManagement\AddProductCategory.resx">
+      <DependentUpon>AddProductCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForm.resx">
       <DependentUpon>ProductForm.cs</DependentUpon>
