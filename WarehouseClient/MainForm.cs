@@ -49,7 +49,7 @@ namespace WarehouseClient
 
             //
             IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
-            dataGridView2.DataSource = productCategoryList.ToList();
+            productCategoryDataGridView.DataSource = productCategoryList.ToList();
         }
         public  void DataRefresh()
         {
