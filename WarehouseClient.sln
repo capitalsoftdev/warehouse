@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseClient", "WarehouseClient.csproj", "{E9D79315-4483-4FC9-B40D-567B65F08C06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseClient", "WarehouseClient\WarehouseClient.csproj", "{E9D79315-4483-4FC9-B40D-567B65F08C06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseServiceHoster", "..\WarehouseServiceHoster\WarehouseServiceHoster.csproj", "{E8BA97F9-EBA0-4B22-819A-4EB471E54B89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseServiceHoster", "WarehouseServiceHoster\WarehouseServiceHoster.csproj", "{E8BA97F9-EBA0-4B22-819A-4EB471E54B89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseWebService", "..\WarehouseWebService\WarehouseWebService.csproj", "{2C5F08CD-A505-489D-BB4D-2A6E3B33A9B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseWebService", "WarehouseWebService\WarehouseWebService.csproj", "{2C5F08CD-A505-489D-BB4D-2A6E3B33A9B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseBL", "..\WarehouseBL\WarehouseBL.csproj", "{0964368B-82B0-4521-B5E8-3379880E77AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseBL", "WarehouseBL\WarehouseBL.csproj", "{0964368B-82B0-4521-B5E8-3379880E77AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseDAL", "..\WarehouseDAL\WarehouseDAL.csproj", "{401DC347-6CA0-4A50-B907-0C49334DEED8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseDAL", "WarehouseDAL\WarehouseDAL.csproj", "{401DC347-6CA0-4A50-B907-0C49334DEED8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALTest", "..\DALTest\DALTest.csproj", "{F9445BE9-4C32-4349-9FE7-8FE1F44F78F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALTest", "DALTest\DALTest.csproj", "{F9445BE9-4C32-4349-9FE7-8FE1F44F78F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "..\Logger\Logger.csproj", "{9EF7BDC9-A78D-4DF3-AB4F-8C9DC0422040}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{9EF7BDC9-A78D-4DF3-AB4F-8C9DC0422040}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WarehouseDatabase", "..\WarehouseDatabase\WarehouseDatabase.sqlproj", "{75719459-C54F-4F03-966F-71CC580969C2}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WarehouseDatabase", "WarehouseDatabase\WarehouseDatabase.sqlproj", "{75719459-C54F-4F03-966F-71CC580969C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
