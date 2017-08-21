@@ -73,3 +73,5 @@ C:\Users\AST\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.Us
 C:\Users\AST\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.csproj.GenerateResource.Cache
 C:\Users\AST\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProductCategoryManagement.AddProductCategory.resources
 C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProductCategoryManagement.AddProductCategory.resources
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.ProdManagForm.NewItemProdManag.resources
+C:\Users\ADT\Source\Repos\warehouse\WarehouseClient\obj\Debug\WarehouseClient.RoleGroupMapManagment.AddRoleGroupMap.resources

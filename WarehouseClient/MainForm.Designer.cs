@@ -46,7 +46,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button1Moderated = new System.Windows.Forms.Button();
             this.productCategoryDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -188,7 +188,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Product management";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            //this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // DeleteProdManag
             // 
@@ -198,7 +198,7 @@
             this.DeleteProdManag.TabIndex = 2;
             this.DeleteProdManag.Text = "Delete";
             this.DeleteProdManag.UseVisualStyleBackColor = true;
-            this.DeleteProdManag.Click += new System.EventHandler(this.DeleteProdManag_Click);
+            //this.DeleteProdManag.Click += new System.EventHandler(this.DeleteProdManag_Click);
             // 
             // AddNewItemProdManag
             // 
@@ -208,7 +208,7 @@
             this.AddNewItemProdManag.TabIndex = 1;
             this.AddNewItemProdManag.Text = "AddNewItem";
             this.AddNewItemProdManag.UseVisualStyleBackColor = true;
-            this.AddNewItemProdManag.Click += new System.EventHandler(this.AddNewItem_Click);
+            //this.AddNewItemProdManag.Click += new System.EventHandler(this.AddNewItem_Click);
             // 
             // ProductManagmentGridView
             // 
@@ -217,8 +217,8 @@
             this.ProductManagmentGridView.Name = "ProductManagmentGridView";
             this.ProductManagmentGridView.Size = new System.Drawing.Size(936, 178);
             this.ProductManagmentGridView.TabIndex = 0;
-            this.ProductManagmentGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductManagmentGridView_CellContentClick);
-            this.ProductManagmentGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ProductManagmentGridView_RowsAdded);
+            //this.ProductManagmentGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductManagmentGridView_CellContentClick);
+            //this.ProductManagmentGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.ProductManagmentGridView_RowsAdded);
             // 
             // tabPage3
             // 
@@ -243,7 +243,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.button1);
+            this.tabPage5.Controls.Add(this.button1Moderated);
             this.tabPage5.Controls.Add(this.productCategoryDataGridView);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
@@ -255,13 +255,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(250, 343);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "AddNewColumn";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1Moderated.Location = new System.Drawing.Point(250, 343);
+            this.button1Moderated.Name = "button1";
+            this.button1Moderated.Size = new System.Drawing.Size(102, 23);
+            this.button1Moderated.TabIndex = 1;
+            this.button1Moderated.Text = "AddNewColumn";
+            this.button1Moderated.UseVisualStyleBackColor = true;
+            this.button1Moderated.Click += new System.EventHandler(this.button1_Click);
             // 
             // productCategoryDataGridView
             // 
@@ -307,7 +307,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            //this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
@@ -339,6 +339,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
@@ -354,7 +355,7 @@
         private System.Windows.Forms.DataGridView ProductManagmentGridView;
         private System.Windows.Forms.Button AddNewItemProdManag;
         private System.Windows.Forms.Button DeleteProdManag;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button1Moderated;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
