@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using WarehouseBL.UserManagement;
 using WarehouseDAL.DataContracts;
 using WarehouseClient.ProductCategoryManagement;
+using WarehouseBL.ProductCategoryManagement;
+using WarehouseClient.ProdManagForm;
 //using WarehouseBL.ProductCategoryManagement;
 
 namespace WarehouseClient
@@ -34,64 +36,55 @@ namespace WarehouseClient
                 dataGridView1.DataSource = us.ToList();
                 dataGridView1.Columns[2].Visible = false;
                 dataGridView1.Columns[0].Visible = false;
-            }
-            else {
-                {
-                    tabControl1.SelectedTab = tabPage1;
-                    us = manage.SelectActiveUser();
-                    dataGridView1.DataSource = us.ToList();
-                    dataGridView1.Columns[2].Visible = false;
-                    dataGridView1.Columns[0].Visible = false;
-                }
-            }
+            }            
             else
             {
                 tabControl1.TabPages.Remove(tabPage1);
             }
 
             //productManagment 
-            prodManagList = prodManag.GetItem(0, 0, 0);
-            ProductManagmentGridView.DataSource = prodManagList.ToList();
+            //prodManagList = prodManag.GetItem(0, 0, 0);
+            //ProductManagmentGridView.DataSource = prodManagList.ToList();
 
 
 
 
             //
-            IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
+            //IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
            // dataGridView2.DataSource = productCategoryList.ToList();
         //
         IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
         dataGridView2.DataSource = productCategoryList.ToList();
         }
-        private void DataRefresh()
-        {
-            us = manage.SelectActiveUser();
-            dataGridView1.DataSource = us.ToList();
-        }
+        //private void DataRefresh()
+        //{
+        //    us = manage.SelectActiveUser();
+        //    dataGridView1.DataSource = us.ToList();
+        //}
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
            // MainForm_Load(null, null);
         }
 
-        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var form = new Login();
-            form.Closed += (s, args) => this.Close();
-            form.Show();
-        }
+        //private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    var form = new Login();
+        //    form.Closed += (s, args) => this.Close();
+        //    form.Show();
+        //}
 
-        public void addToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UserManagement.AddUser add = new UserManagement.AddUser(this);
-            add.Show();
-        }
+        //public void addToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    UserManagement.AddUser add = new UserManagement.AddUser(this);
+        //    add.Show();
+        //}
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-        }
+        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+        //}
 
     private void tabPage2_Click(object sender, EventArgs e)
     {
@@ -104,11 +97,11 @@ namespace WarehouseClient
         add.Show();
     }
  
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddProductCategory add = new AddProductCategory(this);
-            add.Show();
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    AddProductCategory add = new AddProductCategory(this);
+        //    add.Show();
+        //}
 
     private void AddNewItem_Click(object sender, EventArgs e)
     {
@@ -119,7 +112,7 @@ namespace WarehouseClient
     private void DeleteProdManag_Click(object sender, EventArgs e)
     {
         var id = ProductManagmentGridView.CurrentRow.Cells[1].Value;
-        prodManag.DeleteItem(Convert.ToInt32(id));
+        //prodManag.DeleteItem(Convert.ToInt32(id));
         //MessageBox.Show(id.ToString());
     }
 

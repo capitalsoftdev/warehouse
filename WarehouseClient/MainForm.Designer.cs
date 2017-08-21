@@ -1,6 +1,6 @@
 ﻿namespace WarehouseClient
 {
-     partial class MainForm
+     public partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
