@@ -26,6 +26,7 @@ namespace WarehouseClient
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            LoadAllStaticInfo();
             switch (loginUser.RoleGroupId)
             {
                 case 1: {
@@ -61,7 +62,7 @@ namespace WarehouseClient
 
         }
 
-      
+
 
 
         //private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,5 +79,22 @@ namespace WarehouseClient
         //    add.Show();
         //}
 
+        private static void LoadAllStaticInfo()
+        {
+            #region Load Product Categories
+
+            var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
+
+            var allCats = prodCategoryBL.GetAllProductCategories();
+
+            Constants.ApplicationData.ProductCategory = new Dictionary<int, ProductCategory>();
+
+            foreach (var item in allCats)
+            {
+                Constants.ApplicationData.ProductCategory.Add(item.Id, item);
+            }
+            
+            #endregion
+        }
     }
 }
