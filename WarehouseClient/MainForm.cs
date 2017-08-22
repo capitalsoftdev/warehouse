@@ -40,11 +40,6 @@ namespace WarehouseClient
                 tabControl1.TabPages.Remove(tabPage1);
             }
 
-            //productManagment 
-            //prodManagList = prodManag.GetItem(0, 0, 0);
-            //ProductManagmentGridView.DataSource = prodManagList.ToList();
-
-        //
         }
         //private void DataRefresh()
         //{
@@ -56,6 +51,10 @@ namespace WarehouseClient
         {
            // MainForm_Load(null, null);
         }
+
+       
+
+
 
         //private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         //{
@@ -71,40 +70,6 @@ namespace WarehouseClient
         //    add.Show();
         //}
 
-        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-        //}
-
-    private void tabPage2_Click(object sender, EventArgs e)
-    {
-
-
-    }
-    
-
-    private void AddNewItem_Click(object sender, EventArgs e)
-    {
-        NewItemProdManag newItem = new NewItemProdManag();
-        newItem.Show();
-    }
-
-    private void DeleteProdManag_Click(object sender, EventArgs e)
-    {
-        var id = ProductManagmentGridView.CurrentRow.Cells[1].Value;
-        //prodManag.DeleteItem(Convert.ToInt32(id));
-        //MessageBox.Show(id.ToString());
-    }
-
-    private void ProductManagmentGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-    {
-        // MessageBox.Show( ProductManagmentGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
-    }
-
-    private void ProductManagmentGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-    { }
-
-      
     }
 }
 
