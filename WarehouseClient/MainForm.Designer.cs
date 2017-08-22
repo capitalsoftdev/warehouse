@@ -49,6 +49,7 @@
             this.outToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductManagementTab = new System.Windows.Forms.TabPage();
+            this.UserProdManagTabComboBox = new System.Windows.Forms.ComboBox();
             this.ProductProdManagTabComboBox = new System.Windows.Forms.ComboBox();
             this.UpdateProductManagmentButton = new System.Windows.Forms.Button();
             this.DeleteProductManagmentButton = new System.Windows.Forms.Button();
@@ -64,7 +65,7 @@
             this.addRole = new System.Windows.Forms.Button();
             this.RoleDataGridView = new System.Windows.Forms.DataGridView();
             this.SignOutTab = new System.Windows.Forms.TabPage();
-            this.UserProdManagTabComboBox = new System.Windows.Forms.ComboBox();
+            
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.UserTab.SuspendLayout();
@@ -129,7 +130,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(958, 382);
+            this.tabControl1.Size = new System.Drawing.Size(859, 339);
             this.tabControl1.TabIndex = 1;
             // 
             // UserTab
@@ -218,10 +219,18 @@
             this.ProductManagementTab.Location = new System.Drawing.Point(4, 22);
             this.ProductManagementTab.Name = "ProductManagementTab";
             this.ProductManagementTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ProductManagementTab.Size = new System.Drawing.Size(950, 356);
+            this.ProductManagementTab.Size = new System.Drawing.Size(953, 356);
             this.ProductManagementTab.TabIndex = 1;
             this.ProductManagementTab.Text = "Product management";
             this.ProductManagementTab.UseVisualStyleBackColor = true;
+            // 
+            // UserProdManagTabComboBox
+            // 
+            this.UserProdManagTabComboBox.FormattingEnabled = true;
+            this.UserProdManagTabComboBox.Location = new System.Drawing.Point(153, 14);
+            this.UserProdManagTabComboBox.Name = "UserProdManagTabComboBox";
+            this.UserProdManagTabComboBox.Size = new System.Drawing.Size(121, 21);
+            this.UserProdManagTabComboBox.TabIndex = 4;
             // 
             // ProductProdManagTabComboBox
             // 
@@ -289,7 +298,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(950, 356);
+            this.tabPage3.Size = new System.Drawing.Size(953, 356);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Product";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -299,20 +308,10 @@
             this.RoleMapTab.Controls.Add(this.RoleGroupMapDataGridView);
             this.RoleMapTab.Location = new System.Drawing.Point(4, 22);
             this.RoleMapTab.Name = "RoleMapTab";
-            this.RoleMapTab.Size = new System.Drawing.Size(950, 356);
+            this.RoleMapTab.Size = new System.Drawing.Size(851, 313);
             this.RoleMapTab.TabIndex = 3;
             this.RoleMapTab.Text = "RoleGroupMap Manager";
             this.RoleMapTab.UseVisualStyleBackColor = true;
-            // 
-            // AddRoleGroupMap
-            // 
-            this.AddRoleGroupMap.Location = new System.Drawing.Point(289, 27);
-            this.AddRoleGroupMap.Name = "AddRoleGroupMap";
-            this.AddRoleGroupMap.Size = new System.Drawing.Size(75, 23);
-            this.AddRoleGroupMap.TabIndex = 1;
-            this.AddRoleGroupMap.Text = "Add";
-            this.AddRoleGroupMap.UseVisualStyleBackColor = true;
-            this.AddRoleGroupMap.Click += new System.EventHandler(this.AddRoleGroupMap_Click);
             // 
             // RoleGroupMapDataGridView
             // 
@@ -333,7 +332,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.RoleGroupMapDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
-            this.RoleGroupMapDataGridView.Location = new System.Drawing.Point(19, 27);
+            this.RoleGroupMapDataGridView.Location = new System.Drawing.Point(0, 3);
             this.RoleGroupMapDataGridView.Name = "RoleGroupMapDataGridView";
             this.RoleGroupMapDataGridView.Size = new System.Drawing.Size(240, 150);
             this.RoleGroupMapDataGridView.TabIndex = 0;
@@ -345,7 +344,7 @@
             this.ProductCategoryTab.Controls.Add(this.productCategoryDataGridView);
             this.ProductCategoryTab.Location = new System.Drawing.Point(4, 22);
             this.ProductCategoryTab.Name = "ProductCategoryTab";
-            this.ProductCategoryTab.Size = new System.Drawing.Size(950, 356);
+            this.ProductCategoryTab.Size = new System.Drawing.Size(953, 356);
             this.ProductCategoryTab.TabIndex = 4;
             this.ProductCategoryTab.Text = "Product Category";
             this.ProductCategoryTab.UseVisualStyleBackColor = true;
@@ -393,7 +392,7 @@
             this.RoleTab.Controls.Add(this.RoleDataGridView);
             this.RoleTab.Location = new System.Drawing.Point(4, 22);
             this.RoleTab.Name = "RoleTab";
-            this.RoleTab.Size = new System.Drawing.Size(950, 356);
+            this.RoleTab.Size = new System.Drawing.Size(953, 356);
             this.RoleTab.TabIndex = 5;
             this.RoleTab.Text = "Role";
             this.RoleTab.UseVisualStyleBackColor = true;
@@ -437,25 +436,17 @@
             // 
             this.SignOutTab.Location = new System.Drawing.Point(4, 22);
             this.SignOutTab.Name = "SignOutTab";
-            this.SignOutTab.Size = new System.Drawing.Size(950, 356);
+            this.SignOutTab.Size = new System.Drawing.Size(953, 356);
             this.SignOutTab.TabIndex = 6;
             this.SignOutTab.Text = "Sign out";
             this.SignOutTab.UseVisualStyleBackColor = true;
             this.SignOutTab.Enter += new System.EventHandler(this.SignOutTab_Enter);
             // 
-            // UserProdManagTabComboBox
-            // 
-            this.UserProdManagTabComboBox.FormattingEnabled = true;
-            this.UserProdManagTabComboBox.Location = new System.Drawing.Point(153, 14);
-            this.UserProdManagTabComboBox.Name = "UserProdManagTabComboBox";
-            this.UserProdManagTabComboBox.Size = new System.Drawing.Size(121, 21);
-            this.UserProdManagTabComboBox.TabIndex = 4;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 383);
+            this.ClientSize = new System.Drawing.Size(859, 340);
             this.Controls.Add(this.tabControl1);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -507,7 +498,7 @@
         private System.Windows.Forms.ComboBox ProductProdManagTabComboBox;
         private System.Windows.Forms.ComboBox UserProdManagTab;
         private System.Windows.Forms.DataGridView RoleGroupMapDataGridView;
-        private System.Windows.Forms.Button AddRoleGroupMap;
+        
         private System.Windows.Forms.Button addRole;
         private System.Windows.Forms.DataGridView RoleDataGridView;
         private System.Windows.Forms.TabPage SignOutTab;

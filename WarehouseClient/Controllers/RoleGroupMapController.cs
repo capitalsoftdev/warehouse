@@ -14,11 +14,7 @@ namespace WarehouseClient
         {
            
         }
-        private void AddRoleGroupMap_Click(object sender, EventArgs e)
-        {
-            AddRoleGroupMap add = new AddRoleGroupMap (this);
-            add.Show();
-        }
+        
 
     }
 }
