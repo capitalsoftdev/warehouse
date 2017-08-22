@@ -36,5 +36,11 @@ namespace WarehouseClient.UserManagement
             this.Close();
         }
 
+        private void SignOut_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            sendedForm.Enabled = true;
+            sendedForm.SingOutChangePabControl();
+
+        }
     }
 }
