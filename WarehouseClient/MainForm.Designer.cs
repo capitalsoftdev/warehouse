@@ -54,6 +54,7 @@
             this.ProductManagmentGridView = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.AddRoleGroupMap = new System.Windows.Forms.Button();
             this.RoleGroupMapDataGridView = new System.Windows.Forms.DataGridView();
             this.ProductCategoryTab = new System.Windows.Forms.TabPage();
             this.addProductCategoryButton = new System.Windows.Forms.Button();
@@ -267,6 +268,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.AddRoleGroupMap);
             this.tabPage4.Controls.Add(this.RoleGroupMapDataGridView);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -274,6 +276,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "RoleGroupMap Manager";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // AddRoleGroupMap
+            // 
+            this.AddRoleGroupMap.Location = new System.Drawing.Point(289, 27);
+            this.AddRoleGroupMap.Name = "AddRoleGroupMap";
+            this.AddRoleGroupMap.Size = new System.Drawing.Size(75, 23);
+            this.AddRoleGroupMap.TabIndex = 1;
+            this.AddRoleGroupMap.Text = "Add";
+            this.AddRoleGroupMap.UseVisualStyleBackColor = true;
+            this.AddRoleGroupMap.Click += new System.EventHandler(this.AddRoleGroupMap_Click);
             // 
             // RoleGroupMapDataGridView
             // 
@@ -294,7 +306,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.RoleGroupMapDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
-            this.RoleGroupMapDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.RoleGroupMapDataGridView.Location = new System.Drawing.Point(19, 27);
             this.RoleGroupMapDataGridView.Name = "RoleGroupMapDataGridView";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
@@ -306,7 +318,7 @@
             this.RoleGroupMapDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.RoleGroupMapDataGridView.Size = new System.Drawing.Size(240, 150);
             this.RoleGroupMapDataGridView.TabIndex = 0;
-            this.RoleGroupMapDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roleGroupMapDataGridView_CellContentClick);
+            this.RoleGroupMapDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RoleGroupMapDataGridView_CellContentClick_1);
             // 
             // ProductCategoryTab
             // 
@@ -417,6 +429,7 @@
         private System.Windows.Forms.Button addProductCategoryButton;
         private System.Windows.Forms.DataGridView productCategoryDataGridView;
         private System.Windows.Forms.DataGridView RoleGroupMapDataGridView;
+        private System.Windows.Forms.Button AddRoleGroupMap;
     }
 }
 

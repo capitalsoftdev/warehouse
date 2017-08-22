@@ -16,6 +16,14 @@ namespace WarehouseBL.RoleGroupMapManagment
             return roleGroupAdaper.CreateRoleGroupMap(roleGroupMap);
 
         }
+        public IList<RoleGroupMap> GetRoleGroupMap()
+        {
+            var roleGroupAdaptor = new RoleGroupMapAdapter();
+
+            var result = roleGroupAdaptor.GetRoleGroupI();
+
+            return result;
+        }
 
     }
 }

@@ -52,10 +52,13 @@ namespace WarehouseClient
            // MainForm_Load(null, null);
         }
 
-        private void roleGroupMapDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+       
 
-        }
+
+
+
+
+
 
 
 

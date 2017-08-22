@@ -108,6 +108,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleGroupMapManagment\AddRoleGroupMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoleGroupMapManagment\AddRoleGroupMap.Designer.cs">
+      <DependentUpon>AddRoleGroupMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserManagement\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RoleGroupMapManagment\AddRoleGroupMap.resx">
+      <DependentUpon>AddRoleGroupMap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserManagement\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,9 +170,7 @@
       <Name>WarehouseDAL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="RoleGroupMapManagment\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

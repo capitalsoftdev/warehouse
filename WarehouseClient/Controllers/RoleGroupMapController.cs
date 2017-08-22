@@ -4,14 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WarehouseClient.RoleGroupMapManagment;
 
 namespace WarehouseClient
 {
     public partial class MainForm
     {
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void RoleGroupMapDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+           
+        }
+        private void AddRoleGroupMap_Click(object sender, EventArgs e)
+        {
+            AddRoleGroupMap add = new AddRoleGroupMap (this);
+            add.Show();
         }
 
     }
