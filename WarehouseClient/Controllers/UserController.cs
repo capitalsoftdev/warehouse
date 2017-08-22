@@ -30,10 +30,7 @@ namespace WarehouseClient
         }
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var form = new Login();
-            form.Closed += (s, args) => this.Close();
-            form.Show();
+           
         }
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -49,6 +46,14 @@ namespace WarehouseClient
                 us = manage.SelectActiveUser();
             dataGridView1.DataSource = us.ToList();
             dataGridView1.Refresh();
+        }
+        private void SignOutTab_Enter(object sender, EventArgs e)
+        {
+            UserManagement.SignOut signOut = new UserManagement.SignOut(this);
+            signOut.Show();
+        }
+        public void SingOutChangePabControl() {
+            tabControl1.SelectedTab = ProductManagementTab;
         }
     }
 }

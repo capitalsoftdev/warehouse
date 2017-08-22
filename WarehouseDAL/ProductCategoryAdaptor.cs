@@ -20,7 +20,7 @@ namespace WarehouseDAL
         public int CreateOrUpdateProductCategory(ProductCategory product)
         {
             int res = 0;
-            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["LOCAL"].ConnectionString))
+            using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))//ConfigurationManager.ConnectionStrings["LOCAL"].ConnectionString))
             {
                 conn.Open();
 
@@ -61,7 +61,7 @@ namespace WarehouseDAL
 
 
                 }
-                
+
                 return res;
             }
         }
@@ -94,7 +94,13 @@ namespace WarehouseDAL
                             ProductCategory newProductCategory = new ProductCategory();
                             newProductCategory.Id = (int)reader.GetValue(0);//["id"];
                             newProductCategory.Name = (string)reader.GetValue(1);//["name"];
-                            newProductCategory.ParentId = (int)reader.GetValue(2);//["parentId"];
+                            if(reader.GetValue(2) == DBNull.Value )
+                            {
+                                newProductCategory.ParentId = 0;
+                            } else
+                            {
+                                newProductCategory.ParentId = (int)reader.GetValue(2);//["parentId"];
+                            }                            
                             newProductCategory.IsActive = (bool)reader.GetValue(3);//["isActive"];
                             productCategoryList.Add(newProductCategory);
                         }
