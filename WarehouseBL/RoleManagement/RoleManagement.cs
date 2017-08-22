@@ -9,7 +9,7 @@ using WarehouseDAL;
 
 namespace WarehouseBL.RoleManagement
 {
-    class RoleManagement : IRoleManager
+    public class RoleManager : IRoleManager
     {
         public int CreateOrUpdateRole(Role role)
         {
