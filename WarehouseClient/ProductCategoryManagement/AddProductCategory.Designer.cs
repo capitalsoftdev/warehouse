@@ -31,7 +31,7 @@
             this.PCTextBox1 = new System.Windows.Forms.TextBox();
             this.PCLabel1 = new System.Windows.Forms.Label();
             this.PCLabel2 = new System.Windows.Forms.Label();
-            this.addinfo = new System.Windows.Forms.Button();
+            this.addProductCategoryButton = new System.Windows.Forms.Button();
             this.PCNumericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.PCNumericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -64,15 +64,15 @@
             this.PCLabel2.Text = "ParentId";
             this.PCLabel2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // addinfo
+            // addProductCategoryButton
             // 
-            this.addinfo.Location = new System.Drawing.Point(88, 102);
-            this.addinfo.Name = "addinfo";
-            this.addinfo.Size = new System.Drawing.Size(75, 23);
-            this.addinfo.TabIndex = 4;
-            this.addinfo.Text = "Add";
-            this.addinfo.UseVisualStyleBackColor = true;
-            this.addinfo.Click += new System.EventHandler(this.addinfo_Click);
+            this.addProductCategoryButton.Location = new System.Drawing.Point(88, 102);
+            this.addProductCategoryButton.Name = "addProductCategoryButton";
+            this.addProductCategoryButton.Size = new System.Drawing.Size(75, 23);
+            this.addProductCategoryButton.TabIndex = 4;
+            this.addProductCategoryButton.Text = "Add";
+            this.addProductCategoryButton.UseVisualStyleBackColor = true;
+            this.addProductCategoryButton.Click += new System.EventHandler(this.addProductCategoryButton_Click);
             // 
             // PCNumericUpDown1
             // 
@@ -87,7 +87,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(245, 143);
             this.Controls.Add(this.PCNumericUpDown1);
-            this.Controls.Add(this.addinfo);
+            this.Controls.Add(this.addProductCategoryButton);
             this.Controls.Add(this.PCLabel2);
             this.Controls.Add(this.PCLabel1);
             this.Controls.Add(this.PCTextBox1);
@@ -105,7 +105,7 @@
         private System.Windows.Forms.TextBox PCTextBox1;
         private System.Windows.Forms.Label PCLabel1;
         private System.Windows.Forms.Label PCLabel2;
-        private System.Windows.Forms.Button addinfo;
+        private System.Windows.Forms.Button addProductCategoryButton;
         private System.Windows.Forms.NumericUpDown PCNumericUpDown1;
     }
 }

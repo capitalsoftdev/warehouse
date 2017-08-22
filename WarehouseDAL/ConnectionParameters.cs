@@ -10,6 +10,5 @@ namespace WarehouseDAL
     public static class ConnectionParameters
     {
         public static string ConnectionString = @"Server=DESKTOP-DK3JE2O;Database=Warehouse; User Id=sa;Password=1234567;"; //ConfigurationManager.ConnectionStrings["LOCAL"].ConnectionString;//@""
-
     }
 }

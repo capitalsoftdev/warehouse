@@ -19,8 +19,6 @@ namespace WarehouseClient
      public partial class MainForm : Form
     {
 
-        ProductCategoryManager productCategoryManager = new ProductCategoryManager();
-
         public MainForm()
         {
             InitializeComponent();
@@ -46,15 +44,7 @@ namespace WarehouseClient
             //prodManagList = prodManag.GetItem(0, 0, 0);
             //ProductManagmentGridView.DataSource = prodManagList.ToList();
 
-
-
-
-            //
-            //IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
-           // dataGridView2.DataSource = productCategoryList.ToList();
         //
-        IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
-        dataGridView2.DataSource = productCategoryList.ToList();
         }
         //private void DataRefresh()
         //{
@@ -91,17 +81,7 @@ namespace WarehouseClient
 
 
     }
-    private void button1_Click(object sender, EventArgs e)
-    {
-        AddProductCategory add = new AddProductCategory(this);
-        add.Show();
-    }
- 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    AddProductCategory add = new AddProductCategory(this);
-        //    add.Show();
-        //}
+    
 
     private void AddNewItem_Click(object sender, EventArgs e)
     {
@@ -124,6 +104,7 @@ namespace WarehouseClient
     private void ProductManagmentGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
     { }
 
+      
     }
 }
 
