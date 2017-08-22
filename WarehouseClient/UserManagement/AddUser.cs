@@ -53,7 +53,6 @@ namespace WarehouseClient.UserManagement
         private void close1(object sender, FormClosedEventArgs e)
         {
             f.Enabled = true;
-            
         }
      
       
@@ -65,14 +64,7 @@ namespace WarehouseClient.UserManagement
             }
             else
             {
-                label6.Text = "";
-                UserManager user = new UserManager();
-                IList<User> userlist = WarehouseClient.MainForm.SelectUsers();
-                foreach (User oneuser in userlist) {
-                    if (oneuser.Username == textBox1.Text) {
-                        label6.Text = "This username is busy";
-                    }
-                }
+               
             }
         }
 

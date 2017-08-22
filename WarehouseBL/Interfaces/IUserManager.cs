@@ -11,6 +11,5 @@ namespace WarehouseBL
     {
         User Login(string userName, string password);
         IList<User> SelectActiveUser();
-      
     }
 }
