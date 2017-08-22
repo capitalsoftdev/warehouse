@@ -45,7 +45,7 @@
             // 
             // SignOutButtonYes
             // 
-            this.SignOutButtonYes.Location = new System.Drawing.Point(253, 17);
+            this.SignOutButtonYes.Location = new System.Drawing.Point(245, 19);
             this.SignOutButtonYes.Name = "SignOutButtonYes";
             this.SignOutButtonYes.Size = new System.Drawing.Size(75, 23);
             this.SignOutButtonYes.TabIndex = 1;

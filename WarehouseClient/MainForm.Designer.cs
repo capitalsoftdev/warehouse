@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -50,8 +49,10 @@
             this.outToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductManagementTab = new System.Windows.Forms.TabPage();
-            this.DeleteProdManag = new System.Windows.Forms.Button();
-            this.AddNewItemProdManag = new System.Windows.Forms.Button();
+            this.ProductProdManagTabComboBox = new System.Windows.Forms.ComboBox();
+            this.UpdateProductManagmentButton = new System.Windows.Forms.Button();
+            this.DeleteProductManagmentButton = new System.Windows.Forms.Button();
+            this.AddProductManagmentButton = new System.Windows.Forms.Button();
             this.ProductManagmentGridView = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.productDataGridView = new System.Windows.Forms.DataGridView();
@@ -66,6 +67,7 @@
             this.addRole = new System.Windows.Forms.Button();
             this.RoleDataGridView = new System.Windows.Forms.DataGridView();
             this.SignOutTab = new System.Windows.Forms.TabPage();
+            this.UserProdManagTabComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.UserTab.SuspendLayout();
@@ -190,7 +192,6 @@
             // 
             // addToolStripMenuItem
             // 
-            this.addToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("addToolStripMenuItem.Image")));
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.addToolStripMenuItem.Text = "Add...";
@@ -213,8 +214,11 @@
             // 
             // ProductManagementTab
             // 
-            this.ProductManagementTab.Controls.Add(this.DeleteProdManag);
-            this.ProductManagementTab.Controls.Add(this.AddNewItemProdManag);
+            this.ProductManagementTab.Controls.Add(this.UserProdManagTabComboBox);
+            this.ProductManagementTab.Controls.Add(this.ProductProdManagTabComboBox);
+            this.ProductManagementTab.Controls.Add(this.UpdateProductManagmentButton);
+            this.ProductManagementTab.Controls.Add(this.DeleteProductManagmentButton);
+            this.ProductManagementTab.Controls.Add(this.AddProductManagmentButton);
             this.ProductManagementTab.Controls.Add(this.ProductManagmentGridView);
             this.ProductManagementTab.Location = new System.Drawing.Point(4, 22);
             this.ProductManagementTab.Name = "ProductManagementTab";
@@ -223,26 +227,44 @@
             this.ProductManagementTab.TabIndex = 1;
             this.ProductManagementTab.Text = "Product management";
             this.ProductManagementTab.UseVisualStyleBackColor = true;
-            this.ProductManagementTab.Click += new System.EventHandler(this.ProductManagementTab_Click);
             // 
-            // DeleteProdManag
+            // ProductProdManagTabComboBox
             // 
-            this.DeleteProdManag.Location = new System.Drawing.Point(243, 302);
-            this.DeleteProdManag.Name = "DeleteProdManag";
-            this.DeleteProdManag.Size = new System.Drawing.Size(88, 29);
-            this.DeleteProdManag.TabIndex = 2;
-            this.DeleteProdManag.Text = "Delete";
-            this.DeleteProdManag.UseVisualStyleBackColor = true;
+            this.ProductProdManagTabComboBox.FormattingEnabled = true;
+            this.ProductProdManagTabComboBox.Location = new System.Drawing.Point(8, 14);
+            this.ProductProdManagTabComboBox.Name = "ProductProdManagTabComboBox";
+            this.ProductProdManagTabComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ProductProdManagTabComboBox.TabIndex = 4;
             // 
-            // AddNewItemProdManag
+            // UpdateProductManagmentButton
             // 
-            this.AddNewItemProdManag.Location = new System.Drawing.Point(67, 302);
-            this.AddNewItemProdManag.Name = "AddNewItemProdManag";
-            this.AddNewItemProdManag.Size = new System.Drawing.Size(133, 29);
-            this.AddNewItemProdManag.TabIndex = 1;
-            this.AddNewItemProdManag.Text = "AddNewItem";
-            this.AddNewItemProdManag.UseVisualStyleBackColor = true;
-            this.AddNewItemProdManag.Click += new System.EventHandler(this.AddNewItemProdManag_Click);
+            this.UpdateProductManagmentButton.Location = new System.Drawing.Point(380, 302);
+            this.UpdateProductManagmentButton.Name = "UpdateProductManagmentButton";
+            this.UpdateProductManagmentButton.Size = new System.Drawing.Size(99, 23);
+            this.UpdateProductManagmentButton.TabIndex = 3;
+            this.UpdateProductManagmentButton.Text = "Update";
+            this.UpdateProductManagmentButton.UseVisualStyleBackColor = true;
+            this.UpdateProductManagmentButton.Click += new System.EventHandler(this.UpdateProductManagmentButton_Click);
+            // 
+            // DeleteProductManagmentButton
+            // 
+            this.DeleteProductManagmentButton.Location = new System.Drawing.Point(243, 302);
+            this.DeleteProductManagmentButton.Name = "DeleteProductManagmentButton";
+            this.DeleteProductManagmentButton.Size = new System.Drawing.Size(88, 29);
+            this.DeleteProductManagmentButton.TabIndex = 2;
+            this.DeleteProductManagmentButton.Text = "Delete";
+            this.DeleteProductManagmentButton.UseVisualStyleBackColor = true;
+            this.DeleteProductManagmentButton.Click += new System.EventHandler(this.DeleteProductManagmentButton_Click);
+            // 
+            // AddProductManagmentButton
+            // 
+            this.AddProductManagmentButton.Location = new System.Drawing.Point(67, 302);
+            this.AddProductManagmentButton.Name = "AddProductManagmentButton";
+            this.AddProductManagmentButton.Size = new System.Drawing.Size(133, 29);
+            this.AddProductManagmentButton.TabIndex = 1;
+            this.AddProductManagmentButton.Text = "Add";
+            this.AddProductManagmentButton.UseVisualStyleBackColor = true;
+            this.AddProductManagmentButton.Click += new System.EventHandler(this.AddProductManagmentButton_Click);
             // 
             // ProductManagmentGridView
             // 
@@ -447,13 +469,20 @@
             this.SignOutTab.UseVisualStyleBackColor = true;
             this.SignOutTab.Enter += new System.EventHandler(this.SignOutTab_Enter);
             // 
+            // UserProdManagTabComboBox
+            // 
+            this.UserProdManagTabComboBox.FormattingEnabled = true;
+            this.UserProdManagTabComboBox.Location = new System.Drawing.Point(153, 14);
+            this.UserProdManagTabComboBox.Name = "UserProdManagTabComboBox";
+            this.UserProdManagTabComboBox.Size = new System.Drawing.Size(121, 21);
+            this.UserProdManagTabComboBox.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 383);
             this.Controls.Add(this.tabControl1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
@@ -498,10 +527,13 @@
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.DataGridView ProductManagmentGridView;
-        private System.Windows.Forms.Button AddNewItemProdManag;
-        private System.Windows.Forms.Button DeleteProdManag;
+        private System.Windows.Forms.Button AddProductManagmentButton;
+        private System.Windows.Forms.Button DeleteProductManagmentButton;
         private System.Windows.Forms.Button addProductCategoryButton;
         private System.Windows.Forms.DataGridView productCategoryDataGridView;
+        private System.Windows.Forms.Button UpdateProductManagmentButton;
+        private System.Windows.Forms.ComboBox ProductProdManagTabComboBox;
+        private System.Windows.Forms.ComboBox UserProdManagTab;
         private System.Windows.Forms.DataGridView RoleGroupMapDataGridView;
         private System.Windows.Forms.DataGridView productDataGridView;
         private System.Windows.Forms.Button disableProductButton;
@@ -509,6 +541,7 @@
         private System.Windows.Forms.Button addRole;
         private System.Windows.Forms.DataGridView RoleDataGridView;
         private System.Windows.Forms.TabPage SignOutTab;
+        private System.Windows.Forms.ComboBox UserProdManagTabComboBox;
     }
 }
 
