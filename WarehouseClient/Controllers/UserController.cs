@@ -28,10 +28,7 @@ namespace WarehouseClient
             us = manage.SelectActiveUser();
             dataGridView1.DataSource = us.ToList();
         }
-        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
+      
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UserManagement.AddUser add = new UserManagement.AddUser(this);

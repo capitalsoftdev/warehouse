@@ -14,7 +14,7 @@ namespace WarehouseWebService.DataContracts
         private int productCategoryId;
         private string name;
         private int munit;
-        private bool? isActive;
+        private Boolean isActive;
 
         [DataMember]
         public int? Id
@@ -45,7 +45,7 @@ namespace WarehouseWebService.DataContracts
         }
 
         [DataMember]
-        public bool? IsActive
+        public Boolean IsActive
         {
             get { return this.isActive; }
             set { this.isActive = value; }
