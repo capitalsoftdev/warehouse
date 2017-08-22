@@ -61,8 +61,12 @@ namespace WarehouseClient
 
         }
 
-      
+        private void signOutToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("fanfana", "Are you shure", MessageBoxButtons.OKCancel);
+        }
 
+      
 
         //private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         //{
