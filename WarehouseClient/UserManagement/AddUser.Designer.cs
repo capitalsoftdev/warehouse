@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUser));
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtbxpass = new System.Windows.Forms.TextBox();
-            this.txtbxconfirmpass = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.addUserName = new System.Windows.Forms.TextBox();
+            this.addPassword = new System.Windows.Forms.TextBox();
+            this.addConfirmPassword = new System.Windows.Forms.TextBox();
+            this.addRoleGroup = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,37 +54,37 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // addUserName
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.addUserName.Location = new System.Drawing.Point(108, 79);
+            this.addUserName.Name = "addUserName";
+            this.addUserName.Size = new System.Drawing.Size(164, 20);
+            this.addUserName.TabIndex = 1;
+            this.addUserName.TextChanged += new System.EventHandler(this.addUserName_TextChanged);
             // 
-            // txtbxpass
+            // addPassword
             // 
-            this.txtbxpass.Location = new System.Drawing.Point(108, 105);
-            this.txtbxpass.Name = "txtbxpass";
-            this.txtbxpass.Size = new System.Drawing.Size(164, 20);
-            this.txtbxpass.TabIndex = 2;
-            this.txtbxpass.UseSystemPasswordChar = true;
-            this.txtbxpass.TextChanged += new System.EventHandler(this.txtbxpass_TextChanged);
+            this.addPassword.Location = new System.Drawing.Point(108, 105);
+            this.addPassword.Name = "addPassword";
+            this.addPassword.Size = new System.Drawing.Size(164, 20);
+            this.addPassword.TabIndex = 2;
+            this.addPassword.UseSystemPasswordChar = true;
+            this.addPassword.TextChanged += new System.EventHandler(this.txtbxpass_TextChanged);
             // 
-            // txtbxconfirmpass
+            // addConfirmPassword
             // 
-            this.txtbxconfirmpass.Location = new System.Drawing.Point(108, 132);
-            this.txtbxconfirmpass.Name = "txtbxconfirmpass";
-            this.txtbxconfirmpass.Size = new System.Drawing.Size(164, 20);
-            this.txtbxconfirmpass.TabIndex = 3;
-            this.txtbxconfirmpass.UseSystemPasswordChar = true;
-            this.txtbxconfirmpass.TextChanged += new System.EventHandler(this.txtbxconfirmpass_TextChanged);
+            this.addConfirmPassword.Location = new System.Drawing.Point(108, 132);
+            this.addConfirmPassword.Name = "addConfirmPassword";
+            this.addConfirmPassword.Size = new System.Drawing.Size(164, 20);
+            this.addConfirmPassword.TabIndex = 3;
+            this.addConfirmPassword.UseSystemPasswordChar = true;
+            this.addConfirmPassword.TextChanged += new System.EventHandler(this.txtbxconfirmpass_TextChanged);
             // 
-            // comboBox1
+            // addRoleGroup
             // 
-            this.comboBox1.DisplayMember = "2";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.addRoleGroup.DisplayMember = "2";
+            this.addRoleGroup.FormattingEnabled = true;
+            this.addRoleGroup.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -92,10 +92,10 @@
             "5",
             "6",
             "7"});
-            this.comboBox1.Location = new System.Drawing.Point(144, 158);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 21);
-            this.comboBox1.TabIndex = 4;
+            this.addRoleGroup.Location = new System.Drawing.Point(144, 158);
+            this.addRoleGroup.Name = "addRoleGroup";
+            this.addRoleGroup.Size = new System.Drawing.Size(128, 21);
+            this.addRoleGroup.TabIndex = 4;
             // 
             // label1
             // 
@@ -166,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 236);
+            this.ClientSize = new System.Drawing.Size(286, 233);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -174,10 +174,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.txtbxconfirmpass);
-            this.Controls.Add(this.txtbxpass);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.addRoleGroup);
+            this.Controls.Add(this.addConfirmPassword);
+            this.Controls.Add(this.addPassword);
+            this.Controls.Add(this.addUserName);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -194,10 +194,10 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtbxpass;
-        private System.Windows.Forms.TextBox txtbxconfirmpass;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox addUserName;
+        private System.Windows.Forms.TextBox addPassword;
+        private System.Windows.Forms.TextBox addConfirmPassword;
+        private System.Windows.Forms.ComboBox addRoleGroup;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

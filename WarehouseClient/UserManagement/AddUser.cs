@@ -30,13 +30,13 @@ namespace WarehouseClient.UserManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.TextLength>5  && txtbxpass.Text==txtbxconfirmpass.Text && (string)comboBox1.Text!="" && txtbxpass.TextLength > 9)
+            if (addUserName.TextLength>4  && addPassword.Text==addConfirmPassword.Text && addRoleGroup.Text != "" && addPassword.TextLength > 5)
             {
                 WarehouseDAL.DataContracts.User user = new WarehouseDAL.DataContracts.User();
                 user.Id = -1;
-                user.Username = textBox1.Text.ToString();
-                user.Password = txtbxpass.Text.ToString();
-                user.RoleGroupId = Convert.ToInt32(comboBox1.Text);
+                user.Username = addUserName.Text.ToString();
+                user.Password = addPassword.Text.ToString();
+                user.RoleGroupId = Convert.ToInt32(addRoleGroup.Text);
                 WarehouseBL.UserManagement.UserManager manager = new WarehouseBL.UserManagement.UserManager();
                 manager.AddOrInsertUser(user);
 
@@ -54,37 +54,35 @@ namespace WarehouseClient.UserManagement
         {
             f.Enabled = true;
         }
-     
-      
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox1.TextLength < 6)
-            {
-                label6.Text = "The username must be at least 5 characters";
-            }
-            else
-            {
-               
-            }
-        }
 
         private void txtbxconfirmpass_TextChanged(object sender, EventArgs e)
         {
-            if (txtbxpass.Text != txtbxconfirmpass.Text)
+            if (addPassword.Text != addConfirmPassword.Text)
             {
                 label6.Text = "Passwords must match";
             }
             else {
                 label6.Text = "";
-                textBox1_TextChanged(null,null);
+                addUserName_TextChanged(null,null);
             }
         }
 
         private void txtbxpass_TextChanged(object sender, EventArgs e)
         {
-            if (txtbxpass.TextLength < 9)
+            if (addPassword.TextLength < 6)
             {
                 label6.Text = "The password must be at least 10 characters";
+            }
+            else {
+                label6.Text = "";
+            }
+        }
+
+        private void addUserName_TextChanged(object sender, EventArgs e)
+        {
+            if (addUserName.TextLength < 5)
+            {
+                label6.Text = "Min 5 Chars";
             }
             else {
                 label6.Text = "";
