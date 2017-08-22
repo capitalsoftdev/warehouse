@@ -71,7 +71,9 @@
     <Compile Include="Controllers\ProductCategoryController.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductController.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Controllers\ProductManagementController.cs">
       <SubType>Form</SubType>
     </Compile>
