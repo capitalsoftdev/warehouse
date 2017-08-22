@@ -30,6 +30,15 @@ namespace WarehouseBL.ProductManagement
             
         }
 
+        public Dictionary<int, Product> GetActiveProduct()
+        {
+            var productAdaptor = new ProductAdaptor();
+
+            var result = productAdaptor.GetActiveProduct();
+
+            return result;
+        }
+
         public IList<Product> GetProduct()
         {
             var productAdaptor = new ProductAdaptor();

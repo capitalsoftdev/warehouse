@@ -46,6 +46,9 @@
             this.AddProductManagmentButton = new System.Windows.Forms.Button();
             this.ProductManagmentGridView = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.productDataGridView = new System.Windows.Forms.DataGridView();
+            this.disableProductButton = new System.Windows.Forms.Button();
+            this.addNewProductButton = new System.Windows.Forms.Button();
             this.RoleMapTab = new System.Windows.Forms.TabPage();
             this.RoleGroupMapDataGridView = new System.Windows.Forms.DataGridView();
             this.ProductCategoryTab = new System.Windows.Forms.TabPage();
@@ -62,6 +65,8 @@
             this.menuStrip1.SuspendLayout();
             this.ProductManagementTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductManagmentGridView)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             this.RoleMapTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoleGroupMapDataGridView)).BeginInit();
             this.ProductCategoryTab.SuspendLayout();
@@ -253,12 +258,43 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.productDataGridView);
+            this.tabPage3.Controls.Add(this.disableProductButton);
+            this.tabPage3.Controls.Add(this.addNewProductButton);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(950, 356);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Product";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
+            // 
+            // productDataGridView
+            // 
+            this.productDataGridView.Location = new System.Drawing.Point(13, 49);
+            this.productDataGridView.Name = "productDataGridView";
+            this.productDataGridView.Size = new System.Drawing.Size(561, 194);
+            this.productDataGridView.TabIndex = 0;
+            // 
+            // disableProductButton
+            // 
+            this.disableProductButton.Location = new System.Drawing.Point(171, 8);
+            this.disableProductButton.Name = "disableProductButton";
+            this.disableProductButton.Size = new System.Drawing.Size(159, 24);
+            this.disableProductButton.TabIndex = 1;
+            this.disableProductButton.Text = "Disable product";
+            this.disableProductButton.UseVisualStyleBackColor = true;
+            this.disableProductButton.Click += new System.EventHandler(this.disableProductButton_Click);
+            // 
+            // addNewProductButton
+            // 
+            this.addNewProductButton.Location = new System.Drawing.Point(13, 7);
+            this.addNewProductButton.Name = "addNewProductButton";
+            this.addNewProductButton.Size = new System.Drawing.Size(133, 26);
+            this.addNewProductButton.TabIndex = 0;
+            this.addNewProductButton.Text = "Add new product";
+            this.addNewProductButton.UseVisualStyleBackColor = true;
+            this.addNewProductButton.Click += new System.EventHandler(this.addNewProductButton_Click);
             // 
             // RoleMapTab
             // 
@@ -371,6 +407,8 @@
             this.menuStrip1.PerformLayout();
             this.ProductManagementTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductManagmentGridView)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
             this.RoleMapTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RoleGroupMapDataGridView)).EndInit();
             this.ProductCategoryTab.ResumeLayout(false);
@@ -407,6 +445,9 @@
         private System.Windows.Forms.ComboBox ProductProdManagTabComboBox;
         private System.Windows.Forms.ComboBox UserProdManagTab;
         private System.Windows.Forms.DataGridView RoleGroupMapDataGridView;
+        private System.Windows.Forms.DataGridView productDataGridView;
+        private System.Windows.Forms.Button disableProductButton;
+        private System.Windows.Forms.Button addNewProductButton;
         private System.Windows.Forms.Button addRole;
         private System.Windows.Forms.DataGridView RoleDataGridView;
         private System.Windows.Forms.TabPage SignOutTab;
