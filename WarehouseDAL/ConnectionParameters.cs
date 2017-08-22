@@ -9,6 +9,6 @@ namespace WarehouseDAL
 {
     public static class ConnectionParameters
     {
-        public static string ConnectionString = @"Server=DESKTOP-3FSOTT0\SQLEXPRESS;Database=Warehouse; User Id=sa;Password=123456;"; //ConfigurationManager.ConnectionStrings["LOCAL"].ConnectionString;//@""
+        public static string ConnectionString = ConfigurationManager.ConnectionStrings["LOCAL"].ConnectionString;//@""
     }
 }

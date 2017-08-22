@@ -60,9 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionParameters.cs" />
+    <Compile Include="DataContracts\Munit.cs" />
     <Compile Include="DataContracts\Product.cs" />
     <Compile Include="DataContracts\ProductCategory.cs" />
     <Compile Include="DataContracts\ProductManagment.cs" />
+    <Compile Include="MunitAdaptor.cs" />
     <Compile Include="ProductAdaptor.cs" />
     <Compile Include="RoleAdapter.cs" />
     <Compile Include="DataContracts\Role.cs" />
