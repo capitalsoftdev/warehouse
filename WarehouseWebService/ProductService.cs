@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using WarehouseBL.ProductManagement;
-
+using WarehouseWebService.DataContracts;
 
 namespace WarehouseWebService
 {
-    class ProductService : IProductService
+    public partial class WarehouseService
     {
         public int CreateOrUpdateProduct(Product product)
         {

@@ -8,10 +8,10 @@ namespace Logger
 {
     public enum LogLevel
     {
-        Debug =1,
-        Trace,
-        Info,
-        Warn,
-        Error
+        ERROR = 0,
+        WARN,
+        INFO,
+        DEBUG,
+        TRACE
     }
 }

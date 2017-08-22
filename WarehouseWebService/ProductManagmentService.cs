@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WarehouseBL;
 using WarehouseBL.ProductManagmentManagment;
+using WarehouseWebService.DataContracts;
+
 namespace WarehouseWebService
 {
-    class ProductManagmentService : IProductManagmentService
+    public partial class WarehouseService
     {
         public int CreateOrUpdate(ProductManagment prMn)
         {
