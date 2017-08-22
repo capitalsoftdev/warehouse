@@ -40,7 +40,7 @@ namespace WarehouseClient.UserManagement
         {
             sendedForm.Enabled = true;
             sendedForm.SingOutChangePabControl();
-            this.Close();
+
         }
     }
 }
