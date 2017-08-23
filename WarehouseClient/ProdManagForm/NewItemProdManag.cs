@@ -35,17 +35,17 @@ namespace WarehouseClient.ProdManagForm
                 ProductComboBox.Items.Add(elem.Value.Name);
             }
 
-         //   var productCategorySelect = ((IList<ProductCategory>)CategoryComboBox.Tag).Where(p => p.Name == CategoryComboBox.Text).ToList()[0];
+            var productCategorySelect = ((IList<ProductCategory>)CategoryComboBox.Tag).Where(p => p.Name == CategoryComboBox.Text).ToList()[0];
+          
+            ////add elems in ActionComboBox
+            //ActionComboBox.Items.Add(ActionProduct.Acceptance);
+            //ActionComboBox.Items.Add(ActionProduct.Ouptut);
+            //ActionComboBox.Items.Add(ActionProduct.WriteOff);
 
-            //add elems in ActionComboBox
-            ActionComboBox.Items.Add(ActionProduct.Acceptance);
-            ActionComboBox.Items.Add(ActionProduct.Ouptut);
-            ActionComboBox.Items.Add(ActionProduct.WriteOff);
-
-            var productCategoryBL = new ProductCategoryManager();
-            var productCategoryData = productCategoryBL.GetAllProductCategories();
-            CategoryComboBox.DataSource = productCategoryData.Select(p => p.Name).ToList();
-            CategoryComboBox.Tag = productCategoryData;
+            //var productCategoryBL = new ProductCategoryManager();
+            //var productCategoryData = productCategoryBL.GetAllProductCategories();
+            //CategoryComboBox.DataSource = productCategoryData.Select(p => p.Name).ToList();
+            //CategoryComboBox.Tag = productCategoryData;
         }
 
         private void AddItemProductManagment_Click(object sender, EventArgs e)
