@@ -203,14 +203,6 @@
             this.UserProdManagTabComboBox.Size = new System.Drawing.Size(121, 21);
             this.UserProdManagTabComboBox.TabIndex = 4;
             // 
-            // UserProdManagTabComboBox
-            // 
-            this.UserProdManagTabComboBox.FormattingEnabled = true;
-            this.UserProdManagTabComboBox.Location = new System.Drawing.Point(153, 14);
-            this.UserProdManagTabComboBox.Name = "UserProdManagTabComboBox";
-            this.UserProdManagTabComboBox.Size = new System.Drawing.Size(121, 21);
-            this.UserProdManagTabComboBox.TabIndex = 4;
-            // 
             // ProductProdManagTabComboBox
             // 
             this.ProductProdManagTabComboBox.FormattingEnabled = true;
@@ -288,10 +280,11 @@
             // 
             // productDataGridView
             // 
-            this.productDataGridView.Location = new System.Drawing.Point(13, 49);
+            this.productDataGridView.Location = new System.Drawing.Point(13, 51);
             this.productDataGridView.Name = "productDataGridView";
             this.productDataGridView.Size = new System.Drawing.Size(561, 194);
             this.productDataGridView.TabIndex = 0;
+            this.productDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productDataGridView_CellDoubleClick);
             // 
             // disableProductButton
             // 
