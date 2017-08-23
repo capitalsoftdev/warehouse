@@ -97,5 +97,6 @@
     <Build Include="dbo\Stored Procedures\GetRoleGroup.sql" />
     <Build Include="dbo\Stored Procedures\CreateOrUpdateRoleGroup.sql" />
     <Build Include="dbo\Stored Procedures\DisableRoleGroup.sql" />
+    <Build Include="dbo\Stored Procedures\Copy of AddOrUpdateUser.sql" />
   </ItemGroup>
 </Project>
