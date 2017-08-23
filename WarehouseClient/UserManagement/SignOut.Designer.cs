@@ -75,6 +75,7 @@
             this.Name = "SignOut";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignOut";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignOut_FormClosing_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

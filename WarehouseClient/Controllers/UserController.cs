@@ -13,25 +13,25 @@ namespace WarehouseClient
     {
         User loginUser;
         UserManager manage = new UserManager();
-        static IList<User> us = null;
+        static IList<User> userList = null;
         public static IList<User> SelectUsers()
         {
-            return us;
+            return userList;
         }
         public MainForm(User user)
         {
             InitializeComponent();
             loginUser = user;
         }
-        public void DataRefresh()
+        public void ReloadUserGrid(bool reload = false)
         {
-            us = manage.SelectActiveUser();
-            dataGridView1.DataSource = us.ToList();
+            if (reload)
+                userList = manage.SelectActiveUser();
+            dataGridView1.DataSource = userList.ToList();
+            dataGridView1.Refresh();
         }
-        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
+    
+
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UserManagement.AddUser add = new UserManagement.AddUser(this);
@@ -39,14 +39,33 @@ namespace WarehouseClient
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+
+            if (e.ColumnIndex == 7 && e.RowIndex!=-1)
+            {
+                if ((bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value)
+                {
+                    DialogResult result = MessageBox.Show("DeActivate ?", "IsActive", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        UserManager manager = new UserManager();
+                        manager.ActivateOrDeActivate((Int32)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                    }
+                }
+                else 
+                {
+                    DialogResult result = MessageBox.Show("Activate ?", "IsActive", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        UserManager manager = new UserManager();
+                        manager.ActivateOrDeActivate((Int32)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                    }
+
+                }
+                //  MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                ReloadUserGrid(true);
+            }
         }
-        public void ReloadUserGrid(bool reload=false) {
-            if(reload)
-                us = manage.SelectActiveUser();
-            dataGridView1.DataSource = us.ToList();
-            dataGridView1.Refresh();
-        }
+       
         private void SignOutTab_Enter(object sender, EventArgs e)
         {
             UserManagement.SignOut signOut = new UserManagement.SignOut(this);

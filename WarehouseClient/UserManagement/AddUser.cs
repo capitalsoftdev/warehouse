@@ -32,12 +32,12 @@ namespace WarehouseClient.UserManagement
         {
             if (addUserName.TextLength>4  && addPassword.Text==addConfirmPassword.Text && addRoleGroup.Text != "" && addPassword.TextLength > 5)
             {
-                WarehouseDAL.DataContracts.User user = new WarehouseDAL.DataContracts.User();
+                User user = new User();
                 user.Id = -1;
                 user.Username = addUserName.Text.ToString();
                 user.Password = addPassword.Text.ToString();
                 user.RoleGroupId = Convert.ToInt32(addRoleGroup.Text);
-                WarehouseBL.UserManagement.UserManager manager = new WarehouseBL.UserManagement.UserManager();
+                UserManager manager = new UserManager();
                 manager.AddOrInsertUser(user);
 
                 f.Enabled = true;
@@ -71,7 +71,7 @@ namespace WarehouseClient.UserManagement
         {
             if (addPassword.TextLength < 6)
             {
-                label6.Text = "The password must be at least 10 characters";
+                label6.Text = "The password must be at least 6 characters";
             }
             else {
                 label6.Text = "";

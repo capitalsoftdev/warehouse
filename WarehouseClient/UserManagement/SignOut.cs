@@ -16,8 +16,9 @@ namespace WarehouseClient.UserManagement
         public SignOut(MainForm sendedForm)
         {
            this.sendedForm = sendedForm;
-            sendedForm.Enabled = false;
+           sendedForm.Enabled = false;
             InitializeComponent();
+            
         }
 
         private void SignOutButtonYes_Click(object sender, EventArgs e)
@@ -36,11 +37,12 @@ namespace WarehouseClient.UserManagement
             this.Close();
         }
 
-        private void SignOut_FormClosing(object sender, FormClosingEventArgs e)
+      
+
+        private void SignOut_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             sendedForm.Enabled = true;
             sendedForm.SingOutChangePabControl();
-
         }
     }
 }

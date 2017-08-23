@@ -26,12 +26,13 @@ namespace WarehouseClient
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            LoadAllStaticInfo();
             switch (loginUser.RoleGroupId)
             {
                 case 1: {
                         tabControl1.SelectedTab = UserTab;
-                        us = manage.SelectActiveUser();
-                        dataGridView1.DataSource = us.ToList();
+                        userList = manage.SelectActiveUser();
+                        dataGridView1.DataSource = userList.ToList();
                         dataGridView1.Columns[2].Visible = false;
                         dataGridView1.Columns[0].Visible = false;
                         break;
@@ -61,11 +62,6 @@ namespace WarehouseClient
 
         }
 
-       
-
-
-
-
         //private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         //{
         //    this.Hide();
@@ -80,5 +76,24 @@ namespace WarehouseClient
         //    add.Show();
         //}
 
+        private static void LoadAllStaticInfo()
+        {
+            #region Load Product Categories
+
+            var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
+
+            var allCats = prodCategoryBL.GetAllProductCategories();
+
+            Constants.ApplicationData.ProductCategory = new Dictionary<int, ProductCategory>();
+
+            foreach (var item in allCats)
+            {
+                Constants.ApplicationData.ProductCategory.Add(item.Id, item);
+            }
+            
+            #endregion
+        }
+
+        
     }
 }
