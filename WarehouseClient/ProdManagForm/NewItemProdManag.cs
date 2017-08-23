@@ -10,33 +10,47 @@ using System.Windows.Forms;
 using WarehouseBL.ProductCategoryManagement;
 using WarehouseClient.Constants;
 using WarehouseDAL.DataContracts;
+using WarehouseClient.Helpers;
+using WarehouseBL.Interfaces;
+using WarehouseBL.ProductManagmentManagment;
 
 namespace WarehouseClient.ProdManagForm
 {
     public partial class NewItemProdManag : Form
     {
-        public NewItemProdManag()
+        MainForm sendedForm;
+        IProductManagmentManager prodManagManager = null;  
+        public NewItemProdManag(MainForm sendedForm)
         {
+            this.sendedForm = sendedForm;
             InitializeComponent();
         }
 
+
         private void NewItemProdManag_Load(object sender, EventArgs e)
         {
-             
-            //add elems in ProductCategory  ComboBox
+
+            //add elems in ProductCategory ComboBox
             foreach (var elem in WarehouseClient.Constants.ApplicationData.ProductCategory)
             {
                 CategoryComboBox.Items.Add(elem.Value.Name);
             }
-           
+
             //add elems in Product ComboBox
-            foreach(var elem in WarehouseClient.Constants.ApplicationData.Products)
+            foreach (var elem in WarehouseClient.Constants.ApplicationData.Products)
             {
                 ProductComboBox.Items.Add(elem.Value.Name);
             }
 
-            var productCategorySelect = ((IList<ProductCategory>)CategoryComboBox.Tag).Where(p => p.Name == CategoryComboBox.Text).ToList()[0];
-          
+            //var potentialParents = Constants.ApplicationData.ProductCategory.Where(
+            //   p => (p.Value.ParentId == 0 && p.Value.IsActive));
+            //foreach (var prodCat in potentialParents)
+            //{
+            //    CategoryComboBox.Items.Add(new ComboBoxKeyValuePair(prodCat.Value, prodCat.Value.Name));
+            //}
+
+
+
             ////add elems in ActionComboBox
             //ActionComboBox.Items.Add(ActionProduct.Acceptance);
             //ActionComboBox.Items.Add(ActionProduct.Ouptut);
@@ -50,7 +64,42 @@ namespace WarehouseClient.ProdManagForm
 
         private void AddItemProductManagment_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(CategoryComboBox.SelectedItem.ToString());
+            //get Id
+            //var selItem = CategoryComboBox.SelectedItem;
+
+            var productSelect = ProductComboBox.SelectedItem.ToString();
+            var productId = -1;
+            foreach(var prodSel in WarehouseClient.Constants.ApplicationData.Products)
+            {
+                if(productSelect == prodSel.Value.Name)
+                {
+                    productId = prodSel.Key;
+                }
+            }
+
+
+            var quantity = Convert.ToInt32(QuantityTextBox.Text);
+      //      var uresId = this.sendedForm.LoginUser.Id;
+            var reason = Convert.ToString(ReasonLabel.Text);
+            var price = Convert.ToInt32(PriceTextBox.Text);
+            var supplierid = Convert.ToInt32(SupplierIdTextBox.Text);
+            var brand = Convert.ToString(BrandTextBox.Text);
+
+            prodManagManager = new ProductManagmentManager();
+            WarehouseDAL.DataContracts.ProductManagment prodManag = new WarehouseDAL.DataContracts.ProductManagment();
+            prodManag.ProductId = productId;
+            prodManag.Quantity = quantity;
+            prodManag.ActionDate = DateTime.Now;
+            prodManag.Action = Convert.ToInt32(ActionProduct.Acceptance);
+            prodManag.UserId = 1;
+            prodManag.Reason = reason;
+            prodManag.Price = price;
+            prodManag.SupplierId = supplierid;
+            prodManag.Brand = brand;
+            prodManag.LastModifyDate = DateTime.Now;
+            prodManag.IsActive = true;
+            prodManagManager.CreateOrUpdate(prodManag);
+            MessageBox.Show(productId.ToString());
         }
     }
 }
