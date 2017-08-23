@@ -33,7 +33,6 @@
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.ProductLabel = new System.Windows.Forms.Label();
             this.QuantityLabel = new System.Windows.Forms.Label();
-            this.ActionLabel = new System.Windows.Forms.Label();
             this.UserLabel = new System.Windows.Forms.Label();
             this.ReasonLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
@@ -43,9 +42,8 @@
             this.BrandTextBox = new System.Windows.Forms.TextBox();
             this.PriceTextBox = new System.Windows.Forms.TextBox();
             this.BrandLabel = new System.Windows.Forms.Label();
-            this.SupplierComboBox = new System.Windows.Forms.ComboBox();
             this.AddItemProductManagment = new System.Windows.Forms.Button();
-            this.ActionComboBox = new System.Windows.Forms.ComboBox();
+            this.SupplierIdTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // CategoryComboBox
@@ -90,15 +88,6 @@
             this.QuantityLabel.Size = new System.Drawing.Size(46, 13);
             this.QuantityLabel.TabIndex = 4;
             this.QuantityLabel.Text = "Quantity";
-            // 
-            // ActionLabel
-            // 
-            this.ActionLabel.AutoSize = true;
-            this.ActionLabel.Location = new System.Drawing.Point(12, 101);
-            this.ActionLabel.Name = "ActionLabel";
-            this.ActionLabel.Size = new System.Drawing.Size(37, 13);
-            this.ActionLabel.TabIndex = 6;
-            this.ActionLabel.Text = "Action";
             // 
             // UserLabel
             // 
@@ -172,14 +161,6 @@
             this.BrandLabel.TabIndex = 23;
             this.BrandLabel.Text = "Brand";
             // 
-            // SupplierComboBox
-            // 
-            this.SupplierComboBox.FormattingEnabled = true;
-            this.SupplierComboBox.Location = new System.Drawing.Point(88, 221);
-            this.SupplierComboBox.Name = "SupplierComboBox";
-            this.SupplierComboBox.Size = new System.Drawing.Size(121, 21);
-            this.SupplierComboBox.TabIndex = 26;
-            // 
             // AddItemProductManagment
             // 
             this.AddItemProductManagment.Location = new System.Drawing.Point(353, 211);
@@ -190,22 +171,21 @@
             this.AddItemProductManagment.UseVisualStyleBackColor = true;
             this.AddItemProductManagment.Click += new System.EventHandler(this.AddItemProductManagment_Click);
             // 
-            // ActionComboBox
+            // SupplierIdTextBox
             // 
-            this.ActionComboBox.FormattingEnabled = true;
-            this.ActionComboBox.Location = new System.Drawing.Point(67, 93);
-            this.ActionComboBox.Name = "ActionComboBox";
-            this.ActionComboBox.Size = new System.Drawing.Size(121, 21);
-            this.ActionComboBox.TabIndex = 28;
+            this.SupplierIdTextBox.Location = new System.Drawing.Point(98, 221);
+            this.SupplierIdTextBox.Name = "SupplierIdTextBox";
+            this.SupplierIdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.SupplierIdTextBox.TabIndex = 28;
+            this.SupplierIdTextBox.UseWaitCursor = true;
             // 
             // NewItemProdManag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 295);
-            this.Controls.Add(this.ActionComboBox);
+            this.Controls.Add(this.SupplierIdTextBox);
             this.Controls.Add(this.AddItemProductManagment);
-            this.Controls.Add(this.SupplierComboBox);
             this.Controls.Add(this.BrandLabel);
             this.Controls.Add(this.PriceTextBox);
             this.Controls.Add(this.BrandTextBox);
@@ -215,7 +195,6 @@
             this.Controls.Add(this.PriceLabel);
             this.Controls.Add(this.ReasonLabel);
             this.Controls.Add(this.UserLabel);
-            this.Controls.Add(this.ActionLabel);
             this.Controls.Add(this.QuantityLabel);
             this.Controls.Add(this.ProductLabel);
             this.Controls.Add(this.CategoryLabel);
@@ -236,7 +215,6 @@
         private System.Windows.Forms.Label CategoryLabel;
         private System.Windows.Forms.Label ProductLabel;
         private System.Windows.Forms.Label QuantityLabel;
-        private System.Windows.Forms.Label ActionLabel;
         private System.Windows.Forms.Label UserLabel;
         private System.Windows.Forms.Label ReasonLabel;
         private System.Windows.Forms.Label PriceLabel;
@@ -246,8 +224,7 @@
         private System.Windows.Forms.TextBox BrandTextBox;
         private System.Windows.Forms.TextBox PriceTextBox;
         private System.Windows.Forms.Label BrandLabel;
-        private System.Windows.Forms.ComboBox SupplierComboBox;
         private System.Windows.Forms.Button AddItemProductManagment;
-        private System.Windows.Forms.ComboBox ActionComboBox;
+        private System.Windows.Forms.TextBox SupplierIdTextBox;
     }
 }

@@ -15,22 +15,6 @@ namespace WarehouseClient
     {
         IProductManagmentManager prodManag = new ProductManagmentManager();
         static IList<ProductManagment> prodManagList = null;
-        //private void tabControl1_Click(object sender, EventArgs e)
-        //{
-        //    if (tabControl1.SelectedIndex == 1)
-        //    {
-        //        prodManagList = prodManag.GetItem(0, 0, 0);
-        //        if (prodManagList != null)
-        //        {
-        //            ProductManagmentGridView.DataSource = prodManagList.ToList();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Empity list");
-        //        }
-        //    }
-
-        //}
 
         
         IList<ProductManagment> GetItems(int id, int productId, int userId)
@@ -40,8 +24,8 @@ namespace WarehouseClient
         }
         private void ProductManagementTab_Enter(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 1)
-            {                
+           // if (tabControl1.SelectedIndex == 1)
+           // {                
                 prodManagList = GetItems(0, 0, 0);
                 if (prodManagList != null)
                 {
@@ -51,14 +35,15 @@ namespace WarehouseClient
                 {
                     MessageBox.Show("Empity list");
                 }
-            }
+           // }
 
         }
 
 
         private void AddProductManagmentButton_Click(object sender, EventArgs e)
         {
-            NewItemProdManag newItemForm = new NewItemProdManag();
+          //  var id = this.loginUser.Id;
+            NewItemProdManag newItemForm = new NewItemProdManag(this);
             newItemForm.Show();
         }
 
