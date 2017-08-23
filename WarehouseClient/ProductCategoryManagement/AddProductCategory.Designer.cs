@@ -32,8 +32,7 @@
             this.PCLabel1 = new System.Windows.Forms.Label();
             this.PCLabel2 = new System.Windows.Forms.Label();
             this.addProductCategoryButton = new System.Windows.Forms.Button();
-            this.PCNumericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.PCNumericUpDown1)).BeginInit();
+            this.productCategoryComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // PCTextBox1
@@ -74,19 +73,20 @@
             this.addProductCategoryButton.UseVisualStyleBackColor = true;
             this.addProductCategoryButton.Click += new System.EventHandler(this.addProductCategoryButton_Click);
             // 
-            // PCNumericUpDown1
+            // productCategoryComboBox
             // 
-            this.PCNumericUpDown1.Location = new System.Drawing.Point(98, 54);
-            this.PCNumericUpDown1.Name = "PCNumericUpDown1";
-            this.PCNumericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.PCNumericUpDown1.TabIndex = 5;
+            this.productCategoryComboBox.FormattingEnabled = true;
+            this.productCategoryComboBox.Location = new System.Drawing.Point(98, 54);
+            this.productCategoryComboBox.Name = "productCategoryComboBox";
+            this.productCategoryComboBox.Size = new System.Drawing.Size(121, 21);
+            this.productCategoryComboBox.TabIndex = 6;
             // 
             // AddProductCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(245, 143);
-            this.Controls.Add(this.PCNumericUpDown1);
+            this.Controls.Add(this.productCategoryComboBox);
             this.Controls.Add(this.addProductCategoryButton);
             this.Controls.Add(this.PCLabel2);
             this.Controls.Add(this.PCLabel1);
@@ -94,7 +94,7 @@
             this.Name = "AddProductCategory";
             this.Text = "AddProductCategory";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddProductCategory_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.PCNumericUpDown1)).EndInit();
+            this.Load += new System.EventHandler(this.AddProductCategory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,6 +106,6 @@
         private System.Windows.Forms.Label PCLabel1;
         private System.Windows.Forms.Label PCLabel2;
         private System.Windows.Forms.Button addProductCategoryButton;
-        private System.Windows.Forms.NumericUpDown PCNumericUpDown1;
+        private System.Windows.Forms.ComboBox productCategoryComboBox;
     }
 }

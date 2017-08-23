@@ -28,16 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.UserTab = new System.Windows.Forms.TabPage();
@@ -46,8 +36,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.outToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductManagementTab = new System.Windows.Forms.TabPage();
             this.UserProdManagTabComboBox = new System.Windows.Forms.ComboBox();
             this.ProductProdManagTabComboBox = new System.Windows.Forms.ComboBox();
@@ -68,7 +56,6 @@
             this.addRole = new System.Windows.Forms.Button();
             this.RoleDataGridView = new System.Windows.Forms.DataGridView();
             this.SignOutTab = new System.Windows.Forms.TabPage();
-            
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.UserTab.SuspendLayout();
@@ -93,26 +80,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.Location = new System.Drawing.Point(10, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 120;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(353, 280);
@@ -135,7 +108,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(859, 339);
+            this.tabControl1.Size = new System.Drawing.Size(958, 382);
             this.tabControl1.TabIndex = 1;
             // 
             // UserTab
@@ -175,8 +148,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.userToolStripMenuItem,
-            this.outToolStripMenuItem});
+            this.userToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 3);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(944, 24);
@@ -198,21 +170,6 @@
             this.addToolStripMenuItem.Text = "Add...";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
-            // outToolStripMenuItem
-            // 
-            this.outToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.signOutToolStripMenuItem});
-            this.outToolStripMenuItem.Name = "outToolStripMenuItem";
-            this.outToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.outToolStripMenuItem.Text = "Out";
-            // 
-            // signOutToolStripMenuItem
-            // 
-            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.signOutToolStripMenuItem.Text = "Sign out";
-            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
-            // 
             // ProductManagementTab
             // 
             this.ProductManagementTab.Controls.Add(this.UserProdManagTabComboBox);
@@ -224,10 +181,18 @@
             this.ProductManagementTab.Location = new System.Drawing.Point(4, 22);
             this.ProductManagementTab.Name = "ProductManagementTab";
             this.ProductManagementTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ProductManagementTab.Size = new System.Drawing.Size(953, 356);
+            this.ProductManagementTab.Size = new System.Drawing.Size(950, 356);
             this.ProductManagementTab.TabIndex = 1;
             this.ProductManagementTab.Text = "Product management";
             this.ProductManagementTab.UseVisualStyleBackColor = true;
+            // 
+            // UserProdManagTabComboBox
+            // 
+            this.UserProdManagTabComboBox.FormattingEnabled = true;
+            this.UserProdManagTabComboBox.Location = new System.Drawing.Point(153, 14);
+            this.UserProdManagTabComboBox.Name = "UserProdManagTabComboBox";
+            this.UserProdManagTabComboBox.Size = new System.Drawing.Size(121, 21);
+            this.UserProdManagTabComboBox.TabIndex = 4;
             // 
             // ProductProdManagTabComboBox
             // 
@@ -269,23 +234,7 @@
             // 
             // ProductManagmentGridView
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProductManagmentGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.ProductManagmentGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProductManagmentGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.ProductManagmentGridView.Location = new System.Drawing.Point(8, 41);
             this.ProductManagmentGridView.Name = "ProductManagmentGridView";
             this.ProductManagmentGridView.Size = new System.Drawing.Size(936, 178);
@@ -298,7 +247,7 @@
             this.tabPage3.Controls.Add(this.addNewProductButton);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(953, 356);
+            this.tabPage3.Size = new System.Drawing.Size(950, 356);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Product";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -336,35 +285,19 @@
             this.RoleMapTab.Controls.Add(this.RoleGroupMapDataGridView);
             this.RoleMapTab.Location = new System.Drawing.Point(4, 22);
             this.RoleMapTab.Name = "RoleMapTab";
-            this.RoleMapTab.Size = new System.Drawing.Size(851, 313);
+            this.RoleMapTab.Size = new System.Drawing.Size(950, 356);
             this.RoleMapTab.TabIndex = 3;
             this.RoleMapTab.Text = "RoleGroupMap Manager";
             this.RoleMapTab.UseVisualStyleBackColor = true;
             // 
             // RoleGroupMapDataGridView
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RoleGroupMapDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.RoleGroupMapDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.RoleGroupMapDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
-            this.RoleGroupMapDataGridView.Location = new System.Drawing.Point(0, 3);
+            this.RoleGroupMapDataGridView.Location = new System.Drawing.Point(3, 3);
             this.RoleGroupMapDataGridView.Name = "RoleGroupMapDataGridView";
             this.RoleGroupMapDataGridView.Size = new System.Drawing.Size(240, 150);
             this.RoleGroupMapDataGridView.TabIndex = 0;
-            this.RoleGroupMapDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RoleGroupMapDataGridView_CellContentClick_1);
+            this.RoleGroupMapDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roleGroupMapDataGridView_CellContentClick);
             // 
             // ProductCategoryTab
             // 
@@ -372,7 +305,7 @@
             this.ProductCategoryTab.Controls.Add(this.productCategoryDataGridView);
             this.ProductCategoryTab.Location = new System.Drawing.Point(4, 22);
             this.ProductCategoryTab.Name = "ProductCategoryTab";
-            this.ProductCategoryTab.Size = new System.Drawing.Size(953, 356);
+            this.ProductCategoryTab.Size = new System.Drawing.Size(950, 356);
             this.ProductCategoryTab.TabIndex = 4;
             this.ProductCategoryTab.Text = "Product Category";
             this.ProductCategoryTab.UseVisualStyleBackColor = true;
@@ -391,23 +324,7 @@
             // productCategoryDataGridView
             // 
             this.productCategoryDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productCategoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.productCategoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productCategoryDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.productCategoryDataGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.productCategoryDataGridView.Location = new System.Drawing.Point(8, 12);
             this.productCategoryDataGridView.Name = "productCategoryDataGridView";
@@ -420,7 +337,7 @@
             this.RoleTab.Controls.Add(this.RoleDataGridView);
             this.RoleTab.Location = new System.Drawing.Point(4, 22);
             this.RoleTab.Name = "RoleTab";
-            this.RoleTab.Size = new System.Drawing.Size(953, 356);
+            this.RoleTab.Size = new System.Drawing.Size(950, 356);
             this.RoleTab.TabIndex = 5;
             this.RoleTab.Text = "Role";
             this.RoleTab.UseVisualStyleBackColor = true;
@@ -438,23 +355,7 @@
             // 
             // RoleDataGridView
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RoleDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.RoleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.RoleDataGridView.DefaultCellStyle = dataGridViewCellStyle10;
             this.RoleDataGridView.Location = new System.Drawing.Point(9, 13);
             this.RoleDataGridView.Name = "RoleDataGridView";
             this.RoleDataGridView.Size = new System.Drawing.Size(348, 317);
@@ -464,7 +365,7 @@
             // 
             this.SignOutTab.Location = new System.Drawing.Point(4, 22);
             this.SignOutTab.Name = "SignOutTab";
-            this.SignOutTab.Size = new System.Drawing.Size(953, 356);
+            this.SignOutTab.Size = new System.Drawing.Size(950, 356);
             this.SignOutTab.TabIndex = 6;
             this.SignOutTab.Text = "Sign out";
             this.SignOutTab.UseVisualStyleBackColor = true;
@@ -474,7 +375,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 340);
+            this.ClientSize = new System.Drawing.Size(958, 383);
             this.Controls.Add(this.tabControl1);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -516,8 +417,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem outToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.DataGridView ProductManagmentGridView;
         private System.Windows.Forms.Button AddProductManagmentButton;

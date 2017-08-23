@@ -13,11 +13,16 @@ namespace WarehouseClient
     {
         private void ProductCategoryTab_Enter(object sender, EventArgs e)
         {
-        ProductCategoryManager productCategoryManager = new ProductCategoryManager();
-        IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
-        productCategoryDataGridView.DataSource = productCategoryList.ToList();
+        
+            ProductCategoryRefresh();
         }
 
+        public void ProductCategoryRefresh()
+        {
+            ProductCategoryManager productCategoryManager = new ProductCategoryManager();
+            IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
+            productCategoryDataGridView.DataSource = productCategoryList.ToList();
+        }
         private void addProductCategoryButton_Click(object sender, EventArgs e)
         {
             AddProductCategory add = new AddProductCategory(this);
