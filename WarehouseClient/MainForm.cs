@@ -12,6 +12,7 @@ using WarehouseDAL.DataContracts;
 using WarehouseClient.ProductCategoryManagement;
 using WarehouseBL.ProductCategoryManagement;
 using WarehouseClient.ProdManagForm;
+using WarehouseBL.ProductManagement;
 //using WarehouseBL.ProductCategoryManagement;
 
 namespace WarehouseClient
@@ -91,10 +92,18 @@ namespace WarehouseClient
             {
                 Constants.ApplicationData.ProductCategory.Add(item.Id, item);
             }
-            
+
+            #endregion
+
+            #region Load Product
+
+            ProductManager productManager = new ProductManager();
+
+            Constants.ApplicationData.Products = productManager.GetActiveProduct();
+
             #endregion
         }
 
-        
+
     }
 }
