@@ -12,12 +12,20 @@ namespace WarehouseClient
     public partial class MainForm 
     {
         User loginUser;
-        UserManager manage = new UserManager();
-        static IList<User> userList = null;
-        public static IList<User> SelectUsers()
+        public User LoginUser
         {
-            return userList;
+            get
+            {
+                return loginUser;
+            }
+
+            set
+            {
+                loginUser = value;
+            }
         }
+        UserManager manage = new UserManager();
+
         public MainForm(User user)
         {
             InitializeComponent();
@@ -40,7 +48,8 @@ namespace WarehouseClient
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.ColumnIndex == 7 && e.RowIndex!=-1)
+
+            if (e.ColumnIndex == 7 && e.RowIndex != -1)
             {
                 if ((bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value)
                 {
@@ -51,7 +60,7 @@ namespace WarehouseClient
                         manager.ActivateOrDeActivate((Int32)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
                     }
                 }
-                else 
+                else
                 {
                     DialogResult result = MessageBox.Show("Activate ?", "IsActive", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
@@ -64,7 +73,7 @@ namespace WarehouseClient
                 ReloadUserGrid(true);
             }
         }
-       
+        
         private void SignOutTab_Enter(object sender, EventArgs e)
         {
             UserManagement.SignOut signOut = new UserManagement.SignOut(this);
@@ -72,6 +81,10 @@ namespace WarehouseClient
         }
         public void SingOutChangePabControl() {
             tabControl1.SelectedTab = RoleTab;
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
