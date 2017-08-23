@@ -71,7 +71,7 @@ namespace WarehouseClient
             signOut.Show();
         }
         public void SingOutChangePabControl() {
-            tabControl1.SelectedTab = ProductManagementTab;
+            tabControl1.SelectedTab = RoleTab;
         }
     }
 }

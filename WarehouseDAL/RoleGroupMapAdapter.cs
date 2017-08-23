@@ -11,17 +11,17 @@ namespace WarehouseDAL
 {
    public class RoleGroupMapAdapter
     {
-        private string insertRoleGroupMap = "[dbo].[CreateRoleGroupMap]";
+        private string createRoleGroupMap = "[dbo].[CreateRoleGroupMap]";
         private string getRoleGroupMap    = "[dbo].[GetRoleGroupMap]";
 
         public int CreateRoleGroupMap(RoleGroupMap role)
         {
             int res = 0;
-            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["LOCAL"].ConnectionString))
+            using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
             {
                 conn.Open();
 
-                using (var cmd = new SqlCommand(insertRoleGroupMap, conn))
+                using (var cmd = new SqlCommand(createRoleGroupMap, conn))
                 {
 
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;

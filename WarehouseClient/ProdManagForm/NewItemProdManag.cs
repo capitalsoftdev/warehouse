@@ -22,8 +22,7 @@ namespace WarehouseClient.ProdManagForm
 
         private void NewItemProdManag_Load(object sender, EventArgs e)
         {
-            // var productCategorySelect = ((IList<ProductCategory>)CategoryComboBox.Tag).Where(p => p.Name == CategoryComboBox.Text).ToList()[0];
-
+             
             //add elems in ProductCategory  ComboBox
             foreach (var elem in WarehouseClient.Constants.ApplicationData.ProductCategory)
             {
@@ -35,8 +34,8 @@ namespace WarehouseClient.ProdManagForm
             {
                 ProductComboBox.Items.Add(elem.Value.Name);
             }
-           
 
+         //   var productCategorySelect = ((IList<ProductCategory>)CategoryComboBox.Tag).Where(p => p.Name == CategoryComboBox.Text).ToList()[0];
 
             //add elems in ActionComboBox
             ActionComboBox.Items.Add(ActionProduct.Acceptance);

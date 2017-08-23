@@ -56,6 +56,7 @@
             this.disableProductButton = new System.Windows.Forms.Button();
             this.addNewProductButton = new System.Windows.Forms.Button();
             this.RoleMapTab = new System.Windows.Forms.TabPage();
+            this.addRoleGroupMapButton = new System.Windows.Forms.Button();
             this.RoleGroupMapDataGridView = new System.Windows.Forms.DataGridView();
             this.ProductCategoryTab = new System.Windows.Forms.TabPage();
             this.addProductCategoryButton = new System.Windows.Forms.Button();
@@ -315,6 +316,7 @@
             // 
             // RoleMapTab
             // 
+            this.RoleMapTab.Controls.Add(this.addRoleGroupMapButton);
             this.RoleMapTab.Controls.Add(this.RoleGroupMapDataGridView);
             this.RoleMapTab.Location = new System.Drawing.Point(4, 22);
             this.RoleMapTab.Name = "RoleMapTab";
@@ -322,6 +324,15 @@
             this.RoleMapTab.TabIndex = 3;
             this.RoleMapTab.Text = "RoleGroupMap Manager";
             this.RoleMapTab.UseVisualStyleBackColor = true;
+            // 
+            // addRoleGroupMapButton
+            // 
+            this.addRoleGroupMapButton.Location = new System.Drawing.Point(263, 29);
+            this.addRoleGroupMapButton.Name = "addRoleGroupMapButton";
+            this.addRoleGroupMapButton.Size = new System.Drawing.Size(75, 23);
+            this.addRoleGroupMapButton.TabIndex = 1;
+            this.addRoleGroupMapButton.Text = "Add";
+            this.addRoleGroupMapButton.UseVisualStyleBackColor = true;
             // 
             // RoleGroupMapDataGridView
             // 
@@ -346,7 +357,6 @@
             this.RoleGroupMapDataGridView.Name = "RoleGroupMapDataGridView";
             this.RoleGroupMapDataGridView.Size = new System.Drawing.Size(240, 150);
             this.RoleGroupMapDataGridView.TabIndex = 0;
-            this.RoleGroupMapDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roleGroupMapDataGridView_CellContentClick);
             // 
             // ProductCategoryTab
             // 
@@ -515,6 +525,7 @@
         private System.Windows.Forms.DataGridView RoleDataGridView;
         private System.Windows.Forms.TabPage SignOutTab;
         private System.Windows.Forms.ComboBox UserProdManagTabComboBox;
+        private System.Windows.Forms.Button addRoleGroupMapButton;
     }
 }
 
