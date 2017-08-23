@@ -58,6 +58,36 @@ namespace WarehouseClient
 
         private static void LoadAllStaticInfo()
         {
+            #region Load Role Groups
+
+            var roleGroupManagerBL = new WarehouseBL.RoleGroupManagement.RoleGroupManager();
+
+            var allRoleGroups = roleGroupManagerBL.GetRoleGroup();
+
+            Constants.ApplicationData.RoleGroups = new Dictionary<int, RoleGroup>();
+
+            foreach (var roleGroup in allRoleGroups)
+            {
+                Constants.ApplicationData.RoleGroups.Add(roleGroup.Id, roleGroup);
+            }
+
+            #endregion
+
+            #region Load Roles
+
+            var roleManagerBL = new WarehouseBL.RoleManagement.RoleManager();
+
+            var allRoles = roleManagerBL.GetRole();
+
+            Constants.ApplicationData.Roles = new Dictionary<int, Role>();
+
+            foreach(var role in allRoles)
+            {
+                Constants.ApplicationData.Roles.Add(role.Id, role);
+            }
+             
+            #endregion
+            
             #region Load Product Categories
 
             var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
