@@ -79,7 +79,7 @@ namespace WarehouseClient.ProdManagForm
 
 
             var quantity = Convert.ToInt32(QuantityTextBox.Text);
-      //      var uresId = this.sendedForm.LoginUser.Id;
+            var userId = Convert.ToInt32(this.sendedForm.LoginUser.Id);
             var reason = Convert.ToString(ReasonLabel.Text);
             var price = Convert.ToInt32(PriceTextBox.Text);
             var supplierid = Convert.ToInt32(SupplierIdTextBox.Text);
@@ -91,7 +91,7 @@ namespace WarehouseClient.ProdManagForm
             prodManag.Quantity = quantity;
             prodManag.ActionDate = DateTime.Now;
             prodManag.Action = Convert.ToInt32(ActionProduct.Acceptance);
-            prodManag.UserId = 1;
+            prodManag.UserId = userId;
             prodManag.Reason = reason;
             prodManag.Price = price;
             prodManag.SupplierId = supplierid;
