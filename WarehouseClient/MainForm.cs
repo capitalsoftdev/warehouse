@@ -31,8 +31,8 @@ namespace WarehouseClient
             {
                 case 1: {
                         tabControl1.SelectedTab = UserTab;
-                        us = manage.SelectActiveUser();
-                        dataGridView1.DataSource = us.ToList();
+                        userList = manage.SelectActiveUser();
+                        dataGridView1.DataSource = userList.ToList();
                         dataGridView1.Columns[2].Visible = false;
                         dataGridView1.Columns[0].Visible = false;
                         break;
@@ -61,13 +61,6 @@ namespace WarehouseClient
         {
 
         }
-
-        private void signOutToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show("fanfana", "Are you shure", MessageBoxButtons.OKCancel);
-        }
-
-      
 
         //private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         //{
@@ -100,5 +93,7 @@ namespace WarehouseClient
             
             #endregion
         }
+
+        
     }
 }
