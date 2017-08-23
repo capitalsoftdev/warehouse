@@ -23,10 +23,10 @@ namespace WarehouseBL.UserManagement
 
             return null;
         }
-        public IList<User> SelectActiveUser()
+        public Dictionary<int, User> SelectActiveUser()
         {
             var userAdapter = new UserAdaptor();
-            IList<User> reList;
+            Dictionary<int, User> reList;
             reList = userAdapter.SelectActiveUser();
             return reList;
         }
