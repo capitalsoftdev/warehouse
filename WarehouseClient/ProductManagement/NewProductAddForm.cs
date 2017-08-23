@@ -52,8 +52,8 @@ namespace WarehouseClient.ProductManagement
             {
                 addNewProductLabel1.Text = "Update product";
                 newProductAddAndUpdateButton.Text = "Update";
-                productCategorySelectProductComboBox1.SelectedItem = product.ProductCategoryId;
-                munitSelectProductComboBox2.SelectedItem = "" + product.Munit;
+                productCategorySelectProductComboBox1.SelectedItem = Constants.ApplicationData.ProductCategory[product.ProductCategoryId];
+                munitSelectProductComboBox2.SelectedItem = product.Munit;
                 newProductNameTextBox.Text = product.Name;
             }
 
