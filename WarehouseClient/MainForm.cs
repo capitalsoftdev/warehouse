@@ -89,7 +89,9 @@ namespace WarehouseClient
 
             var allRoleGroups = roleGroupManagerBL.GetRoleGroup();
 
-            foreach(var roleGroup in allRoleGroups)
+            Constants.ApplicationData.RoleGroups = new Dictionary<int, RoleGroup>();
+
+            foreach (var roleGroup in allRoleGroups)
             {
                 Constants.ApplicationData.RoleGroups.Add(roleGroup.Id, roleGroup);
             }
@@ -101,6 +103,8 @@ namespace WarehouseClient
             var roleManagerBL = new WarehouseBL.RoleManagement.RoleManager();
 
             var allRoles = roleManagerBL.GetRole();
+
+            Constants.ApplicationData.Roles = new Dictionary<int, Role>();
 
             foreach(var role in allRoles)
             {
