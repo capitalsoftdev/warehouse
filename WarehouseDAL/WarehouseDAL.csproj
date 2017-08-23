@@ -64,6 +64,7 @@
     <Compile Include="DataContracts\Product.cs" />
     <Compile Include="DataContracts\ProductCategory.cs" />
     <Compile Include="DataContracts\ProductManagment.cs" />
+    <Compile Include="DataContracts\RoleGroup.cs" />
     <Compile Include="MunitAdaptor.cs" />
     <Compile Include="ProductAdaptor.cs" />
     <Compile Include="RoleAdapter.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="ProductCategoryAdaptor.cs" />
     <Compile Include="ProductManagmentAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleGroupAdapter.cs" />
     <Compile Include="RoleGroupMapAdapter.cs" />
     <Compile Include="DataContracts\User.cs" />
     <Compile Include="UserAdaptor.cs" />
