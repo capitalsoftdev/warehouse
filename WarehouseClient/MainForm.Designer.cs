@@ -75,7 +75,6 @@
             this.tabControl1.SuspendLayout();
             this.UserTab.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.ProductManagementTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductManagmentGridView)).BeginInit();
