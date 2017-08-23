@@ -10,7 +10,7 @@ namespace WarehouseBL
     interface IUserManager
     {
         User Login(string userName, string password);
-        IList<User> SelectActiveUser();
+        Dictionary<int, User> SelectActiveUser();
         void ActivateOrDeActivate(int id);
     }
 }

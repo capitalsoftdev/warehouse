@@ -61,6 +61,7 @@
     <Compile Include="Interfaces\IMunitManager.cs" />
     <Compile Include="Interfaces\IProductCategoryManager.cs" />
     <Compile Include="Interfaces\IProductManager.cs" />
+    <Compile Include="Interfaces\IRoleGroupManager.cs" />
     <Compile Include="Interfaces\IRoleGroupMapManger.cs" />
     <Compile Include="Interfaces\IRoleManager.cs" />
     <Compile Include="Interfaces\IUserManager.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="ProductCategoryManagement\ProductCategoryManager.cs" />
     <Compile Include="ProductManagement\ProductManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleGroupManagement\RoleGroupManager.cs" />
     <Compile Include="RoleManagement\RoleManagement.cs" />
     <Compile Include="RoleGroupMapManagment\RoleGroupMapManager.cs" />
     <Compile Include="UserManagement\UserManager.cs" />

@@ -17,7 +17,7 @@ namespace WarehouseClient
 
         public void loadProductsInToGrid(bool reLoad)
         {
-            if (ApplicationData.Products == null || reLoad)
+            if (reLoad)
             {
                 ApplicationData.Products = productManager.GetActiveProduct();
             }

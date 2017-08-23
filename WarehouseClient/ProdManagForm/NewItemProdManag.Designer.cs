@@ -33,22 +33,19 @@
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.ProductLabel = new System.Windows.Forms.Label();
             this.QuantityLabel = new System.Windows.Forms.Label();
-            this.ActionDateLabel = new System.Windows.Forms.Label();
             this.ActionLabel = new System.Windows.Forms.Label();
             this.UserLabel = new System.Windows.Forms.Label();
             this.ReasonLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
             this.SupplierLabel = new System.Windows.Forms.Label();
-            this.ActionDateDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.QuantityTextBox = new System.Windows.Forms.TextBox();
-            this.ActionTextBox = new System.Windows.Forms.TextBox();
             this.ReasonTextBox = new System.Windows.Forms.TextBox();
             this.BrandTextBox = new System.Windows.Forms.TextBox();
             this.PriceTextBox = new System.Windows.Forms.TextBox();
-            this.UserComboBox = new System.Windows.Forms.ComboBox();
             this.BrandLabel = new System.Windows.Forms.Label();
             this.SupplierComboBox = new System.Windows.Forms.ComboBox();
             this.AddItemProductManagment = new System.Windows.Forms.Button();
+            this.ActionComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // CategoryComboBox
@@ -94,19 +91,10 @@
             this.QuantityLabel.TabIndex = 4;
             this.QuantityLabel.Text = "Quantity";
             // 
-            // ActionDateLabel
-            // 
-            this.ActionDateLabel.AutoSize = true;
-            this.ActionDateLabel.Location = new System.Drawing.Point(12, 89);
-            this.ActionDateLabel.Name = "ActionDateLabel";
-            this.ActionDateLabel.Size = new System.Drawing.Size(60, 13);
-            this.ActionDateLabel.TabIndex = 5;
-            this.ActionDateLabel.Text = "ActionDate";
-            // 
             // ActionLabel
             // 
             this.ActionLabel.AutoSize = true;
-            this.ActionLabel.Location = new System.Drawing.Point(12, 122);
+            this.ActionLabel.Location = new System.Drawing.Point(12, 101);
             this.ActionLabel.Name = "ActionLabel";
             this.ActionLabel.Size = new System.Drawing.Size(37, 13);
             this.ActionLabel.TabIndex = 6;
@@ -117,14 +105,13 @@
             this.UserLabel.AutoSize = true;
             this.UserLabel.Location = new System.Drawing.Point(12, 156);
             this.UserLabel.Name = "UserLabel";
-            this.UserLabel.Size = new System.Drawing.Size(29, 13);
+            this.UserLabel.Size = new System.Drawing.Size(0, 13);
             this.UserLabel.TabIndex = 7;
-            this.UserLabel.Text = "User";
             // 
             // ReasonLabel
             // 
             this.ReasonLabel.AutoSize = true;
-            this.ReasonLabel.Location = new System.Drawing.Point(12, 195);
+            this.ReasonLabel.Location = new System.Drawing.Point(17, 156);
             this.ReasonLabel.Name = "ReasonLabel";
             this.ReasonLabel.Size = new System.Drawing.Size(44, 13);
             this.ReasonLabel.TabIndex = 8;
@@ -133,7 +120,7 @@
             // PriceLabel
             // 
             this.PriceLabel.AutoSize = true;
-            this.PriceLabel.Location = new System.Drawing.Point(14, 221);
+            this.PriceLabel.Location = new System.Drawing.Point(17, 187);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(31, 13);
             this.PriceLabel.TabIndex = 9;
@@ -142,18 +129,11 @@
             // SupplierLabel
             // 
             this.SupplierLabel.AutoSize = true;
-            this.SupplierLabel.Location = new System.Drawing.Point(17, 245);
+            this.SupplierLabel.Location = new System.Drawing.Point(17, 221);
             this.SupplierLabel.Name = "SupplierLabel";
             this.SupplierLabel.Size = new System.Drawing.Size(45, 13);
             this.SupplierLabel.TabIndex = 11;
             this.SupplierLabel.Text = "Supplier";
-            // 
-            // ActionDateDateTimePicker1
-            // 
-            this.ActionDateDateTimePicker1.Location = new System.Drawing.Point(99, 83);
-            this.ActionDateDateTimePicker1.Name = "ActionDateDateTimePicker1";
-            this.ActionDateDateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.ActionDateDateTimePicker1.TabIndex = 12;
             // 
             // QuantityTextBox
             // 
@@ -162,16 +142,9 @@
             this.QuantityTextBox.Size = new System.Drawing.Size(100, 20);
             this.QuantityTextBox.TabIndex = 14;
             // 
-            // ActionTextBox
-            // 
-            this.ActionTextBox.Location = new System.Drawing.Point(88, 119);
-            this.ActionTextBox.Name = "ActionTextBox";
-            this.ActionTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ActionTextBox.TabIndex = 15;
-            // 
             // ReasonTextBox
             // 
-            this.ReasonTextBox.Location = new System.Drawing.Point(88, 188);
+            this.ReasonTextBox.Location = new System.Drawing.Point(88, 149);
             this.ReasonTextBox.Name = "ReasonTextBox";
             this.ReasonTextBox.Size = new System.Drawing.Size(100, 20);
             this.ReasonTextBox.TabIndex = 16;
@@ -185,18 +158,10 @@
             // 
             // PriceTextBox
             // 
-            this.PriceTextBox.Location = new System.Drawing.Point(88, 214);
+            this.PriceTextBox.Location = new System.Drawing.Point(98, 187);
             this.PriceTextBox.Name = "PriceTextBox";
             this.PriceTextBox.Size = new System.Drawing.Size(100, 20);
             this.PriceTextBox.TabIndex = 21;
-            // 
-            // UserComboBox
-            // 
-            this.UserComboBox.FormattingEnabled = true;
-            this.UserComboBox.Location = new System.Drawing.Point(88, 153);
-            this.UserComboBox.Name = "UserComboBox";
-            this.UserComboBox.Size = new System.Drawing.Size(121, 21);
-            this.UserComboBox.TabIndex = 22;
             // 
             // BrandLabel
             // 
@@ -210,7 +175,7 @@
             // SupplierComboBox
             // 
             this.SupplierComboBox.FormattingEnabled = true;
-            this.SupplierComboBox.Location = new System.Drawing.Point(88, 240);
+            this.SupplierComboBox.Location = new System.Drawing.Point(88, 221);
             this.SupplierComboBox.Name = "SupplierComboBox";
             this.SupplierComboBox.Size = new System.Drawing.Size(121, 21);
             this.SupplierComboBox.TabIndex = 26;
@@ -223,28 +188,34 @@
             this.AddItemProductManagment.TabIndex = 27;
             this.AddItemProductManagment.Text = "Add";
             this.AddItemProductManagment.UseVisualStyleBackColor = true;
+            this.AddItemProductManagment.Click += new System.EventHandler(this.AddItemProductManagment_Click);
+            // 
+            // ActionComboBox
+            // 
+            this.ActionComboBox.FormattingEnabled = true;
+            this.ActionComboBox.Location = new System.Drawing.Point(67, 93);
+            this.ActionComboBox.Name = "ActionComboBox";
+            this.ActionComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ActionComboBox.TabIndex = 28;
             // 
             // NewItemProdManag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 295);
+            this.Controls.Add(this.ActionComboBox);
             this.Controls.Add(this.AddItemProductManagment);
             this.Controls.Add(this.SupplierComboBox);
             this.Controls.Add(this.BrandLabel);
-            this.Controls.Add(this.UserComboBox);
             this.Controls.Add(this.PriceTextBox);
             this.Controls.Add(this.BrandTextBox);
             this.Controls.Add(this.ReasonTextBox);
-            this.Controls.Add(this.ActionTextBox);
             this.Controls.Add(this.QuantityTextBox);
-            this.Controls.Add(this.ActionDateDateTimePicker1);
             this.Controls.Add(this.SupplierLabel);
             this.Controls.Add(this.PriceLabel);
             this.Controls.Add(this.ReasonLabel);
             this.Controls.Add(this.UserLabel);
             this.Controls.Add(this.ActionLabel);
-            this.Controls.Add(this.ActionDateLabel);
             this.Controls.Add(this.QuantityLabel);
             this.Controls.Add(this.ProductLabel);
             this.Controls.Add(this.CategoryLabel);
@@ -265,21 +236,18 @@
         private System.Windows.Forms.Label CategoryLabel;
         private System.Windows.Forms.Label ProductLabel;
         private System.Windows.Forms.Label QuantityLabel;
-        private System.Windows.Forms.Label ActionDateLabel;
         private System.Windows.Forms.Label ActionLabel;
         private System.Windows.Forms.Label UserLabel;
         private System.Windows.Forms.Label ReasonLabel;
         private System.Windows.Forms.Label PriceLabel;
         private System.Windows.Forms.Label SupplierLabel;
-        private System.Windows.Forms.DateTimePicker ActionDateDateTimePicker1;
         private System.Windows.Forms.TextBox QuantityTextBox;
-        private System.Windows.Forms.TextBox ActionTextBox;
         private System.Windows.Forms.TextBox ReasonTextBox;
         private System.Windows.Forms.TextBox BrandTextBox;
         private System.Windows.Forms.TextBox PriceTextBox;
-        private System.Windows.Forms.ComboBox UserComboBox;
         private System.Windows.Forms.Label BrandLabel;
         private System.Windows.Forms.ComboBox SupplierComboBox;
         private System.Windows.Forms.Button AddItemProductManagment;
+        private System.Windows.Forms.ComboBox ActionComboBox;
     }
 }

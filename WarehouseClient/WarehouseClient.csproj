@@ -160,6 +160,9 @@
     <EmbeddedResource Include="ProdManagForm\NewItemProdManag.resx">
       <DependentUpon>NewItemProdManag.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProdManagForm\UpdateProductManagment.resx">
+      <DependentUpon>UpdateProductManagment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductCategoryManagement\AddProductCategory.resx">
       <DependentUpon>AddProductCategory.cs</DependentUpon>
     </EmbeddedResource>

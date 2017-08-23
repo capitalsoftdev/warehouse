@@ -12,6 +12,7 @@ using WarehouseDAL.DataContracts;
 using WarehouseClient.ProductCategoryManagement;
 using WarehouseBL.ProductCategoryManagement;
 using WarehouseClient.ProdManagForm;
+using WarehouseBL.ProductManagement;
 //using WarehouseBL.ProductCategoryManagement;
 
 namespace WarehouseClient
@@ -30,9 +31,10 @@ namespace WarehouseClient
             switch (loginUser.RoleGroupId)
             {
                 case 1: {
+
+                        WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
                         tabControl1.SelectedTab = UserTab;
-                        userList = manage.SelectActiveUser();
-                        dataGridView1.DataSource = userList.ToList();
+                        dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
                         dataGridView1.Columns[2].Visible = false;
                         dataGridView1.Columns[0].Visible = false;
                         break;
@@ -93,10 +95,18 @@ namespace WarehouseClient
             {
                 Constants.ApplicationData.ProductCategory.Add(item.Id, item);
             }
-            
+
+            #endregion
+
+            #region Load Product
+
+            ProductManager productManager = new ProductManager();
+
+            Constants.ApplicationData.Products = productManager.GetActiveProduct();
+
             #endregion
         }
 
-        
+
     }
 }
