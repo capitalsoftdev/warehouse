@@ -14,7 +14,10 @@ namespace WarehouseClient
         {
            
         }
-        
+        private void AddRoleGroupMap_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Barev Dzez");
+        }
 
     }
 }
