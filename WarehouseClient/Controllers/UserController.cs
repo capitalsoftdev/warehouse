@@ -26,8 +26,8 @@ namespace WarehouseClient
         public void ReloadUserGrid(bool reload = false)
         {
             if (reload)
-                userList = manage.SelectActiveUser();
-            dataGridView1.DataSource = userList.ToList();
+                WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
+            dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
             dataGridView1.Refresh();
         }
     
@@ -61,7 +61,6 @@ namespace WarehouseClient
                     }
 
                 }
-                //  MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 ReloadUserGrid(true);
             }
         }

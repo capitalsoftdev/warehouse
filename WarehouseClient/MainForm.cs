@@ -30,9 +30,10 @@ namespace WarehouseClient
             switch (loginUser.RoleGroupId)
             {
                 case 1: {
+
+                        WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
                         tabControl1.SelectedTab = UserTab;
-                        userList = manage.SelectActiveUser();
-                        dataGridView1.DataSource = userList.ToList();
+                        dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
                         dataGridView1.Columns[2].Visible = false;
                         dataGridView1.Columns[0].Visible = false;
                         break;

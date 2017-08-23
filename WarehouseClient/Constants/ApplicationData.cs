@@ -20,4 +20,11 @@ namespace WarehouseClient.Constants
         public static Dictionary<int, WarehouseDAL.DataContracts.Product> Products = 
             new Dictionary<int, WarehouseDAL.DataContracts.Product>();
     }
+
+    public enum ActionProduct
+    {
+        Acceptance = 1, //mutq
+        Ouptut , // elq
+        WriteOff  //dur grum
+    }
 }

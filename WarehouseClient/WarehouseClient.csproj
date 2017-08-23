@@ -74,7 +74,9 @@
     <Compile Include="Controllers\ProductController.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controllers\ProductManagmentController.cs" />
+    <Compile Include="Controllers\ProductManagmentController.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Controllers\RoleController.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProdManagForm\NewItemProdManag.resx">
       <DependentUpon>NewItemProdManag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdManagForm\UpdateProductManagment.resx">
+      <DependentUpon>UpdateProductManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductCategoryManagement\AddProductCategory.resx">
       <DependentUpon>AddProductCategory.cs</DependentUpon>
