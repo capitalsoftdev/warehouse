@@ -49,6 +49,7 @@
             this.outToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductManagementTab = new System.Windows.Forms.TabPage();
+            this.UserProdManagTabComboBox = new System.Windows.Forms.ComboBox();
             this.ProductProdManagTabComboBox = new System.Windows.Forms.ComboBox();
             this.UpdateProductManagmentButton = new System.Windows.Forms.Button();
             this.DeleteProductManagmentButton = new System.Windows.Forms.Button();
@@ -67,7 +68,6 @@
             this.addRole = new System.Windows.Forms.Button();
             this.RoleDataGridView = new System.Windows.Forms.DataGridView();
             this.SignOutTab = new System.Windows.Forms.TabPage();
-            this.UserProdManagTabComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.UserTab.SuspendLayout();
@@ -227,6 +227,15 @@
             this.ProductManagementTab.TabIndex = 1;
             this.ProductManagementTab.Text = "Product management";
             this.ProductManagementTab.UseVisualStyleBackColor = true;
+            this.ProductManagementTab.Enter += new System.EventHandler(this.ProductManagementTab_Enter);
+            // 
+            // UserProdManagTabComboBox
+            // 
+            this.UserProdManagTabComboBox.FormattingEnabled = true;
+            this.UserProdManagTabComboBox.Location = new System.Drawing.Point(153, 14);
+            this.UserProdManagTabComboBox.Name = "UserProdManagTabComboBox";
+            this.UserProdManagTabComboBox.Size = new System.Drawing.Size(121, 21);
+            this.UserProdManagTabComboBox.TabIndex = 4;
             // 
             // ProductProdManagTabComboBox
             // 
@@ -468,14 +477,6 @@
             this.SignOutTab.Text = "Sign out";
             this.SignOutTab.UseVisualStyleBackColor = true;
             this.SignOutTab.Enter += new System.EventHandler(this.SignOutTab_Enter);
-            // 
-            // UserProdManagTabComboBox
-            // 
-            this.UserProdManagTabComboBox.FormattingEnabled = true;
-            this.UserProdManagTabComboBox.Location = new System.Drawing.Point(153, 14);
-            this.UserProdManagTabComboBox.Name = "UserProdManagTabComboBox";
-            this.UserProdManagTabComboBox.Size = new System.Drawing.Size(121, 21);
-            this.UserProdManagTabComboBox.TabIndex = 4;
             // 
             // MainForm
             // 
