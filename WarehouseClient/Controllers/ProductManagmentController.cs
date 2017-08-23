@@ -24,8 +24,8 @@ namespace WarehouseClient
         }
         private void ProductManagementTab_Enter(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 1)
-            {                
+           // if (tabControl1.SelectedIndex == 1)
+           // {                
                 prodManagList = GetItems(0, 0, 0);
                 if (prodManagList != null)
                 {
@@ -35,7 +35,7 @@ namespace WarehouseClient
                 {
                     MessageBox.Show("Empity list");
                 }
-            }
+           // }
 
         }
 
