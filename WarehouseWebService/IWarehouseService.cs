@@ -13,7 +13,7 @@ namespace WarehouseWebService
         int CreateOrUpdateProduct(Product product);
 
         [OperationContract]
-        IList<Product> GetProduct();
+        IList<Product> GetProducts();
 
         [OperationContract]
         Product GetProduct(int id);
@@ -34,6 +34,12 @@ namespace WarehouseWebService
         [OperationContract]
         int CreateOrUpdate(ProductManagment prMn);
 
+        #endregion
+
+        #region Munit
+        IList<Munit> GetMunits();
+
+        Munit GetMunit(int id);
         #endregion
     }
 }

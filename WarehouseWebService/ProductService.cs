@@ -21,7 +21,7 @@ namespace WarehouseWebService
             return productManager.DisableProduct(id);
         }
 
-        public IList<Product> GetProduct()
+        public IList<Product> GetProducts()
         {
             var productManager = new ProductManager();
 

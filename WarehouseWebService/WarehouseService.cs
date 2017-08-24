@@ -1,6 +1,9 @@
 ﻿using Logger;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System;
+using System.Collections.Generic;
+using WarehouseWebService.DataContracts;
 
 namespace WarehouseWebService
 {
@@ -13,5 +16,7 @@ namespace WarehouseWebService
         {  
            WarehouseBL.LoggerBL.Logger = logger;
         }
+
+        
     }
 }
