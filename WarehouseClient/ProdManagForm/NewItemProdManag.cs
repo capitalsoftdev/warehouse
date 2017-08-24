@@ -99,7 +99,30 @@ namespace WarehouseClient.ProdManagForm
             prodManag.LastModifyDate = DateTime.Now;
             prodManag.IsActive = true;
             prodManagManager.CreateOrUpdate(prodManag);
-            MessageBox.Show(productId.ToString());
+            //MessageBox.Show(productId.ToString());
+        }
+
+        private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ProductComboBox.Items.Clear();
+            var categorySelect = CategoryComboBox.SelectedItem.ToString();
+            var categoryId = -1;
+
+            foreach (var elem in WarehouseClient.Constants.ApplicationData.ProductCategory)
+            {
+                if (categorySelect == elem.Value.Name)
+                {
+                    categoryId = elem.Key;
+                }
+            }
+
+            foreach(var elem in WarehouseClient.Constants.ApplicationData.Products)
+            {
+                if(categoryId == elem.Value.ProductCategoryId)
+                {
+                    ProductComboBox.Items.Add(elem.Value.Name);
+                }
+            }
         }
     }
 }
