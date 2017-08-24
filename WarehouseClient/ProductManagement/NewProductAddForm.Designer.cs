@@ -35,7 +35,7 @@
             this.newProductNameTextBox = new System.Windows.Forms.TextBox();
             this.productCategorySelectProductComboBox1 = new System.Windows.Forms.ComboBox();
             this.munitSelectProductComboBox2 = new System.Windows.Forms.ComboBox();
-            this.newProductAddButton = new System.Windows.Forms.Button();
+            this.newProductAddAndUpdateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addNewProductLabel1
@@ -70,9 +70,9 @@
             this.addNewProductLabel4.AutoSize = true;
             this.addNewProductLabel4.Location = new System.Drawing.Point(11, 138);
             this.addNewProductLabel4.Name = "addNewProductLabel4";
-            this.addNewProductLabel4.Size = new System.Drawing.Size(33, 13);
+            this.addNewProductLabel4.Size = new System.Drawing.Size(26, 13);
             this.addNewProductLabel4.TabIndex = 3;
-            this.addNewProductLabel4.Text = "Munit";
+            this.addNewProductLabel4.Text = "Unit";
             // 
             // newProductNameTextBox
             // 
@@ -97,22 +97,22 @@
             this.munitSelectProductComboBox2.Size = new System.Drawing.Size(169, 21);
             this.munitSelectProductComboBox2.TabIndex = 6;
             // 
-            // newProductAddButton
+            // newProductAddAndUpdateButton
             // 
-            this.newProductAddButton.Location = new System.Drawing.Point(99, 201);
-            this.newProductAddButton.Name = "newProductAddButton";
-            this.newProductAddButton.Size = new System.Drawing.Size(122, 40);
-            this.newProductAddButton.TabIndex = 7;
-            this.newProductAddButton.Text = "Add";
-            this.newProductAddButton.UseVisualStyleBackColor = true;
-            this.newProductAddButton.Click += new System.EventHandler(this.newProductAddButton_Click);
+            this.newProductAddAndUpdateButton.Location = new System.Drawing.Point(99, 201);
+            this.newProductAddAndUpdateButton.Name = "newProductAddAndUpdateButton";
+            this.newProductAddAndUpdateButton.Size = new System.Drawing.Size(122, 40);
+            this.newProductAddAndUpdateButton.TabIndex = 7;
+            this.newProductAddAndUpdateButton.Text = "Add";
+            this.newProductAddAndUpdateButton.UseVisualStyleBackColor = true;
+            this.newProductAddAndUpdateButton.Click += new System.EventHandler(this.newProductAddAndUpdateButton_Click);
             // 
             // NewProductAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 297);
-            this.Controls.Add(this.newProductAddButton);
+            this.Controls.Add(this.newProductAddAndUpdateButton);
             this.Controls.Add(this.munitSelectProductComboBox2);
             this.Controls.Add(this.productCategorySelectProductComboBox1);
             this.Controls.Add(this.newProductNameTextBox);
@@ -121,7 +121,7 @@
             this.Controls.Add(this.addNewProductLabel2);
             this.Controls.Add(this.addNewProductLabel1);
             this.Name = "NewProductAddForm";
-            this.Text = "NewProductAddForm";
+            this.Text = "Product";
             this.Load += new System.EventHandler(this.NewProductAddForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -137,6 +137,6 @@
         private System.Windows.Forms.TextBox newProductNameTextBox;
         private System.Windows.Forms.ComboBox productCategorySelectProductComboBox1;
         private System.Windows.Forms.ComboBox munitSelectProductComboBox2;
-        private System.Windows.Forms.Button newProductAddButton;
+        private System.Windows.Forms.Button newProductAddAndUpdateButton;
     }
 }

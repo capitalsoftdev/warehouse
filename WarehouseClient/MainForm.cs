@@ -107,10 +107,34 @@ namespace WarehouseClient
 
             ProductManager productManager = new ProductManager();
 
-            Constants.ApplicationData.Products = productManager.GetActiveProduct();
+            var allProduct = productManager.GetActiveProduct();
+
+            Constants.ApplicationData.Products = new Dictionary<int, Product>();
+
+            foreach (var item in allProduct)
+            {
+                Constants.ApplicationData.Products.Add(item.Id.Value, item);
+            }
+
 
             #endregion
-            
+
+            #region Load Munit
+
+            MunitManager munitManager = new MunitManager();
+
+            var allMunit = munitManager.GetMunit();
+
+            Constants.ApplicationData.Munits = new Dictionary<int, Munit>();
+
+            foreach (var item in allMunit)
+            {
+                Constants.ApplicationData.Munits.Add(item.Id, item);
+            }
+
+
+            #endregion
+
         }
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)

@@ -63,5 +63,27 @@ namespace WarehouseWebService
         [OperationContract]
         int DisableRoleGroup(int id);
         #endregion
+
+        #region Munit
+        IList<Munit> GetMunits();
+
+        Munit GetMunit(int id);
+        #endregion
+
+        #region ProductCategory
+
+        [OperationContract]
+        int CreateOrUpdateProductCategory(ProductCategory product);
+
+        [OperationContract]
+        IList<ProductCategory> GetAllProductCategories();
+
+        [OperationContract]
+        Product GetProductCategoryById(int id);
+
+        [OperationContract]
+        int ManageProductCategory(int id, int action);
+
+        #endregion
     }
 }

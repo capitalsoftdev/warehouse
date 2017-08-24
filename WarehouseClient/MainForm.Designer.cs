@@ -299,10 +299,11 @@
             // 
             // productDataGridView
             // 
-            this.productDataGridView.Location = new System.Drawing.Point(13, 49);
+            this.productDataGridView.Location = new System.Drawing.Point(13, 51);
             this.productDataGridView.Name = "productDataGridView";
             this.productDataGridView.Size = new System.Drawing.Size(561, 194);
             this.productDataGridView.TabIndex = 0;
+            this.productDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productDataGridView_CellDoubleClick);
             // 
             // disableProductButton
             // 

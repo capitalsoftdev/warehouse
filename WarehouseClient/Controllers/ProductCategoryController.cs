@@ -13,7 +13,6 @@ namespace WarehouseClient
     {
         private void ProductCategoryTab_Enter(object sender, EventArgs e)
         {
-        
             ProductCategoryRefresh();
         }
 

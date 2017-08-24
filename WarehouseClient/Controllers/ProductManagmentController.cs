@@ -42,7 +42,8 @@ namespace WarehouseClient
 
         private void AddProductManagmentButton_Click(object sender, EventArgs e)
         {
-            NewItemProdManag newItemForm = new NewItemProdManag();
+          //  var id = this.loginUser.Id;
+            NewItemProdManag newItemForm = new NewItemProdManag(this);
             newItemForm.Show();
         }
 

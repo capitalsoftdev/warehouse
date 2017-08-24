@@ -25,6 +25,27 @@ namespace WarehouseWebService
 
         }
 
+        public static WarehouseDAL.DataContracts.Munit ToDatMunit (this Munit munit)
+        {
+            return new WarehouseDAL.DataContracts.Munit() { Id = munit.Id, MunitName = munit.MunitName, IsActive = munit.IsActive };
+        }
+
+        public static Munit ToServiceMunit (this WarehouseDAL.DataContracts.Munit munit)
+        {
+            return new Munit() { Id = munit.Id, MunitName = munit.MunitName, IsActive = munit.IsActive };
+
+        }
+
+        public static WarehouseDAL.DataContracts.ProductCategory ToDALProductCategory(this ProductCategory product)
+        {
+            return new WarehouseDAL.DataContracts.ProductCategory() { Id = product.Id, Name = product.Name, ParentId = product.ParentId, IsActive = product.IsActive };
+        }
+
+        public static ProductCategory ToServiceProductCategory(this WarehouseDAL.DataContracts.ProductCategory product)
+        {
+            return new ProductCategory() { Id = product.Id, Name = product.Name, ParentId = product.ParentId, IsActive = product.IsActive };
+        }
+
         public static WarehouseDAL.DataContracts.Role ToDALRole(this Role roleMn)
         {
             return new WarehouseDAL.DataContracts.Role() { Id = roleMn.Id, Name = roleMn.Name, IsActive = roleMn.IsActive };

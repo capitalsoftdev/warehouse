@@ -11,23 +11,23 @@ namespace WarehouseBL.ProductManagement
 {
     public class MunitManager : IMunitManager
     {
-            public IList<Munit> GetMunit()
-            {
-                var munitAdaptor = new MunitAdaptor();
+        public IList<Munit> GetMunit()
+        {
+            var munitAdaptor = new MunitAdaptor();
 
-                var result = munitAdaptor.GetMunit();
+            var result = munitAdaptor.GetMunit();
 
-                return result;
-            }
+            return result;
+        }
 
-            public Munit GetMunit(int id)
-            {
-                var munitAdaptor = new MunitAdaptor();
+        public Munit GetMunit(int id)
+        {
+            var munitAdaptor = new MunitAdaptor();
 
-                var result = munitAdaptor.GetMunit(id);
+            var result = munitAdaptor.GetMunit(id);
 
-                return result;
-            }
+            return result;
+        }
 
     }
 }
