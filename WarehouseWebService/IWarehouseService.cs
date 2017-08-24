@@ -79,7 +79,7 @@ namespace WarehouseWebService
         IList<ProductCategory> GetAllProductCategories();
 
         [OperationContract]
-        Product GetProductCategoryById(int id);
+        ProductCategory GetProductCategoryById(int id);
 
         [OperationContract]
         int ManageProductCategory(int id, int action);

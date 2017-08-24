@@ -30,7 +30,7 @@ namespace WarehouseWebService
 
         public ProductCategory GetProductCategoryById(int id)
         {
-            var producCategorytManager = new ProductCategoryManager();
+            var productCategoryManager = new ProductCategoryManager();
 
             return productCategoryManager.GetProductCategoryById(id).ToServiceProductCategory();
         }
