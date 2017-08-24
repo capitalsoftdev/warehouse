@@ -36,20 +36,15 @@ namespace WarehouseClient
                          select new ProductMunitProductCategoryJoin()
                          {
                              Id = productJoin.Id,
-                             Name = productJoin.Name,
-                             MunitId = productJoin.Munit,
                              IsActive = productJoin.IsActive,
-                             ProductCategoryId = productJoin.ProductCategoryId,
+                             Name = productJoin.Name,
                              Category = productCategoryJoin.Value.Name,
                              Munit = munitJoin.MunitName
                          };
 
-
             productDataGridView.DataSource = result.ToList();
             productDataGridView.Columns[0].Visible = false;
             productDataGridView.Columns[2].Visible = false;
-            productDataGridView.Columns[3].Visible = false;
-            productDataGridView.Columns[4].Visible = false;
         }
 
         private void tabPage3_Enter(object sender, EventArgs e)
@@ -90,14 +85,12 @@ namespace WarehouseClient
             newProductAddForm.Show();
         }
 
-       
-        private class ProductMunitProductCategoryJoin
+
+        class ProductMunitProductCategoryJoin
         {
             int? id;
-            string name;
-            int munitId;
             Boolean isActive;
-            int productCategoryId;
+            string name;
             string category;
             string munit;
 
@@ -127,19 +120,6 @@ namespace WarehouseClient
                 }
             }
 
-            public int MunitId
-            {
-                get
-                {
-                    return munitId;
-                }
-
-                set
-                {
-                    munitId = value;
-                }
-            }
-
             public bool IsActive
             {
                 get
@@ -150,19 +130,6 @@ namespace WarehouseClient
                 set
                 {
                     isActive = value;
-                }
-            }
-
-            public int ProductCategoryId
-            {
-                get
-                {
-                    return productCategoryId;
-                }
-
-                set
-                {
-                    productCategoryId = value;
                 }
             }
 
