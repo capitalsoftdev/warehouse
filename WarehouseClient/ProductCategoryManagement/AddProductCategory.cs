@@ -43,12 +43,10 @@ namespace WarehouseClient.ProductCategoryManagement
             product.Id = -1;
             product.Name = PCTextBox1.Text.ToString();
             var selItem = (ComboBoxKeyValuePair)productCategoryComboBox.SelectedItem;
-            product.ParentId = 0;
             if (selItem.m_objKey != null)
             {
                 product.ParentId = ((ProductCategory)selItem.m_objKey).Id;
-            }
-            
+            } 
             
             
             ProductCategoryManager manager = new ProductCategoryManager();
@@ -81,12 +79,13 @@ namespace WarehouseClient.ProductCategoryManagement
         {
             var potentialParents = Constants.ApplicationData.ProductCategory.Where(
                 p => (p.Value.ParentId == 0 && p.Value.IsActive));
+            
             productCategoryComboBox.Items.Add(new ComboBoxKeyValuePair(null, "empty"));
             foreach (var prodCat in potentialParents)
             {
                 productCategoryComboBox.Items.Add(new ComboBoxKeyValuePair(prodCat.Value, prodCat.Value.Name));
             }
-            
+            productCategoryComboBox.SelectedIndex = 0;
 
         }
     }

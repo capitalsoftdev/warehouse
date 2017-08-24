@@ -38,12 +38,12 @@ namespace WarehouseWebService
 
         public static WarehouseDAL.DataContracts.ProductCategory ToDALProductCategory(this ProductCategory product)
         {
-            return new WarehouseDAL.DataContracts.ProductCategory() { Id = product.Id, Name = product.Name, ParentId = product.ParentId, IsActive = product.IsActive };
+            return new WarehouseDAL.DataContracts.ProductCategory() { Id = product.Id.Value, Name = product.Name, ParentId = product.ParentId, IsActive = product.IsActive, Action=product.Action};
         }
 
         public static ProductCategory ToServiceProductCategory(this WarehouseDAL.DataContracts.ProductCategory product)
         {
-            return new ProductCategory() { Id = product.Id, Name = product.Name, ParentId = product.ParentId, IsActive = product.IsActive };
+            return new ProductCategory() { Id = product.Id, Name = product.Name, ParentId = product.ParentId, IsActive = product.IsActive, Action=product.Action };
         }
     }
 }

@@ -85,14 +85,14 @@ namespace WarehouseClient
             {
                 Constants.ApplicationData.Roles.Add(role.Id, role);
             }
-             
+
             #endregion
-            
+
             #region Load Product Categories
 
-            var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
+            ProductCategoryManager productCategoryManager = new ProductCategoryManager();
 
-            var allCats = prodCategoryBL.GetAllProductCategories();
+            var allCats = productCategoryManager.GetAllProductCategories();
 
             Constants.ApplicationData.ProductCategory = new Dictionary<int, ProductCategory>();
 

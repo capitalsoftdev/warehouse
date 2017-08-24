@@ -24,6 +24,7 @@ namespace WarehouseClient
         }
         private void addProductCategoryButton_Click(object sender, EventArgs e)
         {
+            
             AddProductCategory add = new AddProductCategory(this);
             add.Show();
         }

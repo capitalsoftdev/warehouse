@@ -13,6 +13,7 @@ namespace WarehouseWebService.DataContracts
         private int parentId;
         private string name;
         private bool isActive;
+        private int action;
 
         [DataMember]
         public int? Id
@@ -41,6 +42,13 @@ namespace WarehouseWebService.DataContracts
         {
             get { return this.isActive; }
             set { this.isActive = value; }
+        }
+
+        [DataMember]
+        public int Action
+        {
+            get { return this.action; }
+            set { this.action = value; }
         }
     }
 }
