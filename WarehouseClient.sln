@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseClient", "WarehouseClient\WarehouseClient.csproj", "{E9D79315-4483-4FC9-B40D-567B65F08C06}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2C5F08CD-A505-489D-BB4D-2A6E3B33A9B3} = {2C5F08CD-A505-489D-BB4D-2A6E3B33A9B3}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseServiceHoster", "WarehouseServiceHoster\WarehouseServiceHoster.csproj", "{E8BA97F9-EBA0-4B22-819A-4EB471E54B89}"
 EndProject
@@ -98,5 +101,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FA4743E-CD6F-475E-9EC0-0F11B5BAB8CC}
 	EndGlobalSection
 EndGlobal

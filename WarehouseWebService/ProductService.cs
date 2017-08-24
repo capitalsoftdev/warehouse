@@ -28,7 +28,7 @@ namespace WarehouseWebService
             return productManager.GetProduct().Select(p => p.ToServiceProduct()).ToList();
         }
 
-        public Product GetProduct(int id)
+        public Product GetProductById(int id)
         {
             var productManager = new ProductManager();
 

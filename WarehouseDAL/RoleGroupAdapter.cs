@@ -108,7 +108,7 @@ namespace WarehouseDAL
                             int rGId = (int)reader.GetValue(0);
                             string rGName = (string)reader.GetValue(1);
                             bool rGIsActive = (bool)reader.GetValue(2);
-                            roleGroupList.Add(new RoleGroup(rGId, rGName, rGIsActive));
+                            roleGroupList.Add(new RoleGroup() { Id = rGId, Name = rGName, IsActive = rGIsActive });
                         }
                     }
 
