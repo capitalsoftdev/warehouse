@@ -45,5 +45,25 @@ namespace WarehouseWebService
         {
             return new ProductCategory() { Id = product.Id, Name = product.Name, ParentId = product.ParentId, IsActive = product.IsActive, Action=product.Action };
         }
+
+        public static WarehouseDAL.DataContracts.Role ToDALRole(this Role roleMn)
+        {
+            return new WarehouseDAL.DataContracts.Role() { Id = roleMn.Id, Name = roleMn.Name, IsActive = roleMn.IsActive };
+        }
+
+        public static Role ToServiceRole(this WarehouseDAL.DataContracts.Role roleMn)
+        {
+            return new Role() { Id = roleMn.Id,Name = roleMn.Name, IsActive = roleMn.IsActive };
+        }
+
+        public static WarehouseDAL.DataContracts.RoleGroup ToDALRoleGroup(this RoleGroup roleGrMn)
+        {
+            return new WarehouseDAL.DataContracts.RoleGroup() { Id = roleGrMn.Id, Name = roleGrMn.Name, IsActive = roleGrMn.IsActive };
+        }
+
+        public static RoleGroup ToServiceRoleGroup(this WarehouseDAL.DataContracts.RoleGroup roleGrMn)
+        {
+            return new RoleGroup() { Id = roleGrMn.Id, Name = roleGrMn.Name, IsActive = roleGrMn.IsActive };
+        }
     }
 }

@@ -44,6 +44,8 @@
             this.BrandLabel = new System.Windows.Forms.Label();
             this.AddItemProductManagment = new System.Windows.Forms.Button();
             this.SupplierIdTextBox = new System.Windows.Forms.TextBox();
+            this.ActionComboBox = new System.Windows.Forms.ComboBox();
+            this.ActionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CategoryComboBox
@@ -180,11 +182,30 @@
             this.SupplierIdTextBox.TabIndex = 28;
             this.SupplierIdTextBox.UseWaitCursor = true;
             // 
+            // ActionComboBox
+            // 
+            this.ActionComboBox.FormattingEnabled = true;
+            this.ActionComboBox.Location = new System.Drawing.Point(67, 85);
+            this.ActionComboBox.Name = "ActionComboBox";
+            this.ActionComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ActionComboBox.TabIndex = 29;
+            // 
+            // ActionLabel
+            // 
+            this.ActionLabel.AutoSize = true;
+            this.ActionLabel.Location = new System.Drawing.Point(13, 92);
+            this.ActionLabel.Name = "ActionLabel";
+            this.ActionLabel.Size = new System.Drawing.Size(37, 13);
+            this.ActionLabel.TabIndex = 30;
+            this.ActionLabel.Text = "Action";
+            // 
             // NewItemProdManag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 295);
+            this.Controls.Add(this.ActionLabel);
+            this.Controls.Add(this.ActionComboBox);
             this.Controls.Add(this.SupplierIdTextBox);
             this.Controls.Add(this.AddItemProductManagment);
             this.Controls.Add(this.BrandLabel);
@@ -227,5 +248,7 @@
         private System.Windows.Forms.Label BrandLabel;
         private System.Windows.Forms.Button AddItemProductManagment;
         private System.Windows.Forms.TextBox SupplierIdTextBox;
+        private System.Windows.Forms.ComboBox ActionComboBox;
+        private System.Windows.Forms.Label ActionLabel;
     }
 }

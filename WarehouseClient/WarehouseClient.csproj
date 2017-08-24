@@ -56,6 +56,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -126,6 +127,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleGroupManageet\RoleGroupAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoleGroupManageet\RoleGroupAdd.Designer.cs">
+      <DependentUpon>RoleGroupAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoleGroupMapManagment\AddRoleGroupMap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +144,11 @@
     </Compile>
     <Compile Include="RoleManagement\RoleAdd.Designer.cs">
       <DependentUpon>RoleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="UserManagement\AddUser.cs">
       <SubType>Form</SubType>
@@ -178,6 +190,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RoleGroupManageet\RoleGroupAdd.resx">
+      <DependentUpon>RoleGroupAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoleGroupMapManagment\AddRoleGroupMap.resx">
       <DependentUpon>AddRoleGroupMap.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +214,32 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\WWS\api.wsdl" />
+    <None Include="Service References\WWS\api.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WWS\api1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WWS\api2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WWS\WarehouseClient.WWS.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WWS\WarehouseClient.WWS.ProductCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WWS\WarehouseClient.WWS.ProductManagment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WWS\WarehouseClient.WWS.Role.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WWS\WarehouseClient.WWS.RoleGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WWS\WarehouseService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -213,7 +254,27 @@
       <Name>WarehouseDAL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WWS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WWS\api.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

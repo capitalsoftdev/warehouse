@@ -16,7 +16,7 @@ namespace WarehouseDAL
 
         private string _deleteItem = "DeleteItemFromProductManagment";
 
-        private string _getItem = "GetItemFromProductManagment";
+        private string _getItem = "[dbo].[GetItemFromProductManagment]";
         public IList<ProductManagment> GetItem(int id, int userId, int productId)
         {
             IList<ProductManagment> list = null;
@@ -37,8 +37,12 @@ namespace WarehouseDAL
                 using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
                 {
                     conn.Open();
+
                     using (var cmd = new SqlCommand(_getItem, conn))
                     {
+
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
                         SqlParameter pId = new SqlParameter("@id", System.Data.SqlDbType.Int);
                         if (id > 0)
                         {
@@ -72,7 +76,7 @@ namespace WarehouseDAL
                         }
                         cmd.Parameters.Add(pProductId);
 
-
+                        cmd.ExecuteNonQuery();
                         SqlDataReader reader = cmd.ExecuteReader();
 
                         if (reader.HasRows)

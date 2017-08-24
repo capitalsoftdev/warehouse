@@ -9,9 +9,9 @@ namespace WarehouseBL.Interfaces
 {
     interface IRoleManager
     {
-        Role GetRole(int id);
+        Role GetRoleById(int id);
 
-        IList<Role> GetRole();
+        IList<Role> GetRoles();
         int CreateOrUpdateRole(Role role);
 
         int DisableRole(int id);

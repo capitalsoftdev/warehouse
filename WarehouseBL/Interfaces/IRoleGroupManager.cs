@@ -9,9 +9,9 @@ namespace WarehouseBL.Interfaces
 {
     interface IRoleGroupMangaer
     {
-        RoleGroup GetRoleGroup(int id);
+        RoleGroup GetRoleGroupById(int id);
 
-        IList<RoleGroup> GetRoleGroup();
+        IList<RoleGroup> GetRoleGroups();
         int CreateOrUpdateRoleGroup(RoleGroup roleGroup);
 
         int DisableRoleGroup(int id);

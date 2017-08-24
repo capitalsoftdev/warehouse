@@ -16,10 +16,13 @@ namespace WarehouseWebService
         IList<Product> GetProducts();
 
         [OperationContract]
-        Product GetProduct(int id);
+        Product GetProductById(int id);
 
         [OperationContract]
         int DisableProduct(int id);
+
+        [OperationContract]
+        IList<Product> GetActiveProduct();
 
         #endregion
 
@@ -34,6 +37,34 @@ namespace WarehouseWebService
         [OperationContract]
         int CreateOrUpdate(ProductManagment prMn);
 
+        #endregion
+
+        #region Role
+        [OperationContract]
+        int CreateOrUpdateRole(Role role);
+
+        [OperationContract]
+        IList<Role> GetRoles();
+
+        [OperationContract]
+        Role GetRoleById(int id);
+
+        [OperationContract]
+        int DisableRole(int id);
+        #endregion
+
+        #region RoleGroup
+        [OperationContract]
+        int CreateOrUpdateRoleGroup(RoleGroup roleGroup);
+
+        [OperationContract]
+        IList<RoleGroup> GetRoleGroups();
+
+        [OperationContract]
+        RoleGroup GetRoleGroupById(int id);
+
+        [OperationContract]
+        int DisableRoleGroup(int id);
         #endregion
 
         #region Munit

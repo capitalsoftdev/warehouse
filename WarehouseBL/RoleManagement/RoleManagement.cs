@@ -18,18 +18,18 @@ namespace WarehouseBL.RoleManagement
             return roleAdapter.CreateOrUpdateRole(role);
         }
 
-        public Role GetRole(int id)
+        public Role GetRoleById(int id)
         {
             RoleAdapter roleAdapter = new RoleAdapter();
 
-            return roleAdapter.GetRole(id);
+            return roleAdapter.GetRoleById(id);
         }
 
-        public IList<Role> GetRole()
+        public IList<Role> GetRoles()
         {
             RoleAdapter roleAdapter = new RoleAdapter();
 
-            return roleAdapter.GetRole();
+            return roleAdapter.GetRoles();
         }
 
         public int DisableRole(int id)

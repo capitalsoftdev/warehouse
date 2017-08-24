@@ -10,15 +10,7 @@ namespace WarehouseDAL.DataContracts
     {
         private int id = -1;
         private string name;
-        bool isActive;
-
-        public Role() { }
-        public Role(int id, string name, bool isActive)
-        {
-            this.Id = id;
-            this.Name = name;
-            this.IsActive = isActive;
-        }
+        bool isActive = true;
 
         public int Id
         {
