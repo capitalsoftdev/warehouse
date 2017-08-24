@@ -35,5 +35,15 @@ namespace WarehouseWebService
             return new Munit() { Id = munit.Id, MunitName = munit.MunitName, IsActive = munit.IsActive };
 
         }
+
+        public static WarehouseDAL.DataContracts.ProductCategory ToDALProductCategory(this ProductCategory product)
+        {
+            return new WarehouseDAL.DataContracts.ProductCategory() { Id = product.Id, Name = product.Name, ParentId = product.ParentId, IsActive = product.IsActive };
+        }
+
+        public static ProductCategory ToServiceProductCategory(this WarehouseDAL.DataContracts.ProductCategory product)
+        {
+            return new ProductCategory() { Id = product.Id, Name = product.Name, ParentId = product.ParentId, IsActive = product.IsActive };
+        }
     }
 }

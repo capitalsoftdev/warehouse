@@ -41,5 +41,21 @@ namespace WarehouseWebService
 
         Munit GetMunit(int id);
         #endregion
+
+        #region ProductCategory
+
+        [OperationContract]
+        int CreateOrUpdateProductCategory(ProductCategory product);
+
+        [OperationContract]
+        IList<ProductCategory> GetAllProductCategories();
+
+        [OperationContract]
+        Product GetProductCategoryById(int id);
+
+        [OperationContract]
+        int ManageProductCategory(int id, int action);
+
+        #endregion
     }
 }
