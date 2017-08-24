@@ -24,21 +24,25 @@ namespace DALTest
             //    Console.WriteLine(l);
             //}
 
-            prMn.Id = 17;
-            prMn.ProductId = 545;
-            prMn.Quantity = 88852;
-            prMn.ActionDate = new DateTime(2021, 06, 4);
-            prMn.Action = 4;
-            prMn.UserId = 5;
-            prMn.Reason = "readgdfhcgj";
-            prMn.Price = 545;
-            prMn.SupplierId = 4;
-            prMn.Brand = "brandsfgdsghg";
+            //prMn.Id = 17;
+            //prMn.ProductId = 545;
+            //prMn.Quantity = 88852;
+            //prMn.ActionDate = new DateTime(2021, 06, 4);
+            //prMn.Action = 4;
+            //prMn.UserId = 5;
+            //prMn.Reason = "readgdfhcgj";
+            //prMn.Price = 545;
+            //prMn.SupplierId = 4;
+            //prMn.Brand = "brandsfgdsghg";
         //    prMn.LastModifyDate = new DateTime(2014, 04, 22);
-            prMn.IsActive = true;
+            //prMn.IsActive = true;
 
-            Console.WriteLine(prMnAdaptor.CreateOrUpdate(prMn));
-           // Console.ReadLine(); 
+      //      Console.WriteLine(prMnAdaptor.GetItem(0, 0, 7));
+            foreach(var elem in prMnAdaptor.GetItem(0, 1, 0))
+            {
+                Console.WriteLine(elem.ProductId);
+            }
+            Console.ReadLine(); 
 
         }
     }

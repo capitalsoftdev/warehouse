@@ -14,6 +14,7 @@ using WarehouseClient.Helpers;
 using WarehouseBL.Interfaces;
 using WarehouseBL.ProductManagmentManagment;
 
+
 namespace WarehouseClient.ProdManagForm
 {
     public partial class NewItemProdManag : Form
@@ -42,6 +43,10 @@ namespace WarehouseClient.ProdManagForm
                 ProductComboBox.Items.Add(elem.Value.Name);
             }
 
+            ActionComboBox.Items.Add(ActionProduct.Acceptance);
+            ActionComboBox.Items.Add(ActionProduct.Ouptut);
+            ActionComboBox.Items.Add(ActionProduct.WriteOff);
+
             //var potentialParents = Constants.ApplicationData.ProductCategory.Where(
             //   p => (p.Value.ParentId == 0 && p.Value.IsActive));
             //foreach (var prodCat in potentialParents)
@@ -64,42 +69,36 @@ namespace WarehouseClient.ProdManagForm
 
         private void AddItemProductManagment_Click(object sender, EventArgs e)
         {
-            //get Id
-            //var selItem = CategoryComboBox.SelectedItem;
-
+       
+            var selItem = CategoryComboBox.SelectedItem;
             var productSelect = ProductComboBox.SelectedItem.ToString();
             var productId = -1;
-            foreach(var prodSel in WarehouseClient.Constants.ApplicationData.Products)
+            foreach (var prodSel in WarehouseClient.Constants.ApplicationData.Products)
             {
-                if(productSelect == prodSel.Value.Name)
+                if (productSelect == prodSel.Value.Name)
                 {
                     productId = prodSel.Key;
                 }
             }
 
-
-            var quantity = Convert.ToInt32(QuantityTextBox.Text);
-            var userId = Convert.ToInt32(this.sendedForm.LoginUser.Id);
-            var reason = Convert.ToString(ReasonLabel.Text);
-            var price = Convert.ToInt32(PriceTextBox.Text);
-            var supplierid = Convert.ToInt32(SupplierIdTextBox.Text);
-            var brand = Convert.ToString(BrandTextBox.Text);
-
             prodManagManager = new ProductManagmentManager();
+
             WarehouseDAL.DataContracts.ProductManagment prodManag = new WarehouseDAL.DataContracts.ProductManagment();
+
             prodManag.ProductId = productId;
-            prodManag.Quantity = quantity;
+            prodManag.Quantity = Convert.ToInt32(QuantityTextBox.Text.Trim());
             prodManag.ActionDate = DateTime.Now;
-            prodManag.Action = Convert.ToInt32(ActionProduct.Acceptance);
-            prodManag.UserId = userId;
-            prodManag.Reason = reason;
-            prodManag.Price = price;
-            prodManag.SupplierId = supplierid;
-            prodManag.Brand = brand;
+            prodManag.Action = Convert.ToInt32(ActionComboBox.SelectedItem);
+            prodManag.UserId = Convert.ToInt32(this.sendedForm.LoginUser.Id);
+            prodManag.Reason = Convert.ToString(ReasonLabel.Text.Trim());
+            prodManag.Price = Convert.ToInt32(PriceTextBox.Text.Trim());
+            prodManag.SupplierId = Convert.ToInt32(SupplierIdTextBox.Text.Trim());
+            prodManag.Brand = Convert.ToString(BrandTextBox.Text.Trim());
             prodManag.LastModifyDate = DateTime.Now;
             prodManag.IsActive = true;
             prodManagManager.CreateOrUpdate(prodManag);
-            //MessageBox.Show(productId.ToString());
+            sendedForm.ProductManagmentIntoGridView(true);
+            this.Close();
         }
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,6 +112,7 @@ namespace WarehouseClient.ProdManagForm
                 if (categorySelect == elem.Value.Name)
                 {
                     categoryId = elem.Key;
+                    break;
                 }
             }
 
