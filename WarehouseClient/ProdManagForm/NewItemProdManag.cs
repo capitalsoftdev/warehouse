@@ -113,6 +113,7 @@ namespace WarehouseClient.ProdManagForm
                 if (categorySelect == elem.Value.Name)
                 {
                     categoryId = elem.Key;
+                    break;
                 }
             }
 

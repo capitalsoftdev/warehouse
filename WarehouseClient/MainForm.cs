@@ -45,7 +45,8 @@ namespace WarehouseClient
                         tabControl1.TabPages.Remove(RoleMapTab);
                         break;
                         }
-            } 
+            }
+      
         }
 
 
@@ -118,6 +119,6 @@ namespace WarehouseClient
            UserLabel2.Text=dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
-       
+      
     }
 }
