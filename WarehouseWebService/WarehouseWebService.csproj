@@ -63,10 +63,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\Munit.cs" />
     <Compile Include="DataContracts\Product.cs" />
     <Compile Include="DataContracts\ProductManagment.cs" />
     <Compile Include="DALExtention.cs" />
     <Compile Include="IWarehouseService.cs" />
+    <Compile Include="MunitService.cs" />
     <Compile Include="ProductManagmentService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

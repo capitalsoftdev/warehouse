@@ -13,7 +13,6 @@ using WarehouseClient.ProductCategoryManagement;
 using WarehouseBL.ProductCategoryManagement;
 using WarehouseClient.ProdManagForm;
 using WarehouseBL.ProductManagement;
-//using WarehouseBL.ProductCategoryManagement;
 
 namespace WarehouseClient
 {
@@ -48,41 +47,47 @@ namespace WarehouseClient
                         }
             } 
         }
-        //private void DataRefresh()
-        //{
-        //    us = manage.SelectActiveUser();
-        //    dataGridView1.DataSource = us.ToList();
-        //}
+
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-           // MainForm_Load(null, null);
+   
         }
 
-       
 
-
-
-
-
-
-
-        //private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    this.Hide();
-        //    var form = new Login();
-        //    form.Closed += (s, args) => this.Close();
-        //    form.Show();
-        //}
-
-        //public void addToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    UserManagement.AddUser add = new UserManagement.AddUser(this);
-        //    add.Show();
-        //}
 
         private static void LoadAllStaticInfo()
         {
+            #region Load Role Groups
+
+            var roleGroupManagerBL = new WarehouseBL.RoleGroupManagement.RoleGroupManager();
+
+            var allRoleGroups = roleGroupManagerBL.GetRoleGroup();
+
+            Constants.ApplicationData.RoleGroups = new Dictionary<int, RoleGroup>();
+
+            foreach (var roleGroup in allRoleGroups)
+            {
+                Constants.ApplicationData.RoleGroups.Add(roleGroup.Id, roleGroup);
+            }
+
+            #endregion
+
+            #region Load Roles
+
+            var roleManagerBL = new WarehouseBL.RoleManagement.RoleManager();
+
+            var allRoles = roleManagerBL.GetRole();
+
+            Constants.ApplicationData.Roles = new Dictionary<int, Role>();
+
+            foreach(var role in allRoles)
+            {
+                Constants.ApplicationData.Roles.Add(role.Id, role);
+            }
+             
+            #endregion
+            
             #region Load Product Categories
 
             var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
@@ -102,16 +107,41 @@ namespace WarehouseClient
 
             ProductManager productManager = new ProductManager();
 
-            Constants.ApplicationData.Products = productManager.GetActiveProduct();
+            var allProduct = productManager.GetActiveProduct();
+
+            Constants.ApplicationData.Products = new Dictionary<int, Product>();
+
+            foreach (var item in allProduct)
+            {
+                Constants.ApplicationData.Products.Add(item.Id.Value, item);
+            }
+
 
             #endregion
+
+            #region Load Munit
+
+            MunitManager munitManager = new MunitManager();
+
+            var allMunit = munitManager.GetMunit();
+
+            Constants.ApplicationData.Munits = new Dictionary<int, Munit>();
+
+            foreach (var item in allMunit)
+            {
+                Constants.ApplicationData.Munits.Add(item.Id, item);
+            }
+
+
+            #endregion
+
         }
 
-        private void ProductCategoryTab_Load(object sender, EventArgs e)
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            addProductCategoryButton.Enabled = false;
+           UserLabel2.Text=dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
-
+       
     }
 }

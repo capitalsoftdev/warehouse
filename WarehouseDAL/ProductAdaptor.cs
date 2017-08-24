@@ -155,9 +155,9 @@ namespace WarehouseDAL
             }
         }
 
-        public Dictionary<int, Product> GetActiveProduct()
+        public IList<Product> GetActiveProduct()
         {
-            Dictionary<int, Product> productList = null;
+            IList<Product> productList = null;
             using (var conn = new SqlConnection(ConnectionParameters.ConnectionString))
             {
                 conn.Open();
@@ -172,7 +172,7 @@ namespace WarehouseDAL
 
                     if (reader.HasRows)
                     {
-                        productList = new Dictionary<int, Product>();
+                        productList = new List<Product>();
                         while (reader.Read())
                         {
                             Product newProduct = new Product();
@@ -181,8 +181,7 @@ namespace WarehouseDAL
                             newProduct.ProductCategoryId = (int)reader["productCategoryId"];
                             newProduct.Munit = (int)reader["munit"];
                             newProduct.IsActive = (bool)reader["IsActive"];
-                            if (newProduct.Id.HasValue)
-                                productList.Add(newProduct.Id.Value, newProduct);
+                            productList.Add(newProduct);
                         }
                     }
 

@@ -14,11 +14,17 @@ namespace WarehouseClient.Constants
         public static Dictionary<int, WarehouseDAL.DataContracts.Role> Roles = 
             new Dictionary<int, WarehouseDAL.DataContracts.Role>();
 
+        public static Dictionary<int, WarehouseDAL.DataContracts.RoleGroup> RoleGroups =
+            new Dictionary<int, WarehouseDAL.DataContracts.RoleGroup>();
+
         public static Dictionary<int, WarehouseDAL.DataContracts.ProductCategory> ProductCategory = 
             new Dictionary<int, WarehouseDAL.DataContracts.ProductCategory>();
 
         public static Dictionary<int, WarehouseDAL.DataContracts.Product> Products = 
             new Dictionary<int, WarehouseDAL.DataContracts.Product>();
+
+        public static Dictionary<int, WarehouseDAL.DataContracts.Munit> Munits =
+            new Dictionary<int, WarehouseDAL.DataContracts.Munit>();
     }
 
     public enum ActionProduct

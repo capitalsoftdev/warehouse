@@ -30,7 +30,7 @@ namespace WarehouseBL.ProductManagement
             
         }
 
-        public Dictionary<int, Product> GetActiveProduct()
+        public IList<Product> GetActiveProduct()
         {
             var productAdaptor = new ProductAdaptor();
 
@@ -56,5 +56,6 @@ namespace WarehouseBL.ProductManagement
 
             return result;
         }
+
     }
 }

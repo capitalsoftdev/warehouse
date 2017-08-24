@@ -17,6 +17,6 @@ namespace WarehouseBL.Interfaces
 
         int DisableProduct(int id);
 
-        Dictionary<int, Product> GetActiveProduct();
+        IList<Product> GetActiveProduct();
     }
 }
