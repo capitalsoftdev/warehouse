@@ -48,12 +48,12 @@ namespace WarehouseDAL
             return res;
         }
 
-        public Role GetRole(int id)
+        public Role GetRoleById(int id)
         {
             return _GetRole(id)[0];
         }
 
-        public List<Role> GetRole()
+        public List<Role> GetRoles()
         {
             return _GetRole();
         }
@@ -108,7 +108,7 @@ namespace WarehouseDAL
                             int rId = (int)reader.GetValue(0);
                             string rName = (string)reader.GetValue(1);
                             bool rIsActive = (bool)reader.GetValue(2);
-                            roleList.Add(new Role(rId, rName, rIsActive));
+                            roleList.Add(new Role() { Id = rId, Name = rName, IsActive = rIsActive});
                         }
                     }
 

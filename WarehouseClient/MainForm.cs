@@ -62,7 +62,7 @@ namespace WarehouseClient
 
             var roleGroupManagerBL = new WarehouseBL.RoleGroupManagement.RoleGroupManager();
 
-            var allRoleGroups = roleGroupManagerBL.GetRoleGroup();
+            var allRoleGroups = roleGroupManagerBL.GetRoleGroups();
 
             Constants.ApplicationData.RoleGroups = new Dictionary<int, RoleGroup>();
 
@@ -77,7 +77,7 @@ namespace WarehouseClient
 
             var roleManagerBL = new WarehouseBL.RoleManagement.RoleManager();
 
-            var allRoles = roleManagerBL.GetRole();
+            var allRoles = roleManagerBL.GetRoles();
 
             Constants.ApplicationData.Roles = new Dictionary<int, Role>();
 
@@ -118,6 +118,5 @@ namespace WarehouseClient
            UserLabel2.Text=dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
-       
     }
 }

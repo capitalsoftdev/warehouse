@@ -23,14 +23,14 @@ namespace WarehouseBL.RoleGroupManagement
             return roleAdapter.Disable(id);
         }
 
-        public RoleGroup GetRoleGroup(int id)
+        public RoleGroup GetRoleGroupById(int id)
         {
             RoleGroupAdapter roleGroupAdapter = new RoleGroupAdapter();
 
             return roleGroupAdapter.GetRoleGroup(id);
         }
 
-        public IList<RoleGroup> GetRoleGroup()
+        public IList<RoleGroup> GetRoleGroups()
         {
             RoleGroupAdapter roleGroupAdapter = new RoleGroupAdapter();
 

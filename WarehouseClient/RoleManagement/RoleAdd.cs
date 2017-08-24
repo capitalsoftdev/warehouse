@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarehouseBL.RoleManagement;
 using WarehouseDAL.DataContracts;
@@ -30,7 +23,7 @@ namespace WarehouseClient.RoleManagement
         private void roleAddButton_Click(object sender, EventArgs e)
         {
             RoleManager roleManagemer = new RoleManager();
-            roleManagemer.CreateOrUpdateRole(new Role(-1,RoleNameTextBox.Text,true));
+            roleManagemer.CreateOrUpdateRole(new Role() { Name = RoleNameTextBox.Text});
             mainForm.Enabled = true;
             mainForm.RoleDataGridRefresh();
             Close();
