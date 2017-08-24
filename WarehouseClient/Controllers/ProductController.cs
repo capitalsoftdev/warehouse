@@ -15,41 +15,71 @@ namespace WarehouseClient
     {
         ProductManager productManager = new ProductManager();
         IList<Product> productList;
+        IList<Munit> munitList;
+        IList<ProductCategory> productCategoryList;
         IEnumerable<ProductMunitProductCategoryJoin> result;
 
         public void loadProductsInToGrid(bool reLoad)
         {
-            var munitBL = new MunitManager();
-            var munitData = munitBL.GetMunit();
 
             if (reLoad)
             {
-                ApplicationData.Products = productManager.GetActiveProduct();
+                ApplicationData.Products = new Dictionary<int, Product>();
+
+                var allProduct = productManager.GetActiveProduct();
+
+                foreach (var item in allProduct)
+                {
+                    ApplicationData.Products.Add(item.Id.Value, item);
+                }
             }
             productList = ApplicationData.Products.Select(p => p.Value).ToList();
+            productCategoryList = ApplicationData.ProductCategory.Select(pc => pc.Value).ToList();
+            munitList = ApplicationData.Munits.Select(m => m.Value).ToList();
 
-            result = from productJoin in productList
-                         join productCategoryJoin in ApplicationData.ProductCategory
-                         on productJoin.ProductCategoryId equals productCategoryJoin.Value.Id
-                         join munitJoin in munitData
-                         on productJoin.Munit equals munitJoin.Id
-                         select new ProductMunitProductCategoryJoin()
-                         {
-                             Id = productJoin.Id,
-                             Name = productJoin.Name,
-                             MunitId = productJoin.Munit,
-                             IsActive = productJoin.IsActive,
-                             ProductCategoryId = productJoin.ProductCategoryId,
-                             Category = productCategoryJoin.Value.Name,
-                             Munit = munitJoin.MunitName
-                         };
+            var result1 = productList.Join
+                (
+                    munitList,
+                    p => p.Munit,
+                    m => m.Id,
+                    (p, m) => new
+                    {
+                        Id = p.Id.Value,
+                        Name = p.Name,
+                        ProductCategoryId = p.ProductCategoryId,
+                        Munit = m.MunitName
+                    }
+                );
 
+            var result2 = result1.Join
+                (
+                    productCategoryList,
+                    p => p.ProductCategoryId,
+                    pc => pc.Id,
+                    (p, pc) => new
+                    {
+                        Id = p.Id,
+                        Name = p.Name,
+                        Munit = p.Munit,
+                        Category = pc.Name
+                    }
+                );
 
-            productDataGridView.DataSource = result.ToList();
+            //result = from productJoin in productList
+            //             join productCategoryJoin in productCategoryList
+            //             on productJoin.ProductCategoryId equals productCategoryJoin.Id
+            //             join munitJoin in munitList
+            //             on productJoin.Munit equals munitJoin.Id
+            //         select new ProductMunitProductCategoryJoin()
+            //         {
+            //                 Id = productJoin.Id.Value,
+            //                 Name = productJoin.Name,
+            //                 Category = productCategoryJoin.Name,
+            //                 Munit = munitJoin.MunitName
+            //         };
+
+            productDataGridView.DataSource = result2.ToList();
             productDataGridView.Columns[0].Visible = false;
-            productDataGridView.Columns[2].Visible = false;
-            productDataGridView.Columns[3].Visible = false;
-            productDataGridView.Columns[4].Visible = false;
         }
 
         private void tabPage3_Enter(object sender, EventArgs e)
@@ -85,23 +115,20 @@ namespace WarehouseClient
 
         private void productDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var productSelect = productList.Where(p => p.Id ==  result.ToList()[e.RowIndex].Id).First();
-            ProductManagement.NewProductAddForm newProductAddForm = new ProductManagement.NewProductAddForm(this, true, productSelect);
+            ProductManagement.NewProductAddForm newProductAddForm = new ProductManagement.NewProductAddForm(this, true, productList[e.RowIndex]);
             newProductAddForm.Show();
+                
         }
 
-       
-        private class ProductMunitProductCategoryJoin
+
+        class ProductMunitProductCategoryJoin
         {
-            int? id;
+            int id;
             string name;
-            int munitId;
-            Boolean isActive;
-            int productCategoryId;
             string category;
             string munit;
 
-            public int? Id
+            public int Id
             {
                 get
                 {
@@ -127,44 +154,6 @@ namespace WarehouseClient
                 }
             }
 
-            public int MunitId
-            {
-                get
-                {
-                    return munitId;
-                }
-
-                set
-                {
-                    munitId = value;
-                }
-            }
-
-            public bool IsActive
-            {
-                get
-                {
-                    return isActive;
-                }
-
-                set
-                {
-                    isActive = value;
-                }
-            }
-
-            public int ProductCategoryId
-            {
-                get
-                {
-                    return productCategoryId;
-                }
-
-                set
-                {
-                    productCategoryId = value;
-                }
-            }
 
             public string Category
             {

@@ -21,18 +21,26 @@ namespace WarehouseWebService
             return productManager.DisableProduct(id);
         }
 
-        public IList<Product> GetProduct()
+        public IList<Product> GetProducts()
         {
             var productManager = new ProductManager();
 
             return productManager.GetProduct().Select(p => p.ToServiceProduct()).ToList();
         }
 
-        public Product GetProduct(int id)
+        public Product GetProductById(int id)
         {
             var productManager = new ProductManager();
 
             return productManager.GetProduct(id).ToServiceProduct();
+        }
+
+        public IList<Product> GetActiveProduct()
+        {
+            var productManager = new ProductManager();
+
+            return productManager.GetActiveProduct().Select(p => p.ToServiceProduct()).ToList();
+            
         }
     }
 }

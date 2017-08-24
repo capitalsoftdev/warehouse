@@ -34,14 +34,12 @@ namespace WarehouseClient.ProductManagement
         
         private void NewProductAddForm_Load(object sender, EventArgs e)
         {
-            var munitBL = new MunitManager();
-            var munitData = munitBL.GetMunit();
+            var munitData = Constants.ApplicationData.Munits.Select(m => m.Value).ToList();
 
             munitSelectProductComboBox2.DataSource = munitData.Select(m => m.MunitName).ToList();
             munitSelectProductComboBox2.Tag = munitData;
+            
 
-
-            var productCategoryBL = new ProductCategoryManager();
             var productCategoryData = Constants.ApplicationData.ProductCategory.Select(p => p.Value).ToList();
 
             productCategorySelectProductComboBox1.DataSource = productCategoryData.Select(p => p.Name).ToList();
@@ -52,8 +50,8 @@ namespace WarehouseClient.ProductManagement
             {
                 addNewProductLabel1.Text = "Update product";
                 newProductAddAndUpdateButton.Text = "Update";
-                productCategorySelectProductComboBox1.SelectedItem = Constants.ApplicationData.ProductCategory[product.ProductCategoryId];
-                munitSelectProductComboBox2.SelectedItem = product.Munit;
+                productCategorySelectProductComboBox1.SelectedItem = Constants.ApplicationData.ProductCategory[product.ProductCategoryId].Name;
+                munitSelectProductComboBox2.SelectedItem = Constants.ApplicationData.Munits[product.Munit].MunitName;
                 newProductNameTextBox.Text = product.Name;
             }
 

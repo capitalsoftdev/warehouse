@@ -45,8 +45,7 @@ namespace WarehouseClient
                         tabControl1.TabPages.Remove(RoleMapTab);
                         break;
                         }
-            }
-      
+            } 
         }
 
 
@@ -63,7 +62,7 @@ namespace WarehouseClient
 
             var roleGroupManagerBL = new WarehouseBL.RoleGroupManagement.RoleGroupManager();
 
-            var allRoleGroups = roleGroupManagerBL.GetRoleGroup();
+            var allRoleGroups = roleGroupManagerBL.GetRoleGroups();
 
             Constants.ApplicationData.RoleGroups = new Dictionary<int, RoleGroup>();
 
@@ -78,7 +77,7 @@ namespace WarehouseClient
 
             var roleManagerBL = new WarehouseBL.RoleManagement.RoleManager();
 
-            var allRoles = roleManagerBL.GetRole();
+            var allRoles = roleManagerBL.GetRoles();
 
             Constants.ApplicationData.Roles = new Dictionary<int, Role>();
 
@@ -108,10 +107,34 @@ namespace WarehouseClient
 
             ProductManager productManager = new ProductManager();
 
-            Constants.ApplicationData.Products = productManager.GetActiveProduct();
+            var allProduct = productManager.GetActiveProduct();
+
+            Constants.ApplicationData.Products = new Dictionary<int, Product>();
+
+            foreach (var item in allProduct)
+            {
+                Constants.ApplicationData.Products.Add(item.Id.Value, item);
+            }
+
 
             #endregion
-            
+
+            #region Load Munit
+
+            MunitManager munitManager = new MunitManager();
+
+            var allMunit = munitManager.GetMunit();
+
+            Constants.ApplicationData.Munits = new Dictionary<int, Munit>();
+
+            foreach (var item in allMunit)
+            {
+                Constants.ApplicationData.Munits.Add(item.Id, item);
+            }
+
+
+            #endregion
+
         }
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -119,6 +142,5 @@ namespace WarehouseClient
            UserLabel2.Text=dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
-      
     }
 }
