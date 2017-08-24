@@ -34,5 +34,13 @@ namespace WarehouseWebService
 
             return productManager.GetProduct(id).ToServiceProduct();
         }
+
+        public IList<Product> GetActiveProduct()
+        {
+            var productManager = new ProductManager();
+
+            return productManager.GetActiveProduct().Select(p => p.ToServiceProduct()).ToList();
+            
+        }
     }
 }

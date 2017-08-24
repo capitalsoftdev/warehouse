@@ -16,10 +16,13 @@ namespace WarehouseWebService
         IList<Product> GetProducts();
 
         [OperationContract]
-        Product GetProduct(int id);
+        Product GetProductById(int id);
 
         [OperationContract]
         int DisableProduct(int id);
+
+        [OperationContract]
+        IList<Product> GetActiveProduct();
 
         #endregion
 
