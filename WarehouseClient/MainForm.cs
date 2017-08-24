@@ -107,6 +107,11 @@ namespace WarehouseClient
             #endregion
         }
 
+        private void ProductCategoryTab_Load(object sender, EventArgs e)
+        {
+            addProductCategoryButton.Enabled = false;
+        }
+
 
     }
 }
