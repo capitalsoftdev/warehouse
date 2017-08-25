@@ -15,9 +15,9 @@ namespace WarehouseClient
 {
     public partial class MainForm
     {
-        WWS.IWarehouseService prodManag = null;
-
-        IList<WWS.ProductManagment> prodManagList = null;
+        //  IWarehouseService prodManag = null;
+        IProductManagmentManager prodManag = new ProductManagmentManager();
+        IList<ProductManagment> prodManagList = null;
 
         IList<Product> productListForProdManag;
 
@@ -29,10 +29,11 @@ namespace WarehouseClient
         {
             if(reload)
             {
+           
                 prodManagList = prodManag.GetItem(id, userId, productId);
                 if(prodManagList == null)
                 {
-                    prodManagList = new List<WWS.ProductManagment>();
+                    //prodManagList = new List<WWS.ProductManagment>();
                 }
 
                 productListForProdManag = ApplicationData.Products.Select(p => p.Value).ToList();
@@ -55,6 +56,7 @@ namespace WarehouseClient
                         }
                         );
 
+                //poxel
                 UserManager user = new UserManager();
                 userList = user.SelectActiveUser();
                 var pMJoinPJoinUser = pMJOinP.Join(
@@ -78,6 +80,7 @@ namespace WarehouseClient
                //var enumList = Enum.GetValues(typeof(ActionProduct)).Cast<ActionProduct>().ToList();
                //.Select(x => x.ToString()).ToList();
 
+                
                 ProductManagmentGridView.DataSource = pMJoinPJoinUser.ToList();
                 ProductManagmentGridView.Columns[0].Visible = false;
             }
@@ -85,8 +88,8 @@ namespace WarehouseClient
         
         private void ProductManagementTab_Enter(object sender, EventArgs e)
         {
-            try
-            {
+          //  try
+           // {
                 //add elems in ProductCategory ComboBox
                 if (CategoryProdMagTabComboBox.Items.Count == 0)
                 {
@@ -115,11 +118,11 @@ namespace WarehouseClient
                     UserProdManagTabComboBox.Items.Add(elem.Value.Username);
                 }
                 ProductManagmentIntoGridView(true, 0, 0, 0);
-            }
-            catch(Exception ex)
+           // }
+            /*catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
 
         }
 
@@ -143,12 +146,6 @@ namespace WarehouseClient
                 if(statusFilterProductId != 0)
                 {
                     ProductManagmentIntoGridView(true, 0, 0, statusFilterProductId);
-                    //prodManagList = prodManag.GetItem(0, 0, statusFilter);
-                    //if(prodManagList == null)
-                    //{
-                    //    prodManagList = new List<ProductManagment>();
-                    //}
-                    //ProductManagmentGridView.DataSource = prodManagList.ToList();
                 }
                 else
                 {
@@ -161,6 +158,7 @@ namespace WarehouseClient
             }
         }
 
+        //last
         private void UpdateProductManagmentButton_Click(object sender, EventArgs e)
         {
             var id = Convert.ToInt32(ProductManagmentGridView.CurrentRow.Cells[0].Value);
@@ -232,8 +230,8 @@ namespace WarehouseClient
                     break;
                 }
             }
-            prodManagList = prodManag.GetItem(0, userId, 0);
-            ProductManagmentGridView.DataSource = prodManagList.ToList();
+
+            ProductManagmentIntoGridView(true, 0, userId, 0);
            
         }
 

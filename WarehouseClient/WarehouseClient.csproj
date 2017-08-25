@@ -68,6 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\WWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Constants\ApplicationData.cs" />
     <Compile Include="Controllers\ProductCategoryController.cs">
       <SubType>Form</SubType>
@@ -200,6 +205,32 @@
     <EmbeddedResource Include="UserManagement\SignOut.resx">
       <DependentUpon>SignOut.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\WWS\api.wsdl" />
+    <None Include="Connected Services\WWS\api.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WWS\api1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WWS\api2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WWS\WarehouseClient.WWS.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WWS\WarehouseClient.WWS.ProductCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WWS\WarehouseClient.WWS.ProductManagment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WWS\WarehouseClient.WWS.Role.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WWS\WarehouseClient.WWS.RoleGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WWS\WarehouseService.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -211,7 +242,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WarehouseBL\WarehouseBL.csproj">
@@ -222,6 +255,27 @@
       <Project>{401dc347-6ca0-4a50-b907-0c49334deed8}</Project>
       <Name>WarehouseDAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WWS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WWS\api.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
