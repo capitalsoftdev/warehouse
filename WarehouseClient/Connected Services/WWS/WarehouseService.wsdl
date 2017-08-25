@@ -69,15 +69,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetActiveProduct">
-      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveProduct" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetItem">
       <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetItem" style="document" />
       <wsdl:input>
@@ -177,96 +168,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateOrUpdateProductCategory">
-      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProductCategory" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllProductCategories">
-      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetAllProductCategories" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetProductCategoryById">
-      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProductCategoryById" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ManageProductCategory">
-      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ManageProductCategory" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Login">
-      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/Login" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SelectActiveUsers">
-      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUsers" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ActivateOrDeActivate">
-      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ActivateOrDeActivate" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SelectActiveUserById">
-      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUserById" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateOrInsertUser">
-      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateOrInsertUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateUserLoginDate">
-      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateUserLoginDate" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetNamedPipeBinding_IWarehouseService" type="i0:IWarehouseService">
     <wsp:PolicyReference URI="#NetNamedPipeBinding_IWarehouseService_policy" />
@@ -300,15 +201,6 @@
     </wsdl:operation>
     <wsdl:operation name="DisableProduct">
       <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableProduct" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetActiveProduct">
-      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveProduct" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -408,96 +300,6 @@
     </wsdl:operation>
     <wsdl:operation name="DisableRoleGroup">
       <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableRoleGroup" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateOrUpdateProductCategory">
-      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProductCategory" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllProductCategories">
-      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetAllProductCategories" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetProductCategoryById">
-      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProductCategoryById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ManageProductCategory">
-      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ManageProductCategory" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Login">
-      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/Login" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SelectActiveUsers">
-      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUsers" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ActivateOrDeActivate">
-      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ActivateOrDeActivate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SelectActiveUserById">
-      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUserById" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateOrInsertUser">
-      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateOrInsertUser" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateUserLoginDate">
-      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateUserLoginDate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

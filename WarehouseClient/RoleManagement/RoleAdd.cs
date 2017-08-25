@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using WarehouseBL.RoleManagement;
-using WarehouseDAL.DataContracts;
+using WarehouseClient.WWS;
 
 namespace WarehouseClient.RoleManagement
 {
@@ -22,11 +21,27 @@ namespace WarehouseClient.RoleManagement
 
         private void roleAddButton_Click(object sender, EventArgs e)
         {
-            RoleManager roleManagemer = new RoleManager();
-            roleManagemer.CreateOrUpdateRole(new Role() { Name = RoleNameTextBox.Text});
-            mainForm.Enabled = true;
-            mainForm.RoleDataGridRefresh();
-            Close();
+            if (RoleNameTextBox.Text != "")
+            {
+                try
+                {
+                    using (WarehouseServiceClient wwsClient = new WarehouseServiceClient("HTTP"))
+                    {
+                        wwsClient.CreateOrUpdateRole(new Role() { Name = RoleNameTextBox.Text });
+                    }
+                }
+                catch
+                {
+
+                }
+                mainForm.Enabled = true;
+                mainForm.RoleDataGridRefresh();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Wrong role name.");
+            }
         }
 
         private void RoleAdd_FormClosed(object sender, FormClosedEventArgs e)

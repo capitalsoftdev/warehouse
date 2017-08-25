@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WarehouseBL.RoleGroupManagement;
-using WarehouseDAL.DataContracts;
+using WarehouseClient.WWS;
 
 namespace WarehouseClient.RoleGroupManageet
 {
@@ -25,11 +24,28 @@ namespace WarehouseClient.RoleGroupManageet
 
         private void addRoleGroupButton_Click(object sender, EventArgs e)
         {
-            RoleGroupManager roleGroupManagemer = new RoleGroupManager();
-            roleGroupManagemer.CreateOrUpdateRoleGroup(new RoleGroup() { Name = RoleGroupTextBox.Text });
-            mainForm.Enabled = true;
-            mainForm.RoleGroupDataGridRefresh();
-            Close();
+            if (RoleGroupTextBox.Text != "")
+            {
+                try
+                {
+                    using (WarehouseServiceClient wwsClient = new WarehouseServiceClient("HTTP"))
+                    {
+                        wwsClient.CreateOrUpdateRoleGroup(new WWS.RoleGroup() { Name = RoleGroupTextBox.Text });
+                    }
+                }
+                catch
+                {
+
+                }
+                mainForm.Enabled = true;
+                mainForm.RoleGroupDataGridRefresh();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Wrong role group name.");
+            }
+            
         }
     }
 }
