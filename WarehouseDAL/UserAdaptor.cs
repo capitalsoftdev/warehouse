@@ -52,10 +52,10 @@ namespace WarehouseDAL
                         while (reader.Read())
                         {
                             use = new User();
-                            use.Id = (Int32)reader["id"];
+                            use.Id = (int)reader["id"];
                             use.Username = (string)reader["username"];
                             use.Password = (string)reader["password"];
-                            use.RoleGroupId = (Int32)reader["roleGroupId"];
+                            use.RoleGroupId = (int)reader["roleGroupId"];
                             use.CreationDate = (DateTime)reader["CreationDate"];
                             if ((reader["lastLoginDate"]) == DBNull.Value)
                                 use.LastLoginDate = DateTime.MinValue;
@@ -71,6 +71,10 @@ namespace WarehouseDAL
             }
             return user;
         }
+
+
+
+
         public void UpdateOrInsertUser(User user)
         {
             using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
@@ -155,7 +159,7 @@ namespace WarehouseDAL
                     comand.Parameters.Add(parOutput);
 
                     comand.ExecuteNonQuery();
-                    result = (Int32)parOutput.Value;
+                    result = (int)parOutput.Value;
                 }
             }
             return result;

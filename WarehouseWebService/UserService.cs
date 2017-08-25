@@ -10,16 +10,17 @@ namespace WarehouseWebService
     {
         public User Login(string userName, string password)
         {
-            var serviseUserManager = new UserManager();
-
-            var retUser = serviseUserManager.Login(userName, password);
-
-            if (retUser.Id > 0)
+            UserManager serviseUserManager = new UserManager();
+            User retUser = null;
+            if (serviseUserManager.Login(userName, password) == null)
             {
-                return serviseUserManager.SelectActiveUser(retUser.Id.Value).ToServiceUser();
+                return retUser;
             }
-
-            return null;
+            else
+            {
+                retUser = serviseUserManager.Login(userName, password).ToServiceUser();
+                return retUser;
+            }
         }
         public IList<User> SelectActiveUsers()
         {

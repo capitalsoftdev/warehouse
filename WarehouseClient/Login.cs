@@ -24,20 +24,20 @@ namespace WarehouseClient
         {
             try
             {
-                using (var client = new WWS.WarehouseServiceClient("HTTP"))
+                using (var client = new WarehouseServiceClient("HTTP"))
                 {
                     User user = client.Login(textBox1.Text, textBox2.Text);
-                    if (user == null)
-                    {
-                        MessageBox.Show("Invalid User name or password");
-                    }
-                    else
+                    if (user != null)
                     {
                         client.UpdateUserLoginDate(user.Id.Value);
                         this.Hide();
                         var formx = new MainForm(user);
                         formx.Closed += (s, args) => this.Close();
                         formx.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid User name or password");
                     }
                 }
             }
