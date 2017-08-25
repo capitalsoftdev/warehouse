@@ -40,37 +40,46 @@ namespace WarehouseServiceHoster
             eventLog = new EventLog();
             eventLog.Source = warehouseSrcName;
 
-            Type type = typeof(WarehouseService);
-            serviceHost = new ServiceHost(type);
-            serviceHost.Faulted += new EventHandler(Host_Faulted);
-            serviceHost.Open();
-
-            appParams.Clear();
-
-            string[] names = ConfigurationManager.AppSettings.AllKeys;
-
-            NameValueCollection appStgs = ConfigurationManager.AppSettings;
-
-            for (int i = 0; i < appStgs.Count; i++)
+            try
             {
-                appParams.Add(names[i], appStgs[i].ToString());
+                Type type = typeof(WarehouseService);
+                serviceHost = new ServiceHost(type);
+                serviceHost.Faulted += new EventHandler(Host_Faulted);
+                serviceHost.Open();
+
+
+                appParams.Clear();
+
+                string[] names = ConfigurationManager.AppSettings.AllKeys;
+
+                NameValueCollection appStgs = ConfigurationManager.AppSettings;
+
+                for (int i = 0; i < appStgs.Count; i++)
+                {
+                    appParams.Add(names[i], appStgs[i].ToString());
+                }
+
+                WarehouseDAL.ConnectionParameters.ConnectionString =
+                    ConfigurationManager.ConnectionStrings["DB_CONN_STRING"].ConnectionString;
+
+                DirectoryInfo rootLogDirectory = Directory.CreateDirectory(appParams["LOG_DIR"]);
+                FileStream logFileStream = File.Open(Path.Combine(rootLogDirectory.FullName,
+                                                DateTime.Now.ToString("yyyy_MM_dd_") + appParams["WAREHOUSE_LOG"]),
+                                                FileMode.OpenOrCreate | FileMode.Append, FileAccess.Write,
+                                                FileShare.ReadWrite);
+                StreamWriter logStream = new StreamWriter(logFileStream);
+                logStream.AutoFlush = true;
+
+                _log = new FileLogger(logStream, warehouseSrcName,
+                    Convert.ToInt32(ConfigurationManager.AppSettings["LOGGING_LEVEL"].ToString()));
+
+                WarehouseService.SetLogger(_log);
             }
-
-            WarehouseDAL.ConnectionParameters.ConnectionString = 
-                ConfigurationManager.ConnectionStrings["DB_CONN_STRING"].ConnectionString;
-           
-            DirectoryInfo rootLogDirectory = Directory.CreateDirectory(appParams["LOG_DIR"]);
-            FileStream logFileStream = File.Open(Path.Combine(rootLogDirectory.FullName,
-                                            DateTime.Now.ToString("yyyy_MM_dd_") + appParams["WAREHOUSE_LOG"]),
-                                            FileMode.OpenOrCreate | FileMode.Append, FileAccess.Write,
-                                            FileShare.ReadWrite);
-            StreamWriter logStream = new StreamWriter(logFileStream);
-            logStream.AutoFlush = true;
-
-            _log = new FileLogger(logStream, warehouseSrcName,
-                Convert.ToInt32(ConfigurationManager.AppSettings["LOGGING_LEVEL"].ToString()));
-
-            WarehouseService.SetLogger(_log);
+            catch(Exception e)
+            {
+                eventLog.WriteEntry(e.Message, EventLogEntryType.Error);
+                throw;
+            }
         }
 
         private void Host_Faulted(object sender, EventArgs e)

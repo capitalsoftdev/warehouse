@@ -33,6 +33,7 @@ namespace WarehouseWebService
             var productCategoryManager = new ProductCategoryManager();
 
             return productCategoryManager.GetProductCategoryById(id).ToServiceProductCategory();
+           
         }
     }
 }

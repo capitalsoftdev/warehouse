@@ -100,20 +100,30 @@ namespace WarehouseClient
 
             #endregion
 
-            //#region Load Product Categories
+            #region Load Product Categories
 
-            //var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
+            try
+            {
+                using (WarehouseServiceClient wwsClient = new WarehouseServiceClient("HTTP"))
+                {
+                    var allCats = wwsClient.GetAllProductCategories();
 
-            //var allCats = prodCategoryBL.GetAllProductCategories();
+                    Constants.ApplicationData.ProductCategory = new Dictionary<int, ProductCategory>();
 
-            //Constants.ApplicationData.ProductCategory = new Dictionary<int, ProductCategory>();
+                    foreach (var product in allCats)
+                    {
+                        Constants.ApplicationData.ProductCategory.Add(product.Id.Value, product);
+                    }
+                }
+            }
+            catch
+            {
 
-            //foreach (var item in allCats)
-            //{
-            //    Constants.ApplicationData.ProductCategory.Add(item.Id, item);
-            //}
+            }
 
-            //#endregion
+            
+
+            #endregion
 
             #region Load Product
 
