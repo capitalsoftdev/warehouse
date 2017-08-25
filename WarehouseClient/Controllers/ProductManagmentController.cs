@@ -11,78 +11,76 @@ using WarehouseClient.ProdManagForm;
 using WarehouseDAL.DataContracts;
 using WarehouseClient.Constants;
 using System.Collections;
+using WarehouseClient.WWS;
+
 namespace WarehouseClient
 {
     public partial class MainForm
     {
-        //  IWarehouseService prodManag = null;
-        IProductManagmentManager prodManag = new ProductManagmentManager();
-        IList<ProductManagment> prodManagList = null;
+       // WarehouseServiceClient wwsClient = new WarehouseServiceClient(ServiceParametor.Parametor);
+        //WWS.IWarehouseService prodManag = new WWS.WarehouseService();
+      //  IProductManagmentManager prodManag = new ProductManagmentManager();
 
-        IList<Product> productListForProdManag;
+        IList<WWS.ProductManagment> prodManagList = null;
+
+        IList<WWS.Product> productListForProdManag;
 
         int statusFilterProductId;
 
-        Dictionary<int, User> userList;
+        Dictionary<int, WWS.User> userList;
         
         public void ProductManagmentIntoGridView(bool reload, int id, int userId, int productId)
         {
             if(reload)
             {
-           
-                prodManagList = prodManag.GetItem(id, userId, productId);
-                if(prodManagList == null)
+                using (WarehouseServiceClient client = new WarehouseServiceClient("HTTP"))
                 {
-                    //prodManagList = new List<WWS.ProductManagment>();
-                }
-
-                productListForProdManag = ApplicationData.Products.Select(p => p.Value).ToList();
-                var pMJOinP = prodManagList.Join(
-                        productListForProdManag,
-                        p => p.ProductId,
-                        m => m.Id,
-                        (p, m) => new
-                        {
-                            Id = p.Id.Value,
-                            Product = m.Name,
-                            Quantity = p.Quantity,
-                            ActionDate = p.ActionDate,
-                            Action = p.Action,
-                            userId = p.UserId,
-                            Reason = p.Reason,
-                            Price = p.Price,
-                            supplierId = p.SupplierId,
-                            brand = p.Brand,
-                        }
-                        );
-
-                //poxel
-                UserManager user = new UserManager();
-                userList = user.SelectActiveUser();
-                var pMJoinPJoinUser = pMJOinP.Join(
-                    userList,
-                    p => p.userId,
-                    u => u.Value.Id,
-                    (p, u) => new
+                    prodManagList = client.GetItem(id, userId, productId);
+                    if (prodManagList == null)
                     {
-                        Id = p.Id,
-                        Product = p.Product,
-                        Quantity = p.Quantity,
-                        ActionDate = p.ActionDate,
-                        Action = p.Action,
-                        User = u.Value.Username,
-                        Reason = p.Reason,
-                        Price = p.Price,
-                        supplierId = p.supplierId,
-                        brand = p.brand,
+                        //prodManagList = new List<WWS.ProductManagment>();
                     }
-                    );
-               //var enumList = Enum.GetValues(typeof(ActionProduct)).Cast<ActionProduct>().ToList();
-               //.Select(x => x.ToString()).ToList();
-
-                
-                ProductManagmentGridView.DataSource = pMJoinPJoinUser.ToList();
-                ProductManagmentGridView.Columns[0].Visible = false;
+                    productListForProdManag = ApplicationData.Products.Select(p => p.Value).ToList();
+                    var pMJOinP = prodManagList.Join(
+                       productListForProdManag,
+                       p => p.ProductId,
+                       m => m.Id,
+                       (p, m) => new
+                       {
+                           Id = p.Id.Value,
+                           Product = m.Name,
+                           Quantity = p.Quantity,
+                           ActionDate = p.ActionDate,
+                           Action = p.Action,
+                           userId = p.UserId,
+                           Reason = p.Reason,
+                           Price = p.Price,
+                           supplierId = p.SupplierId,
+                           brand = p.Brand,
+                       }
+                       );
+                    var userList = client.SelectActiveUsers();
+                    var pMJoinPJoinUser = pMJOinP.Join(
+                   userList,
+                   p => p.userId,
+                   u => u.Id,
+                   (p, u) => new
+                   {
+                       Id = p.Id,
+                       Product = p.Product,
+                       Quantity = p.Quantity,
+                       ActionDate = p.ActionDate,
+                       Action = p.Action,
+                       User = u.Username,
+                       Reason = p.Reason,
+                       Price = p.Price,
+                       supplierId = p.supplierId,
+                       brand = p.brand,
+                   }
+                   );
+                    ProductManagmentGridView.DataSource = pMJoinPJoinUser.ToList();
+                    ProductManagmentGridView.Columns[0].Visible = false;
+                }
             }
         }
         
@@ -109,15 +107,20 @@ namespace WarehouseClient
                         ProductProdManagTabComboBox.Items.Add(elem.Value.Name);
                     }
                 }
-            
 
-                UserManager user = new UserManager();
-                //userList = user.SelectActiveUser();
-                foreach(var elem in userList)
+
+            //  UserManager user = new UserManager();
+            //userList = user.SelectActiveUser();
+            using (WarehouseServiceClient client = new WarehouseServiceClient("HTTP"))
+            {
+                var userList = client.SelectActiveUsers();
+                foreach (var elem in userList)
                 {
-                    UserProdManagTabComboBox.Items.Add(elem.Value.Username);
+                    UserProdManagTabComboBox.Items.Add(elem.Username);
                 }
                 ProductManagmentIntoGridView(true, 0, 0, 0);
+            }
+           
            // }
             /*catch(Exception ex)
             {
@@ -139,9 +142,12 @@ namespace WarehouseClient
             var selectedRows = ProductManagmentGridView.SelectedRows;
             try
             {
-                foreach(var elem in selectedRows)
+                using (WarehouseServiceClient client = new WarehouseServiceClient("HTTP"))
                 {
-                    prodManag.DeleteItem(Convert.ToInt32(((DataGridViewRow)elem).Cells[0].Value));
+                    foreach (var elem in selectedRows)
+                    {
+                        client.DeleteItem(Convert.ToInt32(((DataGridViewRow)elem).Cells[0].Value));
+                    }
                 }
                 if(statusFilterProductId != 0)
                 {
@@ -220,19 +226,21 @@ namespace WarehouseClient
 
        private void UserProdManagTabComboBox_SelectedIndexChanged(object sender, EventArgs e)
        {
-             var selectedUser = UserProdManagTabComboBox.SelectedItem.ToString();
-            int userId = -1;
-            foreach(var elem in userList)
+            using (WarehouseServiceClient client = new WarehouseServiceClient("HTTP"))
             {
-                if(selectedUser == elem.Value.Username)
+                var userList = client.SelectActiveUsers();
+                var selectedUser = UserProdManagTabComboBox.SelectedItem.ToString();
+                int userId = -1;
+                foreach (var elem in userList)
                 {
-                    userId = Convert.ToInt32(elem.Value.Id);
-                    break;
+                    if (selectedUser == elem.Username)
+                    {
+                        userId = Convert.ToInt32(elem.Id);
+                        break;
+                    }
                 }
+                ProductManagmentIntoGridView(true, 0, userId, 0);
             }
-
-            ProductManagmentIntoGridView(true, 0, userId, 0);
-           
         }
 
     }

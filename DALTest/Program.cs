@@ -38,7 +38,7 @@ namespace DALTest
             //prMn.IsActive = true;
 
       //      Console.WriteLine(prMnAdaptor.GetItem(0, 0, 7));
-            foreach(var elem in prMnAdaptor.GetItem(0, 1, 0))
+            foreach(var elem in prMnAdaptor.GetItem(0, 6, 0))
             {
                 Console.WriteLine(elem.ProductId);
             }

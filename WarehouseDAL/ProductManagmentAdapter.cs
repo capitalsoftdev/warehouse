@@ -57,7 +57,7 @@ namespace WarehouseDAL
                         SqlParameter pUserId = new SqlParameter("@userId", System.Data.SqlDbType.Int);
                         if (userId > 0)
                         {
-                            pId.Value = userId;
+                            pUserId.Value = userId;
                         }
                         else
                         {

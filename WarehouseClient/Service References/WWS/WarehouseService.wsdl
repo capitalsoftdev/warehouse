@@ -551,7 +551,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.pipe://localhost/warehouseapi</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Spn>host/DESKTOP-36129HG</Spn>
+          <Spn>host/DESKTOP-3FSOTT0</Spn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
