@@ -7,7 +7,8 @@ using WarehouseBL.RoleGroupManagement;
 using WarehouseBL.RoleManagement;
 using WarehouseClient.RoleGroupManageet;
 using WarehouseClient.RoleManagement;
-using WarehouseDAL.DataContracts;
+using WarehouseClient.WWS;
+//using WarehouseDAL.DataContracts;
 
 namespace WarehouseClient
 {
@@ -15,7 +16,7 @@ namespace WarehouseClient
     {
         RoleManager roleManager = new RoleManager();
         RoleGroupManager roleGroupManager = new RoleGroupManager();
-
+        
         private void RoleTab_Enter(object sender, EventArgs e)
         {
             RoleDataGridRefresh();
@@ -34,15 +35,19 @@ namespace WarehouseClient
             RoleGroupAdd addRoleGroup = new RoleGroupAdd(this);
             addRoleGroup.Show();
         }
-
+        
         public void RoleDataGridRefresh()
         {
-            IList<Role> roleList = roleManager.GetRoles();
-            RoleDataGridView.DataSource = roleList.ToList();
+            using (WarehouseServiceClient wwsClient = new WarehouseServiceClient("HTTP"))
+            {
+                IList<Role> roleList = wwsClient.GetRoles().ToList();
+                RoleDataGridView.DataSource = roleList.ToList();
+            }
         }
         public void RoleGroupDataGridRefresh()
         {
-            IList<RoleGroup> roleGroupList = roleGroupManager.GetRoleGroups();
+            WarehouseServiceClient wwsClient = new WarehouseServiceClient("HTTP");
+            IList<RoleGroup> roleGroupList = wwsClient.GetRoleGroups().ToList();
             roleGroupDataGridView.DataSource = roleGroupList.ToList();
         }
     }
