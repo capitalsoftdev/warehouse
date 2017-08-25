@@ -68,8 +68,9 @@ namespace WarehouseWebService
         #endregion
 
         #region Munit
+        [OperationContract]
         IList<Munit> GetMunits();
-
+        [OperationContract]
         Munit GetMunit(int id);
         #endregion
 
