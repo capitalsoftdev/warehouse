@@ -99,8 +99,8 @@ namespace WarehouseClient
             }
 
             #endregion
-
-            #region Load Product Categories
+            
+            //#region Load Product Categories
 
             //var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
 
