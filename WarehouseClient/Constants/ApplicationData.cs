@@ -8,23 +8,23 @@ namespace WarehouseClient.Constants
 {
     class ApplicationData
     {
-        public static Dictionary<int, WarehouseDAL.DataContracts.User> Users =
-            new Dictionary<int, WarehouseDAL.DataContracts.User>();
+        public static Dictionary<int, WWS.User> Users =
+            new Dictionary<int, WWS.User>();
 
-        public static Dictionary<int, WarehouseDAL.DataContracts.Role> Roles = 
-            new Dictionary<int, WarehouseDAL.DataContracts.Role>();
+        public static Dictionary<int, WWS.Role> Roles = 
+            new Dictionary<int, WWS.Role>();
 
-        public static Dictionary<int, WarehouseDAL.DataContracts.RoleGroup> RoleGroups =
-            new Dictionary<int, WarehouseDAL.DataContracts.RoleGroup>();
+        public static Dictionary<int, WWS.RoleGroup> RoleGroups =
+            new Dictionary<int, WWS.RoleGroup>();
 
         public static Dictionary<int, WarehouseDAL.DataContracts.ProductCategory> ProductCategory = 
             new Dictionary<int, WarehouseDAL.DataContracts.ProductCategory>();
 
-        public static Dictionary<int, WarehouseDAL.DataContracts.Product> Products = 
-            new Dictionary<int, WarehouseDAL.DataContracts.Product>();
+        public static Dictionary<int, WWS.Product> Products = 
+            new Dictionary<int, WWS.Product>();
 
-        public static Dictionary<int, WarehouseDAL.DataContracts.Munit> Munits =
-            new Dictionary<int, WarehouseDAL.DataContracts.Munit>();
+        public static Dictionary<int, WWS.Munit> Munits =
+            new Dictionary<int, WWS.Munit>();
     }
 
     public enum ActionProduct

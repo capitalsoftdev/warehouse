@@ -11,8 +11,8 @@ namespace WarehouseClient
 {
     public partial class MainForm 
     {
-        User loginUser;
-        public User LoginUser
+       WWS.User loginUser;
+        public WWS.User LoginUser
         {
             get
             {
@@ -24,19 +24,18 @@ namespace WarehouseClient
                 loginUser = value;
             }
         }
-        UserManager manage = new UserManager();
 
-        public MainForm(User user)
+        public MainForm(WWS.User user)
         {
             InitializeComponent();
             loginUser = user;
         }
         public void ReloadUserGrid(bool reload = false)
         {
-            if (reload)
-                WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
-            dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
-            dataGridView1.Refresh();
+            //if (reload)
+            //    WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
+            //dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
+            //dataGridView1.Refresh();
         }
     
 

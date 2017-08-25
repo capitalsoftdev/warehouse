@@ -219,10 +219,36 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetMunits">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMunitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="GetMunitsResult" nillable="true" type="q13:ArrayOfMunit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMunit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMunitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="GetMunitResult" nillable="true" type="q14:Munit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CreateOrUpdateProductCategory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="product" nillable="true" type="q13:ProductCategory" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="product" nillable="true" type="q15:ProductCategory" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -241,7 +267,7 @@
   <xs:element name="GetAllProductCategoriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="GetAllProductCategoriesResult" nillable="true" type="q14:ArrayOfProductCategory" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="GetAllProductCategoriesResult" nillable="true" type="q16:ArrayOfProductCategory" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -255,7 +281,7 @@
   <xs:element name="GetProductCategoryByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="GetProductCategoryByIdResult" nillable="true" type="q15:ProductCategory" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="GetProductCategoryByIdResult" nillable="true" type="q17:ProductCategory" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -272,6 +298,83 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="ManageProductCategoryResult" type="xs:int" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="LoginResult" nillable="true" type="q18:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectActiveUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectActiveUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="SelectActiveUsersResult" nillable="true" type="q19:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateOrDeActivate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateOrDeActivateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectActiveUserById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectActiveUserByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="SelectActiveUserByIdResult" nillable="true" type="q20:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrInsertUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" minOccurs="0" name="user" nillable="true" type="q21:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrInsertUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserLoginDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserLoginDateResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

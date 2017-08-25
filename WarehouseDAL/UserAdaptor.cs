@@ -12,20 +12,20 @@ namespace WarehouseDAL
 {
   public  class UserAdaptor
     {
-        public Dictionary<int, User> SelectActiveUser()
+        public  IList<User> SelectActiveUser()
         {
             return GetActiveUsers(null);
         }
-        public User SelectActiveUser(int id)
+        public  User SelectActiveUser(int id)
         {
-            Dictionary<int, User> user = GetActiveUsers(id);
+            IList<User> user = GetActiveUsers(id);
             if (user.Count != 0)
-                return user[id];
+                return user[0];
             return null;
         }
-        private Dictionary<int, User> GetActiveUsers(int? id)
+        private IList<User> GetActiveUsers(int? id)
         {
-            Dictionary<int, User> user = new Dictionary<int, User>();
+            IList<User> user = new List<User>();
             using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
             {
                 connection.Open();
@@ -52,10 +52,10 @@ namespace WarehouseDAL
                         while (reader.Read())
                         {
                             use = new User();
-                            use.Id = (Int32)reader["id"];
+                            use.Id = (int)reader["id"];
                             use.Username = (string)reader["username"];
                             use.Password = (string)reader["password"];
-                            use.RoleGroupId = (Int32)reader["roleGroupId"];
+                            use.RoleGroupId = (int)reader["roleGroupId"];
                             use.CreationDate = (DateTime)reader["CreationDate"];
                             if ((reader["lastLoginDate"]) == DBNull.Value)
                                 use.LastLoginDate = DateTime.MinValue;
@@ -63,7 +63,7 @@ namespace WarehouseDAL
                                 use.LastLoginDate = (DateTime)reader["lastLoginDate"];
                             use.LastModifireDate = (DateTime)reader["LastModifyDate"];
                             use.IsActive = (bool)reader["IsActive"];
-                            user.Add((Int32)use.Id, use);
+                            user.Add(use);
                         }
                     }
                     reader.Close();
@@ -71,6 +71,10 @@ namespace WarehouseDAL
             }
             return user;
         }
+
+
+
+
         public void UpdateOrInsertUser(User user)
         {
             using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
@@ -128,7 +132,7 @@ namespace WarehouseDAL
         }
         public int Autorisation(string username, string password)
         {
-            int result = 0;
+            int result ;
             using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
             {
                 connection.Open();
@@ -155,12 +159,11 @@ namespace WarehouseDAL
                     comand.Parameters.Add(parOutput);
 
                     comand.ExecuteNonQuery();
-                    result = (Int32)parOutput.Value;
+                    result = (int)parOutput.Value;
                 }
             }
             return result;
         }
-
         public void UpdateUserLoginDate(int id)
         {
             using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))

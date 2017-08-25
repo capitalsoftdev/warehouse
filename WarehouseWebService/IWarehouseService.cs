@@ -68,8 +68,9 @@ namespace WarehouseWebService
         #endregion
 
         #region Munit
+        [OperationContract]
         IList<Munit> GetMunits();
-
+        [OperationContract]
         Munit GetMunit(int id);
         #endregion
 
@@ -87,6 +88,21 @@ namespace WarehouseWebService
         [OperationContract]
         int ManageProductCategory(int id, int action);
 
+        #endregion
+
+        #region User
+        [OperationContract]
+        User Login(string userName, string password);
+        [OperationContract]
+        IList<User> SelectActiveUsers();
+        [OperationContract]
+        void ActivateOrDeActivate(int id);
+        [OperationContract]
+        User SelectActiveUserById(int id);
+        [OperationContract]
+        void UpdateOrInsertUser(User user);
+        [OperationContract]
+        void UpdateUserLoginDate(int id);
         #endregion
     }
 }

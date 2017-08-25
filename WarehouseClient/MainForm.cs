@@ -7,12 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WarehouseBL.UserManagement;
-using WarehouseDAL.DataContracts;
 using WarehouseClient.ProductCategoryManagement;
-using WarehouseBL.ProductCategoryManagement;
 using WarehouseClient.ProdManagForm;
-using WarehouseBL.ProductManagement;
+using WarehouseClient.WWS;
 
 namespace WarehouseClient
 {
@@ -30,12 +27,13 @@ namespace WarehouseClient
             switch (loginUser.RoleGroupId)
             {
                 case 1: {
+                        
 
-                        WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
-                        tabControl1.SelectedTab = UserTab;
-                        dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
-                        dataGridView1.Columns[2].Visible = false;
-                        dataGridView1.Columns[0].Visible = false;
+                        //WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
+                        //tabControl1.SelectedTab = UserTab;
+                        //dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
+                        //dataGridView1.Columns[2].Visible = false;
+                        //dataGridView1.Columns[0].Visible = false;
                         break;
                         }
                default:
@@ -59,79 +57,105 @@ namespace WarehouseClient
         private static void LoadAllStaticInfo()
         {
             #region Load Role Groups
-
-            var roleGroupManagerBL = new WarehouseBL.RoleGroupManagement.RoleGroupManager();
-
-            var allRoleGroups = roleGroupManagerBL.GetRoleGroups();
-
-            Constants.ApplicationData.RoleGroups = new Dictionary<int, RoleGroup>();
-
-            foreach (var roleGroup in allRoleGroups)
+            try
             {
-                Constants.ApplicationData.RoleGroups.Add(roleGroup.Id, roleGroup);
+                using (WarehouseServiceClient wwsClient = new WarehouseServiceClient("HTTP"))
+                {
+                    var allRoleGroups = wwsClient.GetRoleGroups();
+
+                    Constants.ApplicationData.RoleGroups = new Dictionary<int, RoleGroup>();
+
+                    foreach (var roleGroup in allRoleGroups)
+                    {
+                        Constants.ApplicationData.RoleGroups.Add(roleGroup.Id, roleGroup);
+                    }
+                }
+            }
+            catch
+            {
+
             }
 
             #endregion
 
             #region Load Roles
-
-            var roleManagerBL = new WarehouseBL.RoleManagement.RoleManager();
-
-            var allRoles = roleManagerBL.GetRoles();
-
-            Constants.ApplicationData.Roles = new Dictionary<int, Role>();
-
-            foreach(var role in allRoles)
+            try
             {
-                Constants.ApplicationData.Roles.Add(role.Id, role);
+                using (WarehouseServiceClient wwsClient = new WarehouseServiceClient("HTTP"))
+                {
+                    var allRoles = wwsClient.GetRoles();
+
+                    Constants.ApplicationData.Roles = new Dictionary<int, Role>();
+
+                    foreach (var role in allRoles)
+                    {
+                        Constants.ApplicationData.Roles.Add(role.Id, role);
+                    }
+                }
             }
+            catch
+            {
+
+            } 
 
             #endregion
+            
+            //#region Load Product Categories
 
-            #region Load Product Categories
+            //var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
 
-            ProductCategoryManager productCategoryManager = new ProductCategoryManager();
+            //var allCats = prodCategoryBL.GetAllProductCategories();
 
-            var allCats = productCategoryManager.GetAllProductCategories();
+            //Constants.ApplicationData.ProductCategory = new Dictionary<int, ProductCategory>();
 
-            Constants.ApplicationData.ProductCategory = new Dictionary<int, ProductCategory>();
+            //foreach (var item in allCats)
+            //{
+            //    Constants.ApplicationData.ProductCategory.Add(item.Id, item);
+            //}
 
-            foreach (var item in allCats)
+            //#endregion
+
+            //#region Load Product
+
+            try
             {
-                Constants.ApplicationData.ProductCategory.Add(item.Id, item);
+
+                WWS.WarehouseServiceClient productManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
+
+                var allProduct = productManager.GetActiveProduct();
+
+                Constants.ApplicationData.Products = new Dictionary<int, WWS.Product>();
+
+                foreach (var item in allProduct)
+                {
+                    Constants.ApplicationData.Products.Add(item.Id.Value, item);
+                }
             }
-
-            #endregion
-
-            #region Load Product
-
-            ProductManager productManager = new ProductManager();
-
-            var allProduct = productManager.GetActiveProduct();
-
-            Constants.ApplicationData.Products = new Dictionary<int, Product>();
-
-            foreach (var item in allProduct)
+            catch (Exception e)
             {
-                Constants.ApplicationData.Products.Add(item.Id.Value, item);
+                MessageBox.Show(e.Message);
             }
-
 
             #endregion
 
             #region Load Munit
-
-            MunitManager munitManager = new MunitManager();
-
-            var allMunit = munitManager.GetMunit();
-
-            Constants.ApplicationData.Munits = new Dictionary<int, Munit>();
-
-            foreach (var item in allMunit)
+            try
             {
-                Constants.ApplicationData.Munits.Add(item.Id, item);
-            }
+                WWS.WarehouseServiceClient munitManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
 
+                var allMunit = munitManager.GetMunits();
+
+                Constants.ApplicationData.Munits = new Dictionary<int, WWS.Munit>();
+
+                foreach (var item in allMunit)
+                {
+                    Constants.ApplicationData.Munits.Add(item.Id, item);
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
 
             #endregion
 

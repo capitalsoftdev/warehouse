@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarehouseBL.UserManagement;
+using WarehouseClient.WWS;
 
 namespace WarehouseClient
 {
@@ -18,23 +19,30 @@ namespace WarehouseClient
         {
             InitializeComponent();
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
-            UserManager user = new UserManager();
-            WarehouseDAL.DataContracts.User user1 = user.Login(textBox1.Text, textBox2.Text);
-            if (user1 == null)
+            try
             {
-                MessageBox.Show("Invalid User name or password");
+                using (var client = new WarehouseServiceClient("HTTP"))
+                {
+                    User user = client.Login(textBox1.Text, textBox2.Text);
+                    if (user != null)
+                    {
+                        client.UpdateUserLoginDate(user.Id.Value);
+                        this.Hide();
+                        var formx = new MainForm(user);
+                        formx.Closed += (s, args) => this.Close();
+                        formx.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid User name or password");
+                    }
+                }
             }
-            else
-            {
-                user.UpdateUserLoginDate(user1.Id.Value);
-                this.Hide();
-                var formx = new MainForm(user1);
-                formx.Closed += (s, args) => this.Close();
-                formx.Show();
-               
+            catch (Exception exception) {
+                MessageBox.Show($"Connection error\n{exception.Message}");
             }
         }
     }
