@@ -69,13 +69,13 @@ namespace WarehouseWebService
         public static WarehouseDAL.DataContracts.User ToDALUser(this User user)
         {
             return new WarehouseDAL.DataContracts.User()
-            { Id = user.Id, Username = user.Username, Password = user.Password,CreationDate=user.CreationDate,LastLoginDate=user.LastLoginDate,LastModifireDate=user.LastModifireDate,IsActive=user.IsActive };
+            { Id = user.Id, RoleGroupId = user.RoleGroupId, Username = user.Username, Password = user.Password,CreationDate=user.CreationDate,LastLoginDate=user.LastLoginDate,LastModifireDate=user.LastModifireDate,IsActive=user.IsActive };
         }
 
         public static User ToServiceUser(this WarehouseDAL.DataContracts.User user)
         {
             return new User()
-            { Id = user.Id, Username = user.Username, Password = user.Password, CreationDate = user.CreationDate, LastLoginDate = user.LastLoginDate, LastModifireDate = user.LastModifireDate, IsActive = user.IsActive };
+            { Id = user.Id, RoleGroupId=user.RoleGroupId, Username = user.Username, Password = user.Password, CreationDate = user.CreationDate, LastLoginDate = user.LastLoginDate, LastModifireDate = user.LastModifireDate, IsActive = user.IsActive };
         }
 
     }
