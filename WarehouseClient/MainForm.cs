@@ -96,26 +96,26 @@ namespace WarehouseClient
             catch
             {
 
-            } 
+            }
 
             #endregion
-            
-            //#region Load Product Categories
 
-            //var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
+            #region Load Product Categories
 
-            //var allCats = prodCategoryBL.GetAllProductCategories();
+            var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
 
-            //Constants.ApplicationData.ProductCategory = new Dictionary<int, ProductCategory>();
+            var allCats = prodCategoryBL.GetAllProductCategories();
 
-            //foreach (var item in allCats)
-            //{
-            //    Constants.ApplicationData.ProductCategory.Add(item.Id, item);
-            //}
+            Constants.ApplicationData.ProductCategory = new Dictionary<int, WarehouseDAL.DataContracts.ProductCategory>();
 
-            //#endregion
+            foreach (var item in allCats)
+            {
+                Constants.ApplicationData.ProductCategory.Add(item.Id, item);
+            }
 
-            //#region Load Product
+            #endregion
+
+            #region Load Product
 
             try
             {
