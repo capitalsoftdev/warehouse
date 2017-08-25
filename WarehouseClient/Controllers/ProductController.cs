@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WarehouseBL.ProductManagement;
 using WarehouseClient.Constants;
-using WarehouseDAL.DataContracts;
+
 
 
 namespace WarehouseClient
@@ -17,7 +16,7 @@ namespace WarehouseClient
         WWS.WarehouseServiceClient productManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);    
         IList<WWS.Product> productList;
         IList<WWS.Munit> munitList;
-        IList<ProductCategory> productCategoryList;
+        IList<WWS.ProductCategory> productCategoryList;
 
         public void loadProductsInToGrid(bool reLoad)
         {
@@ -106,7 +105,7 @@ namespace WarehouseClient
                 }
                 else
                 {
-                    var productManager = new ProductManager();
+                    var productManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
                     foreach (var product in selectedRowsList)
                     {
                         var a = (DataGridViewRow)product;
