@@ -112,7 +112,7 @@ namespace WarehouseClient
             
 
                 UserManager user = new UserManager();
-                userList = user.SelectActiveUser();
+                //userList = user.SelectActiveUser();
                 foreach(var elem in userList)
                 {
                     UserProdManagTabComboBox.Items.Add(elem.Value.Username);

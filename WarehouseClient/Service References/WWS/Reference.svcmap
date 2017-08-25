@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c9acf2a6-502a-467e-9258-fa19c24dc464" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2772/api" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="api.xsd" MetadataType="Schema" ID="2987752c-be3f-4142-a46d-52283cc83b22" SourceId="1" SourceUrl="http://localhost:2772/api?xsd=xsd2" />
+    <MetadataFile FileName="api.disco" MetadataType="Disco" ID="06b79ed3-20e0-4349-b609-54ca3a691e83" SourceId="1" SourceUrl="http://localhost:2772/api?disco" />
+    <MetadataFile FileName="api1.xsd" MetadataType="Schema" ID="434c4551-96bb-4abe-b004-30346d06f295" SourceId="1" SourceUrl="http://localhost:2772/api?xsd=xsd0" />
+    <MetadataFile FileName="api2.xsd" MetadataType="Schema" ID="ff03fb33-36be-42c6-aa71-9ae7ea50a077" SourceId="1" SourceUrl="http://localhost:2772/api?xsd=xsd1" />
+    <MetadataFile FileName="api.wsdl" MetadataType="Wsdl" ID="c3e5a8be-b316-466c-9c0c-bc17fa3594d2" SourceId="1" SourceUrl="http://localhost:2772/api?wsdl=wsdl0" />
+    <MetadataFile FileName="WarehouseService.wsdl" MetadataType="Wsdl" ID="eb7cf2bd-579b-45c0-8433-430809f876e2" SourceId="1" SourceUrl="http://localhost:2772/api?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

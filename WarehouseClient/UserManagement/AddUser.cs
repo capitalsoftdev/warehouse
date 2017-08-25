@@ -38,7 +38,7 @@ namespace WarehouseClient.UserManagement
                 user.Password = addPassword.Text.ToString();
                 user.RoleGroupId = Convert.ToInt32(addRoleGroup.Text);
                 UserManager manager = new UserManager();
-                manager.AddOrInsertUser(user);
+                manager.UpdateOrInsertUser(user);
 
                 f.Enabled = true;
                 f.ReloadUserGrid(true);

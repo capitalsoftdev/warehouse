@@ -11,38 +11,38 @@ namespace WarehouseDAL
 {
     public class RoleAdapter
     {
-        private string _getRole = "GetRole";
-        private string _disableRole = "DisableRole";
-        private string _createOrUpdateRole = "CreateOrUpdateRole";
+        private string getRole = "GetRole";
+        private string disableRole = "DisableRole";
+        private string createOrUpdateRole = "CreateOrUpdateRole";
         public int CreateOrUpdateRole(Role role)
         {
             int res;
-            using (var _connection = new SqlConnection(ConnectionParameters.ConnectionString))
+            using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
             {
-                _connection.Open();
-                using (var _command = new SqlCommand(_createOrUpdateRole, _connection))
+                connection.Open();
+                using (var command = new SqlCommand(createOrUpdateRole, connection))
                 {
-                    _command.CommandType = CommandType.StoredProcedure;
+                    command.CommandType = CommandType.StoredProcedure;
 
-                    SqlParameter _pId = new SqlParameter("@id", SqlDbType.Int);
-                    _pId.Value = role.Id;
-                    _command.Parameters.Add(_pId);
+                    SqlParameter pId = new SqlParameter("@id", SqlDbType.Int);
+                    pId.Value = role.Id;
+                    command.Parameters.Add(pId);
 
-                    SqlParameter _pName = new SqlParameter("@name", SqlDbType.VarChar, 50);
-                    _pName.Value = role.Name;
-                    _command.Parameters.Add(_pName);
+                    SqlParameter pName = new SqlParameter("@name", SqlDbType.VarChar, 50);
+                    pName.Value = role.Name;
+                    command.Parameters.Add(pName);
 
-                    SqlParameter _pIsActive = new SqlParameter("@isActive", SqlDbType.Bit);
-                    _pIsActive.Value = role.IsActive;
-                    _command.Parameters.Add(_pIsActive);
+                    SqlParameter pIsActive = new SqlParameter("@isActive", SqlDbType.Bit);
+                    pIsActive.Value = role.IsActive;
+                    command.Parameters.Add(pIsActive);
 
-                    SqlParameter _pResult = new SqlParameter("@result", SqlDbType.Int);
-                    _pResult.Direction = ParameterDirection.Output;
-                    _command.Parameters.Add(_pResult);
+                    SqlParameter pResult = new SqlParameter("@result", SqlDbType.Int);
+                    pResult.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(pResult);
 
-                    _command.ExecuteNonQuery();
+                    command.ExecuteNonQuery();
 
-                    res = Convert.ToInt32(_pResult.Value);
+                    res = Convert.ToInt32(pResult.Value);
                 }
             }
             return res;
@@ -63,23 +63,23 @@ namespace WarehouseDAL
         public int Disable(int id)
         {
             int res;
-            using (var _connnection = new SqlConnection(ConnectionParameters.ConnectionString))
+            using (var connnection = new SqlConnection(ConnectionParameters.ConnectionString))
             {
-                _connnection.Open();
-                using (var _command = new SqlCommand(_disableRole, _connnection))
+                connnection.Open();
+                using (var command = new SqlCommand(disableRole, connnection))
                 {
-                    _command.CommandType = CommandType.StoredProcedure;
+                    command.CommandType = CommandType.StoredProcedure;
 
-                    SqlParameter _pId = new SqlParameter("@Id", SqlDbType.Int);
-                    _pId.Value = id;
-                    _command.Parameters.Add(_pId);
+                    SqlParameter pId = new SqlParameter("@Id", SqlDbType.Int);
+                    pId.Value = id;
+                    command.Parameters.Add(pId);
 
-                    SqlParameter _pResult = new SqlParameter("@result", SqlDbType.Int);
-                    _pResult.Direction = ParameterDirection.Output;
-                    _command.Parameters.Add(_pResult);
+                    SqlParameter pResult = new SqlParameter("@result", SqlDbType.Int);
+                    pResult.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(pResult);
 
-                    _command.ExecuteNonQuery();
-                    res = Convert.ToInt32(_pResult.Value);
+                    command.ExecuteNonQuery();
+                    res = Convert.ToInt32(pResult.Value);
                 }
             }
             return res;
@@ -88,18 +88,18 @@ namespace WarehouseDAL
         private List<Role> _GetRole(int id = -1)
         {
             List<Role> roleList = new List<Role>();
-            using (var _connection = new SqlConnection(ConnectionParameters.ConnectionString))
+            using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
             {
-                _connection.Open();
-                using (var _command = new SqlCommand(_getRole, _connection))
+                connection.Open();
+                using (var command = new SqlCommand(getRole, connection))
                 {
-                    _command.CommandType = CommandType.StoredProcedure;
+                    command.CommandType = CommandType.StoredProcedure;
 
-                    SqlParameter _pId = new SqlParameter("@id", SqlDbType.Int);
-                    _pId.Value = id;
-                    _command.Parameters.Add(_pId);
+                    SqlParameter pId = new SqlParameter("@id", SqlDbType.Int);
+                    pId.Value = id;
+                    command.Parameters.Add(pId);
 
-                    SqlDataReader reader = _command.ExecuteReader();
+                    SqlDataReader reader = command.ExecuteReader();
 
                     if (reader.HasRows)
                     {

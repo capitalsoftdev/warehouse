@@ -8,29 +8,29 @@ using WarehouseDAL.DataContracts;
 
 namespace WarehouseBL.UserManagement
 {
-  public  class UserManager : IUserManager
+    public class UserManager : IUserManager
     {
         public User Login(string userName, string password)
         {
             var userAdapter = new UserAdaptor();
+            var loginResult = userAdapter.Autorisation(userName, password);
 
-            var loginResult = userAdapter.Autorisation(userName,password);
-
-            if (loginResult > 0)
+            if (loginResult > 0 )
             {
                 return userAdapter.SelectActiveUser(loginResult);
             }
-
             return null;
         }
-        public Dictionary<int, User> SelectActiveUser()
+        public IList<User> SelectActiveUser()
         {
             var userAdapter = new UserAdaptor();
-            Dictionary<int, User> reList;
-            reList = userAdapter.SelectActiveUser();
-            return reList;
+            return userAdapter.SelectActiveUser();
         }
-        public void AddOrInsertUser(User user) {
+        public User SelectActiveUser(int id) {
+            var manager =new UserAdaptor();
+            return manager.SelectActiveUser(id);
+        }
+        public void UpdateOrInsertUser(User user) {
             UserAdaptor adaptor = new UserAdaptor();
             adaptor.UpdateOrInsertUser(user);
         }
@@ -38,10 +38,6 @@ namespace WarehouseBL.UserManagement
             UserAdaptor adaptor = new UserAdaptor();
             adaptor.ActiveOrDeactive(id);
         }
-
-
-
-
         public void UpdateUserLoginDate(int id)
         {
             UserAdaptor adaptor = new UserAdaptor();
