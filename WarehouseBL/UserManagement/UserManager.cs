@@ -23,14 +23,16 @@ namespace WarehouseBL.UserManagement
 
             return null;
         }
-        public Dictionary<int, User> SelectActiveUser()
+        public IList<User> SelectActiveUser()
         {
             var userAdapter = new UserAdaptor();
-            Dictionary<int, User> reList;
-            reList = userAdapter.SelectActiveUser();
-            return reList;
+            return userAdapter.SelectActiveUser();
         }
-        public void AddOrInsertUser(User user) {
+        public User SelectActiveUser(int id) {
+            var manager =new UserAdaptor();
+            return manager.SelectActiveUser(id);
+        }
+        public void UpdateOrInsertUser(User user) {
             UserAdaptor adaptor = new UserAdaptor();
             adaptor.UpdateOrInsertUser(user);
         }
@@ -38,10 +40,6 @@ namespace WarehouseBL.UserManagement
             UserAdaptor adaptor = new UserAdaptor();
             adaptor.ActiveOrDeactive(id);
         }
-
-
-
-
         public void UpdateUserLoginDate(int id)
         {
             UserAdaptor adaptor = new UserAdaptor();

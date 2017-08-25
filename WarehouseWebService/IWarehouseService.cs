@@ -88,5 +88,20 @@ namespace WarehouseWebService
         int ManageProductCategory(int id, int action);
 
         #endregion
+
+        #region User
+        [OperationContract]
+        User Login(string userName, string password);
+        [OperationContract]
+        IList<User> SelectActiveUser();
+        [OperationContract]
+        void ActivateOrDeActivate(int id);
+        [OperationContract]
+        User SelectActiveUser(int id);
+        [OperationContract]
+        void UpdateOrInsertUser(User user);
+        [OperationContract]
+        void UpdateUserLoginDate(int id);
+        #endregion
     }
 }
