@@ -40,7 +40,7 @@ namespace WarehouseClient.RoleManagement
             }
             else
             {
-                MessageBox.Show("Uncorrect role name.");
+                MessageBox.Show("Wrong role name.");
             }
         }
 

@@ -17,14 +17,14 @@ namespace WarehouseClient.Constants
         public static Dictionary<int, WWS.RoleGroup> RoleGroups =
             new Dictionary<int, WWS.RoleGroup>();
 
-        public static Dictionary<int, WWS.ProductCategory> ProductCategory = 
-            new Dictionary<int, WWS.ProductCategory>();
+        public static Dictionary<int, WarehouseDAL.DataContracts.ProductCategory> ProductCategory = 
+            new Dictionary<int, WarehouseDAL.DataContracts.ProductCategory>();
 
-        public static Dictionary<int, WWS.Product> Products = 
-            new Dictionary<int, WWS.Product>();
+        public static Dictionary<int, WarehouseDAL.DataContracts.Product> Products = 
+            new Dictionary<int, WarehouseDAL.DataContracts.Product>();
 
-        public static Dictionary<int, WWS.Munit> Munits =
-            new Dictionary<int, WWS.Munit>();
+        public static Dictionary<int, WarehouseDAL.DataContracts.Munit> Munits =
+            new Dictionary<int, WarehouseDAL.DataContracts.Munit>();
     }
 
     public enum ActionProduct

@@ -43,7 +43,7 @@ namespace WarehouseClient.RoleGroupManageet
             }
             else
             {
-                MessageBox.Show("Uncorrect role group name.");
+                MessageBox.Show("Wrong role group name.");
             }
             
         }

@@ -26,7 +26,7 @@ namespace WarehouseClient
             LoadAllStaticInfo();
             switch (loginUser.RoleGroupId)
             {
-                case 1: {
+                case 0: {
 
                         //WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
                         //tabControl1.SelectedTab = UserTab;
