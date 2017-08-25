@@ -20,7 +20,7 @@ namespace WarehouseClient.ProdManagForm
     public partial class NewItemProdManag : Form
     {
         MainForm sendedForm;
-        IProductManagmentManager prodManagManager = null;  
+        WWS.IWarehouseService prodManagManager = null;  
         public NewItemProdManag(MainForm sendedForm)
         {
             this.sendedForm = sendedForm;
@@ -81,10 +81,12 @@ namespace WarehouseClient.ProdManagForm
                 }
             }
 
-            prodManagManager = new ProductManagmentManager();
+            // prodManagManager = new ProductManagmentManager();
 
-            WarehouseDAL.DataContracts.ProductManagment prodManag = new WarehouseDAL.DataContracts.ProductManagment();
+            //prodManagManager = new WWS.WarehouseService();
 
+            // WarehouseDAL.DataContracts.ProductManagment prodManag = new WarehouseDAL.DataContracts.ProductManagment();
+            WWS.ProductManagment prodManag = new WWS.ProductManagment();
             prodManag.ProductId = productId;
             prodManag.Quantity = Convert.ToInt32(QuantityTextBox.Text.Trim());
             prodManag.ActionDate = DateTime.Now;
@@ -97,8 +99,11 @@ namespace WarehouseClient.ProdManagForm
             prodManag.LastModifyDate = DateTime.Now;
             prodManag.IsActive = true;
             prodManagManager.CreateOrUpdate(prodManag);
-            sendedForm.ProductManagmentIntoGridView(true);
+
+            //poxel
+            sendedForm.ProductManagmentIntoGridView(true,0,0,0);
             this.Close();
+
         }
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)

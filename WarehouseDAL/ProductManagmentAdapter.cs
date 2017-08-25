@@ -57,7 +57,7 @@ namespace WarehouseDAL
                         SqlParameter pUserId = new SqlParameter("@userId", System.Data.SqlDbType.Int);
                         if (userId > 0)
                         {
-                            pId.Value = userId;
+                            pUserId.Value = userId;
                         }
                         else
                         {
@@ -77,6 +77,7 @@ namespace WarehouseDAL
                         cmd.Parameters.Add(pProductId);
 
                         cmd.ExecuteNonQuery();
+
                         SqlDataReader reader = cmd.ExecuteReader();
 
                         if (reader.HasRows)

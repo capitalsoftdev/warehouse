@@ -9,57 +9,123 @@ using WarehouseBL.ProductManagmentManagment;
 using WarehouseBL.UserManagement;
 using WarehouseClient.ProdManagForm;
 using WarehouseDAL.DataContracts;
+using WarehouseClient.Constants;
+using System.Collections;
+using WarehouseClient.WWS;
 
 namespace WarehouseClient
 {
     public partial class MainForm
     {
-        IProductManagmentManager prodManag = new ProductManagmentManager();
-        static IList<ProductManagment> prodManagList = null;
+       // WarehouseServiceClient wwsClient = new WarehouseServiceClient(ServiceParametor.Parametor);
+        //WWS.IWarehouseService prodManag = new WWS.WarehouseService();
+      //  IProductManagmentManager prodManag = new ProductManagmentManager();
 
-        int statusFilter;
+        IList<WWS.ProductManagment> prodManagList = null;
 
-        Dictionary<int, User> userList;
-        public void ProductManagmentIntoGridView(bool reload)
+        IList<WWS.Product> productListForProdManag;
+
+        int statusFilterProductId;
+
+        Dictionary<int, WWS.User> userList;
+        
+        public void ProductManagmentIntoGridView(bool reload, int id, int userId, int productId)
         {
             if(reload)
             {
-                prodManagList = prodManag.GetItem(0, 0, 0);
-                ProductManagmentGridView.DataSource = prodManagList.ToList();
+                using (WarehouseServiceClient client = new WarehouseServiceClient("HTTP"))
+                {
+                    prodManagList = client.GetItem(id, userId, productId);
+                    if (prodManagList == null)
+                    {
+                        //prodManagList = new List<WWS.ProductManagment>();
+                    }
+                    productListForProdManag = ApplicationData.Products.Select(p => p.Value).ToList();
+                    var pMJOinP = prodManagList.Join(
+                       productListForProdManag,
+                       p => p.ProductId,
+                       m => m.Id,
+                       (p, m) => new
+                       {
+                           Id = p.Id.Value,
+                           Product = m.Name,
+                           Quantity = p.Quantity,
+                           ActionDate = p.ActionDate,
+                           Action = p.Action,
+                           userId = p.UserId,
+                           Reason = p.Reason,
+                           Price = p.Price,
+                           supplierId = p.SupplierId,
+                           brand = p.Brand,
+                       }
+                       );
+                    var userList = client.SelectActiveUsers();
+                    var pMJoinPJoinUser = pMJOinP.Join(
+                   userList,
+                   p => p.userId,
+                   u => u.Id,
+                   (p, u) => new
+                   {
+                       Id = p.Id,
+                       Product = p.Product,
+                       Quantity = p.Quantity,
+                       ActionDate = p.ActionDate,
+                       Action = p.Action,
+                       User = u.Username,
+                       Reason = p.Reason,
+                       Price = p.Price,
+                       supplierId = p.supplierId,
+                       brand = p.brand,
+                   }
+                   );
+                    ProductManagmentGridView.DataSource = pMJoinPJoinUser.ToList();
+                    ProductManagmentGridView.Columns[0].Visible = false;
+                }
             }
         }
         
         private void ProductManagementTab_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                CategoryProdMagTabComboBox.Items.Clear();
-                ProductProdManagTabComboBox.Items.Clear();
-
+          //  try
+           // {
                 //add elems in ProductCategory ComboBox
-                foreach (var elem in WarehouseClient.Constants.ApplicationData.ProductCategory)
+                if (CategoryProdMagTabComboBox.Items.Count == 0)
                 {
-                    CategoryProdMagTabComboBox.Items.Add(elem.Value.Name);
+                    foreach (var elem in WarehouseClient.Constants.ApplicationData.ProductCategory)
+                    {
+                        CategoryProdMagTabComboBox.Items.Add(elem.Value.Name);
+                    }
                 }
+
+
 
                 //add elems in Product ComboBox
-                foreach (var elem in WarehouseClient.Constants.ApplicationData.Products)
+                if (ProductProdManagTabComboBox.Items.Count == 0)
                 {
-                    ProductProdManagTabComboBox.Items.Add(elem.Value.Name);
+                    foreach (var elem in WarehouseClient.Constants.ApplicationData.Products)
+                    {
+                        ProductProdManagTabComboBox.Items.Add(elem.Value.Name);
+                    }
                 }
 
-                UserManager user = new UserManager();
-                //userList = user.SelectActiveUser();
-                foreach(var elem in userList)
-                {
-                    UserProdManagTabComboBox.Items.Add(elem.Value.Username);
-                }
-                ProductManagmentIntoGridView(true);
-            }
-            catch(Exception ex)
+
+            //  UserManager user = new UserManager();
+            //userList = user.SelectActiveUser();
+            using (WarehouseServiceClient client = new WarehouseServiceClient("HTTP"))
             {
-
+                var userList = client.SelectActiveUsers();
+                foreach (var elem in userList)
+                {
+                    UserProdManagTabComboBox.Items.Add(elem.Username);
+                }
+                ProductManagmentIntoGridView(true, 0, 0, 0);
             }
+           
+           // }
+            /*catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
 
         }
 
@@ -76,42 +142,37 @@ namespace WarehouseClient
             var selectedRows = ProductManagmentGridView.SelectedRows;
             try
             {
-                foreach(var elem in selectedRows)
+                using (WarehouseServiceClient client = new WarehouseServiceClient("HTTP"))
                 {
-                    prodManag.DeleteItem(Convert.ToInt32(((DataGridViewRow)elem).Cells[0].Value));
+                    foreach (var elem in selectedRows)
+                    {
+                        client.DeleteItem(Convert.ToInt32(((DataGridViewRow)elem).Cells[0].Value));
+                    }
                 }
-                if(statusFilter != 0)
+                if(statusFilterProductId != 0)
                 {
-                    prodManagList = prodManag.GetItem(0, 0, statusFilter);
-                    ProductManagmentGridView.DataSource = prodManagList.ToList();
+                    ProductManagmentIntoGridView(true, 0, 0, statusFilterProductId);
                 }
                 else
                 {
-                    ProductManagmentIntoGridView(true);
+                    ProductManagmentIntoGridView(true, 0, 0, 0);
                 }
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
 
+        //last
         private void UpdateProductManagmentButton_Click(object sender, EventArgs e)
         {
             var id = Convert.ToInt32(ProductManagmentGridView.CurrentRow.Cells[0].Value);
-            var productId = Convert.ToInt32(ProductManagmentGridView.CurrentRow.Cells[1].Value);
             var quantity = Convert.ToInt32(ProductManagmentGridView.CurrentRow.Cells[2].Value);
-            var actionDate = Convert.ToDateTime(ProductManagmentGridView.CurrentRow.Cells[3].Value);
-            var action = Convert.ToInt32(ProductManagmentGridView.CurrentRow.Cells[4].Value);
-            var userId = Convert.ToInt32(ProductManagmentGridView.CurrentRow.Cells[5].Value);
-            var price = Convert.ToInt32(ProductManagmentGridView.CurrentRow.Cells[6].Value);
-            var supplierId = Convert.ToInt32(ProductManagmentGridView.CurrentRow.Cells[7].Value);
-            var reason = Convert.ToString(ProductManagmentGridView.CurrentRow.Cells[8].Value);
+            var reason = Convert.ToString(ProductManagmentGridView.CurrentRow.Cells[6].Value);
+            var price = Convert.ToInt32(ProductManagmentGridView.CurrentRow.Cells[7].Value);
             var brand = Convert.ToString(ProductManagmentGridView.CurrentRow.Cells[9].Value);
-            var lastModifyDate = Convert.ToDateTime(ProductManagmentGridView.CurrentRow.Cells[10].Value);
-            var isActive =Convert.ToBoolean(ProductManagmentGridView.CurrentRow.Cells[11].Value);
-            
-            UpdateProductManagment updateItemForm = new UpdateProductManagment(id, productId, quantity, actionDate, action, userId, reason, price, supplierId, brand, lastModifyDate, isActive);
+            UpdateProductManagment updateItemForm = new UpdateProductManagment(id,  quantity, reason, price, brand, this);
             updateItemForm.Show();
         }
 
@@ -153,31 +214,34 @@ namespace WarehouseClient
 
             try
             {
-                prodManagList = prodManag.GetItem(0, 0, productId);
-                ProductManagmentGridView.DataSource = prodManagList.ToList();
-                statusFilter = productId;
+                ProductManagmentIntoGridView(true, 0, 0, productId);
+                statusFilterProductId = productId;
 
             }catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
 
        private void UserProdManagTabComboBox_SelectedIndexChanged(object sender, EventArgs e)
        {
-            var selectedUser = UserProdManagTabComboBox.SelectedItem.ToString();
-            int userId = -1;
-            foreach(var elem in userList)
+            using (WarehouseServiceClient client = new WarehouseServiceClient("HTTP"))
             {
-                if(selectedUser == elem.Value.Username)
+                var userList = client.SelectActiveUsers();
+                var selectedUser = UserProdManagTabComboBox.SelectedItem.ToString();
+                int userId = -1;
+                foreach (var elem in userList)
                 {
-                    userId = Convert.ToInt32(elem.Value.Id);
+                    if (selectedUser == elem.Username)
+                    {
+                        userId = Convert.ToInt32(elem.Id);
+                        break;
+                    }
                 }
+                ProductManagmentIntoGridView(true, 0, userId, 0);
             }
-            prodManagList = prodManag.GetItem(0, userId, 0);
-            ProductManagmentGridView.DataSource = prodManagList.ToList();
-           // MessageBox.Show(userId.ToString());
         }
+
     }
 }

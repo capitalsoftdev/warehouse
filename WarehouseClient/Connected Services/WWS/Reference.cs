@@ -497,6 +497,99 @@ namespace WarehouseClient.WWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductCategory", Namespace="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class ProductCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsActiveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ParentIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsActive {
+            get {
+                return this.IsActiveField;
+            }
+            set {
+                if ((this.IsActiveField.Equals(value) != true)) {
+                    this.IsActiveField = value;
+                    this.RaisePropertyChanged("IsActive");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ParentId {
+            get {
+                return this.ParentIdField;
+            }
+            set {
+                if ((this.ParentIdField.Equals(value) != true)) {
+                    this.ParentIdField = value;
+                    this.RaisePropertyChanged("ParentId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.capitalsoft.am/api/soap/2017/08/22", ConfigurationName="WWS.IWarehouseService")]
     public interface IWarehouseService {
@@ -534,6 +627,14 @@ namespace WarehouseClient.WWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableProduct", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableProductRes" +
             "ponse")]
         System.Threading.Tasks.Task<int> DisableProductAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveProduct", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveProductR" +
+            "esponse")]
+        System.Collections.Generic.List<WarehouseClient.WWS.Product> GetActiveProduct();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveProduct", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveProductR" +
+            "esponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WarehouseClient.WWS.Product>> GetActiveProductAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetItem", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetItemResponse")]
         System.Collections.Generic.List<WarehouseClient.WWS.ProductManagment> GetItem(int id, int userId, int productId);
@@ -622,6 +723,46 @@ namespace WarehouseClient.WWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableRoleGroup", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableRoleGroupR" +
             "esponse")]
         System.Threading.Tasks.Task<int> DisableRoleGroupAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdatePro" +
+            "ductCategory", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdatePro" +
+            "ductCategoryResponse")]
+        int CreateOrUpdateProductCategory(WarehouseClient.WWS.ProductCategory product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdatePro" +
+            "ductCategory", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdatePro" +
+            "ductCategoryResponse")]
+        System.Threading.Tasks.Task<int> CreateOrUpdateProductCategoryAsync(WarehouseClient.WWS.ProductCategory product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetAllProductCate" +
+            "gories", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetAllProductCate" +
+            "goriesResponse")]
+        System.Collections.Generic.List<WarehouseClient.WWS.ProductCategory> GetAllProductCategories();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetAllProductCate" +
+            "gories", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetAllProductCate" +
+            "goriesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WarehouseClient.WWS.ProductCategory>> GetAllProductCategoriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProductCategor" +
+            "yById", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProductCategor" +
+            "yByIdResponse")]
+        WarehouseClient.WWS.ProductCategory GetProductCategoryById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProductCategor" +
+            "yById", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProductCategor" +
+            "yByIdResponse")]
+        System.Threading.Tasks.Task<WarehouseClient.WWS.ProductCategory> GetProductCategoryByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ManageProductCate" +
+            "gory", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ManageProductCate" +
+            "goryResponse")]
+        int ManageProductCategory(int id, int action);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ManageProductCate" +
+            "gory", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ManageProductCate" +
+            "goryResponse")]
+        System.Threading.Tasks.Task<int> ManageProductCategoryAsync(int id, int action);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -681,6 +822,14 @@ namespace WarehouseClient.WWS {
         
         public System.Threading.Tasks.Task<int> DisableProductAsync(int id) {
             return base.Channel.DisableProductAsync(id);
+        }
+        
+        public System.Collections.Generic.List<WarehouseClient.WWS.Product> GetActiveProduct() {
+            return base.Channel.GetActiveProduct();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WarehouseClient.WWS.Product>> GetActiveProductAsync() {
+            return base.Channel.GetActiveProductAsync();
         }
         
         public System.Collections.Generic.List<WarehouseClient.WWS.ProductManagment> GetItem(int id, int userId, int productId) {
@@ -769,6 +918,38 @@ namespace WarehouseClient.WWS {
         
         public System.Threading.Tasks.Task<int> DisableRoleGroupAsync(int id) {
             return base.Channel.DisableRoleGroupAsync(id);
+        }
+        
+        public int CreateOrUpdateProductCategory(WarehouseClient.WWS.ProductCategory product) {
+            return base.Channel.CreateOrUpdateProductCategory(product);
+        }
+        
+        public System.Threading.Tasks.Task<int> CreateOrUpdateProductCategoryAsync(WarehouseClient.WWS.ProductCategory product) {
+            return base.Channel.CreateOrUpdateProductCategoryAsync(product);
+        }
+        
+        public System.Collections.Generic.List<WarehouseClient.WWS.ProductCategory> GetAllProductCategories() {
+            return base.Channel.GetAllProductCategories();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WarehouseClient.WWS.ProductCategory>> GetAllProductCategoriesAsync() {
+            return base.Channel.GetAllProductCategoriesAsync();
+        }
+        
+        public WarehouseClient.WWS.ProductCategory GetProductCategoryById(int id) {
+            return base.Channel.GetProductCategoryById(id);
+        }
+        
+        public System.Threading.Tasks.Task<WarehouseClient.WWS.ProductCategory> GetProductCategoryByIdAsync(int id) {
+            return base.Channel.GetProductCategoryByIdAsync(id);
+        }
+        
+        public int ManageProductCategory(int id, int action) {
+            return base.Channel.ManageProductCategory(id, action);
+        }
+        
+        public System.Threading.Tasks.Task<int> ManageProductCategoryAsync(int id, int action) {
+            return base.Channel.ManageProductCategoryAsync(id, action);
         }
     }
 }

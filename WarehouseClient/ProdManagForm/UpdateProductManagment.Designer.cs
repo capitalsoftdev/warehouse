@@ -28,121 +28,189 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.BrandUpdateTextBox = new System.Windows.Forms.TextBox();
+            this.PriceUpdateTextBox = new System.Windows.Forms.TextBox();
+            this.QuantityUpdateTextBox = new System.Windows.Forms.TextBox();
+            this.SupplierIdTextBox = new System.Windows.Forms.TextBox();
+            this.ProductUpdateLabel = new System.Windows.Forms.Label();
+            this.categoryUpdateLabel = new System.Windows.Forms.Label();
+            this.QuantityUpdateLabel = new System.Windows.Forms.Label();
+            this.BrandUpdateLabel = new System.Windows.Forms.Label();
+            this.SupplierIdUpdateLabel = new System.Windows.Forms.Label();
+            this.PriceUpdateLabel = new System.Windows.Forms.Label();
+            this.ActionUpdateLabel = new System.Windows.Forms.Label();
+            this.ProductUpdateComboBox = new System.Windows.Forms.ComboBox();
+            this.CategoryUpdateComboBox = new System.Windows.Forms.ComboBox();
+            this.ActionUpdateComboBox = new System.Windows.Forms.ComboBox();
+            this.SaveUpdateButton = new System.Windows.Forms.Button();
+            this.ReasonUpdateLabel = new System.Windows.Forms.Label();
+            this.ReasonUpdateTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // BrandUpdateTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.BrandUpdateTextBox.Location = new System.Drawing.Point(101, 227);
+            this.BrandUpdateTextBox.Name = "BrandUpdateTextBox";
+            this.BrandUpdateTextBox.Size = new System.Drawing.Size(100, 20);
+            this.BrandUpdateTextBox.TabIndex = 0;
             // 
-            // textBox2
+            // PriceUpdateTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(36, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.PriceUpdateTextBox.Location = new System.Drawing.Point(101, 133);
+            this.PriceUpdateTextBox.Name = "PriceUpdateTextBox";
+            this.PriceUpdateTextBox.Size = new System.Drawing.Size(100, 20);
+            this.PriceUpdateTextBox.TabIndex = 1;
             // 
-            // textBox3
+            // QuantityUpdateTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(36, 120);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.QuantityUpdateTextBox.Location = new System.Drawing.Point(101, 56);
+            this.QuantityUpdateTextBox.Name = "QuantityUpdateTextBox";
+            this.QuantityUpdateTextBox.Size = new System.Drawing.Size(100, 20);
+            this.QuantityUpdateTextBox.TabIndex = 2;
             // 
-            // textBox4
+            // SupplierIdTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(36, 161);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 3;
+            this.SupplierIdTextBox.Location = new System.Drawing.Point(101, 173);
+            this.SupplierIdTextBox.Name = "SupplierIdTextBox";
+            this.SupplierIdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.SupplierIdTextBox.TabIndex = 3;
             // 
-            // textBox5
+            // ProductUpdateLabel
             // 
-            this.textBox5.Location = new System.Drawing.Point(36, 202);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 4;
+            this.ProductUpdateLabel.AutoSize = true;
+            this.ProductUpdateLabel.Location = new System.Drawing.Point(273, 23);
+            this.ProductUpdateLabel.Name = "ProductUpdateLabel";
+            this.ProductUpdateLabel.Size = new System.Drawing.Size(44, 13);
+            this.ProductUpdateLabel.TabIndex = 12;
+            this.ProductUpdateLabel.Text = "Product";
             // 
-            // textBox6
+            // categoryUpdateLabel
             // 
-            this.textBox6.Location = new System.Drawing.Point(36, 228);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 5;
+            this.categoryUpdateLabel.AutoSize = true;
+            this.categoryUpdateLabel.Location = new System.Drawing.Point(33, 23);
+            this.categoryUpdateLabel.Name = "categoryUpdateLabel";
+            this.categoryUpdateLabel.Size = new System.Drawing.Size(49, 13);
+            this.categoryUpdateLabel.TabIndex = 13;
+            this.categoryUpdateLabel.Text = "Category";
             // 
-            // textBox7
+            // QuantityUpdateLabel
             // 
-            this.textBox7.Location = new System.Drawing.Point(36, 254);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 6;
+            this.QuantityUpdateLabel.AutoSize = true;
+            this.QuantityUpdateLabel.Location = new System.Drawing.Point(33, 63);
+            this.QuantityUpdateLabel.Name = "QuantityUpdateLabel";
+            this.QuantityUpdateLabel.Size = new System.Drawing.Size(46, 13);
+            this.QuantityUpdateLabel.TabIndex = 14;
+            this.QuantityUpdateLabel.Text = "Quantity";
             // 
-            // textBox8
+            // BrandUpdateLabel
             // 
-            this.textBox8.Location = new System.Drawing.Point(36, 279);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 7;
+            this.BrandUpdateLabel.AutoSize = true;
+            this.BrandUpdateLabel.Location = new System.Drawing.Point(33, 230);
+            this.BrandUpdateLabel.Name = "BrandUpdateLabel";
+            this.BrandUpdateLabel.Size = new System.Drawing.Size(35, 13);
+            this.BrandUpdateLabel.TabIndex = 15;
+            this.BrandUpdateLabel.Text = "Brand";
             // 
-            // textBox9
+            // SupplierIdUpdateLabel
             // 
-            this.textBox9.Location = new System.Drawing.Point(36, 305);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 8;
+            this.SupplierIdUpdateLabel.AutoSize = true;
+            this.SupplierIdUpdateLabel.Location = new System.Drawing.Point(33, 176);
+            this.SupplierIdUpdateLabel.Name = "SupplierIdUpdateLabel";
+            this.SupplierIdUpdateLabel.Size = new System.Drawing.Size(54, 13);
+            this.SupplierIdUpdateLabel.TabIndex = 16;
+            this.SupplierIdUpdateLabel.Text = "SupplierId";
             // 
-            // textBox10
+            // PriceUpdateLabel
             // 
-            this.textBox10.Location = new System.Drawing.Point(36, 340);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 9;
+            this.PriceUpdateLabel.AutoSize = true;
+            this.PriceUpdateLabel.Location = new System.Drawing.Point(33, 136);
+            this.PriceUpdateLabel.Name = "PriceUpdateLabel";
+            this.PriceUpdateLabel.Size = new System.Drawing.Size(31, 13);
+            this.PriceUpdateLabel.TabIndex = 17;
+            this.PriceUpdateLabel.Text = "Price";
             // 
-            // textBox11
+            // ActionUpdateLabel
             // 
-            this.textBox11.Location = new System.Drawing.Point(45, 376);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 10;
+            this.ActionUpdateLabel.AutoSize = true;
+            this.ActionUpdateLabel.Location = new System.Drawing.Point(33, 98);
+            this.ActionUpdateLabel.Name = "ActionUpdateLabel";
+            this.ActionUpdateLabel.Size = new System.Drawing.Size(37, 13);
+            this.ActionUpdateLabel.TabIndex = 18;
+            this.ActionUpdateLabel.Text = "Action";
             // 
-            // textBox12
+            // ProductUpdateComboBox
             // 
-            this.textBox12.Location = new System.Drawing.Point(101, 402);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 11;
+            this.ProductUpdateComboBox.FormattingEnabled = true;
+            this.ProductUpdateComboBox.Location = new System.Drawing.Point(381, 17);
+            this.ProductUpdateComboBox.Name = "ProductUpdateComboBox";
+            this.ProductUpdateComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ProductUpdateComboBox.TabIndex = 19;
+            // 
+            // CategoryUpdateComboBox
+            // 
+            this.CategoryUpdateComboBox.FormattingEnabled = true;
+            this.CategoryUpdateComboBox.Location = new System.Drawing.Point(101, 20);
+            this.CategoryUpdateComboBox.Name = "CategoryUpdateComboBox";
+            this.CategoryUpdateComboBox.Size = new System.Drawing.Size(121, 21);
+            this.CategoryUpdateComboBox.TabIndex = 20;
+            this.CategoryUpdateComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryUpdateComboBox_SelectedIndexChanged);
+            // 
+            // ActionUpdateComboBox
+            // 
+            this.ActionUpdateComboBox.FormattingEnabled = true;
+            this.ActionUpdateComboBox.Location = new System.Drawing.Point(101, 98);
+            this.ActionUpdateComboBox.Name = "ActionUpdateComboBox";
+            this.ActionUpdateComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ActionUpdateComboBox.TabIndex = 21;
+            // 
+            // SaveUpdateButton
+            // 
+            this.SaveUpdateButton.Location = new System.Drawing.Point(290, 227);
+            this.SaveUpdateButton.Name = "SaveUpdateButton";
+            this.SaveUpdateButton.Size = new System.Drawing.Size(152, 44);
+            this.SaveUpdateButton.TabIndex = 22;
+            this.SaveUpdateButton.Text = "Save";
+            this.SaveUpdateButton.UseVisualStyleBackColor = true;
+            this.SaveUpdateButton.Click += new System.EventHandler(this.SaveUpdateButton_Click);
+            // 
+            // ReasonUpdateLabel
+            // 
+            this.ReasonUpdateLabel.AutoSize = true;
+            this.ReasonUpdateLabel.Location = new System.Drawing.Point(273, 63);
+            this.ReasonUpdateLabel.Name = "ReasonUpdateLabel";
+            this.ReasonUpdateLabel.Size = new System.Drawing.Size(44, 13);
+            this.ReasonUpdateLabel.TabIndex = 23;
+            this.ReasonUpdateLabel.Text = "Reason";
+            // 
+            // ReasonUpdateTextBox
+            // 
+            this.ReasonUpdateTextBox.Location = new System.Drawing.Point(381, 56);
+            this.ReasonUpdateTextBox.Name = "ReasonUpdateTextBox";
+            this.ReasonUpdateTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ReasonUpdateTextBox.TabIndex = 24;
             // 
             // UpdateProductManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 458);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(711, 458);
+            this.Controls.Add(this.ReasonUpdateTextBox);
+            this.Controls.Add(this.ReasonUpdateLabel);
+            this.Controls.Add(this.SaveUpdateButton);
+            this.Controls.Add(this.ActionUpdateComboBox);
+            this.Controls.Add(this.CategoryUpdateComboBox);
+            this.Controls.Add(this.ProductUpdateComboBox);
+            this.Controls.Add(this.ActionUpdateLabel);
+            this.Controls.Add(this.PriceUpdateLabel);
+            this.Controls.Add(this.SupplierIdUpdateLabel);
+            this.Controls.Add(this.BrandUpdateLabel);
+            this.Controls.Add(this.QuantityUpdateLabel);
+            this.Controls.Add(this.categoryUpdateLabel);
+            this.Controls.Add(this.ProductUpdateLabel);
+            this.Controls.Add(this.SupplierIdTextBox);
+            this.Controls.Add(this.QuantityUpdateTextBox);
+            this.Controls.Add(this.PriceUpdateTextBox);
+            this.Controls.Add(this.BrandUpdateTextBox);
             this.Name = "UpdateProductManagment";
             this.Text = "UpdateProductManagment";
             this.Load += new System.EventHandler(this.UpdateProductManagment_Load);
@@ -153,17 +221,22 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox BrandUpdateTextBox;
+        private System.Windows.Forms.TextBox PriceUpdateTextBox;
+        private System.Windows.Forms.TextBox QuantityUpdateTextBox;
+        private System.Windows.Forms.TextBox SupplierIdTextBox;
+        private System.Windows.Forms.Label ProductUpdateLabel;
+        private System.Windows.Forms.Label categoryUpdateLabel;
+        private System.Windows.Forms.Label QuantityUpdateLabel;
+        private System.Windows.Forms.Label BrandUpdateLabel;
+        private System.Windows.Forms.Label SupplierIdUpdateLabel;
+        private System.Windows.Forms.Label PriceUpdateLabel;
+        private System.Windows.Forms.Label ActionUpdateLabel;
+        private System.Windows.Forms.ComboBox ProductUpdateComboBox;
+        private System.Windows.Forms.ComboBox CategoryUpdateComboBox;
+        private System.Windows.Forms.ComboBox ActionUpdateComboBox;
+        private System.Windows.Forms.Button SaveUpdateButton;
+        private System.Windows.Forms.Label ReasonUpdateLabel;
+        private System.Windows.Forms.TextBox ReasonUpdateTextBox;
     }
 }

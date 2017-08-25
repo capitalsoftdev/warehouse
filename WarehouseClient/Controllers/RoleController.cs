@@ -30,7 +30,7 @@ namespace WarehouseClient
         
         public void RoleDataGridRefresh()
         {
-            using (WarehouseServiceClient wwsClient = new WarehouseServiceClient("HTTP"))
+            using (WarehouseServiceClient wwsClient = new WarehouseServiceClient(ServiceParametor.Parametor))
             {
                 IList<Role> roleList = wwsClient.GetRoles().ToList();
                 RoleDataGridView.DataSource = roleList.ToList();
@@ -38,7 +38,7 @@ namespace WarehouseClient
         }
         public void RoleGroupDataGridRefresh()
         {
-            using (WarehouseServiceClient wwsClient = new WarehouseServiceClient("HTTP"))
+            using (WarehouseServiceClient wwsClient = new WarehouseServiceClient(ServiceParametor.Parametor))
             {
                 IList<RoleGroup> roleGroupList = wwsClient.GetRoleGroups().ToList();
                 roleGroupDataGridView.DataSource = roleGroupList.ToList();
