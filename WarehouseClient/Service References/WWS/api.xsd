@@ -67,6 +67,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfRoleGroup" nillable="true" type="tns:ArrayOfRoleGroup" />
+  <xs:complexType name="ArrayOfMunit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Munit" nillable="true" type="tns:Munit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMunit" nillable="true" type="tns:ArrayOfMunit" />
+  <xs:complexType name="Munit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MunitName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Munit" nillable="true" type="tns:Munit" />
   <xs:complexType name="ProductCategory">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />

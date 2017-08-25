@@ -13,73 +13,67 @@ namespace WarehouseClient
 {
     public partial class MainForm
     {
-        ProductManager productManager = new ProductManager();
-        IList<Product> productList;
-        IList<Munit> munitList;
+
+        WWS.WarehouseServiceClient productManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);    
+        IList<WWS.Product> productList;
+        IList<WWS.Munit> munitList;
         IList<ProductCategory> productCategoryList;
-        IEnumerable<ProductMunitProductCategoryJoin> result;
 
         public void loadProductsInToGrid(bool reLoad)
         {
-
-            if (reLoad)
+            try
             {
-                ApplicationData.Products = new Dictionary<int, Product>();
-
-                var allProduct = productManager.GetActiveProduct();
-
-                foreach (var item in allProduct)
+                if (reLoad)
                 {
-                    ApplicationData.Products.Add(item.Id.Value, item);
+                    ApplicationData.Products = new Dictionary<int, WWS.Product>();
+
+                    var allProduct = productManager.GetActiveProduct();
+
+                    foreach (var item in allProduct)
+                    {
+                        ApplicationData.Products.Add(item.Id.Value, item);
+                    }
                 }
+                productList = ApplicationData.Products.Select(p => p.Value).ToList();
+                productCategoryList = ApplicationData.ProductCategory.Select(pc => pc.Value).ToList();
+                munitList = ApplicationData.Munits.Select(m => m.Value).ToList();
+
+                var result1 = productList.Join
+                    (
+                        munitList,
+                        p => p.Munit,
+                        m => m.Id,
+                        (p, m) => new
+                        {
+                            Id = p.Id.Value,
+                            Name = p.Name,
+                            ProductCategoryId = p.ProductCategoryId,
+                            Munit = m.MunitName
+                        }
+                    );
+
+                var result2 = result1.Join
+                    (
+                        productCategoryList,
+                        p => p.ProductCategoryId,
+                        pc => pc.Id,
+                        (p, pc) => new
+                        {
+                            Id = p.Id,
+                            Name = p.Name,
+                            Munit = p.Munit,
+                            Category = pc.Name
+                        }
+                    );
+
+
+                productDataGridView.DataSource = result2.ToList();
+                productDataGridView.Columns[0].Visible = false;
             }
-            productList = ApplicationData.Products.Select(p => p.Value).ToList();
-            productCategoryList = ApplicationData.ProductCategory.Select(pc => pc.Value).ToList();
-            munitList = ApplicationData.Munits.Select(m => m.Value).ToList();
-
-            var result1 = productList.Join
-                (
-                    munitList,
-                    p => p.Munit,
-                    m => m.Id,
-                    (p, m) => new
-                    {
-                        Id = p.Id.Value,
-                        Name = p.Name,
-                        ProductCategoryId = p.ProductCategoryId,
-                        Munit = m.MunitName
-                    }
-                );
-
-            var result2 = result1.Join
-                (
-                    productCategoryList,
-                    p => p.ProductCategoryId,
-                    pc => pc.Id,
-                    (p, pc) => new
-                    {
-                        Id = p.Id,
-                        Name = p.Name,
-                        Munit = p.Munit,
-                        Category = pc.Name
-                    }
-                );
-
-            //result = from productJoin in productList
-            //             join productCategoryJoin in productCategoryList
-            //             on productJoin.ProductCategoryId equals productCategoryJoin.Id
-            //             join munitJoin in munitList
-            //             on productJoin.Munit equals munitJoin.Id
-            //         select new ProductMunitProductCategoryJoin()
-            //         {
-            //                 Id = productJoin.Id.Value,
-            //                 Name = productJoin.Name,
-            //                 Category = productCategoryJoin.Name,
-            //                 Munit = munitJoin.MunitName
-            //         };
-
-            productDataGridView.DataSource = result2.ToList();
-            productDataGridView.Columns[0].Visible = false;
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         private void tabPage3_Enter(object sender, EventArgs e)
@@ -89,37 +83,57 @@ namespace WarehouseClient
 
         private void addNewProductButton_Click(object sender, EventArgs e)
         {
-            ProductManagement.NewProductAddForm newProductAddForm = new ProductManagement.NewProductAddForm(this, false, null);
-            newProductAddForm.Show();
+            try
+            {
+                ProductManagement.NewProductAddForm newProductAddForm = new ProductManagement.NewProductAddForm(this, false, null);
+                newProductAddForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void disableProductButton_Click(object sender, EventArgs e)
         {
-            var selectedRowsList = productDataGridView.SelectedRows;
+            try
+            {
+                var selectedRowsList = productDataGridView.SelectedRows;
 
-            if (selectedRowsList.Count == 0)
-            {
-                MessageBox.Show("Select row");
-            }
-            else
-            {
-                var productManager = new ProductManager();
-                foreach (var product in selectedRowsList)
+                if (selectedRowsList.Count == 0)
                 {
-                    var a = (DataGridViewRow)product;
-                    productManager.DisableProduct((int)a.Cells[0].Value);
+                    MessageBox.Show("Select row");
                 }
-                loadProductsInToGrid(true);
+                else
+                {
+                    var productManager = new ProductManager();
+                    foreach (var product in selectedRowsList)
+                    {
+                        var a = (DataGridViewRow)product;
+                        productManager.DisableProduct((int)a.Cells[0].Value);
+                    }
+                    loadProductsInToGrid(true);
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
             }
         }
 
         private void productDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ProductManagement.NewProductAddForm newProductAddForm = new ProductManagement.NewProductAddForm(this, true, productList[e.RowIndex]);
-            newProductAddForm.Show();
-                
-        }
+            try
+            {
+                ProductManagement.NewProductAddForm newProductAddForm = new ProductManagement.NewProductAddForm(this, true, productList[e.RowIndex]);
+                newProductAddForm.Show();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
 
+        }
 
         class ProductMunitProductCategoryJoin
         {

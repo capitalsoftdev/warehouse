@@ -150,6 +150,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ServiceParametor.cs" />
     <Compile Include="UserManagement\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +230,9 @@
     </None>
     <None Include="Service References\WWS\api2.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WWS\WarehouseClient.WWS.Munit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\WWS\WarehouseClient.WWS.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

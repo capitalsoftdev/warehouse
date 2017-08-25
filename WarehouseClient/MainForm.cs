@@ -96,10 +96,10 @@ namespace WarehouseClient
             catch
             {
 
-            } 
+            }
 
             #endregion
-            
+
             //#region Load Product Categories
 
             //var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
@@ -115,37 +115,49 @@ namespace WarehouseClient
 
             //#endregion
 
-            //#region Load Product
+            #region Load Product
 
-            //ProductManager productManager = new ProductManager();
+            try
+            {
 
-            //var allProduct = productManager.GetActiveProduct();
+                WWS.WarehouseServiceClient productManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
 
-            //Constants.ApplicationData.Products = new Dictionary<int, WWS.Product>();
+                var allProduct = productManager.GetActiveProduct();
 
-            //foreach (var item in allProduct)
-            //{
-            //    Constants.ApplicationData.Products.Add(item.Id.Value, item);
-            //}
+                Constants.ApplicationData.Products = new Dictionary<int, WWS.Product>();
 
+                foreach (var item in allProduct)
+                {
+                    Constants.ApplicationData.Products.Add(item.Id.Value, item);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
 
-            //#endregion
+            #endregion
 
-            //#region Load Munit
+            #region Load Munit
+            try
+            {
+                WWS.WarehouseServiceClient munitManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
 
-            //MunitManager munitManager = new MunitManager();
+                var allMunit = munitManager.GetMunits();
 
-            //var allMunit = munitManager.GetMunit();
+                Constants.ApplicationData.Munits = new Dictionary<int, WWS.Munit>();
 
-            //Constants.ApplicationData.Munits = new Dictionary<int, Munit>();
+                foreach (var item in allMunit)
+                {
+                    Constants.ApplicationData.Munits.Add(item.Id, item);
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
 
-            //foreach (var item in allMunit)
-            //{
-            //    Constants.ApplicationData.Munits.Add(item.Id, item);
-            //}
-
-
-            //#endregion
+            #endregion
 
         }
 

@@ -177,6 +177,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetMunits">
+      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetMunits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMunit">
+      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetMunit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateOrUpdateProductCategory">
       <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProductCategory" style="document" />
       <wsdl:input>
@@ -415,6 +433,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetMunits">
+      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetMunits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMunit">
+      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetMunit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateOrUpdateProductCategory">
       <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProductCategory" style="document" />
       <wsdl:input>
@@ -515,7 +551,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.pipe://localhost/warehouseapi</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Spn>host/DESKTOP-ACMRGJ9</Spn>
+          <Spn>host/DESKTOP-36129HG</Spn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

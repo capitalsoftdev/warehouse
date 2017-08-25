@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarehouseBL.UserManagement;
 using WarehouseDAL.DataContracts;
+using WarehouseClient.WWS;
 
 namespace WarehouseClient
 {
@@ -55,8 +56,9 @@ namespace WarehouseClient
                     DialogResult result = MessageBox.Show("DeActivate ?", "IsActive", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        UserManager manager = new UserManager();
-                        manager.ActivateOrDeActivate((Int32)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                        //using (var client = new WarehouseServiceClient()
+                        //UserManager manager = new UserManager();
+                        //manager.ActivateOrDeActivate((Int32)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
                     }
                 }
                 else
