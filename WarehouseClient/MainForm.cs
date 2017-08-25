@@ -96,11 +96,11 @@ namespace WarehouseClient
             catch
             {
 
-            } 
+            }
 
             #endregion
-            
-            //#region Load Product Categories
+
+            #region Load Product Categories
 
             //var prodCategoryBL = new WarehouseBL.ProductCategoryManagement.ProductCategoryManager();
 
@@ -113,13 +113,12 @@ namespace WarehouseClient
             //    Constants.ApplicationData.ProductCategory.Add(item.Id, item);
             //}
 
-            //#endregion
+            #endregion
 
-            //#region Load Product
+            #region Load Product
 
             try
             {
-
                 WWS.WarehouseServiceClient productManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
 
                 var allProduct = productManager.GetActiveProduct();
