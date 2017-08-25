@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.capitalsoft.am/api/soap/2017/08/22" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.capitalsoft.am/api/soap/2017/08/22" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.capitalsoft.am/api/soap/2017/08/22/Imports">
+      <xsd:import schemaLocation="http://localhost:2772/api?xsd=xsd0" namespace="http://www.capitalsoft.am/api/soap/2017/08/22" />
+      <xsd:import schemaLocation="http://localhost:2772/api?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2772/api?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWarehouseService_CreateOrUpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_CreateOrUpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetProductById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductById" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetProductById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_DisableProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisableProduct" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_DisableProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisableProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetActiveProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveProduct" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetActiveProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItem" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_DeleteItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItem" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_DeleteItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_CreateOrUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_CreateOrUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_CreateOrUpdateRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateRole" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_CreateOrUpdateRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetRoleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleById" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetRoleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_DisableRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisableRole" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_DisableRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisableRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_CreateOrUpdateRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_CreateOrUpdateRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetRoleGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleGroups" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetRoleGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetRoleGroupById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleGroupById" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetRoleGroupById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleGroupByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_DisableRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisableRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_DisableRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisableRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_CreateOrUpdateProductCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateProductCategory" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_CreateOrUpdateProductCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateProductCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetAllProductCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductCategories" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetAllProductCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetProductCategoryById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCategoryById" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetProductCategoryById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCategoryByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_ManageProductCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:ManageProductCategory" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_ManageProductCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ManageProductCategoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWarehouseService">
+    <wsdl:operation name="CreateOrUpdateProduct">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProduct" message="tns:IWarehouseService_CreateOrUpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProductResponse" message="tns:IWarehouseService_CreateOrUpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProducts" message="tns:IWarehouseService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProductsResponse" message="tns:IWarehouseService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProductById" message="tns:IWarehouseService_GetProductById_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProductByIdResponse" message="tns:IWarehouseService_GetProductById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableProduct">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableProduct" message="tns:IWarehouseService_DisableProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableProductResponse" message="tns:IWarehouseService_DisableProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveProduct">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveProduct" message="tns:IWarehouseService_GetActiveProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveProductResponse" message="tns:IWarehouseService_GetActiveProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetItem" message="tns:IWarehouseService_GetItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetItemResponse" message="tns:IWarehouseService_GetItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItem">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DeleteItem" message="tns:IWarehouseService_DeleteItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DeleteItemResponse" message="tns:IWarehouseService_DeleteItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdate">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdate" message="tns:IWarehouseService_CreateOrUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateResponse" message="tns:IWarehouseService_CreateOrUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateRole">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateRole" message="tns:IWarehouseService_CreateOrUpdateRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateRoleResponse" message="tns:IWarehouseService_CreateOrUpdateRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetRoles" message="tns:IWarehouseService_GetRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetRolesResponse" message="tns:IWarehouseService_GetRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleById">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetRoleById" message="tns:IWarehouseService_GetRoleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetRoleByIdResponse" message="tns:IWarehouseService_GetRoleById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableRole">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableRole" message="tns:IWarehouseService_DisableRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableRoleResponse" message="tns:IWarehouseService_DisableRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateRoleGroup">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateRoleGroup" message="tns:IWarehouseService_CreateOrUpdateRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateRoleGroupResponse" message="tns:IWarehouseService_CreateOrUpdateRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleGroups">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetRoleGroups" message="tns:IWarehouseService_GetRoleGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetRoleGroupsResponse" message="tns:IWarehouseService_GetRoleGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleGroupById">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetRoleGroupById" message="tns:IWarehouseService_GetRoleGroupById_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetRoleGroupByIdResponse" message="tns:IWarehouseService_GetRoleGroupById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableRoleGroup">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableRoleGroup" message="tns:IWarehouseService_DisableRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableRoleGroupResponse" message="tns:IWarehouseService_DisableRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateProductCategory">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProductCategory" message="tns:IWarehouseService_CreateOrUpdateProductCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProductCategoryResponse" message="tns:IWarehouseService_CreateOrUpdateProductCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductCategories">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetAllProductCategories" message="tns:IWarehouseService_GetAllProductCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetAllProductCategoriesResponse" message="tns:IWarehouseService_GetAllProductCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategoryById">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProductCategoryById" message="tns:IWarehouseService_GetProductCategoryById_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetProductCategoryByIdResponse" message="tns:IWarehouseService_GetProductCategoryById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ManageProductCategory">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ManageProductCategory" message="tns:IWarehouseService_ManageProductCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ManageProductCategoryResponse" message="tns:IWarehouseService_ManageProductCategory_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
