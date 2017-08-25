@@ -105,33 +105,45 @@ namespace WarehouseClient
 
             #region Load Product
 
-            ProductManager productManager = new ProductManager();
-
-            var allProduct = productManager.GetActiveProduct();
-
-            Constants.ApplicationData.Products = new Dictionary<int, Product>();
-
-            foreach (var item in allProduct)
+            try
             {
-                Constants.ApplicationData.Products.Add(item.Id.Value, item);
-            }
 
+                WWS.WarehouseServiceClient productManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
+
+                var allProduct = productManager.GetActiveProduct();
+
+                Constants.ApplicationData.Products = new Dictionary<int, WWS.Product>();
+
+                foreach (var item in allProduct)
+                {
+                    Constants.ApplicationData.Products.Add(item.Id.Value, item);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
 
             #endregion
 
             #region Load Munit
-
-            MunitManager munitManager = new MunitManager();
-
-            var allMunit = munitManager.GetMunit();
-
-            Constants.ApplicationData.Munits = new Dictionary<int, Munit>();
-
-            foreach (var item in allMunit)
+            try
             {
-                Constants.ApplicationData.Munits.Add(item.Id, item);
-            }
+                WWS.WarehouseServiceClient munitManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
 
+                var allMunit = munitManager.GetMunits();
+
+                Constants.ApplicationData.Munits = new Dictionary<int, WWS.Munit>();
+
+                foreach (var item in allMunit)
+                {
+                    Constants.ApplicationData.Munits.Add(item.Id, item);
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
 
             #endregion
 

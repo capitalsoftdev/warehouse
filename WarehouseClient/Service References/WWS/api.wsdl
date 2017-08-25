@@ -103,6 +103,18 @@
   <wsdl:message name="IWarehouseService_DisableRoleGroup_OutputMessage">
     <wsdl:part name="parameters" element="tns:DisableRoleGroupResponse" />
   </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetMunits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMunits" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetMunits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMunitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetMunit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMunit" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_GetMunit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMunitResponse" />
+  </wsdl:message>
   <wsdl:message name="IWarehouseService_CreateOrUpdateProductCategory_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateOrUpdateProductCategory" />
   </wsdl:message>
@@ -227,6 +239,14 @@
     <wsdl:operation name="DisableRoleGroup">
       <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableRoleGroup" message="tns:IWarehouseService_DisableRoleGroup_InputMessage" />
       <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableRoleGroupResponse" message="tns:IWarehouseService_DisableRoleGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMunits">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetMunits" message="tns:IWarehouseService_GetMunits_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetMunitsResponse" message="tns:IWarehouseService_GetMunits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMunit">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetMunit" message="tns:IWarehouseService_GetMunit_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetMunitResponse" message="tns:IWarehouseService_GetMunit_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateOrUpdateProductCategory">
       <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProductCategory" message="tns:IWarehouseService_CreateOrUpdateProductCategory_InputMessage" />
