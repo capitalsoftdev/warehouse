@@ -69,6 +69,7 @@
   <xs:element name="ArrayOfRoleGroup" nillable="true" type="tns:ArrayOfRoleGroup" />
   <xs:complexType name="ProductCategory">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Action" type="xs:int" />
       <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
