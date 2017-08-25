@@ -97,8 +97,11 @@ namespace WarehouseClient.ProdManagForm
             prodManag.LastModifyDate = DateTime.Now;
             prodManag.IsActive = true;
             prodManagManager.CreateOrUpdate(prodManag);
-            sendedForm.ProductManagmentIntoGridView(true);
+
+            //poxel
+            sendedForm.ProductManagmentIntoGridView(true,0,0,0);
             this.Close();
+
         }
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -176,11 +176,12 @@
             // 
             // SupplierIdTextBox
             // 
+            
             this.SupplierIdTextBox.Location = new System.Drawing.Point(98, 221);
             this.SupplierIdTextBox.Name = "SupplierIdTextBox";
             this.SupplierIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.SupplierIdTextBox.TabIndex = 28;
-            this.SupplierIdTextBox.UseWaitCursor = true;
+            
             // 
             // ActionComboBox
             // 
