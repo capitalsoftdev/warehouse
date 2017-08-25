@@ -21,12 +21,12 @@ namespace WarehouseWebService
 
             return null;
         }
-        public IList<User> SelectActiveUser()
+        public IList<User> SelectActiveUsers()
         {
             var serviseUserManager = new UserManager();
             return serviseUserManager.SelectActiveUser().Select(p => p.ToServiceUser()).ToList();
         }
-        public User SelectActiveUser(int id)
+        public User SelectActiveUserById(int id)
         {
             var serviseUserManager = new UserManager();
             return serviseUserManager.SelectActiveUser(id).ToServiceUser();

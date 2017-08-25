@@ -128,7 +128,7 @@ namespace WarehouseDAL
         }
         public int Autorisation(string username, string password)
         {
-            int result = 0;
+            int result ;
             using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
             {
                 connection.Open();
