@@ -677,19 +677,10 @@ namespace WarehouseClient.WWS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreationDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsActiveField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime LastLoginDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime LastModifireDateField;
+        private string UsernameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PasswordField;
@@ -698,7 +689,16 @@ namespace WarehouseClient.WWS {
         private int RoleGroupIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UsernameField;
+        private System.DateTime CreationDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastLoginDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastModifireDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsActiveField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -707,19 +707,6 @@ namespace WarehouseClient.WWS {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreationDate {
-            get {
-                return this.CreationDateField;
-            }
-            set {
-                if ((this.CreationDateField.Equals(value) != true)) {
-                    this.CreationDateField = value;
-                    this.RaisePropertyChanged("CreationDate");
-                }
             }
         }
         
@@ -737,45 +724,19 @@ namespace WarehouseClient.WWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsActive {
+        public string Username {
             get {
-                return this.IsActiveField;
+                return this.UsernameField;
             }
             set {
-                if ((this.IsActiveField.Equals(value) != true)) {
-                    this.IsActiveField = value;
-                    this.RaisePropertyChanged("IsActive");
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime LastLoginDate {
-            get {
-                return this.LastLoginDateField;
-            }
-            set {
-                if ((this.LastLoginDateField.Equals(value) != true)) {
-                    this.LastLoginDateField = value;
-                    this.RaisePropertyChanged("LastLoginDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime LastModifireDate {
-            get {
-                return this.LastModifireDateField;
-            }
-            set {
-                if ((this.LastModifireDateField.Equals(value) != true)) {
-                    this.LastModifireDateField = value;
-                    this.RaisePropertyChanged("LastModifireDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
         public string Password {
             get {
                 return this.PasswordField;
@@ -788,7 +749,7 @@ namespace WarehouseClient.WWS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
         public int RoleGroupId {
             get {
                 return this.RoleGroupIdField;
@@ -801,15 +762,54 @@ namespace WarehouseClient.WWS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Username {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.DateTime CreationDate {
             get {
-                return this.UsernameField;
+                return this.CreationDateField;
             }
             set {
-                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
-                    this.UsernameField = value;
-                    this.RaisePropertyChanged("Username");
+                if ((this.CreationDateField.Equals(value) != true)) {
+                    this.CreationDateField = value;
+                    this.RaisePropertyChanged("CreationDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.DateTime LastLoginDate {
+            get {
+                return this.LastLoginDateField;
+            }
+            set {
+                if ((this.LastLoginDateField.Equals(value) != true)) {
+                    this.LastLoginDateField = value;
+                    this.RaisePropertyChanged("LastLoginDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public System.DateTime LastModifireDate {
+            get {
+                return this.LastModifireDateField;
+            }
+            set {
+                if ((this.LastModifireDateField.Equals(value) != true)) {
+                    this.LastModifireDateField = value;
+                    this.RaisePropertyChanged("LastModifireDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public bool IsActive {
+            get {
+                return this.IsActiveField;
+            }
+            set {
+                if ((this.IsActiveField.Equals(value) != true)) {
+                    this.IsActiveField = value;
+                    this.RaisePropertyChanged("IsActive");
                 }
             }
         }

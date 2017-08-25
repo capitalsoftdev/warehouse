@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WarehouseClient.ProductCategoryManagement;
 using WarehouseClient.ProdManagForm;
 using WarehouseClient.WWS;
+using WarehouseClient.Constants;
 
 namespace WarehouseClient
 {
@@ -27,15 +28,27 @@ namespace WarehouseClient
             switch (loginUser.RoleGroupId)
             {
                 case 1: {
-                        
-
-                        //WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
-                        //tabControl1.SelectedTab = UserTab;
-                        //dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
-                        //dataGridView1.Columns[2].Visible = false;
-                        //dataGridView1.Columns[0].Visible = false;
-                        break;
+                        try
+                        {
+                            using (var client = new WarehouseServiceClient(ServiceParametor.Parametor))
+                            {
+                                foreach (User user in client.SelectActiveUsers())
+                                {
+                                    ApplicationData.Users.Add(user.Id.Value, user);
+                                }
+                                
+                                dataGridView1.DataSource = ApplicationData.Users.Values.ToList();
+                            }
+                            dataGridView1.Columns[2].Visible = false;
+                            dataGridView1.Columns[0].Visible = false;
                         }
+                        catch (Exception exeption) {
+                            
+                            Console.WriteLine(exeption.Message);
+                            
+                        }
+                        break;
+                    }
                default:
                         {
                         tabControl1.TabPages.Remove(UserTab);

@@ -18,7 +18,7 @@ namespace WarehouseWebService.DataContracts
         private DateTime lastLoginDate;
         private DateTime lastModifireDate;
         private bool isActive;
-        [DataMember]
+        [DataMember(Order = 1)]
         public int? Id
         {
             get
@@ -31,7 +31,7 @@ namespace WarehouseWebService.DataContracts
                 id = value;
             }
         }
-        [DataMember]
+        [DataMember(Order = 2)]
         public string Username
         {
             get
@@ -44,7 +44,7 @@ namespace WarehouseWebService.DataContracts
                 username = value;
             }
         }
-        [DataMember]
+        [DataMember(Order = 3)]
         public string Password
         {
             get
@@ -69,7 +69,7 @@ namespace WarehouseWebService.DataContracts
                 }
             }
         }
-        [DataMember]
+        [DataMember(Order = 4)]
         public int RoleGroupId
         {
             get
@@ -82,7 +82,7 @@ namespace WarehouseWebService.DataContracts
                 roleGroupId = value;
             }
         }
-        [DataMember]
+        [DataMember(Order = 5)]
         public DateTime CreationDate
         {
             get
@@ -95,7 +95,7 @@ namespace WarehouseWebService.DataContracts
                 creationDate = value;
             }
         }
-        [DataMember]
+        [DataMember(Order = 6)]
         public DateTime LastLoginDate
         {
             get
@@ -108,7 +108,7 @@ namespace WarehouseWebService.DataContracts
                 lastLoginDate = value;
             }
         }
-        [DataMember]
+        [DataMember(Order = 7)]
         public DateTime LastModifireDate
         {
             get
@@ -121,7 +121,7 @@ namespace WarehouseWebService.DataContracts
                 lastModifireDate = value;
             }
         }
-        [DataMember]
+        [DataMember(Order = 8)]
         public bool IsActive
         {
             get

@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarehouseBL.UserManagement;
-using WarehouseDAL.DataContracts;
+using WarehouseClient.Constants;
 using WarehouseClient.WWS;
 
 namespace WarehouseClient
 {
-    public partial class MainForm 
+    public partial class MainForm
     {
-       WWS.User loginUser;
-        public WWS.User LoginUser
+        User loginUser;
+        public User LoginUser
         {
             get
             {
@@ -26,19 +26,29 @@ namespace WarehouseClient
             }
         }
 
-        public MainForm(WWS.User user)
+        public MainForm(User user)
         {
             InitializeComponent();
             loginUser = user;
         }
         public void ReloadUserGrid(bool reload = false)
         {
-            //if (reload)
-            //    WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
-            //dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
-            //dataGridView1.Refresh();
+
+
+            if (reload)
+            {
+                using (var client = new WarehouseServiceClient(ServiceParametor.Parametor))
+                {
+                    foreach (User user in client.SelectActiveUsers())
+                    {
+                        ApplicationData.Users.Add(user.Id.Value, user);
+                    }
+                }
+                dataGridView1.DataSource = ApplicationData.Users.Values.ToList();
+                dataGridView1.Refresh();
+            }
         }
-    
+
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -74,13 +84,14 @@ namespace WarehouseClient
                 ReloadUserGrid(true);
             }
         }
-        
+
         private void SignOutTab_Enter(object sender, EventArgs e)
         {
             UserManagement.SignOut signOut = new UserManagement.SignOut(this);
             signOut.Show();
         }
-        public void SingOutChangePabControl() {
+        public void SingOutChangePabControl()
+        {
             tabControl1.SelectedTab = RoleTab;
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

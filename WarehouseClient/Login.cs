@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using WarehouseBL.UserManagement;
 using WarehouseClient.WWS;
 
+
 namespace WarehouseClient
 {
     public partial class Login : Form
@@ -24,7 +25,7 @@ namespace WarehouseClient
         {
             try
             {
-                using (var client = new WarehouseServiceClient("HTTP"))
+                using (var client = new WarehouseServiceClient(ServiceParametor.Parametor))
                 {
                     User user = client.Login(textBox1.Text, textBox2.Text);
                     if (user != null)
@@ -38,11 +39,12 @@ namespace WarehouseClient
                     else
                     {
                         MessageBox.Show("Invalid User name or password");
+                       
                     }
                 }
             }
-            catch (Exception exception) {
-                MessageBox.Show($"Connection error\n{exception.Message}");
+            catch (System.ServiceModel.FaultException exception) {
+                MessageBox.Show($"Connection error\n\n{exception.Message}");
             }
         }
     }
