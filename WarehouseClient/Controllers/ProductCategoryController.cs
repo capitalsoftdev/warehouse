@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WarehouseBL.ProductCategoryManagement;
 using WarehouseClient.ProductCategoryManagement;
-using WarehouseDAL.DataContracts;
+using WarehouseClient.WWS;
+
 
 namespace WarehouseClient
 {
@@ -18,9 +16,12 @@ namespace WarehouseClient
 
         public void ProductCategoryRefresh()
         {
-            ProductCategoryManager productCategoryManager = new ProductCategoryManager();
-            IList<ProductCategory> productCategoryList = productCategoryManager.GetAllProductCategories();
-            productCategoryDataGridView.DataSource = productCategoryList.ToList();
+            using (WarehouseServiceClient wwsClient = new WarehouseServiceClient(ServiceParametor.Parametor))
+            {
+                IList<ProductCategory> prodCatList = wwsClient.GetAllProductCategories().ToList();
+                productCategoryDataGridView.DataSource = prodCatList.ToList();
+            }
+          
         }
         private void addProductCategoryButton_Click(object sender, EventArgs e)
         {
