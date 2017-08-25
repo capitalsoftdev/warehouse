@@ -11,8 +11,8 @@ namespace WarehouseClient
 {
     public partial class MainForm 
     {
-        User loginUser;
-        public User LoginUser
+       WWS.User loginUser;
+        public WWS.User LoginUser
         {
             get
             {
@@ -24,9 +24,8 @@ namespace WarehouseClient
                 loginUser = value;
             }
         }
-        UserManager manage = new UserManager();
 
-        public MainForm(User user)
+        public MainForm(WWS.User user)
         {
             InitializeComponent();
             loginUser = user;

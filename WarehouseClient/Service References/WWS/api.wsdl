@@ -127,6 +127,42 @@
   <wsdl:message name="IWarehouseService_ManageProductCategory_OutputMessage">
     <wsdl:part name="parameters" element="tns:ManageProductCategoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IWarehouseService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_SelectActiveUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectActiveUsers" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_SelectActiveUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectActiveUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_ActivateOrDeActivate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateOrDeActivate" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_ActivateOrDeActivate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateOrDeActivateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_SelectActiveUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectActiveUserById" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_SelectActiveUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectActiveUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_UpdateOrInsertUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrInsertUser" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_UpdateOrInsertUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrInsertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_UpdateUserLoginDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserLoginDate" />
+  </wsdl:message>
+  <wsdl:message name="IWarehouseService_UpdateUserLoginDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserLoginDateResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWarehouseService">
     <wsdl:operation name="CreateOrUpdateProduct">
       <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProduct" message="tns:IWarehouseService_CreateOrUpdateProduct_InputMessage" />
@@ -207,6 +243,30 @@
     <wsdl:operation name="ManageProductCategory">
       <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ManageProductCategory" message="tns:IWarehouseService_ManageProductCategory_InputMessage" />
       <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ManageProductCategoryResponse" message="tns:IWarehouseService_ManageProductCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/Login" message="tns:IWarehouseService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/LoginResponse" message="tns:IWarehouseService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectActiveUsers">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUsers" message="tns:IWarehouseService_SelectActiveUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUsersResponse" message="tns:IWarehouseService_SelectActiveUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateOrDeActivate">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ActivateOrDeActivate" message="tns:IWarehouseService_ActivateOrDeActivate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ActivateOrDeActivateResponse" message="tns:IWarehouseService_ActivateOrDeActivate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectActiveUserById">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUserById" message="tns:IWarehouseService_SelectActiveUserById_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUserByIdResponse" message="tns:IWarehouseService_SelectActiveUserById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrInsertUser">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateOrInsertUser" message="tns:IWarehouseService_UpdateOrInsertUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateOrInsertUserResponse" message="tns:IWarehouseService_UpdateOrInsertUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserLoginDate">
+      <wsdl:input wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateUserLoginDate" message="tns:IWarehouseService_UpdateUserLoginDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateUserLoginDateResponse" message="tns:IWarehouseService_UpdateUserLoginDate_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

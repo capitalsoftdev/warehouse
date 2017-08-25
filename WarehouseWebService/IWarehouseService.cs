@@ -93,11 +93,11 @@ namespace WarehouseWebService
         [OperationContract]
         User Login(string userName, string password);
         [OperationContract]
-        IList<User> SelectActiveUser();
+        IList<User> SelectActiveUsers();
         [OperationContract]
         void ActivateOrDeActivate(int id);
         [OperationContract]
-        User SelectActiveUser(int id);
+        User SelectActiveUserById(int id);
         [OperationContract]
         void UpdateOrInsertUser(User user);
         [OperationContract]

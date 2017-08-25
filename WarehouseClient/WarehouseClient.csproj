@@ -205,6 +205,12 @@
     <EmbeddedResource Include="UserManagement\SignOut.resx">
       <DependentUpon>SignOut.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\WarehouseWebService.DataContracts.Product.datasource" />
+    <None Include="Properties\DataSources\WarehouseWebService.DataContracts.ProductCategory.datasource" />
+    <None Include="Properties\DataSources\WarehouseWebService.DataContracts.ProductManagment.datasource" />
+    <None Include="Properties\DataSources\WarehouseWebService.DataContracts.Role.datasource" />
+    <None Include="Properties\DataSources\WarehouseWebService.DataContracts.RoleGroup.datasource" />
+    <None Include="Properties\DataSources\WarehouseWebService.DataContracts.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -239,20 +245,13 @@
     <None Include="Service References\WWS\WarehouseClient.WWS.RoleGroup.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\WWS\WarehouseClient.WWS.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\WWS\WarehouseService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WarehouseBL\WarehouseBL.csproj">
-      <Project>{0964368b-82b0-4521-b5e8-3379880e77aa}</Project>
-      <Name>WarehouseBL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WarehouseDAL\WarehouseDAL.csproj">
-      <Project>{401dc347-6ca0-4a50-b907-0c49334deed8}</Project>
-      <Name>WarehouseDAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -274,6 +273,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WarehouseBL\WarehouseBL.csproj">
+      <Project>{0964368b-82b0-4521-b5e8-3379880e77aa}</Project>
+      <Name>WarehouseBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WarehouseDAL\WarehouseDAL.csproj">
+      <Project>{401dc347-6ca0-4a50-b907-0c49334deed8}</Project>
+      <Name>WarehouseDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -590,6 +590,163 @@ namespace WarehouseClient.WWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/WarehouseWebService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreationDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsActiveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastLoginDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastModifireDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RoleGroupIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreationDate {
+            get {
+                return this.CreationDateField;
+            }
+            set {
+                if ((this.CreationDateField.Equals(value) != true)) {
+                    this.CreationDateField = value;
+                    this.RaisePropertyChanged("CreationDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsActive {
+            get {
+                return this.IsActiveField;
+            }
+            set {
+                if ((this.IsActiveField.Equals(value) != true)) {
+                    this.IsActiveField = value;
+                    this.RaisePropertyChanged("IsActive");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastLoginDate {
+            get {
+                return this.LastLoginDateField;
+            }
+            set {
+                if ((this.LastLoginDateField.Equals(value) != true)) {
+                    this.LastLoginDateField = value;
+                    this.RaisePropertyChanged("LastLoginDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastModifireDate {
+            get {
+                return this.LastModifireDateField;
+            }
+            set {
+                if ((this.LastModifireDateField.Equals(value) != true)) {
+                    this.LastModifireDateField = value;
+                    this.RaisePropertyChanged("LastModifireDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RoleGroupId {
+            get {
+                return this.RoleGroupIdField;
+            }
+            set {
+                if ((this.RoleGroupIdField.Equals(value) != true)) {
+                    this.RoleGroupIdField = value;
+                    this.RaisePropertyChanged("RoleGroupId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.capitalsoft.am/api/soap/2017/08/22", ConfigurationName="WWS.IWarehouseService")]
     public interface IWarehouseService {
@@ -763,6 +920,62 @@ namespace WarehouseClient.WWS {
             "gory", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ManageProductCate" +
             "goryResponse")]
         System.Threading.Tasks.Task<int> ManageProductCategoryAsync(int id, int action);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/Login", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/LoginResponse")]
+        WarehouseClient.WWS.User Login(string userName, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/Login", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/LoginResponse")]
+        System.Threading.Tasks.Task<WarehouseClient.WWS.User> LoginAsync(string userName, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUsers" +
+            "", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUsers" +
+            "Response")]
+        System.Collections.Generic.List<WarehouseClient.WWS.User> SelectActiveUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUsers" +
+            "", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUsers" +
+            "Response")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WarehouseClient.WWS.User>> SelectActiveUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ActivateOrDeActiv" +
+            "ate", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ActivateOrDeActiv" +
+            "ateResponse")]
+        void ActivateOrDeActivate(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ActivateOrDeActiv" +
+            "ate", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/ActivateOrDeActiv" +
+            "ateResponse")]
+        System.Threading.Tasks.Task ActivateOrDeActivateAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUserB" +
+            "yId", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUserB" +
+            "yIdResponse")]
+        WarehouseClient.WWS.User SelectActiveUserById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUserB" +
+            "yId", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/SelectActiveUserB" +
+            "yIdResponse")]
+        System.Threading.Tasks.Task<WarehouseClient.WWS.User> SelectActiveUserByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateOrInsertUse" +
+            "r", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateOrInsertUse" +
+            "rResponse")]
+        void UpdateOrInsertUser(WarehouseClient.WWS.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateOrInsertUse" +
+            "r", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateOrInsertUse" +
+            "rResponse")]
+        System.Threading.Tasks.Task UpdateOrInsertUserAsync(WarehouseClient.WWS.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateUserLoginDa" +
+            "te", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateUserLoginDa" +
+            "teResponse")]
+        void UpdateUserLoginDate(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateUserLoginDa" +
+            "te", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/UpdateUserLoginDa" +
+            "teResponse")]
+        System.Threading.Tasks.Task UpdateUserLoginDateAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -950,6 +1163,54 @@ namespace WarehouseClient.WWS {
         
         public System.Threading.Tasks.Task<int> ManageProductCategoryAsync(int id, int action) {
             return base.Channel.ManageProductCategoryAsync(id, action);
+        }
+        
+        public WarehouseClient.WWS.User Login(string userName, string password) {
+            return base.Channel.Login(userName, password);
+        }
+        
+        public System.Threading.Tasks.Task<WarehouseClient.WWS.User> LoginAsync(string userName, string password) {
+            return base.Channel.LoginAsync(userName, password);
+        }
+        
+        public System.Collections.Generic.List<WarehouseClient.WWS.User> SelectActiveUsers() {
+            return base.Channel.SelectActiveUsers();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WarehouseClient.WWS.User>> SelectActiveUsersAsync() {
+            return base.Channel.SelectActiveUsersAsync();
+        }
+        
+        public void ActivateOrDeActivate(int id) {
+            base.Channel.ActivateOrDeActivate(id);
+        }
+        
+        public System.Threading.Tasks.Task ActivateOrDeActivateAsync(int id) {
+            return base.Channel.ActivateOrDeActivateAsync(id);
+        }
+        
+        public WarehouseClient.WWS.User SelectActiveUserById(int id) {
+            return base.Channel.SelectActiveUserById(id);
+        }
+        
+        public System.Threading.Tasks.Task<WarehouseClient.WWS.User> SelectActiveUserByIdAsync(int id) {
+            return base.Channel.SelectActiveUserByIdAsync(id);
+        }
+        
+        public void UpdateOrInsertUser(WarehouseClient.WWS.User user) {
+            base.Channel.UpdateOrInsertUser(user);
+        }
+        
+        public System.Threading.Tasks.Task UpdateOrInsertUserAsync(WarehouseClient.WWS.User user) {
+            return base.Channel.UpdateOrInsertUserAsync(user);
+        }
+        
+        public void UpdateUserLoginDate(int id) {
+            base.Channel.UpdateUserLoginDate(id);
+        }
+        
+        public System.Threading.Tasks.Task UpdateUserLoginDateAsync(int id) {
+            return base.Channel.UpdateUserLoginDateAsync(id);
         }
     }
 }
