@@ -239,6 +239,9 @@
     <None Include="Service References\WWS\WarehouseClient.WWS.RoleGroup.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\WWS\WarehouseClient.WWS.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\WWS\WarehouseService.wsdl" />
   </ItemGroup>
   <ItemGroup>
