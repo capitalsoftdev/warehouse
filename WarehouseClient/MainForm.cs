@@ -31,11 +31,11 @@ namespace WarehouseClient
             {
                 case 1: {
 
-                        WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
-                        tabControl1.SelectedTab = UserTab;
-                        dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
-                        dataGridView1.Columns[2].Visible = false;
-                        dataGridView1.Columns[0].Visible = false;
+                        //WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
+                        //tabControl1.SelectedTab = UserTab;
+                        //dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
+                        //dataGridView1.Columns[2].Visible = false;
+                       // dataGridView1.Columns[0].Visible = false;
                         break;
                         }
                default:

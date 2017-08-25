@@ -33,10 +33,10 @@ namespace WarehouseClient
         }
         public void ReloadUserGrid(bool reload = false)
         {
-            if (reload)
-                WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
-            dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
-            dataGridView1.Refresh();
+            //if (reload)
+            //    WarehouseClient.Constants.ApplicationData.Users = manage.SelectActiveUser();
+            //dataGridView1.DataSource = WarehouseClient.Constants.ApplicationData.Users.Values.ToList();
+            //dataGridView1.Refresh();
         }
     
 

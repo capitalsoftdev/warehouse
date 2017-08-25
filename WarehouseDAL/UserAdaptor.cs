@@ -12,20 +12,20 @@ namespace WarehouseDAL
 {
   public  class UserAdaptor
     {
-        public Dictionary<int, User> SelectActiveUser()
+        public  IList<User> SelectActiveUser()
         {
             return GetActiveUsers(null);
         }
-        public User SelectActiveUser(int id)
+        public  User SelectActiveUser(int id)
         {
-            Dictionary<int, User> user = GetActiveUsers(id);
+            IList<User> user = GetActiveUsers(id);
             if (user.Count != 0)
-                return user[id];
+                return user[0];
             return null;
         }
-        private Dictionary<int, User> GetActiveUsers(int? id)
+        private IList<User> GetActiveUsers(int? id)
         {
-            Dictionary<int, User> user = new Dictionary<int, User>();
+            IList<User> user = new List<User>();
             using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
             {
                 connection.Open();
@@ -63,7 +63,7 @@ namespace WarehouseDAL
                                 use.LastLoginDate = (DateTime)reader["lastLoginDate"];
                             use.LastModifireDate = (DateTime)reader["LastModifyDate"];
                             use.IsActive = (bool)reader["IsActive"];
-                            user.Add((Int32)use.Id, use);
+                            user.Add(use);
                         }
                     }
                     reader.Close();
@@ -160,7 +160,6 @@ namespace WarehouseDAL
             }
             return result;
         }
-
         public void UpdateUserLoginDate(int id)
         {
             using (var connection = new SqlConnection(ConnectionParameters.ConnectionString))
