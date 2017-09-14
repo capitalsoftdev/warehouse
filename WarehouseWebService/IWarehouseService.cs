@@ -68,10 +68,22 @@ namespace WarehouseWebService
         #endregion
 
         #region Munit
+
         [OperationContract]
         IList<Munit> GetMunits();
+
         [OperationContract]
         Munit GetMunit(int id);
+
+        [OperationContract]
+        int CreateOrUpdateMunit(Munit munit);
+
+        [OperationContract]
+        int DisableMunit(int id);
+
+        [OperationContract]
+        IList<Munit> GetActiveMunit();
+
         #endregion
 
         #region ProductCategory

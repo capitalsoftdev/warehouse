@@ -75,6 +75,8 @@ namespace WarehouseClient
             }
         }
 
+        
+
         private void tabPage3_Enter(object sender, EventArgs e)
         {
             loadProductsInToGrid(true);
@@ -132,6 +134,25 @@ namespace WarehouseClient
                 MessageBox.Show(exc.Message);
             }
 
+        }
+
+        private void addNewMunitButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProductManagement.NewMunitAddForm newMunitAddForm = new ProductManagement.NewMunitAddForm();
+                newMunitAddForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void munitButton_Click(object sender, EventArgs e)
+        {
+            ProductManagement.MunitForm munitForm = new ProductManagement.MunitForm();
+            munitForm.Show();
         }
 
         class ProductMunitProductCategoryJoin

@@ -119,6 +119,18 @@
     <Compile Include="ProductCategoryManagement\AddProductCategory.Designer.cs">
       <DependentUpon>AddProductCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductManagement\MunitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManagement\MunitForm.Designer.cs">
+      <DependentUpon>MunitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManagement\NewMunitAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManagement\NewMunitAddForm.Designer.cs">
+      <DependentUpon>NewMunitAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductManagement\NewProductAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductCategoryManagement\AddProductCategory.resx">
       <DependentUpon>AddProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManagement\MunitForm.resx">
+      <DependentUpon>MunitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManagement\NewMunitAddForm.resx">
+      <DependentUpon>NewMunitAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductManagement\NewProductAddForm.resx">
       <DependentUpon>NewProductAddForm.cs</DependentUpon>

@@ -172,7 +172,7 @@ namespace WarehouseClient
 
                 foreach (var item in allMunit)
                 {
-                    Constants.ApplicationData.Munits.Add(item.Id, item);
+                    Constants.ApplicationData.Munits.Add(item.Id.Value, item);
                 }
             }
             catch(Exception e)
@@ -189,5 +189,6 @@ namespace WarehouseClient
            UserLabel2.Text=dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
+       
     }
 }

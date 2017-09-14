@@ -8,11 +8,11 @@ namespace WarehouseDAL.DataContracts
 {
     public class Munit
     {
-        private int id;
+        private int? id;
         private string munitName;
         private Boolean isActive;
 
-        public int Id
+        public int? Id
         {
             get
             {

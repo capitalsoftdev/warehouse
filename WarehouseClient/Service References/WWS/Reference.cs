@@ -507,7 +507,7 @@ namespace WarehouseClient.WWS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
+        private System.Nullable<int> IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsActiveField;
@@ -526,7 +526,7 @@ namespace WarehouseClient.WWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
+        public System.Nullable<int> Id {
             get {
                 return this.IdField;
             }
@@ -988,6 +988,32 @@ namespace WarehouseClient.WWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetMunit", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetMunitResponse")]
         System.Threading.Tasks.Task<WarehouseClient.WWS.Munit> GetMunitAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateMun" +
+            "it", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateMun" +
+            "itResponse")]
+        int CreateOrUpdateMunit(WarehouseClient.WWS.Munit munit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateMun" +
+            "it", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateMun" +
+            "itResponse")]
+        System.Threading.Tasks.Task<int> CreateOrUpdateMunitAsync(WarehouseClient.WWS.Munit munit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableMunit", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableMunitRespo" +
+            "nse")]
+        int DisableMunit(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableMunit", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableMunitRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<int> DisableMunitAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveMunit", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveMunitRes" +
+            "ponse")]
+        System.Collections.Generic.List<WarehouseClient.WWS.Munit> GetActiveMunit();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveMunit", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveMunitRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<WarehouseClient.WWS.Munit>> GetActiveMunitAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdatePro" +
             "ductCategory", ReplyAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdatePro" +
             "ductCategoryResponse")]
@@ -1254,6 +1280,30 @@ namespace WarehouseClient.WWS {
         
         public System.Threading.Tasks.Task<WarehouseClient.WWS.Munit> GetMunitAsync(int id) {
             return base.Channel.GetMunitAsync(id);
+        }
+        
+        public int CreateOrUpdateMunit(WarehouseClient.WWS.Munit munit) {
+            return base.Channel.CreateOrUpdateMunit(munit);
+        }
+        
+        public System.Threading.Tasks.Task<int> CreateOrUpdateMunitAsync(WarehouseClient.WWS.Munit munit) {
+            return base.Channel.CreateOrUpdateMunitAsync(munit);
+        }
+        
+        public int DisableMunit(int id) {
+            return base.Channel.DisableMunit(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DisableMunitAsync(int id) {
+            return base.Channel.DisableMunitAsync(id);
+        }
+        
+        public System.Collections.Generic.List<WarehouseClient.WWS.Munit> GetActiveMunit() {
+            return base.Channel.GetActiveMunit();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<WarehouseClient.WWS.Munit>> GetActiveMunitAsync() {
+            return base.Channel.GetActiveMunitAsync();
         }
         
         public int CreateOrUpdateProductCategory(WarehouseClient.WWS.ProductCategory product) {

@@ -10,12 +10,12 @@ namespace WarehouseWebService.DataContracts
     [DataContract]
     public class Munit
     {
-        private int id;
+        private int? id;
         private string munitName;
         private Boolean isActive;
 
         [DataMember]
-        public int Id
+        public int? Id
         {
             get
             {

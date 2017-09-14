@@ -79,12 +79,12 @@ namespace WarehouseClient.ProductManagement
                     WWS.WarehouseServiceClient productAdaptor = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
                     if (product == null)
                     {
-                        product = new WWS.Product() { Name = productName, Munit = munitSelect.Id, ProductCategoryId = productCategorySelect.Id };
+                        product = new WWS.Product() { Name = productName, Munit = munitSelect.Id.Value, ProductCategoryId = productCategorySelect.Id };
                     }
                     else
                     {
                         product.Name = productName;
-                        product.Munit = munitSelect.Id;
+                        product.Munit = munitSelect.Id.Value;
                         product.ProductCategoryId = productCategorySelect.Id;
                     }
                     productAdaptor.CreateOrUpdateProduct(product);

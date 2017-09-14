@@ -75,7 +75,7 @@
   <xs:element name="ArrayOfMunit" nillable="true" type="tns:ArrayOfMunit" />
   <xs:complexType name="Munit">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
       <xs:element minOccurs="0" name="MunitName" nillable="true" type="xs:string" />
     </xs:sequence>

@@ -29,5 +29,33 @@ namespace WarehouseBL.ProductManagement
             return result;
         }
 
+        public int CreateOrUpdateMunit(Munit munit)
+        {
+            var munitAdaptor = new MunitAdaptor();
+
+            var result = munitAdaptor.CreateOrUpdateMunit(munit);
+
+            return result;
+        }
+
+
+        public int DisableMunit(int id)
+        {
+            var munitAdaptor = new MunitAdaptor();
+
+            var result = munitAdaptor.DisableMunit(id);
+
+            return result;
+        }
+
+        public IList<Munit> GetActiveMunit()
+        {
+            var munitAdaptor = new MunitAdaptor();
+
+            var result = munitAdaptor.GetActiveMunit();
+
+            return result;
+        }
+
     }
 }

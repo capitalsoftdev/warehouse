@@ -195,6 +195,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateMunit">
+      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateMunit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableMunit">
+      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableMunit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveMunit">
+      <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveMunit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateOrUpdateProductCategory">
       <soap:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProductCategory" style="document" />
       <wsdl:input>
@@ -451,6 +478,33 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateMunit">
+      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateMunit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableMunit">
+      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/DisableMunit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveMunit">
+      <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/GetActiveMunit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateOrUpdateProductCategory">
       <soap12:operation soapAction="http://www.capitalsoft.am/api/soap/2017/08/22/IWarehouseService/CreateOrUpdateProductCategory" style="document" />
       <wsdl:input>
@@ -551,7 +605,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.pipe://localhost/warehouseapi</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Spn>host/DESKTOP-DK3JE2O</Spn>
+          <Spn>host/DESKTOP-H1FEDPA</Spn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
