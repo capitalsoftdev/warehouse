@@ -47,7 +47,7 @@
             this.AddProductManagmentButton = new System.Windows.Forms.Button();
             this.ProductManagmentGridView = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.addNewMunitButton = new System.Windows.Forms.Button();
+            this.munitButton = new System.Windows.Forms.Button();
             this.productDataGridView = new System.Windows.Forms.DataGridView();
             this.disableProductButton = new System.Windows.Forms.Button();
             this.addNewProductButton = new System.Windows.Forms.Button();
@@ -63,7 +63,6 @@
             this.addRole = new System.Windows.Forms.Button();
             this.RoleDataGridView = new System.Windows.Forms.DataGridView();
             this.SignOutTab = new System.Windows.Forms.TabPage();
-            this.munitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.UserTab.SuspendLayout();
@@ -292,7 +291,6 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.munitButton);
-            this.tabPage3.Controls.Add(this.addNewMunitButton);
             this.tabPage3.Controls.Add(this.productDataGridView);
             this.tabPage3.Controls.Add(this.disableProductButton);
             this.tabPage3.Controls.Add(this.addNewProductButton);
@@ -304,15 +302,15 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
             // 
-            // addNewMunitButton
+            // munitButton
             // 
-            this.addNewMunitButton.Location = new System.Drawing.Point(652, 128);
-            this.addNewMunitButton.Name = "addNewMunitButton";
-            this.addNewMunitButton.Size = new System.Drawing.Size(172, 24);
-            this.addNewMunitButton.TabIndex = 2;
-            this.addNewMunitButton.Text = "Add new munit";
-            this.addNewMunitButton.UseVisualStyleBackColor = true;
-            this.addNewMunitButton.Click += new System.EventHandler(this.addNewMunitButton_Click);
+            this.munitButton.Location = new System.Drawing.Point(343, 7);
+            this.munitButton.Name = "munitButton";
+            this.munitButton.Size = new System.Drawing.Size(155, 26);
+            this.munitButton.TabIndex = 3;
+            this.munitButton.Text = "Munit";
+            this.munitButton.UseVisualStyleBackColor = true;
+            this.munitButton.Click += new System.EventHandler(this.munitButton_Click);
             // 
             // productDataGridView
             // 
@@ -462,16 +460,6 @@
             this.SignOutTab.UseVisualStyleBackColor = true;
             this.SignOutTab.Enter += new System.EventHandler(this.SignOutTab_Enter);
             // 
-            // munitButton
-            // 
-            this.munitButton.Location = new System.Drawing.Point(343, 7);
-            this.munitButton.Name = "munitButton";
-            this.munitButton.Size = new System.Drawing.Size(155, 26);
-            this.munitButton.TabIndex = 3;
-            this.munitButton.Text = "Munit";
-            this.munitButton.UseVisualStyleBackColor = true;
-            this.munitButton.Click += new System.EventHandler(this.munitButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -542,7 +530,6 @@
         private System.Windows.Forms.ComboBox CategoryProdMagTabComboBox;
         private System.Windows.Forms.Button FilterProdManadButton;
         private System.Windows.Forms.Button addRoleGroupButton;
-        private System.Windows.Forms.Button addNewMunitButton;
         private System.Windows.Forms.Button munitButton;
     }
 }

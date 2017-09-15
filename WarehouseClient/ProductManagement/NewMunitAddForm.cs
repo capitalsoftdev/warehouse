@@ -12,19 +12,27 @@ namespace WarehouseClient.ProductManagement
 {
     public partial class NewMunitAddForm : Form
     {
-        MainForm mainFrm;
+        MunitForm munitForm;
         WWS.Munit munit;
         public NewMunitAddForm()
         {
             InitializeComponent();
         }
 
-        public NewMunitAddForm(MainForm mainFrm, WWS.Munit munit)
+        public NewMunitAddForm( WWS.Munit munit, MunitForm munitForm )
         {
             InitializeComponent();
-            this.mainFrm = mainFrm;
+            this.munitForm = munitForm;
             this.munit = munit;
         }
+
+        public NewMunitAddForm(MunitForm munitForm)
+        {
+            InitializeComponent();
+
+            this.munitForm = munitForm;
+        }
+
 
         private void addNewOrUpdateMunitButton_Click(object sender, EventArgs e)
         {
@@ -43,11 +51,28 @@ namespace WarehouseClient.ProductManagement
                     else
                     {
                         munit.MunitName = munitName;
+                        
                     }
 
                     munitAdaptor.CreateOrUpdateMunit(munit);
-                  
 
+
+                    WWS.WarehouseServiceClient munitManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
+
+                    var allMunit = munitManager.GetActiveMunit();
+
+                    Constants.ApplicationData.Munits = new Dictionary<int, WWS.Munit>();
+
+                    foreach (var item in allMunit)
+                    {
+                        Constants.ApplicationData.Munits.Add(item.Id.Value, item);
+                    }
+
+                    
+
+                        munitForm.LoadMunitToGrid(true);
+
+                    
                     this.Close();
                 }
             }
@@ -62,6 +87,8 @@ namespace WarehouseClient.ProductManagement
             if(munit != null)
             {
                 addNewMunitLabel.Text = "Update Munit";
+
+                munitAddTextBox.Text = munit.MunitName;
             }
         }
     }

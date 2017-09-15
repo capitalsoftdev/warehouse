@@ -14,25 +14,40 @@ namespace WarehouseClient.ProductManagement
     {
         WWS.WarehouseServiceClient munitManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
         IList<WWS.Munit> munitList;
+
         public MunitForm()
         {
             InitializeComponent();
         }
 
+        public void LoadMunitToGrid(bool reLoad)
+        {
+            try
+            {
+                if(reLoad)
+                {
+                    munitList = Constants.ApplicationData.Munits.Select(m => m.Value).ToList();
+
+
+                    munitDataGridView.DataSource = munitList.ToList();
+                    munitDataGridView.Columns[0].Visible = false;
+                    munitDataGridView.Columns[1].Visible = false;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
         private void MunitForm_Load(object sender, EventArgs e)
         {
-            munitList = WarehouseClient.Constants.ApplicationData.Munits.Select(m => m.Value).ToList();
-
-
-            munitDataGridView.DataSource = munitList.ToList();
-            munitDataGridView.Columns[0].Visible = false;
-            munitDataGridView.Columns[1].Visible = false;
-
+            LoadMunitToGrid(true);
         }
 
         private void addMunitButton_Click(object sender, EventArgs e)
         {
-            NewMunitAddForm newMunitAddForm = new NewMunitAddForm();
+            NewMunitAddForm newMunitAddForm = new NewMunitAddForm(this);
             newMunitAddForm.Show();
         }
 
@@ -52,8 +67,11 @@ namespace WarehouseClient.ProductManagement
                     foreach (var munit in selectedRowsList)
                     {
                         var a = (DataGridViewRow)munit;
-                        munitManager.DisableProduct((int)a.Cells[0].Value);
+                        int idDisableMunit = munitList[(int)a.Index].Id.Value;
+                        munitManager.DisableMunit(idDisableMunit);
+                        Constants.ApplicationData.Munits.Remove(idDisableMunit);
                     }
+                    this.LoadMunitToGrid(true);
                 }
             }
             catch (Exception exc)
@@ -66,7 +84,7 @@ namespace WarehouseClient.ProductManagement
         {
             try
             {
-                NewMunitAddForm newMunitAddForm = new NewMunitAddForm();
+                NewMunitAddForm newMunitAddForm = new NewMunitAddForm(munitList[e.RowIndex], this);
                 newMunitAddForm.Show();
             }
             catch (Exception exc)

@@ -166,7 +166,7 @@ namespace WarehouseClient
             {
                 WWS.WarehouseServiceClient munitManager = new WWS.WarehouseServiceClient(ServiceParametor.Parametor);
 
-                var allMunit = munitManager.GetMunits();
+                var allMunit = munitManager.GetActiveMunit();
 
                 Constants.ApplicationData.Munits = new Dictionary<int, WWS.Munit>();
 
