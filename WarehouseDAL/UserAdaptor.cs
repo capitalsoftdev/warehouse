@@ -15,6 +15,7 @@ namespace WarehouseDAL
         public  IList<User> SelectActiveUser()
         {
             return GetActiveUsers(null);
+
         }
         public  User SelectActiveUser(int id)
         {
